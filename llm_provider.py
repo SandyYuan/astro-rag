@@ -6,7 +6,7 @@ from typing import Optional, Dict, Any, List
 from langchain.llms.base import LLM
 from langchain.embeddings.base import Embeddings
 from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.embeddings import GoogleGenerativeAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 # Import the provided LLMClient class
 class LLMClient:
