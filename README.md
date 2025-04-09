@@ -1,18 +1,18 @@
-# Astronomy Chatbot: Professor Risa Wechsler (Gemini Version)
+# Academic Research Assistant: Professor-Specific Chatbot
 
-A specialized chatbot that emulates Professor Risa Wechsler, using her research papers as a knowledge base with Retrieval-Augmented Generation (RAG) powered by Google's Gemini AI models.
+A specialized chatbot system that emulates academic professors, using their research papers as a knowledge base with Retrieval-Augmented Generation (RAG) powered by Google's Gemini AI models.
 
 ## Project Overview
 
 This project builds a conversational AI system that:
-1. Collects research papers by Professor Risa Wechsler
+1. Collects research papers by a specific professor (currently using Risa Wechsler as an example)
 2. Processes these papers into a searchable knowledge base
-3. Uses RAG technology with Gemini to provide informed responses in the style of Professor Wechsler
+3. Uses RAG technology with Gemini to provide informed responses in the style of the professor
 4. Hosts the chatbot through a web interface
 
 ## Components
 
-- `paper_collector.py`: Tool to search and download papers by Professor Wechsler
+- `paper_collector.py`: Tool to search and download papers by a target professor
 - `rag_processor.py`: Processes papers and creates the vector database for RAG using Gemini embeddings
 - `chatbot.py`: Core chatbot implementation using Gemini and RAG
 - `app.py`: Web application to host the chatbot
@@ -36,22 +36,28 @@ This project builds a conversational AI system that:
    GOOGLE_API_KEY=your_google_api_key_here
    ```
 
-4. Run the paper collector to gather research content:
+4. Configure the target professor (defaults to Risa Wechsler as an example):
+   ```python
+   # In paper_collector.py, modify:
+   collector = PaperCollector(author_name="Professor Name")
+   ```
+
+5. Run the paper collector to gather research content:
    ```
    python paper_collector.py
    ```
 
-5. Process the papers to build the RAG system:
+6. Process the papers to build the RAG system:
    ```
    python rag_processor.py
    ```
 
-6. Start the web application:
+7. Start the web application:
    ```
    python app.py
    ```
 
-7. Access the chatbot at `http://localhost:8000`
+8. Access the chatbot at `http://localhost:8000`
 
 ## Usage
 
@@ -59,21 +65,21 @@ Once the web application is running, you can interact with the chatbot through t
 
 1. Type your question in the input field
 2. Press "Send" or hit Enter
-3. The chatbot will respond based on Professor Wechsler's research papers
+3. The chatbot will respond based on the professor's research papers
 4. Sources used to generate the response will be displayed below each answer
 
 ## Customization
 
 ### Adjusting the Chatbot Personality
 
-You can modify the system prompt in `chatbot.py` to refine how the chatbot emulates Professor Wechsler.
+You can modify the system prompt in `chatbot.py` to refine how the chatbot emulates the professor.
 
 ### Adding More Papers
 
 To expand the knowledge base, run the paper collector again with higher `max_papers` value:
 
 ```python
-collector = PaperCollector()
+collector = PaperCollector(author_name="Professor Name")
 papers = collector.collect_papers(max_papers=50)
 ```
 
