@@ -9,17 +9,21 @@ from typing import List, Dict, Any
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
-from langchain.embeddings import GoogleGenerativeAIEmbeddings
 from langchain.schema import Document
+
+from llm_provider import LLMProvider
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class RAGProcessor:
-    def __init__(self, papers_dir="papers", output_dir="rag_data"):
+    def __init__(self, papers_dir="papers", output_dir="rag_data", provider=None):
         self.papers_dir = papers_dir
         self.output_dir = output_dir
         os.makedirs(output_dir, exist_ok=True)
+        
+        # Initialize the LLM provider
+        self.llm_provider = LLMProvider(provider=provider)
         
     def load_papers(self) -> List[Document]:
         """Load PDF papers and convert to LangChain documents."""
@@ -61,8 +65,11 @@ class RAGProcessor:
     
     def create_vector_store(self, documents: List[Document]):
         """Create a vector store from the document chunks."""
-        logger.info("Creating vector store with Google Gemini embeddings...")
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        provider_name = self.llm_provider.provider.capitalize()
+        logger.info(f"Creating vector store with {provider_name} embeddings...")
+        
+        # Get embeddings from the provider
+        embeddings = self.llm_provider.get_embeddings()
         vector_store = FAISS.from_documents(documents, embeddings)
         
         # Save the vector store

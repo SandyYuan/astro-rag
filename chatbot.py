@@ -3,27 +3,31 @@ import logging
 from typing import List, Dict, Any
 
 from langchain.vectorstores import FAISS
-from langchain.embeddings import GoogleGenerativeAIEmbeddings
-from langchain.llms.google_genai import GoogleGenerativeAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
+
+from llm_provider import LLMProvider
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class AstronomyChatbot:
-    def __init__(self, vector_store_path="rag_data/vector_store", model_name="gemini-pro"):
+    def __init__(self, vector_store_path="rag_data/vector_store", provider=None):
         self.vector_store_path = vector_store_path
-        self.model_name = model_name
+        self.provider = provider
         self.chat_history = []
+        
+        # Initialize the LLM provider
+        self.llm_provider = LLMProvider(provider=self.provider)
+        
         self.setup_rag()
         
     def setup_rag(self):
         """Set up the RAG system using the saved vector store."""
         logger.info("Setting up the RAG system...")
         
-        # Load the vector store
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        # Load the vector store with the provider's embeddings
+        embeddings = self.llm_provider.get_embeddings()
         self.vector_store = FAISS.load_local(self.vector_store_path, embeddings)
         logger.info("Vector store loaded successfully")
         
@@ -39,17 +43,8 @@ class AstronomyChatbot:
             return_messages=True
         )
         
-        # Set up the language model
-        self.llm = GoogleGenerativeAI(
-            model=self.model_name,
-            temperature=0.3,
-            safety_settings=[
-                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"}
-            ]
-        )
+        # Get the language model from the provider
+        self.llm = self.llm_provider.get_llm()
         
         # Create the conversational chain
         self.qa_chain = ConversationalRetrievalChain.from_llm(

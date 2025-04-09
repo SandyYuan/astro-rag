@@ -3,6 +3,8 @@ scholarly==1.7.11
 langchain==0.1.0
 langchain-google-genai==0.0.6
 google-generativeai==0.3.2
+langchain-openai==0.0.5
+anthropic==0.9.0
 faiss-cpu==1.7.4
 fastapi==0.104.1
 uvicorn==0.24.0
@@ -10,4 +12,5 @@ python-dotenv==1.0.0
 PyPDF2==3.0.1
 unstructured==0.10.30
 pydantic==2.4.2
-tiktoken==0.5.1 
+tiktoken>=0.5.2,<0.6.0
+arxiv==1.4.8 
