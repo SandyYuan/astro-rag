@@ -43,9 +43,9 @@ async def startup_event():
     """Initialize the chatbot on startup."""
     global chatbot
     
-    # Check if OpenAI API key is set
-    if "OPENAI_API_KEY" not in os.environ:
-        logger.error("OPENAI_API_KEY environment variable not set. Please set it in .env file.")
+    # Check if Google API key is set
+    if "GOOGLE_API_KEY" not in os.environ:
+        logger.error("GOOGLE_API_KEY environment variable not set. Please set it in .env file.")
     
     # Initialize the chatbot
     try:
@@ -65,7 +65,7 @@ async def get_home(request: Request):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Professor Wechsler Astronomy Chatbot</title>
+        <title>Professor Wechsler Astronomy Chatbot (Gemini)</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -142,12 +142,12 @@ async def get_home(request: Request):
         </style>
     </head>
     <body>
-        <h1>Professor Wechsler Astronomy Chatbot</h1>
+        <h1>Professor Wechsler Astronomy Chatbot (Gemini)</h1>
         
         <div class="chat-container">
             <div id="chat-messages">
                 <div class="message bot-message">
-                    Hello! I'm a chatbot designed to emulate Professor Risa Wechsler, an astrophysicist and cosmologist. 
+                    Hello! I'm a Gemini-powered chatbot designed to emulate Professor Risa Wechsler, an astrophysicist and cosmologist. 
                     How can I help with questions about astronomy, cosmology, dark matter, or related topics?
                 </div>
             </div>
@@ -275,9 +275,9 @@ def main():
     # Create a .env file if it doesn't exist
     if not os.path.exists(".env"):
         with open(".env", "w") as f:
-            f.write("# Add your OpenAI API key here\n")
-            f.write("OPENAI_API_KEY=\n")
-        logger.info("Created .env file. Please add your OpenAI API key.")
+            f.write("# Add your Google API key here\n")
+            f.write("GOOGLE_API_KEY=\n")
+        logger.info("Created .env file. Please add your Google API key.")
     
     # Start the server
     uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)

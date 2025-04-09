@@ -1,20 +1,20 @@
-# Astronomy Chatbot: Professor Risa Wechsler
+# Astronomy Chatbot: Professor Risa Wechsler (Gemini Version)
 
-A specialized chatbot that emulates Professor Risa Wechsler, using her research papers as a knowledge base with Retrieval-Augmented Generation (RAG).
+A specialized chatbot that emulates Professor Risa Wechsler, using her research papers as a knowledge base with Retrieval-Augmented Generation (RAG) powered by Google's Gemini AI models.
 
 ## Project Overview
 
 This project builds a conversational AI system that:
 1. Collects research papers by Professor Risa Wechsler
 2. Processes these papers into a searchable knowledge base
-3. Uses RAG technology to provide informed responses in the style of Professor Wechsler
+3. Uses RAG technology with Gemini to provide informed responses in the style of Professor Wechsler
 4. Hosts the chatbot through a web interface
 
 ## Components
 
 - `paper_collector.py`: Tool to search and download papers by Professor Wechsler
-- `rag_processor.py`: Processes papers and creates the vector database for RAG
-- `chatbot.py`: Core chatbot implementation using RAG
+- `rag_processor.py`: Processes papers and creates the vector database for RAG using Gemini embeddings
+- `chatbot.py`: Core chatbot implementation using Gemini and RAG
 - `app.py`: Web application to host the chatbot
 - `requirements.txt`: Dependencies for the project
 
@@ -31,9 +31,9 @@ This project builds a conversational AI system that:
    pip install -r requirements.txt
    ```
 
-3. Set up your OpenAI API key in a `.env` file:
+3. Set up your Google API key in a `.env` file:
    ```
-   OPENAI_API_KEY=your_api_key_here
+   GOOGLE_API_KEY=your_google_api_key_here
    ```
 
 4. Run the paper collector to gather research content:
@@ -82,13 +82,13 @@ Then reprocess the papers to update the vector database.
 ## Dependencies
 
 - LangChain for RAG implementation
-- OpenAI for embeddings and language model
+- Google Generative AI for embeddings and language model
 - FAISS for vector storage
 - FastAPI for web application
 - Scholarly for paper collection
 
 ## Notes
 
-- The system requires an OpenAI API key with access to embedding and language models
+- The system requires a Google API key with access to Gemini models
 - Paper collection may be limited by API rate limits
 - For educational and research purposes only 
