@@ -38,9 +38,16 @@ class RAGProcessor:
         if os.path.exists(self.checkpoint_path):
             try:
                 with open(self.checkpoint_path, 'rb') as f:
-                    return pickle.load(f)
+                    logger.info(f"Attempting to load PDF checkpoint from {self.checkpoint_path}") # Added info log
+                    data = pickle.load(f)
+                    logger.info(f"Successfully loaded {len(data)} entries from PDF checkpoint.") # Added success log
+                    return data
             except Exception as e:
-                logger.warning(f"Error loading PDF checkpoint: {str(e)}. Assuming no files processed.")
+                # Log the full traceback for detailed debugging
+                logger.error(f"Failed to load PDF checkpoint: {str(e)}", exc_info=True) 
+                logger.warning("Assuming no files processed due to checkpoint load failure.")
+        else:
+            logger.info("PDF checkpoint file not found. Assuming no files processed.") # Added info log for non-existence
         return []
 
     def _save_pdf_checkpoint(self, processed_files: List[str]):
