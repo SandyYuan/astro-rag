@@ -263,7 +263,7 @@ async def get_home(request: Request):
                     // Remove loading indicator
                     messagesContainer.removeChild(loadingDiv);
                     
-                    // Add bot response
+                    // Add bot response (cleaned on backend)
                     addMessage(data.answer, false, data.sources);
                 }} catch (error) {{
                     // Remove loading indicator
@@ -312,8 +312,33 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=503, detail="Chatbot not initialized")
     
     try:
-        response = chatbot.chat(request.message)
-        return response
+        response_data = chatbot.chat(request.message)
+        
+        # Post-process the answer to remove unwanted phrases
+        answer = response_data.get("answer", "")
+        phrases_to_remove = [
+            "Based on the provided text, ",
+            "Based on the provided texts, ",
+            "According to the documents, ",
+            "According to the text, ",
+            "The context suggests that ",
+            "The provided context indicates that ",
+            "From the text provided, ",
+            "In the provided text, ",
+            # Add variations as needed
+        ]
+        for phrase in phrases_to_remove:
+            # Use case-insensitive replacement if desired, e.g., re.sub
+            if answer.startswith(phrase):
+                 answer = answer[len(phrase):] # Remove prefix
+                 break # Remove only the first occurrence if it's a prefix
+            # Optionally, replace mid-sentence too, but be cautious
+            # answer = answer.replace(phrase, "") 
+            
+        # Update the response data
+        response_data["answer"] = answer.strip() # Remove leading/trailing whitespace
+        
+        return response_data
     except Exception as e:
         logger.error(f"Error in chat endpoint: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
