@@ -26,71 +26,61 @@ class RAGProcessor:
     def __init__(self, papers_dir="papers", output_dir="rag_data", provider=None):
         self.papers_dir = papers_dir
         self.output_dir = output_dir
-        self.checkpoint_path = os.path.join(output_dir, "checkpoint.pkl")
+        self.checkpoint_path = os.path.join(output_dir, "pdf_checkpoint.pkl") # Re-adding PDF checkpoint path
+        self.vector_store_path = os.path.join(self.output_dir, "vector_store")
         os.makedirs(output_dir, exist_ok=True)
         
-        # Initialize the LLM provider
         self.llm_provider = LLMProvider(provider=provider)
-        
-    def load_papers(self) -> List[Document]:
-        """Load PDF papers and convert to LangChain documents."""
-        all_docs = []
-        
-        # Check for checkpoint
-        processed_files = self._load_checkpoint()
-        
-        pdf_files = [f for f in os.listdir(self.papers_dir) if f.endswith('.pdf')]
-        remaining_files = [f for f in pdf_files if f not in processed_files]
-        
-        logger.info(f"Found {len(pdf_files)} PDF files, {len(processed_files)} already processed")
-        
-        # Create a progress bar
-        for pdf_file in tqdm(remaining_files, desc="Loading PDFs"):
-            try:
-                file_path = os.path.join(self.papers_dir, pdf_file)
-                
-                loader = PyPDFLoader(file_path)
-                docs = loader.load()
-                
-                # Add metadata about the source file
-                for doc in docs:
-                    doc.metadata["source"] = pdf_file
-                
-                all_docs.extend(docs)
-                
-                # Update checkpoint after each file
-                processed_files.append(pdf_file)
-                self._save_checkpoint(processed_files)
-                
-            except Exception as e:
-                logger.error(f"Error loading {pdf_file}: {str(e)}")
-        
-        logger.info(f"Loaded a total of {len(all_docs)} document chunks")
-        return all_docs
-    
-    def _load_checkpoint(self) -> List[str]:
-        """Load checkpoint of processed files."""
+
+    # --- PDF Loading and Checkpointing (Re-added) --- 
+    def _load_pdf_checkpoint(self) -> List[str]:
+        """Load checkpoint of processed PDF files."""
         if os.path.exists(self.checkpoint_path):
             try:
                 with open(self.checkpoint_path, 'rb') as f:
                     return pickle.load(f)
             except Exception as e:
-                logger.error(f"Error loading checkpoint: {str(e)}")
+                logger.warning(f"Error loading PDF checkpoint: {str(e)}. Assuming no files processed.")
         return []
-    
-    def _save_checkpoint(self, processed_files: List[str]):
-        """Save checkpoint of processed files."""
+
+    def _save_pdf_checkpoint(self, processed_files: List[str]):
+        """Save checkpoint of processed PDF files."""
         try:
             with open(self.checkpoint_path, 'wb') as f:
-                pickle.dump(processed_files, f)
+                # Ensure we save a unique list
+                pickle.dump(list(set(processed_files)), f)
         except Exception as e:
-            logger.error(f"Error saving checkpoint: {str(e)}")
-    
+            logger.error(f"Error saving PDF checkpoint: {str(e)}")
+
+    def _load_documents_from_files(self, files_to_load: List[str], desc: str) -> List[Document]:
+        """Helper to load documents from a list of PDF files with progress."""
+        loaded_docs = []
+        successfully_loaded_files = [] # Track successfully loaded files in this batch
+        for pdf_file in tqdm(files_to_load, desc=desc):
+            try:
+                file_path = os.path.join(self.papers_dir, pdf_file)
+                if not os.path.exists(file_path):
+                     logger.warning(f"PDF file not found, skipping: {pdf_file}")
+                     continue
+                loader = PyPDFLoader(file_path)
+                docs = loader.load()
+                for doc in docs:
+                    doc.metadata["source"] = pdf_file
+                loaded_docs.extend(docs)
+                successfully_loaded_files.append(pdf_file) # Mark as successfully loaded
+            except Exception as e:
+                logger.error(f"Error loading {pdf_file}: {str(e)}")
+        # Return both the documents and the list of files actually loaded
+        return loaded_docs, successfully_loaded_files 
+
+    # --- Splitting ---    
     def split_documents(self, documents: List[Document]) -> List[Document]:
         """Split documents into smaller chunks for better retrieval."""
-        # Using 8000 character chunks with 15% overlap
+        if not documents:
+             return []
+             
         chunk_size = 8000
-        overlap = int(chunk_size * 0.15)  # 15% overlap
+        overlap = int(chunk_size * 0.15)
         
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
@@ -98,111 +88,188 @@ class RAGProcessor:
             length_function=len,
         )
         
+        logger.info(f"Splitting {len(documents)} document pages into chunks...")
         chunks = text_splitter.split_documents(documents)
-        logger.info(f"Split documents into {len(chunks)} chunks (size: {chunk_size}, overlap: {overlap})")
+        logger.info(f"Split into {len(chunks)} chunks (size: {chunk_size}, overlap: {overlap})")
         return chunks
-    
-    def create_vector_store(self, documents: List[Document]):
-        """Create a vector store from the document chunks."""
+
+    # --- Vector Store Creation / Update / Resume --- 
+    def create_or_update_vector_store(self, all_expected_chunks: List[Document]):
+        """Create or update a FAISS vector store, resuming if necessary."""
         provider_name = self.llm_provider.provider.capitalize()
-        logger.info(f"Creating vector store with {provider_name} embeddings...")
-        
-        # Get embeddings from the provider
+        logger.info(f"Starting vector store processing with {provider_name} embeddings.")
+
+        if not all_expected_chunks:
+            logger.warning("No document chunks provided to create or update the vector store.")
+            # Try loading existing store anyway, maybe it just needs loading
+            if os.path.exists(os.path.join(self.vector_store_path, "index.faiss")):
+                 try:
+                      embeddings = self.llm_provider.get_embeddings()
+                      vector_store = FAISS.load_local(self.vector_store_path, embeddings, allow_dangerous_deserialization=True)
+                      logger.info(f"Loaded existing vector store with {vector_store.index.ntotal} entries. No new chunks to add.")
+                      return vector_store
+                 except Exception as e:
+                      logger.error(f"Failed to load existing vector store even with no new chunks: {e}")
+                      return None
+            else:
+                 logger.error("No chunks provided and no existing store found.")
+                 return None
+
         embeddings = self.llm_provider.get_embeddings()
-        
-        # Process embeddings in batches to handle API rate limits
-        batch_size = 32
-        total_chunks = len(documents)
-        
-        # Check for existing vector store to append to
-        vector_store_path = os.path.join(self.output_dir, "vector_store")
-        if os.path.exists(vector_store_path):
-            logger.info(f"Loading existing vector store from {vector_store_path}")
-            vector_store = FAISS.load_local(vector_store_path, embeddings)
-        else:
-            # Initialize with a small batch to create the store
-            initial_batch = min(batch_size, total_chunks)
-            logger.info(f"Creating new vector store with initial {initial_batch} documents")
-            vector_store = FAISS.from_documents(documents[:initial_batch], embeddings)
-            
-            # Save initial vector store
-            vector_store.save_local(vector_store_path)
-            
-            # Start from the next batch
-            documents = documents[initial_batch:]
-        
-        # Process remaining documents in batches with progress bar
-        for i in tqdm(range(0, len(documents), batch_size), desc="Creating embeddings"):
-            batch_end = min(i + batch_size, len(documents))
-            batch = documents[i:batch_end]
-            
+        vector_store = None
+        start_index = 0
+
+        # Try loading existing store to find resume point
+        if os.path.exists(os.path.join(self.vector_store_path, "index.faiss")):
             try:
-                # Add batch to the vector store
-                vector_store.add_documents(batch)
+                logger.info(f"Loading existing vector store from {self.vector_store_path} to check status.")
+                vector_store = FAISS.load_local(self.vector_store_path, embeddings, allow_dangerous_deserialization=True)
+                start_index = vector_store.index.ntotal
+                logger.info(f"Existing store loaded with {start_index} entries.")
                 
-                # Save after each batch to checkpoint progress
-                vector_store.save_local(vector_store_path)
-                
-                # Slight delay to avoid hitting rate limits
-                time.sleep(0.5)
-                
+                if start_index >= len(all_expected_chunks):
+                     logger.info("Existing vector store contains all expected chunks. Processing complete.")
+                     return vector_store
+                else:
+                     logger.info(f"Resuming embedding process from chunk index {start_index}. Need to process {len(all_expected_chunks) - start_index} more chunks.")
+
             except Exception as e:
-                logger.error(f"Error processing batch {i//batch_size + 1}: {str(e)}")
-                logger.info("Saving progress and pausing. You can resume by running the script again.")
-                vector_store.save_local(vector_store_path)
-                # If it's an API rate limit error, wait and retry
-                if "rate limit" in str(e).lower():
-                    retry_wait = 60  # Wait 60 seconds
-                    logger.info(f"Rate limit hit. Waiting {retry_wait} seconds before retrying...")
-                    time.sleep(retry_wait)
-                    # Retry this batch
-                    try:
-                        vector_store.add_documents(batch)
-                        vector_store.save_local(vector_store_path)
-                    except Exception as retry_e:
-                        logger.error(f"Retry failed: {str(retry_e)}")
-                        break
+                logger.warning(f"Error loading existing vector store: {str(e)}. Will attempt to recreate from scratch.")
+                vector_store = None # Force recreation
+                start_index = 0
+
+        # Determine chunks to process for this run
+        chunks_to_process = all_expected_chunks[start_index:]
+        if not chunks_to_process:
+             logger.info("No chunks remaining to process.")
+             return vector_store
+
+        logger.info(f"Processing {len(chunks_to_process)} chunks (starting from overall index {start_index})...")
+        batch_size = 32
         
-        logger.info(f"Vector store creation completed. Final vector store saved to {vector_store_path}")
+        # If vector store doesn't exist (or failed to load), create it with the first batch
+        if vector_store is None:
+             logger.info("Creating new vector store.")
+             initial_batch_docs = chunks_to_process[:batch_size]
+             if not initial_batch_docs:
+                  logger.error("Cannot create vector store: No documents available for initial batch.")
+                  return None
+             try:
+                  logger.info(f"Creating store with first {len(initial_batch_docs)} chunks.")
+                  vector_store = FAISS.from_documents(initial_batch_docs, embeddings)
+                  vector_store.save_local(self.vector_store_path)
+                  logger.info(f"Initial vector store created and saved. Processed up to index {start_index + len(initial_batch_docs) - 1}.")
+                  # Adjust list for the main loop
+                  chunks_to_process = chunks_to_process[batch_size:]
+                  start_index += len(initial_batch_docs) # Update effective start for tqdm description
+             except Exception as e:
+                  logger.error(f"Failed to create initial vector store: {str(e)}")
+                  return None
+        
+        if not chunks_to_process:
+             logger.info("Initial batch processing completed the vector store.")
+             return vector_store
+
+        # Process remaining chunks in batches
+        desc = f"Adding embeddings (Index {start_index}-{len(all_expected_chunks)-1})"
+        for i in tqdm(range(0, len(chunks_to_process), batch_size), desc=desc):
+            batch_docs = chunks_to_process[i:min(i + batch_size, len(chunks_to_process))]
+            if not batch_docs: continue
+            current_chunk_index = start_index + i # For logging
+
+            try:
+                vector_store.add_documents(batch_docs)
+                vector_store.save_local(self.vector_store_path)
+                time.sleep(0.5)
+            except Exception as e:
+                logger.error(f"Error processing batch starting at overall index ~{current_chunk_index}: {str(e)}")
+                logger.info("Saving progress before potential pause/retry.")
+                vector_store.save_local(self.vector_store_path) # Ensure latest state is saved
+                if "rate limit" in str(e).lower():
+                    retry_wait = 60
+                    logger.info(f"Rate limit hit. Waiting {retry_wait} seconds...")
+                    time.sleep(retry_wait)
+                    try:
+                        logger.info(f"Retrying batch starting at index ~{current_chunk_index}...")
+                        vector_store.add_documents(batch_docs)
+                        vector_store.save_local(self.vector_store_path)
+                        logger.info("Retry successful.")
+                    except Exception as retry_e:
+                        logger.error(f"Retry failed for batch at index ~{current_chunk_index}: {str(retry_e)}. Stopping.")
+                        return None # Return None on retry failure
+                else:
+                     logger.error("Non-rate-limit error. Stopping embedding process.")
+                     return None # Return None on non-rate-limit error
+
+        final_count = vector_store.index.ntotal if vector_store else 0
+        logger.info(f"Vector store processing completed. Final store contains {final_count} entries. Saved to {self.vector_store_path}")
         return vector_store
     
-    def save_document_metadata(self, documents: List[Document]):
-        """Save metadata about the documents for reference."""
-        metadata = {
-            "document_count": len(documents),
-            "sources": list(set(doc.metadata.get("source", "") for doc in documents)),
-            "chunk_size": 8000,
-            "chunk_overlap": 1200,  # 15% of 8000
-            "embedding_model": self.llm_provider.provider,
-            "processed_date": time.strftime("%Y-%m-%d %H:%M:%S")
-        }
-        
-        metadata_path = os.path.join(self.output_dir, "metadata.json")
-        with open(metadata_path, 'w') as f:
-            json.dump(metadata, f, indent=2)
-        
-        logger.info(f"Metadata saved to {metadata_path}")
-    
+    # --- Main Process (Reinstating PDF Checkpoint Logic) --- 
     def process(self):
-        """Process all papers and build the RAG system."""
-        logger.info("Starting RAG processing pipeline")
+        """Load PDFs with checkpointing, split docs, create/update vector store."""
+        logger.info("Starting RAG processing pipeline...")
         
-        # Load papers
-        documents = self.load_papers()
-        if not documents:
-            logger.error("No documents loaded. Make sure the papers directory contains PDF files.")
+        # 1. Check for new PDF files using checkpoint
+        processed_pdf_files = self._load_pdf_checkpoint()
+        try:
+            pdf_files_in_dir = [f for f in os.listdir(self.papers_dir) if f.endswith('.pdf')]
+        except FileNotFoundError:
+             logger.error(f"Papers directory not found: {self.papers_dir}. Cannot process.")
+             return None
+             
+        new_pdf_files = [f for f in pdf_files_in_dir if f not in processed_pdf_files]
+        logger.info(f"Found {len(pdf_files_in_dir)} total PDF files. {len(processed_pdf_files)} previously processed according to checkpoint.")
+
+        # 2. Load and process ONLY new PDFs, update checkpoint
+        successfully_processed_new_files = []
+        if new_pdf_files:
+             logger.info(f"Loading {len(new_pdf_files)} new PDF files...")
+             # _load_documents_from_files now returns docs and successfully loaded file names
+             new_documents, successfully_processed_new_files = self._load_documents_from_files(new_pdf_files, desc="Loading New PDFs")
+             
+             if successfully_processed_new_files:
+                 logger.info(f"Successfully loaded {len(successfully_processed_new_files)} new files.")
+                 # Update the main checkpoint with successfully processed new files
+                 current_checkpoint = self._load_pdf_checkpoint()
+                 current_checkpoint.extend(successfully_processed_new_files)
+                 self._save_pdf_checkpoint(current_checkpoint) # Saves unique list internally
+                 logger.info(f"PDF checkpoint updated.")
+             else:
+                  logger.warning("Loading of new PDFs failed or yielded no documents, checkpoint not updated.")
+        else:
+             logger.info("No new PDF files to process based on checkpoint.")
+        
+        # 3. Determine the full list of PDFs that should be in the vector store (from the updated checkpoint)
+        all_processed_pdf_files = self._load_pdf_checkpoint()
+        if not all_processed_pdf_files:
+             logger.error("No processed PDFs found in checkpoint. Cannot build or verify vector store.")
+             return None
+             
+        # 4. Load documents for ALL files in the checkpoint for vector store processing
+        logger.info(f"Loading documents for all {len(all_processed_pdf_files)} PDFs listed in checkpoint to ensure vector store completeness...")
+        all_documents = self._load_documents_from_files(all_processed_pdf_files, desc="Loading All PDFs for VS")
+        # Note: _load_documents_from_files returns a tuple now, we only need the docs here
+        all_documents = all_documents[0] 
+        
+        if not all_documents:
+             logger.error("Failed to load documents required by checkpoint. Cannot proceed.")
+             return None
+
+        # 5. Split ALL loaded documents into the total expected chunks
+        all_expected_chunks = self.split_documents(all_documents)
+        if not all_expected_chunks:
+             logger.error("Splitting documents resulted in no chunks. Cannot proceed.")
+             return None
+        
+        # 6. Create or update the vector store with ALL expected chunks (handles resume internally)
+        vector_store = self.create_or_update_vector_store(all_expected_chunks)
+        
+        if vector_store is None:
+            logger.error("RAG processing failed: Could not load or create a valid vector store.")
             return None
-        
-        # Split into chunks
-        chunks = self.split_documents(documents)
-        
-        # Create vector store
-        vector_store = self.create_vector_store(chunks)
-        
-        # Save metadata
-        self.save_document_metadata(chunks)
-        
-        logger.info("RAG processing completed successfully")
+
+        logger.info("RAG processing pipeline finished successfully.")
         return vector_store
 
 if __name__ == "__main__":
