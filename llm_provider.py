@@ -116,7 +116,7 @@ class LLMClientWrapper(LLM):
 class LLMEmbeddings(Embeddings):
     """LangChain-compatible embeddings that use Google's embeddings API."""
     
-    def __init__(self, google_api_key: str, model: str = "models/embedding-001"):
+    def __init__(self, google_api_key: str, model: str = "models/embedding-001"): # gemini-embedding-exp-03-07
         self.embeddings = GoogleGenerativeAIEmbeddings(model=model)
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:

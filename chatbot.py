@@ -1,8 +1,12 @@
 import os
 import logging
 from typing import List, Dict, Any
+from dotenv import load_dotenv
 
-from langchain.vectorstores import FAISS
+# Load environment variables from .env file
+load_dotenv()
+
+from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 
@@ -28,7 +32,11 @@ class AstronomyChatbot:
         
         # Load the vector store with the provider's embeddings
         embeddings = self.llm_provider.get_embeddings()
-        self.vector_store = FAISS.load_local(self.vector_store_path, embeddings)
+        self.vector_store = FAISS.load_local(
+            self.vector_store_path, 
+            embeddings, 
+            allow_dangerous_deserialization=True
+        )
         logger.info("Vector store loaded successfully")
         
         # Set up the retriever
@@ -40,7 +48,8 @@ class AstronomyChatbot:
         # Set up conversation memory
         self.memory = ConversationBufferMemory(
             memory_key="chat_history",
-            return_messages=True
+            return_messages=True,
+            output_key='answer'  # Specify which output key is the AI's response
         )
         
         # Get the language model from the provider
@@ -105,6 +114,6 @@ class AstronomyChatbot:
 if __name__ == "__main__":
     # Test the chatbot
     chatbot = AstronomyChatbot()
-    response = chatbot.chat("What are Professor Wechsler's views on dark matter?")
+    response = chatbot.chat("What are semi-empirical models?")
     print(response["answer"])
     print("\nSources:", response["sources"]) 
