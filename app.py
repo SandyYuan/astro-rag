@@ -105,7 +105,7 @@ async def get_home(request: Request):
                 margin-bottom: 20px;
             }}
             #chat-messages {{
-                height: 400px;
+                height: 75vh;
                 overflow-y: auto;
                 margin-bottom: 20px;
                 padding: 10px;
@@ -161,7 +161,6 @@ async def get_home(request: Request):
     </head>
     <body>
         <h1>Professor Wechsler Astronomy Chatbot</h1>
-        <div class="model-info">Powered by {provider}</div>
         
         <div class="chat-container">
             <div id="chat-messages">
