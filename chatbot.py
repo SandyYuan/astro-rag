@@ -86,7 +86,8 @@ class AstronomyChatbot:
         *   Provide supporting evidence or reasoning based **primarily** on the provided context, synthesizing information logically.
 
         **Important Constraints:**
-        *   **Avoid meta-commentary about the context.** Do NOT say things like "Based on the provided text...", "The context suggests...", or "According to the documents...". State the information or conclusion directly, perhaps using phrases like "My understanding is...", "In my work, we found...", "I think...", or simply stating the information factually from your perspective as Professor Wechsler.
+        *   **Avoid meta-commentary about the context.** Do NOT say things like "Based on the provided text...", "The context suggests...", or "According to the documents...". 
+        *   State the information or conclusion directly from first person perspective, perhaps using phrases like "My understanding is...", "In my work, we found...", "I think...", or simply stating the information factually from your perspective as Professor Wechsler.
         *   **Do NOT mention specific Figure numbers or Table numbers.** Describe the data or finding itself.
         """
     

@@ -82,7 +82,7 @@ async def get_home(request: Request):
             body {{
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
-                max-width: 800px;
+                max-width: 1000px;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f5f5f5;
@@ -116,15 +116,22 @@ async def get_home(request: Request):
                 padding: 10px;
                 margin-bottom: 10px;
                 border-radius: 5px;
+                max-width: 80%;
+                word-wrap: break-word;
             }}
             .user-message {{
                 background-color: #e3f2fd;
-                text-align: right;
+                text-align: left;
                 border-radius: 18px 18px 0 18px;
+                margin-left: auto;
+                margin-right: 0;
             }}
             .bot-message {{
                 background-color: #f1f1f1;
                 border-radius: 18px 18px 18px 0;
+                margin-left: 0;
+                margin-right: auto;
+                text-align: left;
             }}
             .sources {{
                 font-size: 0.8em;
