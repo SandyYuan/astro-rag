@@ -75,7 +75,7 @@ async def get_home(request: Request):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Professor Wechsler Astronomy Chatbot ({provider})</title>
+        <title>Mini-Risa Chatbot ({provider})</title>
         <!-- Add Marked.js library from CDN -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <style>
@@ -160,7 +160,7 @@ async def get_home(request: Request):
         </style>
     </head>
     <body>
-        <h1>Professor Wechsler Astronomy Chatbot</h1>
+        <h1>Mini-Risa Chatbot</h1>
         
         <div class="chat-container">
             <div id="chat-messages">
