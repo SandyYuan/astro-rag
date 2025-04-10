@@ -61,7 +61,7 @@ class LLMClient:
         """
         if self.provider == "google":
             response = self.client.models.generate_content(
-                model="gemini-2.0-flash-thinking-exp", 
+                model="gemini-2.5-pro-exp-03-25", # gemini-2.0-flash-thinking-exp
                 contents=prompt
             )
             return response.text
