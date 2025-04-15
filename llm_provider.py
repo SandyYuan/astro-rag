@@ -8,99 +8,65 @@ from langchain.embeddings.base import Embeddings
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-# Import the provided LLMClient class
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 class LLMClient:
-    """Wrapper for LLM clients to provide a consistent interface"""
+    """Client for Google's Gemini models"""
     
-    def __init__(self, api_key: str, provider: str = "azure"):
-        """Initialize the LLM client with the appropriate provider
+    def __init__(self, api_key: str):
+        """Initialize the Google Gemini client
         
         Args:
-            api_key: API key for the selected provider
-            provider: 'azure', 'google', or 'claude'
+            api_key: Google API key for Gemini models
         """
+        if not api_key:
+            raise ValueError("API key is required for Gemini")
+            
         self.api_key = api_key
-        self.provider = provider
         
-        if provider == "google":
-            try:
-                from google import genai
-                self.client = genai.Client(api_key=api_key)
-            except ImportError:
-                raise ImportError("googleai is not installed")
-        elif provider == "azure":
-            try:
-                from langchain_openai import AzureChatOpenAI
-                # Hard-coded Azure configuration
-                self.client = AzureChatOpenAI(
-                    azure_endpoint="https://utbd-omodels-advanced.openai.azure.com",
-                    azure_deployment="o1",
-                    api_version="2025-01-01-preview",
-                    api_key=api_key
-                )
-            except ImportError:
-                raise ImportError("langchain_openai is not installed")
-        elif provider == "claude":
-            try:
-                import anthropic
-                self.client = anthropic.Anthropic(api_key=api_key)
-            except ImportError:
-                raise ImportError("anthropic is not installed")
-        else:
-            raise ValueError(f"Unsupported provider: {provider}")
+        try:
+            from google import genai
+            self.client = genai.Client(api_key=self.api_key)
+            logger.info("Initialized Gemini client successfully")
+        except ImportError:
+            raise ImportError("google.genai is not installed. Please run: pip install google-generativeai")
+        except Exception as e:
+            raise ValueError(f"Failed to initialize Gemini client: {e}")
     
-    def generate_content(self, prompt: str, temperature: float = 0.7) -> str:
-        """Generate content using the configured LLM
+    def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-pro-exp-03-25") -> str:
+        """Generate content using Gemini
         
         Args:
-            prompt: The prompt to send to the LLM
-            temperature: Temperature for generation
+            prompt: The text prompt to send to Gemini
+            temperature: Controls randomness (0 = deterministic, 1 = creative)
+            model_name: Gemini model to use
             
         Returns:
             Generated text response
         """
-        if self.provider == "google":
+        try:
+            logger.debug(f"Generating content with model {model_name}")
             response = self.client.models.generate_content(
-                model="gemini-2.5-pro-exp-03-25", # gemini-2.0-flash-thinking-exp
+                model=model_name,
                 contents=prompt
             )
             return response.text
-        elif self.provider == "azure":
-            # For Azure, we can directly invoke the client
-            response = self.client.invoke(prompt)
-            return response.content
-        elif self.provider == "claude":
-            # For Claude, we need to structure the message differently
-            response = self.client.messages.create(
-                model="claude-3-7-sonnet-20250219",
-                max_tokens=8000,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": prompt
-                            }
-                        ]
-                    }
-                ]
-            )
-            return response.content[0].text
-        
-        # Fallback (should never reach here)
-        raise ValueError(f"Unsupported provider: {self.provider}")
+        except Exception as e:
+            logger.error(f"Error generating content: {e}")
+            raise
 
-# Create a LangChain-compatible wrapper for LLMClient
 class LLMClientWrapper(LLM):
-    """LangChain-compatible wrapper for the LLMClient."""
+    """LangChain-compatible wrapper for the Gemini client"""
     
     client: LLMClient
     temperature: float = 0.3
+    model_name: str = "gemini-2.5-pro-exp-03-25"
     
     @property
     def _llm_type(self) -> str:
-        return f"llm_client_{self.client.provider}"
+        return "gemini"
     
     def _call(
         self, 
@@ -109,99 +75,116 @@ class LLMClientWrapper(LLM):
         run_manager: Optional[CallbackManagerForLLMRun] = None,
         **kwargs
     ) -> str:
-        """Call the LLM client with the given prompt."""
-        return self.client.generate_content(prompt, temperature=self.temperature)
+        """Call the Gemini API with the given prompt"""
+        return self.client.generate_content(
+            prompt, 
+            temperature=self.temperature,
+            model_name=self.model_name
+        )
 
-# LangChain-compatible embeddings class that uses Google's embeddings
 class LLMEmbeddings(Embeddings):
-    """LangChain-compatible embeddings that use Google's embeddings API."""
+    """LangChain-compatible embeddings using Google's embedding models"""
     
-    def __init__(self, google_api_key: str, model: str = "models/text-embedding-004"): # gemini-embedding-exp-03-07
-        self.embeddings = GoogleGenerativeAIEmbeddings(model=model)
+    def __init__(self, google_api_key: str, model: str = "models/text-embedding-004"):
+        """Initialize the embeddings with Google API key
+        
+        Args:
+            google_api_key: Google API key
+            model: Embedding model name
+        """
+        if not google_api_key:
+            raise ValueError("Google API key is required for embeddings")
+            
+        try:
+            self.embeddings = GoogleGenerativeAIEmbeddings(
+                model=model, 
+                google_api_key=google_api_key
+            )
+            logger.info(f"Initialized Google embeddings with model: {model}")
+        except Exception as e:
+            logger.error(f"Failed to initialize embeddings: {e}")
+            raise
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        """Embed the given texts."""
+        """Embed a list of documents"""
         return self.embeddings.embed_documents(texts)
     
     def embed_query(self, text: str) -> List[float]:
-        """Embed the given query."""
+        """Embed a single query text"""
         return self.embeddings.embed_query(text)
 
-# Main provider class that manages the LLM and embeddings
 class LLMProvider:
     """
-    Provider class for Language Models and Embeddings using LLMClient.
+    Provider for Google's Gemini models and embeddings
     """
     
-    # Available provider options
-    PROVIDER_GOOGLE = "google"
-    PROVIDER_AZURE = "azure"
-    PROVIDER_CLAUDE = "claude"
+    # Default model configuration
+    PROVIDER_GOOGLE = "google"  # Kept for backward compatibility
+    DEFAULT_EMBEDDING_MODEL = "models/text-embedding-004"
+    DEFAULT_TEXT_MODEL = "gemini-2.5-pro-exp-03-25"
     
-    # Default provider configuration
-    DEFAULT_PROVIDER = PROVIDER_GOOGLE
-    
-    def __init__(self, provider=None):
+    def __init__(self, api_key: str = None, provider: str = None, embedding_model: str = None):
         """
-        Initialize the LLM provider.
+        Initialize the Gemini provider with API key
         
         Args:
-            provider (str, optional): LLM provider name. Defaults to environment variable or google.
+            api_key: Google API key (required)
+            provider: Ignored parameter (kept for backward compatibility)
+            embedding_model: Embedding model name (optional)
         """
-        # Get provider from environment or use default
-        self.provider = provider or os.environ.get("LLM_PROVIDER", self.DEFAULT_PROVIDER)
+        # Handle API key from parameter or environment
+        self.api_key = api_key or os.environ.get("GOOGLE_API_KEY")
+        if not self.api_key:
+            raise ValueError("API key is required. Either provide it directly or set GOOGLE_API_KEY environment variable.")
         
-        # Get the appropriate API key
-        self.api_key = self._get_api_key()
+        # Set default models
+        self.embedding_model = embedding_model or self.DEFAULT_EMBEDDING_MODEL
         
-        # Initialize the client
-        self.client = LLMClient(api_key=self.api_key, provider=self.provider)
+        # Initialize the Gemini client
+        self.client = LLMClient(api_key=self.api_key)
         
-        logging.info(f"Initialized LLM provider: {self.provider}")
-    
-    def _get_api_key(self) -> str:
-        """Get the API key for the selected provider."""
-        if self.provider == self.PROVIDER_GOOGLE:
-            api_key = os.environ.get("GOOGLE_API_KEY")
-            if not api_key:
-                raise ValueError("GOOGLE_API_KEY environment variable not set")
-            return api_key
-        elif self.provider == self.PROVIDER_AZURE:
-            api_key = os.environ.get("AZURE_API_KEY")
-            if not api_key:
-                raise ValueError("AZURE_API_KEY environment variable not set")
-            return api_key
-        elif self.provider == self.PROVIDER_CLAUDE:
-            api_key = os.environ.get("ANTHROPIC_API_KEY")
-            if not api_key:
-                raise ValueError("ANTHROPIC_API_KEY environment variable not set")
-            return api_key
-        else:
-            raise ValueError(f"Unsupported provider: {self.provider}")
+        logger.info(f"Initialized Gemini provider")
+        logger.info(f"Using embedding model: {self.embedding_model}")
     
     def get_llm(self, **kwargs) -> LLM:
         """
-        Get a LangChain-compatible LLM instance.
+        Get a LangChain-compatible LLM instance
         
         Args:
-            **kwargs: Additional arguments to pass to the LLM constructor.
-            
+            **kwargs: Additional arguments including:
+                - temperature: Controls randomness (0-1)
+                - model_name: Gemini model to use
+                
         Returns:
-            A LangChain-compatible LLM instance.
+            A LangChain-compatible LLM instance
         """
         temperature = kwargs.pop("temperature", 0.3)
-        return LLMClientWrapper(client=self.client, temperature=temperature)
+        model_name = kwargs.pop("model_name", self.DEFAULT_TEXT_MODEL)
+        
+        logger.info(f"Creating LLM with model: {model_name}, temperature: {temperature}")
+        return LLMClientWrapper(
+            client=self.client, 
+            temperature=temperature,
+            model_name=model_name
+        )
     
     def get_embeddings(self, **kwargs) -> Embeddings:
         """
-        Get a LangChain-compatible embeddings instance.
+        Get a LangChain-compatible embeddings instance
         
         Args:
-            **kwargs: Additional arguments to pass to the embeddings constructor.
+            **kwargs: Additional arguments (unused)
             
         Returns:
-            A LangChain-compatible embeddings instance.
+            A LangChain-compatible embeddings instance
         """
-        # Currently using Google's embedding model for all providers
-        # This can be expanded in the future to support other embedding models
-        return LLMEmbeddings(google_api_key=os.environ.get("GOOGLE_API_KEY")) 
+        logger.info(f"Creating embeddings with model: {self.embedding_model}")
+        return LLMEmbeddings(
+            google_api_key=self.api_key, 
+            model=self.embedding_model
+        )
+        
+    @property
+    def embedding_model_name(self) -> str:
+        """Property to access the embedding model name"""
+        return self.embedding_model 

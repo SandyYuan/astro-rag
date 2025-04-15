@@ -44,29 +44,32 @@ async def startup_event():
     """Initialize the chatbot on startup."""
     global chatbot
     
-    # Check for API keys based on the selected provider
-    provider = os.environ.get("LLM_PROVIDER", LLMProvider.DEFAULT_PROVIDER)
-    
-    if provider == LLMProvider.PROVIDER_GOOGLE and "GOOGLE_API_KEY" not in os.environ:
+    # Get Google API key from environment
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if not api_key:
         logger.error("GOOGLE_API_KEY environment variable not set. Please set it in .env file.")
-    elif provider == LLMProvider.PROVIDER_AZURE and "AZURE_API_KEY" not in os.environ:
-        logger.error("AZURE_API_KEY environment variable not set. Please set it in .env file.")
-    elif provider == LLMProvider.PROVIDER_CLAUDE and "ANTHROPIC_API_KEY" not in os.environ:
-        logger.error("ANTHROPIC_API_KEY environment variable not set. Please set it in .env file.")
+        chatbot = None
+        return
     
-    # Initialize the chatbot with the configured provider
+    # Set the environment variable for the chatbot to use
+    os.environ["GOOGLE_API_KEY"] = api_key
+    
+    # Initialize the chatbot with Google provider
     try:
-        chatbot = AstronomyChatbot(provider=provider)
-        logger.info(f"Chatbot initialized successfully with {provider} provider")
+        provider = LLMProvider.PROVIDER_GOOGLE
+        # Pass the api_key to AstronomyChatbot
+        chatbot = AstronomyChatbot(provider=provider, api_key=api_key)
+        logger.info("Chatbot initialized successfully with Google provider")
     except Exception as e:
         logger.error(f"Failed to initialize chatbot: {str(e)}")
+        chatbot = None
 
 
 @app.get("/", response_class=HTMLResponse)
 async def get_home(request: Request):
     """Serve the home page."""
     # Get current provider name for display
-    provider = os.environ.get("LLM_PROVIDER", LLMProvider.DEFAULT_PROVIDER).capitalize()
+    provider = "Google"  # Simplified since we only support Google now
     
     # Create the index.html template content
     index_html = f"""

@@ -16,13 +16,41 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class AstronomyChatbot:
-    def __init__(self, vector_store_path="rag_data/vector_store", provider=None, summary_file="rag_data/prof_summary.txt"):
+    def __init__(self, vector_store_path="rag_data/vector_store", provider="google", api_key=None, llm_provider_instance=None, summary_file="rag_data/prof_summary.txt"):
+        """Initialize the AstronomyChatbot with flexible provider options.
+        
+        Args:
+            vector_store_path: Path to the FAISS vector store
+            provider: LLM provider identifier (only "google" supported)
+            api_key: Optional API key override
+            llm_provider_instance: Optional pre-configured LLMProvider instance
+            summary_file: Path to professor summary file
+        """
         self.vector_store_path = vector_store_path
         self.provider = provider
+        # Initialize chat_history as a list to store tuples of (question, answer)
         self.chat_history = []
         
-        # Initialize the LLM provider
-        self.llm_provider = LLMProvider(provider=self.provider)
+        # Handle LLM provider setup with multiple options for flexibility
+        if llm_provider_instance:
+            # Use pre-configured provider if given
+            self.llm_provider = llm_provider_instance
+            logger.info("Using provided LLMProvider instance")
+        else:
+            # Get API key from parameter or environment
+            self.api_key = api_key or os.environ.get("GOOGLE_API_KEY")
+            if not self.api_key:
+                raise ValueError("API key is required. Either provide it directly, pass a provider instance, or set GOOGLE_API_KEY environment variable.")
+            
+            # Initialize the LLM provider with API key
+            try:
+                self.llm_provider = LLMProvider(api_key=self.api_key, provider=self.provider)
+                logger.info(f"Created new LLMProvider with {self.provider} provider")
+            except Exception as e:
+                # Fallback to original constructor if the new one fails
+                logger.warning(f"Error with new LLMProvider constructor: {e}. Trying legacy constructor...")
+                self.llm_provider = LLMProvider(provider=self.provider)
+                logger.info("Created LLMProvider with legacy constructor")
         
         # Load the summary file
         self.summary_text = self._load_summary(summary_file)
@@ -57,28 +85,37 @@ class AstronomyChatbot:
         )
         logger.info("Vector store loaded successfully")
         
-        # Set up the retriever
+        # Set up the retriever with parameters to improve relevance
         self.retriever = self.vector_store.as_retriever(
-            search_type="mmr",  # Maximum Marginal Relevance
-            search_kwargs={"k": 5}  # Number of documents to retrieve
+            search_type="mmr",  # Maximum Marginal Relevance - helps with diversity
+            search_kwargs={
+                "k": 5,  # Number of documents to retrieve
+                "fetch_k": 10,  # Fetch more documents then rerank
+                "lambda_mult": 0.7  # Controls diversity (0 = max diversity, 1 = min diversity)
+            }
         )
         
-        # Set up conversation memory
+        # Configure conversation memory to better maintain context
         self.memory = ConversationBufferMemory(
             memory_key="chat_history",
             return_messages=True,
-            output_key='answer'  # Specify which output key is the AI's response
+            output_key='answer',
+            input_key='question'  # Make sure this matches the input key in qa_chain call
         )
         
         # Get the language model from the provider
         self.llm = self.llm_provider.get_llm()
         
-        # Create the conversational chain
+        # Create the conversational chain with improved configuration
         self.qa_chain = ConversationalRetrievalChain.from_llm(
             llm=self.llm,
             retriever=self.retriever,
             memory=self.memory,
-            return_source_documents=True
+            return_source_documents=True,
+            # Increase chain_type to "stuff" for better context handling
+            chain_type="stuff",
+            # Add condense_question_prompt if needed
+            verbose=True  # Enable verbose mode for debugging
         )
         
         logger.info("RAG system setup complete")
@@ -120,31 +157,56 @@ class AstronomyChatbot:
         """Process a query and return a response."""
         logger.info(f"Received query: {query}")
         
-        # Add system prompt to guide the response
-        query_with_context = f"{self.get_system_prompt()}\n\nUser query: {query}"
+        # Prepare the system prompt - this sets the personality and constraints
+        system_prompt = self.get_system_prompt()
         
-        # Get the response from the conversational chain
-        response = self.qa_chain({"question": query_with_context})
+        # Create a more effective conversation-aware prompt 
+        if len(self.chat_history) > 0:
+            # When we have chat history, create a context that includes previous exchanges
+            # This helps the model understand follow-up questions
+            context_summary = "Previous conversation:\n"
+            for prev_q, prev_a in self.chat_history[-3:]:  # Include up to 3 most recent exchanges 
+                context_summary += f"User: {prev_q}\nRisa: {prev_a}\n\n"
+            
+            # Add explicit direction to continue the conversation
+            query_with_context = f"{system_prompt}\n\n{context_summary}\nCurrent user question: {query}\n\nRemember to maintain continuity with our previous conversation when answering this follow-up question."
+        else:
+            # First question in conversation
+            query_with_context = f"{system_prompt}\n\nUser query: {query}"
         
-        # Extract the answer and source documents
-        answer = response["answer"]
-        source_docs = response.get("source_documents", [])
-        
-        # Format source information
-        sources = []
-        for doc in source_docs:
-            if "source" in doc.metadata:
-                source = doc.metadata["source"]
-                if source not in sources:
-                    sources.append(source)
-        
-        result = {
-            "answer": answer,
-            "sources": sources
-        }
-        
-        logger.info("Generated response")
-        return result
+        try:
+            # Get the response from the conversational chain
+            response = self.qa_chain({"question": query_with_context})
+            
+            # Extract the answer and source documents
+            answer = response["answer"]
+            source_docs = response.get("source_documents", [])
+            
+            # Store this exchange in our chat history
+            self.chat_history.append((query, answer))
+            
+            # Format source information
+            sources = []
+            for doc in source_docs:
+                if "source" in doc.metadata:
+                    source = doc.metadata["source"]
+                    if source not in sources:
+                        sources.append(source)
+            
+            result = {
+                "answer": answer,
+                "sources": sources
+            }
+            
+            logger.info("Generated response")
+            return result
+        except Exception as e:
+            logger.error(f"Error generating response: {e}", exc_info=True)
+            # Return a meaningful error message
+            return {
+                "answer": "I'm sorry, I encountered an error processing your question. Please try again or rephrase your query.",
+                "sources": []
+            }
 
 if __name__ == "__main__":
     # Test the chatbot
