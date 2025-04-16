@@ -1,6 +1,7 @@
 import os
 import logging
 import re  # Added for regex pattern matching
+import sys  # For sys.executable
 from typing import List, Dict
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -9,6 +10,25 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import uvicorn
 import dotenv
+
+# Try importing google.generativeai at startup to verify installation
+try:
+    import google.generativeai
+    google_genai_available = True
+    logging.info("Successfully imported google.generativeai at startup")
+except ImportError as e:
+    google_genai_available = False
+    logging.error(f"Failed to import google.generativeai at startup: {e}")
+    # Attempt to install
+    try:
+        import subprocess
+        logging.info("Attempting to install google-generativeai package...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.3.2"])
+        import google.generativeai
+        google_genai_available = True
+        logging.info("Successfully installed and imported google.generativeai")
+    except Exception as install_error:
+        logging.error(f"Failed to install google-generativeai: {install_error}")
 
 from chatbot import AstronomyChatbot
 from llm_provider import LLMProvider
@@ -66,6 +86,26 @@ async def set_api_key(request: ApiKeyRequest):
         )
     
     try:
+        # First, explicitly try to import google.generativeai
+        try:
+            import google.generativeai
+            logger.info("Successfully imported google.generativeai")
+        except ImportError as e:
+            logger.error(f"Failed to import google.generativeai: {e}")
+            # Try to install it dynamically
+            try:
+                import subprocess, sys
+                logger.info("Attempting to install google-generativeai package...")
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.3.2"])
+                import google.generativeai
+                logger.info("Successfully installed and imported google.generativeai")
+            except Exception as install_error:
+                logger.error(f"Failed to install google-generativeai: {install_error}")
+                return JSONResponse(
+                    status_code=500,
+                    content={"success": False, "message": "Could not import or install google-generativeai. Please contact support."}
+                )
+        
         # Set the API key in the environment
         os.environ["GOOGLE_API_KEY"] = api_key
         
