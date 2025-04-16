@@ -10,6 +10,47 @@ This project builds a conversational AI system that:
 3. Uses RAG technology with Gemini to provide informed responses in the style of the professor
 4. Hosts the chatbot through a web interface
 
+## Architecture
+
+The chatbot combines multiple AI techniques to create natural, informative, and contextually-aware conversations:
+
+### Dual-Augmentation Approach
+
+1. **RAG (Retrieval-Augmented Generation)**
+   - Indexes professor's research papers in a FAISS vector database
+   - Uses semantic search to retrieve relevant document fragments for each query
+   - Embeds documents using Google's text-embedding-004 model
+   - Employs Maximum Marginal Relevance (MMR) for diverse, relevant results
+   - Retrieved documents are combined with the prompt before being sent to the LLM
+
+2. **CAG (Context-Augmented Generation)**
+   - Incorporates a pre-written summary file (`prof_summary.txt`) with biographical information
+   - Provides personality, style, and general stance information about the professor
+   - Helps the model respond to questions about career, opinions, and non-research topics
+   - This static context is combined with the dynamic RAG results
+
+### Conversation Context Management
+
+The system maintains conversation history through an innovative dual-context approach:
+
+1. **Document Retrieval Context**
+   - For follow-up questions, previous queries are included in the retrieval query
+   - Example: If a user asks "What is dark matter?" followed by "Why is it important?", the retrieval query becomes "Context: What is dark matter? Question: Why is it important?"
+   - This helps the system retrieve documents relevant to the entire conversation flow
+
+2. **Response Generation Context**
+   - Stores the last 3 conversation exchanges (question-answer pairs)
+   - Includes this conversational history in the prompt to the LLM
+   - Explicitly instructs the model to maintain continuity with previous exchanges
+   - Preserves the "thread" of conversation across multiple turns
+
+3. **Single-Stage RAG Implementation**
+   - Uses a custom document QA chain with direct document processing
+   - Manually retrieves documents using context-enhanced queries
+   - Combines system instructions, conversation history, and retrieved documents in a carefully crafted prompt
+
+This architecture ensures the chatbot can handle follow-up questions naturally, maintain professor-specific knowledge, and provide responses that feel like a cohesive conversation rather than isolated Q&A pairs.
+
 ## Components
 
 - `paper_collector.py`: Tool to search and download papers by a target professor
