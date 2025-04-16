@@ -1,6 +1,62 @@
-# Academic Research Assistant: Professor-Specific Chatbot
+# Astronomy RAG Chatbot
 
-A specialized chatbot system that emulates academic professors, using their research papers as a knowledge base with Retrieval-Augmented Generation (RAG) powered by Google's Gemini AI models.
+This is a Retrieval-Augmented Generation (RAG) chatbot focused on astronomy topics. It uses Google's Gemini models for text generation and embeddings.
+
+## Features
+
+- Web-based chat interface
+- RAG system for knowledge retrieval
+- Conversation context memory
+- Resilient implementation with fallback mechanisms
+- Deployable to Google Cloud Run or similar platforms
+
+## Fallback Implementation
+
+This application includes a lightweight fallback implementation of the Google Generative AI client. This works even in environments where the official Google Generative AI client can't be installed, such as in some cloud environments with restricted permissions.
+
+The fallback implementation (`fallback_genai.py`) provides:
+
+- A simple HTTP-based client for Gemini APIs
+- Support for text generation with the Gemini models
+- Support for embeddings with Google's embedding models
+- Automatic fallback when the official client can't be loaded
+
+## Deployment
+
+### Local Development
+
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the application: `python app.py`
+4. Open http://localhost:8000 in your browser
+
+### Docker Deployment
+
+1. Run the build script: `./build-image.sh`
+2. Follow the instructions to push the image to Docker Hub
+3. Deploy to Google Cloud Run or similar platforms
+
+### Cloud Run Deployment
+
+```bash
+# Push to Docker Hub
+docker login
+docker push <username>/astro-rag-repo:latest
+
+# Deploy to Cloud Run
+gcloud run deploy --image <username>/astro-rag-repo:latest --platform managed --allow-unauthenticated
+```
+
+## API Key Setup
+
+This application requires a Google Gemini API key to function. Users will need to provide their API key through the web interface. The API key is only stored in memory during the session and is not persisted.
+
+## Architecture
+
+- `app.py`: FastAPI web application
+- `chatbot.py`: RAG implementation with conversation memory
+- `llm_provider.py`: Provider for LLM services with resilient loading
+- `fallback_genai.py`: Fallback implementation of Google Generative AI client
 
 ## Project Overview
 

@@ -26,12 +26,29 @@
                 margin-bottom: 20px;
                 font-style: italic;
             }
-            .chat-container {
+            .container {
                 background-color: white;
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 padding: 20px;
                 margin-bottom: 20px;
+            }
+            .api-key-container {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .api-key-container p {
+                margin-bottom: 10px;
+            }
+            #api-key-input {
+                width: 70%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+            .chat-container {
+                display: none; /* Hidden until API key is set */
             }
             #chat-messages {
                 height: 75vh;
@@ -93,12 +110,41 @@
                 text-align: center;
                 color: #666;
             }
+            .alert {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+            }
+            .alert-success {
+                background-color: #d4edda;
+                color: #155724;
+            }
+            .alert-error {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
         </style>
     </head>
     <body>
         <h1>Mini-Risa Chatbot</h1>
         
-        <div class="chat-container">
+        <div class="container api-key-container" id="api-key-section">
+            <h2>Enter your Google Gemini API Key</h2>
+            <p>This chatbot requires a Google Gemini API key to function. Your API key will only be used for this session and is not stored on our servers.</p>
+            <p>You can get a Gemini API key from the <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
+            <div>
+                <input 
+                    type="password" 
+                    id="api-key-input" 
+                    placeholder="Enter your Gemini API key here..." 
+                    autocomplete="off"
+                >
+                <button id="set-api-key-button">Set API Key</button>
+            </div>
+            <div id="api-key-status"></div>
+        </div>
+        
+        <div class="container chat-container" id="chat-section">
             <div id="chat-messages">
                 <div class="message bot-message">
                     Hello! I'm a chatbot designed to emulate Professor Risa Wechsler, an astrophysicist and cosmologist. 
@@ -121,12 +167,58 @@
             const messagesContainer = document.getElementById('chat-messages');
             const userInput = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
+            const apiKeyInput = document.getElementById('api-key-input');
+            const setApiKeyButton = document.getElementById('set-api-key-button');
+            const apiKeyStatus = document.getElementById('api-key-status');
+            const apiKeySection = document.getElementById('api-key-section');
+            const chatSection = document.getElementById('chat-section');
             
-            console.log('UI elements initialized:', {
-                messagesContainer: !!messagesContainer,
-                userInput: !!userInput,
-                sendButton: !!sendButton
-            });
+            console.log('UI elements initialized');
+            
+            // Function to handle API key setup
+            async function setApiKey() {
+                const apiKey = apiKeyInput.value.trim();
+                if (!apiKey) {
+                    showStatus('Please enter an API key', false);
+                    return;
+                }
+                
+                try {
+                    // Show a loading message
+                    showStatus('Setting up chatbot, please wait...', true);
+                    
+                    // Send API key to server
+                    const response = await fetch('/set-api-key', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ api_key: apiKey }),
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Show success message
+                        showStatus('API key set successfully! Starting chat...', true);
+                        
+                        // Hide API key section and show chat section after a brief delay
+                        setTimeout(() => {
+                            apiKeySection.style.display = 'none';
+                            chatSection.style.display = 'block';
+                        }, 1500);
+                    } else {
+                        showStatus(`Error: ${data.message}`, false);
+                    }
+                } catch (error) {
+                    showStatus(`Error: ${error.message}`, false);
+                }
+            }
+            
+            // Show status message
+            function showStatus(message, isSuccess) {
+                apiKeyStatus.innerHTML = `<div class="alert ${isSuccess ? 'alert-success' : 'alert-error'}">${message}</div>`;
+            }
             
             // Function to add a message to the chat
             function addMessage(content, isUser, sources = []) {
@@ -265,6 +357,20 @@
             
             // Event listeners
             console.log('Adding event listeners');
+            
+            // Set API key button event listener
+            setApiKeyButton.addEventListener('click', function() {
+                console.log('Set API key button clicked');
+                setApiKey();
+            });
+            
+            // API key input enter key event listener
+            apiKeyInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    console.log('Enter key pressed on API key input');
+                    setApiKey();
+                }
+            });
             
             sendButton.addEventListener('click', function() {
                 console.log('Send button clicked');

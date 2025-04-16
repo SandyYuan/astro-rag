@@ -6,11 +6,20 @@ from typing import Optional, Dict, Any, List
 from langchain.llms.base import LLM
 from langchain.embeddings.base import Embeddings
 from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+# Import conditionally handled in class implementation
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Try to load fallback_genai
+try:
+    import fallback_genai
+    logger.info("Loaded fallback_genai module")
+    has_fallback = True
+except ImportError:
+    logger.warning("fallback_genai module not available")
+    has_fallback = False
 
 class LLMClient:
     """Client for Google's Gemini models"""
@@ -25,15 +34,70 @@ class LLMClient:
             raise ValueError("API key is required for Gemini")
             
         self.api_key = api_key
+        self.genai = None
+        self.using_fallback = False
         
+        # Try multiple approaches to import the google.generativeai package
+        error_messages = []
+        
+        # Approach 1: Standard import
         try:
-            from google import genai
-            self.client = genai.Client(api_key=self.api_key)
-            logger.info("Initialized Gemini client successfully")
-        except ImportError:
-            raise ImportError("google.genai is not installed. Please run: pip install google-generativeai")
+            import google.generativeai as genai
+            self.genai = genai
+            genai.configure(api_key=self.api_key)
+            logger.info("Initialized Gemini client successfully using direct import")
+            return
+        except ImportError as e:
+            error_messages.append(f"Standard import failed: {str(e)}")
         except Exception as e:
-            raise ValueError(f"Failed to initialize Gemini client: {e}")
+            error_messages.append(f"Error during standard import: {str(e)}")
+        
+        # Approach 2: Try alternate import path
+        try:
+            from google import generativeai as genai
+            self.genai = genai
+            genai.configure(api_key=self.api_key)
+            logger.info("Initialized Gemini client successfully using alternate import")
+            return
+        except ImportError as e:
+            error_messages.append(f"Alternate import failed: {str(e)}")
+        except Exception as e:
+            error_messages.append(f"Error during alternate import: {str(e)}")
+        
+        # Approach 3: Try dynamic installation
+        try:
+            import sys, subprocess
+            logger.info("Attempting to install google-generativeai package...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "google-generativeai==0.3.2"])
+            
+            # Try import again after installation
+            import importlib
+            importlib.invalidate_caches()
+            
+            import google.generativeai as genai
+            self.genai = genai
+            genai.configure(api_key=self.api_key)
+            logger.info("Initialized Gemini client successfully after dynamic installation")
+            return
+        except Exception as e:
+            error_messages.append(f"Dynamic installation failed: {str(e)}")
+        
+        # Approach 4: Use our fallback implementation as last resort
+        try:
+            logger.warning("All standard approaches failed. Using fallback implementation.")
+            import fallback_genai as genai
+            self.genai = genai
+            genai.configure(api_key=self.api_key)
+            self.using_fallback = True
+            logger.info("Initialized Gemini client using fallback HTTP implementation")
+            return
+        except Exception as e:
+            error_messages.append(f"Fallback implementation failed: {str(e)}")
+        
+        # If we reach here, all approaches failed
+        detailed_error = "\n".join(error_messages)
+        logger.error(f"All import approaches failed: {detailed_error}")
+        raise ImportError(f"Failed to import google.generativeai. Tried multiple approaches: {detailed_error}")
     
     def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-pro-exp-03-25") -> str:
         """Generate content using Gemini
@@ -46,13 +110,27 @@ class LLMClient:
         Returns:
             Generated text response
         """
+        if not self.genai:
+            raise ValueError("Gemini client not properly initialized")
+            
         try:
             logger.debug(f"Generating content with model {model_name}")
-            response = self.client.models.generate_content(
-                model=model_name,
-                contents=prompt
+            
+            # Create the model with the appropriate configuration
+            model = self.genai.GenerativeModel(
+                model_name=model_name,
+                generation_config={"temperature": temperature},
+                api_key=self.api_key
             )
-            return response.text
+            
+            # Generate content
+            response = model.generate_content(prompt)
+            
+            # Extract text from response
+            if hasattr(response, 'text'):
+                return response.text
+            else:
+                return str(response)
         except Exception as e:
             logger.error(f"Error generating content: {e}")
             raise
@@ -94,24 +172,71 @@ class LLMEmbeddings(Embeddings):
         """
         if not google_api_key:
             raise ValueError("Google API key is required for embeddings")
-            
+        
+        self.api_key = google_api_key
+        self.model = model
+        self.using_fallback = False
+        self.embeddings = None
+        
+        # Try to use official LangChain integration first
         try:
+            from langchain_google_genai import GoogleGenerativeAIEmbeddings
             self.embeddings = GoogleGenerativeAIEmbeddings(
                 model=model, 
                 google_api_key=google_api_key
             )
-            logger.info(f"Initialized Google embeddings with model: {model}")
+            logger.info(f"Initialized Google embeddings with model: {model} (official LangChain integration)")
+            return
         except Exception as e:
-            logger.error(f"Failed to initialize embeddings: {e}")
+            logger.warning(f"Could not use official LangChain integration for embeddings: {e}")
+        
+        # Fall back to using our direct implementation
+        try:
+            import fallback_genai
+            self.using_fallback = True
+            logger.info(f"Using fallback implementation for embeddings with model: {model}")
+            return
+        except Exception as e:
+            logger.error(f"Failed to initialize embeddings with fallback implementation: {e}")
             raise
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """Embed a list of documents"""
-        return self.embeddings.embed_documents(texts)
+        if self.embeddings:
+            return self.embeddings.embed_documents(texts)
+        
+        # Use fallback implementation
+        try:
+            import fallback_genai
+            return fallback_genai.embed_content(
+                content=texts,
+                model=self.model,
+                task_type="RETRIEVAL_DOCUMENT",
+                api_key=self.api_key
+            )
+        except Exception as e:
+            logger.error(f"Error embedding documents with fallback implementation: {e}")
+            # Return empty embeddings as last resort to prevent crashes
+            return [[0.0] * 768 for _ in range(len(texts))]
     
     def embed_query(self, text: str) -> List[float]:
         """Embed a single query text"""
-        return self.embeddings.embed_query(text)
+        if self.embeddings:
+            return self.embeddings.embed_query(text)
+        
+        # Use fallback implementation
+        try:
+            import fallback_genai
+            return fallback_genai.embed_content(
+                content=text,
+                model=self.model,
+                task_type="RETRIEVAL_QUERY",
+                api_key=self.api_key
+            )
+        except Exception as e:
+            logger.error(f"Error embedding query with fallback implementation: {e}")
+            # Return empty embedding as last resort to prevent crashes
+            return [0.0] * 768
 
 class LLMProvider:
     """
@@ -141,10 +266,13 @@ class LLMProvider:
         self.embedding_model = embedding_model or self.DEFAULT_EMBEDDING_MODEL
         
         # Initialize the Gemini client
-        self.client = LLMClient(api_key=self.api_key)
-        
-        logger.info(f"Initialized Gemini provider")
-        logger.info(f"Using embedding model: {self.embedding_model}")
+        try:
+            self.client = LLMClient(api_key=self.api_key)
+            logger.info(f"Initialized Gemini provider")
+            logger.info(f"Using embedding model: {self.embedding_model}")
+        except ImportError as e:
+            logger.error(f"Error initializing LLMClient: {e}")
+            raise ValueError(f"Unable to initialize LLMClient: {str(e)}")
     
     def get_llm(self, **kwargs) -> LLM:
         """
