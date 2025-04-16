@@ -1,5 +1,6 @@
 import os
 import logging
+import re  # Added for regex pattern matching
 from typing import List, Dict
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
@@ -72,86 +73,86 @@ async def get_home(request: Request):
     provider = "Google"  # Simplified since we only support Google now
     
     # Create the index.html template content
-    index_html = f"""
+    index_html = """
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mini-Risa Chatbot ({provider})</title>
+        <title>Mini-Risa Chatbot</title>
         <!-- Add Marked.js library from CDN -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <style>
-            body {{
+            body {
                 font-family: Arial, sans-serif;
                 line-height: 1.6;
                 max-width: 1000px;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f5f5f5;
-            }}
-            h1 {{
+            }
+            h1 {
                 color: #333;
                 text-align: center;
-            }}
-            .model-info {{
+            }
+            .model-info {
                 text-align: center;
                 color: #666;
                 margin-bottom: 20px;
                 font-style: italic;
-            }}
-            .chat-container {{
+            }
+            .chat-container {
                 background-color: white;
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 padding: 20px;
                 margin-bottom: 20px;
-            }}
-            #chat-messages {{
+            }
+            #chat-messages {
                 height: 75vh;
                 overflow-y: auto;
                 margin-bottom: 20px;
                 padding: 10px;
                 background-color: #f9f9f9;
                 border-radius: 5px;
-            }}
-            .message {{
+            }
+            .message {
                 padding: 10px;
                 margin-bottom: 10px;
                 border-radius: 5px;
                 max-width: 80%;
                 word-wrap: break-word;
-            }}
-            .user-message {{
+            }
+            .user-message {
                 background-color: #e3f2fd;
                 text-align: left;
                 border-radius: 18px 18px 0 18px;
                 margin-left: auto;
                 margin-right: 0;
-            }}
-            .bot-message {{
+            }
+            .bot-message {
                 background-color: #f1f1f1;
                 border-radius: 18px 18px 18px 0;
                 margin-left: 0;
                 margin-right: auto;
                 text-align: left;
-            }}
-            .sources {{
+            }
+            .sources {
                 font-size: 0.8em;
                 color: #666;
                 margin-top: 5px;
-            }}
-            .chat-input-container {{
+            }
+            .chat-input-container {
                 display: flex;
-            }}
-            #user-input {{
+            }
+            #user-input {
                 flex: 1;
                 padding: 10px;
                 border: 1px solid #ddd;
                 border-radius: 4px;
                 font-size: 16px;
-            }}
-            button {{
+            }
+            button {
                 padding: 10px 20px;
                 background-color: #4285f4;
                 color: white;
@@ -159,14 +160,14 @@ async def get_home(request: Request):
                 border-radius: 4px;
                 margin-left: 10px;
                 cursor: pointer;
-            }}
-            button:hover {{
+            }
+            button:hover {
                 background-color: #3367d6;
-            }}
-            .loading {{
+            }
+            .loading {
                 text-align: center;
                 color: #666;
-            }}
+            }
         </style>
     </head>
     <body>
@@ -196,44 +197,53 @@ async def get_home(request: Request):
             const userInput = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
             
+            console.log('UI elements initialized:', {
+                messagesContainer: !!messagesContainer,
+                userInput: !!userInput,
+                sendButton: !!sendButton
+            });
+            
             // Function to add a message to the chat
-            function addMessage(content, isUser, sources = []) {{
+            function addMessage(content, isUser, sources = []) {
                 const messageDiv = document.createElement('div');
-                messageDiv.className = `message ${{isUser ? 'user-message' : 'bot-message'}}`;
+                messageDiv.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
                 
                 // Render content: Use Markdown for bot, plain text for user
-                if (isUser) {{
+                if (isUser) {
                     messageDiv.textContent = content;
-                }} else {{
-                    if (typeof marked !== 'undefined') {{
+                } else {
+                    if (typeof marked !== 'undefined') {
                         // Use marked.parse() which handles sanitization by default
                         messageDiv.innerHTML = marked.parse(content);
-                    }} else {{
+                    } else {
                         // Fallback if marked.js fails to load
-                        // Replace newlines with <br> tags for basic formatting using innerHTML
-                        console.warn("Marked.js not loaded. Falling back to newline replacement."); // Changed log level
-                        // Use RegExp constructor for robustness
+                        console.warn("Marked.js not loaded. Falling back to newline replacement.");
                         const newlineRegex = new RegExp('\\n', 'g');
                         messageDiv.innerHTML = content.replace(newlineRegex, '<br>');
-                    }}
-                }}
+                    }
+                }
                 
                 // Add sources if available
-                if (sources && sources.length > 0) {{
+                if (sources && sources.length > 0) {
                     const sourcesDiv = document.createElement('div');
                     sourcesDiv.className = 'sources';
                     sourcesDiv.textContent = 'Sources: ' + sources.join(', ');
                     messageDiv.appendChild(sourcesDiv);
-                }}
+                }
                 
                 messagesContainer.appendChild(messageDiv);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }}
+            }
             
             // Function to send message to the server
-            async function sendMessage() {{
+            async function sendMessage() {
+                console.log('sendMessage function called');
                 const message = userInput.value.trim();
-                if (!message) return;
+                console.log('Message content:', message);
+                if (!message) {
+                    console.log('Message is empty, returning');
+                    return;
+                }
                 
                 // Add user message to chat
                 addMessage(message, true);
@@ -247,53 +257,103 @@ async def get_home(request: Request):
                 loadingDiv.textContent = 'Thinking...';
                 messagesContainer.appendChild(loadingDiv);
                 
-                try {{
-                    // Send to server
-                    const response = await fetch('/chat', {{
-                        method: 'POST',
-                        headers: {{
-                            'Content-Type': 'application/json',
-                        }},
-                        body: JSON.stringify({{ message }}),
-                    }});
+                try {
+                    console.log('Sending request to server...');
+                    // Send to server with absolute URL
+                    const chatEndpoint = new URL('/chat', window.location.href).href;
+                    console.log('Using endpoint:', chatEndpoint);
                     
-                    if (!response.ok) {{
-                        throw new Error('Failed to get response');
-                    }}
+                    const response = await fetch(chatEndpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: message }),
+                    });
+                    
+                    console.log('Response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error('Failed to get response: ' + response.status);
+                    }
                     
                     const data = await response.json();
                     
                     // Remove loading indicator
                     messagesContainer.removeChild(loadingDiv);
                     
-                    // Add bot response (cleaned on backend)
+                    // Post-process the answer to remove unwanted phrases
+                    let answer = data.answer;
+                    const phrasesToRemove = [
+                        "Based on the provided text, ",
+                        "Based on the provided texts, ",
+                        "According to the documents, ",
+                        "According to the text, ",
+                        "The context suggests that ",
+                        "The provided context indicates that ",
+                        "From the text provided, ",
+                        "In the provided text, ",
+                        "Based on the context, ",
+                        "The text indicates that ",
+                        "From the documents provided, ",
+                        "According to the provided information, ",
+                        "The information provided suggests that ",
+                        "Based on the information given, "
+                    ];
+                    
+                    // First check for phrases at the beginning of the response
+                    for (const phrase of phrasesToRemove) {
+                        if (answer.startsWith(phrase)) {
+                            answer = answer.substring(phrase.length);
+                            break;
+                        }
+                    }
+                    
+                    // Then check for these phrases anywhere in the text
+                    for (const phrase of phrasesToRemove) {
+                        // Create a regex pattern that's case-insensitive
+                        const pattern = new RegExp('\\s*' + phrase.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'), 'gi');
+                        answer = answer.replace(pattern, ' ');
+                    }
+                    
+                    // Update the answer
+                    data.answer = answer.trim();
+                    
+                    // Add bot response
                     addMessage(data.answer, false, data.sources);
-                }} catch (error) {{
+                } catch (error) {
                     // Remove loading indicator
                     messagesContainer.removeChild(loadingDiv);
                     
                     // Show error message
                     addMessage('Sorry, there was an error processing your request. Please try again.', false);
                     console.error('Error:', error);
-                }}
-            }}
+                }
+            }
             
             // Initialize Marked.js options (ensure script is loaded before this)
-            if (typeof marked !== 'undefined') {{
-                marked.setOptions({{
+            if (typeof marked !== 'undefined') {
+                marked.setOptions({
                     breaks: true, // Treat single newlines as <br>
                     gfm: true      // Enable GitHub Flavored Markdown
-                }});
-            }}
+                });
+            }
             
             // Event listeners
-            sendButton.addEventListener('click', sendMessage);
+            console.log('Adding event listeners');
             
-            userInput.addEventListener('keypress', (e) => {{
-                if (e.key === 'Enter') {{
+            sendButton.addEventListener('click', function() {
+                console.log('Send button clicked');
+                sendMessage();
+            });
+            
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    console.log('Enter key pressed');
                     sendMessage();
-                }}
-            }});
+                }
+            });
+            
+            console.log('Event listeners added successfully');
         </script>
     </body>
     </html>
@@ -328,16 +388,27 @@ async def chat(request: ChatRequest):
             "The provided context indicates that ",
             "From the text provided, ",
             "In the provided text, ",
-            # Add variations as needed
+            "Based on the context, ",
+            "The text indicates that ",
+            "From the documents provided, ",
+            "According to the provided information, ",
+            "The information provided suggests that ",
+            "Based on the information given, ",
+            # Add more variations as needed
         ]
+        
+        # First check for phrases at the beginning of the response
         for phrase in phrases_to_remove:
-            # Use case-insensitive replacement if desired, e.g., re.sub
             if answer.startswith(phrase):
-                 answer = answer[len(phrase):] # Remove prefix
-                 break # Remove only the first occurrence if it's a prefix
-            # Optionally, replace mid-sentence too, but be cautious
-            # answer = answer.replace(phrase, "") 
-            
+                answer = answer[len(phrase):]
+                break
+        
+        # Then check for these phrases anywhere in the text
+        for phrase in phrases_to_remove:
+            # Create a regex pattern that's case-insensitive and handles sentence boundaries
+            pattern = re.compile(r'\s*' + re.escape(phrase), re.IGNORECASE)
+            answer = pattern.sub(' ', answer)
+        
         # Update the response data
         response_data["answer"] = answer.strip() # Remove leading/trailing whitespace
         

@@ -95,27 +95,36 @@ class AstronomyChatbot:
             }
         )
         
-        # Configure conversation memory to better maintain context
-        self.memory = ConversationBufferMemory(
-            memory_key="chat_history",
-            return_messages=True,
-            output_key='answer',
-            input_key='question'  # Make sure this matches the input key in qa_chain call
-        )
-        
         # Get the language model from the provider
         self.llm = self.llm_provider.get_llm()
         
-        # Create the conversational chain with improved configuration
-        self.qa_chain = ConversationalRetrievalChain.from_llm(
+        # Import QA chain components
+        from langchain.chains.question_answering import load_qa_chain
+        from langchain.prompts import PromptTemplate
+        
+        # Create a document-aware prompt template for the QA chain
+        # This template will be formatted with our system instructions and the document content
+        prompt_template = """
+        {question}
+        
+        RELEVANT DOCUMENTS:
+        {context}
+        
+        Answer the question based on the information above. Respond in a helpful, conversational tone.
+        """
+        
+        # Create the prompt template
+        prompt = PromptTemplate(
+            template=prompt_template,
+            input_variables=["context", "question"]
+        )
+        
+        # Create a simple QA chain that properly handles documents
+        self.qa_chain = load_qa_chain(
             llm=self.llm,
-            retriever=self.retriever,
-            memory=self.memory,
-            return_source_documents=True,
-            # Increase chain_type to "stuff" for better context handling
-            chain_type="stuff",
-            # Add condense_question_prompt if needed
-            verbose=True  # Enable verbose mode for debugging
+            chain_type="stuff",  # This combines all documents into one prompt
+            prompt=prompt,
+            verbose=True
         )
         
         logger.info("RAG system setup complete")
@@ -160,7 +169,7 @@ class AstronomyChatbot:
         # Prepare the system prompt - this sets the personality and constraints
         system_prompt = self.get_system_prompt()
         
-        # Create a more effective conversation-aware prompt 
+        # Create a more effective conversation-aware prompt and query
         if len(self.chat_history) > 0:
             # When we have chat history, create a context that includes previous exchanges
             # This helps the model understand follow-up questions
@@ -168,19 +177,38 @@ class AstronomyChatbot:
             for prev_q, prev_a in self.chat_history[-3:]:  # Include up to 3 most recent exchanges 
                 context_summary += f"User: {prev_q}\nRisa: {prev_a}\n\n"
             
-            # Add explicit direction to continue the conversation
+            # Create two different formatted queries:
+            # 1. A full LLM prompt with system instructions
+            # 2. A search query that combines context with the new question for document retrieval
+            
+            # This is for the LLM response generation
             query_with_context = f"{system_prompt}\n\n{context_summary}\nCurrent user question: {query}\n\nRemember to maintain continuity with our previous conversation when answering this follow-up question."
+            
+            # This is for document retrieval - include recent context to help with follow-up questions
+            # Get the most recent user question to provide context for the current query
+            recent_questions = [q for q, _ in self.chat_history[-2:]]
+            retrieval_query = f"Context: {' '.join(recent_questions)} Question: {query}"
+            logger.info(f"Using contextual retrieval query: {retrieval_query}")
         else:
             # First question in conversation
             query_with_context = f"{system_prompt}\n\nUser query: {query}"
+            retrieval_query = query
         
         try:
-            # Get the response from the conversational chain
-            response = self.qa_chain({"question": query_with_context})
+            # Manual two-step RAG process to use context-enhanced retrieval
+            # 1. Get relevant documents using the contextual retrieval query
+            relevant_docs = self.retriever.get_relevant_documents(retrieval_query)
+            logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
             
-            # Extract the answer and source documents
-            answer = response["answer"]
-            source_docs = response.get("source_documents", [])
+            # 2. Feed these documents and the full prompt to the chain
+            response = self.qa_chain({
+                "question": query_with_context,
+                "input_documents": relevant_docs
+            })
+            
+            # Extract the answer from the chain response
+            answer = response["output_text"]
+            source_docs = relevant_docs
             
             # Store this exchange in our chat history
             self.chat_history.append((query, answer))

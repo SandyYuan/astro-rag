@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mini-Risa Chatbot (Google)</title>
+        <title>Mini-Risa Chatbot</title>
         <!-- Add Marked.js library from CDN -->
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <style>
@@ -122,10 +122,16 @@
             const userInput = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
             
+            console.log('UI elements initialized:', {
+                messagesContainer: !!messagesContainer,
+                userInput: !!userInput,
+                sendButton: !!sendButton
+            });
+            
             // Function to add a message to the chat
             function addMessage(content, isUser, sources = []) {
                 const messageDiv = document.createElement('div');
-                messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+                messageDiv.className = 'message ' + (isUser ? 'user-message' : 'bot-message');
                 
                 // Render content: Use Markdown for bot, plain text for user
                 if (isUser) {
@@ -136,9 +142,7 @@
                         messageDiv.innerHTML = marked.parse(content);
                     } else {
                         // Fallback if marked.js fails to load
-                        // Replace newlines with <br> tags for basic formatting using innerHTML
-                        console.warn("Marked.js not loaded. Falling back to newline replacement."); // Changed log level
-                        // Use RegExp constructor for robustness
+                        console.warn("Marked.js not loaded. Falling back to newline replacement.");
                         const newlineRegex = new RegExp('\n', 'g');
                         messageDiv.innerHTML = content.replace(newlineRegex, '<br>');
                     }
@@ -158,8 +162,13 @@
             
             // Function to send message to the server
             async function sendMessage() {
+                console.log('sendMessage function called');
                 const message = userInput.value.trim();
-                if (!message) return;
+                console.log('Message content:', message);
+                if (!message) {
+                    console.log('Message is empty, returning');
+                    return;
+                }
                 
                 // Add user message to chat
                 addMessage(message, true);
@@ -174,17 +183,22 @@
                 messagesContainer.appendChild(loadingDiv);
                 
                 try {
-                    // Send to server
-                    const response = await fetch('/chat', {
+                    console.log('Sending request to server...');
+                    // Send to server with absolute URL
+                    const chatEndpoint = new URL('/chat', window.location.href).href;
+                    console.log('Using endpoint:', chatEndpoint);
+                    
+                    const response = await fetch(chatEndpoint, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ message }),
+                        body: JSON.stringify({ message: message }),
                     });
                     
+                    console.log('Response status:', response.status);
                     if (!response.ok) {
-                        throw new Error('Failed to get response');
+                        throw new Error('Failed to get response: ' + response.status);
                     }
                     
                     const data = await response.json();
@@ -192,7 +206,44 @@
                     // Remove loading indicator
                     messagesContainer.removeChild(loadingDiv);
                     
-                    // Add bot response (cleaned on backend)
+                    // Post-process the answer to remove unwanted phrases
+                    let answer = data.answer;
+                    const phrasesToRemove = [
+                        "Based on the provided text, ",
+                        "Based on the provided texts, ",
+                        "According to the documents, ",
+                        "According to the text, ",
+                        "The context suggests that ",
+                        "The provided context indicates that ",
+                        "From the text provided, ",
+                        "In the provided text, ",
+                        "Based on the context, ",
+                        "The text indicates that ",
+                        "From the documents provided, ",
+                        "According to the provided information, ",
+                        "The information provided suggests that ",
+                        "Based on the information given, "
+                    ];
+                    
+                    // First check for phrases at the beginning of the response
+                    for (const phrase of phrasesToRemove) {
+                        if (answer.startsWith(phrase)) {
+                            answer = answer.substring(phrase.length);
+                            break;
+                        }
+                    }
+                    
+                    // Then check for these phrases anywhere in the text
+                    for (const phrase of phrasesToRemove) {
+                        // Create a regex pattern that's case-insensitive
+                        const pattern = new RegExp('\s*' + phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+                        answer = answer.replace(pattern, ' ');
+                    }
+                    
+                    // Update the answer
+                    data.answer = answer.trim();
+                    
+                    // Add bot response
                     addMessage(data.answer, false, data.sources);
                 } catch (error) {
                     // Remove loading indicator
@@ -213,13 +264,21 @@
             }
             
             // Event listeners
-            sendButton.addEventListener('click', sendMessage);
+            console.log('Adding event listeners');
             
-            userInput.addEventListener('keypress', (e) => {
+            sendButton.addEventListener('click', function() {
+                console.log('Send button clicked');
+                sendMessage();
+            });
+            
+            userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
+                    console.log('Enter key pressed');
                     sendMessage();
                 }
             });
+            
+            console.log('Event listeners added successfully');
         </script>
     </body>
     </html>
