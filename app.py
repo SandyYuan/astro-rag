@@ -20,15 +20,16 @@ try:
 except ImportError as e:
     google_genai_available = False
     logging.error(f"Failed to import google.generativeai at startup: {e}")
-
-# Check for fallback implementation
-try:
-    import fallback_genai
-    fallback_available = True
-    logging.info("Fallback implementation available if needed")
-except ImportError:
-    fallback_available = False
-    logging.warning("Fallback implementation not available")
+    # Attempt to install
+    try:
+        import subprocess
+        logging.info("Attempting to install google-generativeai package...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.3.2"])
+        import google.generativeai
+        google_genai_available = True
+        logging.info("Successfully installed and imported google.generativeai")
+    except Exception as install_error:
+        logging.error(f"Failed to install google-generativeai: {install_error}")
 
 from chatbot import AstronomyChatbot
 from llm_provider import LLMProvider
@@ -86,6 +87,26 @@ async def set_api_key(request: ApiKeyRequest):
         )
     
     try:
+        # First, explicitly try to import google.generativeai
+        try:
+            import google.generativeai
+            logger.info("Successfully imported google.generativeai")
+        except ImportError as e:
+            logger.error(f"Failed to import google.generativeai: {e}")
+            # Try to install it dynamically
+            try:
+                import subprocess, sys
+                logger.info("Attempting to install google-generativeai package...")
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.3.2"])
+                import google.generativeai
+                logger.info("Successfully installed and imported google.generativeai")
+            except Exception as install_error:
+                logger.error(f"Failed to install google-generativeai: {install_error}")
+                return JSONResponse(
+                    status_code=500,
+                    content={"success": False, "message": "Could not import or install google-generativeai. Please contact support."}
+                )
+        
         # Set the API key in the environment
         os.environ["GOOGLE_API_KEY"] = api_key
         
@@ -247,7 +268,6 @@ async def get_home(request: Request):
             <h2>Enter your Google Gemini API Key</h2>
             <p>This chatbot requires a Google Gemini API key to function. Your API key will only be used for this session and is not stored on our servers.</p>
             <p>You can get a Gemini API key from the <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
-            <p><strong>Note:</strong> This application includes a lightweight fallback implementation that works even in environments where the official Google Generative AI client can't be installed.</p>
             <div>
                 <input 
                     type="password" 
@@ -577,8 +597,7 @@ async def diagnostics():
         "working_directory": os.getcwd(),
         "sys_path": sys.path,
         "installed_packages": [],
-        "import_tests": {},
-        "fallback_available": False
+        "import_tests": {}
     }
     
     # Check installed packages
@@ -602,14 +621,6 @@ async def diagnostics():
             results["import_tests"][test] = "Success"
         except Exception as e:
             results["import_tests"][test] = f"Error: {str(e)}"
-    
-    # Check for fallback_genai
-    try:
-        import fallback_genai
-        results["fallback_available"] = True
-        results["import_tests"]["import fallback_genai"] = "Success"
-    except ImportError:
-        results["import_tests"]["import fallback_genai"] = "Not available"
     
     # Try to create LLMProvider instance with dummy key
     try:

@@ -12,15 +12,6 @@ from langchain.callbacks.manager import CallbackManagerForLLMRun
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Try to load fallback_genai
-try:
-    import fallback_genai
-    logger.info("Loaded fallback_genai module")
-    has_fallback = True
-except ImportError:
-    logger.warning("fallback_genai module not available")
-    has_fallback = False
-
 class LLMClient:
     """Client for Google's Gemini models"""
     
@@ -35,7 +26,6 @@ class LLMClient:
             
         self.api_key = api_key
         self.genai = None
-        self.using_fallback = False
         
         # Try multiple approaches to import the google.generativeai package
         error_messages = []
@@ -82,18 +72,6 @@ class LLMClient:
         except Exception as e:
             error_messages.append(f"Dynamic installation failed: {str(e)}")
         
-        # Approach 4: Use our fallback implementation as last resort
-        try:
-            logger.warning("All standard approaches failed. Using fallback implementation.")
-            import fallback_genai as genai
-            self.genai = genai
-            genai.configure(api_key=self.api_key)
-            self.using_fallback = True
-            logger.info("Initialized Gemini client using fallback HTTP implementation")
-            return
-        except Exception as e:
-            error_messages.append(f"Fallback implementation failed: {str(e)}")
-        
         # If we reach here, all approaches failed
         detailed_error = "\n".join(error_messages)
         logger.error(f"All import approaches failed: {detailed_error}")
@@ -119,8 +97,7 @@ class LLMClient:
             # Create the model with the appropriate configuration
             model = self.genai.GenerativeModel(
                 model_name=model_name,
-                generation_config={"temperature": temperature},
-                api_key=self.api_key
+                generation_config={"temperature": temperature}
             )
             
             # Generate content
@@ -175,10 +152,9 @@ class LLMEmbeddings(Embeddings):
         
         self.api_key = google_api_key
         self.model = model
-        self.using_fallback = False
         self.embeddings = None
         
-        # Try to use official LangChain integration first
+        # Try to use official LangChain integration
         try:
             from langchain_google_genai import GoogleGenerativeAIEmbeddings
             self.embeddings = GoogleGenerativeAIEmbeddings(
@@ -188,55 +164,22 @@ class LLMEmbeddings(Embeddings):
             logger.info(f"Initialized Google embeddings with model: {model} (official LangChain integration)")
             return
         except Exception as e:
-            logger.warning(f"Could not use official LangChain integration for embeddings: {e}")
-        
-        # Fall back to using our direct implementation
-        try:
-            import fallback_genai
-            self.using_fallback = True
-            logger.info(f"Using fallback implementation for embeddings with model: {model}")
-            return
-        except Exception as e:
-            logger.error(f"Failed to initialize embeddings with fallback implementation: {e}")
-            raise
+            logger.warning(f"Could not use LangChain integration for embeddings: {e}")
+            raise ValueError(f"Failed to initialize embeddings: {e}")
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """Embed a list of documents"""
         if self.embeddings:
             return self.embeddings.embed_documents(texts)
-        
-        # Use fallback implementation
-        try:
-            import fallback_genai
-            return fallback_genai.embed_content(
-                content=texts,
-                model=self.model,
-                task_type="RETRIEVAL_DOCUMENT",
-                api_key=self.api_key
-            )
-        except Exception as e:
-            logger.error(f"Error embedding documents with fallback implementation: {e}")
-            # Return empty embeddings as last resort to prevent crashes
-            return [[0.0] * 768 for _ in range(len(texts))]
+        else:
+            raise ValueError("Embeddings not properly initialized")
     
     def embed_query(self, text: str) -> List[float]:
         """Embed a single query text"""
         if self.embeddings:
             return self.embeddings.embed_query(text)
-        
-        # Use fallback implementation
-        try:
-            import fallback_genai
-            return fallback_genai.embed_content(
-                content=text,
-                model=self.model,
-                task_type="RETRIEVAL_QUERY",
-                api_key=self.api_key
-            )
-        except Exception as e:
-            logger.error(f"Error embedding query with fallback implementation: {e}")
-            # Return empty embedding as last resort to prevent crashes
-            return [0.0] * 768
+        else:
+            raise ValueError("Embeddings not properly initialized")
 
 class LLMProvider:
     """
