@@ -3,7 +3,7 @@ import logging
 import re  # Added for regex pattern matching
 from typing import List, Dict
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -39,31 +39,51 @@ chatbot = None
 class ChatRequest(BaseModel):
     message: str
 
+class ApiKeyRequest(BaseModel):
+    api_key: str
 
 @app.on_event("startup")
 async def startup_event():
     """Initialize the chatbot on startup."""
     global chatbot
     
-    # Get Google API key from environment
-    api_key = os.environ.get("GOOGLE_API_KEY")
+    # Initialize chatbot to None - it will be set when the user provides their API key
+    chatbot = None
+    logger.info("Chatbot not initialized. Waiting for user to provide API key.")
+
+
+@app.post("/set-api-key")
+async def set_api_key(request: ApiKeyRequest):
+    """Set the API key and initialize the chatbot."""
+    global chatbot
+    
+    api_key = request.api_key
+    
     if not api_key:
-        logger.error("GOOGLE_API_KEY environment variable not set. Please set it in .env file.")
-        chatbot = None
-        return
+        return JSONResponse(
+            status_code=400,
+            content={"success": False, "message": "API key is required"}
+        )
     
-    # Set the environment variable for the chatbot to use
-    os.environ["GOOGLE_API_KEY"] = api_key
-    
-    # Initialize the chatbot with Google provider
     try:
+        # Set the API key in the environment
+        os.environ["GOOGLE_API_KEY"] = api_key
+        
+        # Initialize the chatbot with the provided API key
         provider = LLMProvider.PROVIDER_GOOGLE
-        # Pass the api_key to AstronomyChatbot
         chatbot = AstronomyChatbot(provider=provider, api_key=api_key)
-        logger.info("Chatbot initialized successfully with Google provider")
+        logger.info("Chatbot initialized successfully with user-provided API key")
+        
+        return JSONResponse(
+            status_code=200,
+            content={"success": True, "message": "API key set successfully"}
+        )
     except Exception as e:
         logger.error(f"Failed to initialize chatbot: {str(e)}")
-        chatbot = None
+        return JSONResponse(
+            status_code=500,
+            content={"success": False, "message": f"Error initializing chatbot: {str(e)}"}
+        )
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -101,12 +121,29 @@ async def get_home(request: Request):
                 margin-bottom: 20px;
                 font-style: italic;
             }
-            .chat-container {
+            .container {
                 background-color: white;
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                 padding: 20px;
                 margin-bottom: 20px;
+            }
+            .api-key-container {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .api-key-container p {
+                margin-bottom: 10px;
+            }
+            #api-key-input {
+                width: 70%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+            .chat-container {
+                display: none; /* Hidden until API key is set */
             }
             #chat-messages {
                 height: 75vh;
@@ -168,12 +205,41 @@ async def get_home(request: Request):
                 text-align: center;
                 color: #666;
             }
+            .alert {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+            }
+            .alert-success {
+                background-color: #d4edda;
+                color: #155724;
+            }
+            .alert-error {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
         </style>
     </head>
     <body>
         <h1>Mini-Risa Chatbot</h1>
         
-        <div class="chat-container">
+        <div class="container api-key-container" id="api-key-section">
+            <h2>Enter your Google Gemini API Key</h2>
+            <p>This chatbot requires a Google Gemini API key to function. Your API key will only be used for this session and is not stored on our servers.</p>
+            <p>You can get a Gemini API key from the <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>.</p>
+            <div>
+                <input 
+                    type="password" 
+                    id="api-key-input" 
+                    placeholder="Enter your Gemini API key here..." 
+                    autocomplete="off"
+                >
+                <button id="set-api-key-button">Set API Key</button>
+            </div>
+            <div id="api-key-status"></div>
+        </div>
+        
+        <div class="container chat-container" id="chat-section">
             <div id="chat-messages">
                 <div class="message bot-message">
                     Hello! I'm a chatbot designed to emulate Professor Risa Wechsler, an astrophysicist and cosmologist. 
@@ -196,12 +262,58 @@ async def get_home(request: Request):
             const messagesContainer = document.getElementById('chat-messages');
             const userInput = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
+            const apiKeyInput = document.getElementById('api-key-input');
+            const setApiKeyButton = document.getElementById('set-api-key-button');
+            const apiKeyStatus = document.getElementById('api-key-status');
+            const apiKeySection = document.getElementById('api-key-section');
+            const chatSection = document.getElementById('chat-section');
             
-            console.log('UI elements initialized:', {
-                messagesContainer: !!messagesContainer,
-                userInput: !!userInput,
-                sendButton: !!sendButton
-            });
+            console.log('UI elements initialized');
+            
+            // Function to handle API key setup
+            async function setApiKey() {
+                const apiKey = apiKeyInput.value.trim();
+                if (!apiKey) {
+                    showStatus('Please enter an API key', false);
+                    return;
+                }
+                
+                try {
+                    // Show a loading message
+                    showStatus('Setting up chatbot, please wait...', true);
+                    
+                    // Send API key to server
+                    const response = await fetch('/set-api-key', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ api_key: apiKey }),
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Show success message
+                        showStatus('API key set successfully! Starting chat...', true);
+                        
+                        // Hide API key section and show chat section after a brief delay
+                        setTimeout(() => {
+                            apiKeySection.style.display = 'none';
+                            chatSection.style.display = 'block';
+                        }, 1500);
+                    } else {
+                        showStatus(`Error: ${data.message}`, false);
+                    }
+                } catch (error) {
+                    showStatus(`Error: ${error.message}`, false);
+                }
+            }
+            
+            // Show status message
+            function showStatus(message, isSuccess) {
+                apiKeyStatus.innerHTML = `<div class="alert ${isSuccess ? 'alert-success' : 'alert-error'}">${message}</div>`;
+            }
             
             // Function to add a message to the chat
             function addMessage(content, isUser, sources = []) {
@@ -341,6 +453,20 @@ async def get_home(request: Request):
             // Event listeners
             console.log('Adding event listeners');
             
+            // Set API key button event listener
+            setApiKeyButton.addEventListener('click', function() {
+                console.log('Set API key button clicked');
+                setApiKey();
+            });
+            
+            // API key input enter key event listener
+            apiKeyInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    console.log('Enter key pressed on API key input');
+                    setApiKey();
+                }
+            });
+            
             sendButton.addEventListener('click', function() {
                 console.log('Send button clicked');
                 sendMessage();
@@ -372,7 +498,7 @@ async def chat(request: ChatRequest):
     global chatbot
     
     if chatbot is None:
-        raise HTTPException(status_code=503, detail="Chatbot not initialized")
+        raise HTTPException(status_code=503, detail="Chatbot not initialized. Please set your API key first.")
     
     try:
         response_data = chatbot.chat(request.message)
@@ -393,8 +519,7 @@ async def chat(request: ChatRequest):
             "From the documents provided, ",
             "According to the provided information, ",
             "The information provided suggests that ",
-            "Based on the information given, ",
-            # Add more variations as needed
+            "Based on the information given, "
         ]
         
         # First check for phrases at the beginning of the response
@@ -427,14 +552,13 @@ def main():
             f.write("LLM_PROVIDER=google\n\n")
             f.write("# Google API Key - Required if using Google\n")
             f.write("GOOGLE_API_KEY=\n\n")
-            f.write("# Azure API Key - Required if using Azure\n")
-            f.write("# AZURE_API_KEY=\n\n")
-            f.write("# Anthropic API Key - Required if using Claude\n")
-            f.write("# ANTHROPIC_API_KEY=\n")
         logger.info("Created .env file. Please add your API keys.")
     
+    # Get the port from the environment (for Render) or default to 8000
+    port = int(os.environ.get("PORT", 8000))
+    
     # Start the server
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
 
 
 if __name__ == "__main__":
