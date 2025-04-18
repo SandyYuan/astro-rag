@@ -12,9 +12,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-from langchain_community.document_loaders import PyPDFLoader
+from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
+from langchain.vectorstores import FAISS
 from langchain.schema import Document
 
 from llm_provider import LLMProvider

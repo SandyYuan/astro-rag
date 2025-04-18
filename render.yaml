@@ -5,15 +5,20 @@ services:
     buildCommand: |
       python -m pip install --upgrade pip setuptools wheel
       python -m pip install --no-cache-dir google-generativeai==0.3.2
-      python -m pip install --no-cache-dir langchain-google-genai==0.0.6
+      python -m pip install --no-cache-dir langchain==0.0.267
+      python -m pip install --no-cache-dir langchain-google-genai==0.0.5
       python -m pip install --no-cache-dir -r requirements.txt
-      echo "Running import tester..."
+      echo "Running import testers..."
       python import_tester.py
       python verify_packages.py
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+      python verify_langchain.py
+      chmod +x verify_langchain.py
+      chmod +x import_tester.py
+      chmod +x verify_packages.py
+    startCommand: python -m uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.11.0
       - key: PYTHONUNBUFFERED
         value: "true"
       - key: PYTHONPATH
