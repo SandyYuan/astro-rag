@@ -12,6 +12,31 @@ import uvicorn
 import dotenv
 import pkg_resources
 
+# Debug print for langchain modules
+try:
+    import langchain
+    print(f"LangChain version: {getattr(langchain, '__version__', 'unknown')}")
+    print(f"LangChain path: {langchain.__file__}")
+    print("Checking for vectorstores...")
+    try:
+        from langchain.vectorstores import FAISS
+        print("✅ Successfully imported FAISS from langchain.vectorstores")
+    except ImportError as e:
+        print(f"❌ Error importing from langchain.vectorstores: {e}")
+        try:
+            # Check if langchain_community exists
+            import langchain_community
+            print(f"⚠️ langchain_community exists at {langchain_community.__file__}")
+            try:
+                from langchain_community.vectorstores import FAISS
+                print("⚠️ FAISS exists in langchain_community.vectorstores instead")
+            except ImportError:
+                print("❌ FAISS not found in langchain_community.vectorstores either")
+        except ImportError:
+            print("❌ langchain_community not found at all")
+except ImportError as e:
+    print(f"❌ Error importing langchain: {e}")
+
 # Try importing google.generativeai at startup to verify installation
 try:
     import google.generativeai
@@ -99,6 +124,7 @@ async def set_api_key(request: ApiKeyRequest):
                 logger.info("Attempting to install google-generativeai package...")
                 subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.3.2"])
                 import google.generativeai
+                google_genai_available = True
                 logger.info("Successfully installed and imported google.generativeai")
             except Exception as install_error:
                 logger.error(f"Failed to install google-generativeai: {install_error}")
@@ -597,7 +623,8 @@ async def diagnostics():
         "working_directory": os.getcwd(),
         "sys_path": sys.path,
         "installed_packages": [],
-        "import_tests": {}
+        "import_tests": {},
+        "file_checks": {}
     }
     
     # Check installed packages
@@ -610,7 +637,10 @@ async def diagnostics():
         "import google",
         "import google.generativeai",
         "import langchain",
-        "import langchain_google_genai",
+        "import langchain.vectorstores",
+        "from langchain.vectorstores import FAISS",
+        "import langchain.document_loaders",
+        "from langchain.document_loaders import PyPDFLoader",
         "from llm_provider import LLMProvider",
         "from chatbot import AstronomyChatbot"
     ]
@@ -622,6 +652,28 @@ async def diagnostics():
         except Exception as e:
             results["import_tests"][test] = f"Error: {str(e)}"
     
+    # Check critical files and directories
+    file_checks = [
+        "rag_data",
+        "rag_data/vector_store",
+        "rag_data/vector_store/index.faiss",
+        "rag_data/vector_store/index.pkl",
+        "rag_data/prof_summary.txt",
+        "chatbot.py",
+        "llm_provider.py",
+        "app.py"
+    ]
+    
+    for path in file_checks:
+        if os.path.exists(path):
+            if os.path.isdir(path):
+                results["file_checks"][path] = f"Directory exists, contains: {os.listdir(path)[:5]}..."
+            else:
+                size = os.path.getsize(path) / 1024.0  # KB
+                results["file_checks"][path] = f"File exists, size: {size:.2f} KB"
+        else:
+            results["file_checks"][path] = "Does not exist"
+            
     # Try to create LLMProvider instance with dummy key
     try:
         from llm_provider import LLMProvider
