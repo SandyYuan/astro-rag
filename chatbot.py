@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-from langchain.vectorstores import FAISS
-from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
+from langchain_community.vectorstores import FAISS
+from langchain_community.chains import ConversationalRetrievalChain
+from langchain_community.memory import ConversationBufferMemory
 
 from llm_provider import LLMProvider
 
@@ -99,8 +99,8 @@ class AstronomyChatbot:
         self.llm = self.llm_provider.get_llm()
         
         # Import QA chain components
-        from langchain.chains.question_answering import load_qa_chain
-        from langchain.prompts import PromptTemplate
+        from langchain_community.chains.question_answering import load_qa_chain
+        from langchain_community.prompts import PromptTemplate
         
         # Create a document-aware prompt template for the QA chain
         # This template will be formatted with our system instructions and the document content

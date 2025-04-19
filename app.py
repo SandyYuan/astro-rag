@@ -19,10 +19,10 @@ try:
     print(f"LangChain path: {langchain.__file__}")
     print("Checking for vectorstores...")
     try:
-        from langchain.vectorstores import FAISS
-        print("✅ Successfully imported FAISS from langchain.vectorstores")
+        from langchain_community.vectorstores import FAISS
+        print("✅ Successfully imported FAISS from langchain_community.vectorstores")
     except ImportError as e:
-        print(f"❌ Error importing from langchain.vectorstores: {e}")
+        print(f"❌ Error importing from langchain_community.vectorstores: {e}")
         try:
             # Check if langchain_community exists
             import langchain_community
@@ -637,10 +637,11 @@ async def diagnostics():
         "import google",
         "import google.generativeai",
         "import langchain",
-        "import langchain.vectorstores",
-        "from langchain.vectorstores import FAISS",
-        "import langchain.document_loaders",
-        "from langchain.document_loaders import PyPDFLoader",
+        "import langchain_community",
+        "import langchain_community.vectorstores",
+        "from langchain_community.vectorstores import FAISS",
+        "import langchain_community.document_loaders",
+        "from langchain_community.document_loaders import PyPDFLoader",
         "from llm_provider import LLMProvider",
         "from chatbot import AstronomyChatbot"
     ]

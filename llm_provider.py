@@ -3,9 +3,12 @@ import logging
 from typing import Optional, Dict, Any, List
 
 # LangChain imports for compatibility
-from langchain.llms.base import LLM
-from langchain.embeddings.base import Embeddings
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain.chat_models.base import BaseChatModel
+from langchain.schema import HumanMessage
+from langchain_community.embeddings.base import Embeddings
 from langchain.callbacks.manager import CallbackManagerForLLMRun
+from langchain_community.llms.base import LLM
 # Import conditionally handled in class implementation
 
 # Set up logging
