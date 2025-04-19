@@ -14,6 +14,10 @@ ENV/
 # Data directories
 papers/
 rag_data/
+# Exception for vector store files
+!rag_data/vector_store/
+!rag_data/vector_store/index.faiss
+!rag_data/vector_store/index.pkl
 
 # Distribution / packaging
 dist/
