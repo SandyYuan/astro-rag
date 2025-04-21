@@ -13,7 +13,10 @@ ENV/
 
 # Data directories
 papers/
+# Exclude most of rag_data but allow vector store database files
 rag_data/
+!rag_data/vector_store/index.faiss
+!rag_data/vector_store/index.pkl
 
 # Distribution / packaging
 dist/
