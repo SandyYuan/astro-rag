@@ -63,8 +63,8 @@ This architecture ensures the chatbot can handle follow-up questions naturally, 
 
 1. Clone the repository:
    ```
-   git clone [repository-url]
-   cd [repository-name]
+   git clone https://github.com/SandyYuan/astro-rag.git
+   cd astro-rag
    ```
 
 2. Install dependencies:
@@ -76,6 +76,16 @@ This architecture ensures the chatbot can handle follow-up questions naturally, 
    ```
    GOOGLE_API_KEY=your_google_api_key_here
    ```
+
+4. Start the web application:
+   ```
+   python app.py
+   ```
+
+5. Access the chatbot at `http://localhost:8000` (This version does not include the in-context summary file. You can ask me for it.)
+
+If you would like to run your own literature database or emulate a different professor:
+
 
 4. Configure the target professor (defaults to Risa Wechsler as an example):
    ```python
@@ -99,6 +109,7 @@ This architecture ensures the chatbot can handle follow-up questions naturally, 
    ```
 
 8. Access the chatbot at `http://localhost:8000`
+
 
 ## Usage
 
