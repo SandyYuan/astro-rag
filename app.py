@@ -39,32 +39,24 @@ chatbot = None
 class ChatRequest(BaseModel):
     message: str
 
+def initialize_chatbot():
+    """Initialize the chatbot with the correct vector store path."""
+    global chatbot
+    try:
+        # Initialize with the new vector store path
+        chatbot = AstronomyChatbot(
+            vector_store_path="rag_data/index_all",
+            provider="google"
+        )
+        logger.info("Chatbot initialized successfully with new vector store")
+    except Exception as e:
+        logger.error(f"Failed to initialize chatbot: {str(e)}")
+        raise
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize the chatbot on startup."""
-    global chatbot
-    
-    # Get Google API key from environment
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    if not api_key:
-        logger.error("GOOGLE_API_KEY environment variable not set. Please set it in .env file.")
-        chatbot = None
-        return
-    
-    # Set the environment variable for the chatbot to use
-    os.environ["GOOGLE_API_KEY"] = api_key
-    
-    # Initialize the chatbot with Google provider
-    try:
-        provider = LLMProvider.PROVIDER_GOOGLE
-        # Pass the api_key to AstronomyChatbot
-        chatbot = AstronomyChatbot(provider=provider, api_key=api_key)
-        logger.info("Chatbot initialized successfully with Google provider")
-    except Exception as e:
-        logger.error(f"Failed to initialize chatbot: {str(e)}")
-        chatbot = None
-
+    """Initialize the chatbot when the server starts."""
+    initialize_chatbot()
 
 @app.get("/", response_class=HTMLResponse)
 async def get_home(request: Request):
