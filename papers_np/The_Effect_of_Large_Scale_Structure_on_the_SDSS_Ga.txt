@@ -1,0 +1,34 @@
+Title: The Effect of Large-Scale Structure on the SDSS Galaxy Three-Point Correlation Function
+Authors: R. C. Nichol, R. K. Sheth, Y. Suto, A. J. Gray, I. Kayo, R. H. Wechsler, F. Marin, G. Kulkarni, M. Blanton, A. J. Connolly, J. P. Gardner, B. Jain, C. J. Miller, A. W. Moore, A. Pope, J. Pun, D. Schneider, J. Schneider, A. Szalay, I. Szapudi, I. Zehavi, N. A. Bahcall, I. Csabai, J. Brinkmann
+Published: 2006-02-24 21:01:24+00:00
+Updated: 2006-02-24 21:01:24+00:00
+DOI: 10.1111/j.1365-2966.2006.10239.x
+arXiv ID: http://arxiv.org/abs/astro-ph/0602548v1
+arXiv URL: http://arxiv.org/pdf/astro-ph/0602548v1
+Categories: astro-ph
+Author Position: 6
+
+Abstract:
+We present measurements of the normalised redshift-space three-point
+correlation function (Q_z) of galaxies from the Sloan Digital Sky Survey (SDSS)
+main galaxy sample. We have applied our "npt" algorithm to both a
+volume-limited (36738 galaxies) and magnitude-limited sample (134741 galaxies)
+of SDSS galaxies, and find consistent results between the two samples, thus
+confirming the weak luminosity dependence of Q_z recently seen by other
+authors. We compare our results to other Q_z measurements in the literature and
+find it to be consistent within the full jack-knife error estimates. However,
+we find these errors are significantly increased by the presence of the ``Sloan
+Great Wall'' (at z ~ 0.08) within these two SDSS datasets, which changes the
+3-point correlation function (3PCF) by 70% on large scales (s>=10h^-1 Mpc). If
+we exclude this supercluster, our observed Q_z is in better agreement with that
+obtained from the 2dFGRS by other authors, thus demonstrating the sensitivity
+of these higher-order correlation functions to large-scale structures in the
+Universe. This analysis highlights that the SDSS datasets used here are not
+``fair samples'' of the Universe for the estimation of higher-order clustering
+statistics and larger volumes are required. We study the shape-dependence of
+Q_z(s,q,theta) as one expects this measurement to depend on scale if the large
+scale structure in the Universe has grown via gravitational instability from
+Gaussian initial conditions. On small scales (s <= 6h^-1 Mpc), we see some
+evidence for shape-dependence in Q_z, but at present our measurements are
+consistent with a constant within the errors (Q_z ~ 0.75 +/- 0.05). On scales
+>10h^-1 Mpc, we see considerable shape-dependence in Q_z.

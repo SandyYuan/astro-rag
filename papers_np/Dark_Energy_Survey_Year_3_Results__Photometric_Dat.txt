@@ -1,0 +1,31 @@
+Title: Dark Energy Survey Year 3 Results: Photometric Data Set for Cosmology
+Authors: I. Sevilla-Noarbe, K. Bechtol, M. Carrasco Kind, A. Carnero Rosell, M. R. Becker, A. Drlica-Wagner, R. A. Gruendl, E. S. Rykoff, E. Sheldon, B. Yanny, A. Alarcon, S. Allam, A. Amon, A. Benoit-Lévy, G. M. Bernstein, E. Bertin, D. L. Burke, J. Carretero, A. Choi, H. T. Diehl, S. Everett, B. Flaugher, E. Gaztanaga, J. Gschwend, I. Harrison, W. G. Hartley, B. Hoyle, M. Jarvis, M. D. Johnson, R. Kessler, R. Kron, N. Kuropatkin, B. Leistedt, T. S. Li, F. Menanteau, E. Morganson, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, A. Pieres, C. Pond, M. Rodriguez-Monroy, J. Allyn-Smith, K. M. Stringer, M. A. Troxel, D. L. Tucker, J. de Vicente, W. Wester, Y. Zhang, T. M. C. Abbott, M. Aguena, J. Annis, S. Avila, S. Bhargava, S. L. Bridle, D. Brooks, D. Brout, F. J. Castander, R. Cawthon, C. Chang, C. Conselice, M. Costanzi, M. Crocce, L. N. da Costa, M. E. E. Pereira, T. M. Davis, S. Desai, J. P. Dietrich, P. Doel, K. Eckert, A. E. Evrard, I. Ferrero, P. Fosalba, J. García-Bellido, D. W. Gerdes, T. Giannantonio, D. Gruen, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, E. M. Huff, D. Huterer, D. J. James, T. Jeltema, K. Kuehn, O. Lahav, C. Lidman, M. Lima, H. Lin, M. A. G. Maia, J. L. Marshall, P. Martini, P. Melchior, R. Miquel, J. J. Mohr, R. Morgan, E. Neilsen, A. A. Plazas, A. K. Romer, A. Roodman, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, M. Smith, E. Suchyta, G. Tarle, D. Thomas, C. To, T. N. Varga, R. H. Wechsler, J. Weller, R. D. Wilkinson
+Published: 2020-11-06 15:06:52+00:00
+Updated: 2021-05-27 12:23:00+00:00
+DOI: 10.3847/1538-4365/abeb66
+arXiv ID: http://arxiv.org/abs/2011.03407v2
+arXiv URL: http://arxiv.org/pdf/2011.03407v2
+Categories: astro-ph.CO, astro-ph.GA, astro-ph.IM
+Author Position: 112
+
+Abstract:
+We describe the Dark Energy Survey (DES) photometric data set assembled from
+the first three years of science operations to support DES Year 3 cosmology
+analyses, and provide usage notes aimed at the broad astrophysics community. Y3
+Gold improves on previous releases from DES, Y1 Gold and Data Release 1 (DES
+DR1), presenting an expanded and curated data set that incorporates algorithmic
+developments in image detrending and processing, photometric calibration, and
+object classification. Y3 Gold comprises nearly 5000 square degrees of grizY
+imaging in the south Galactic cap, including nearly 390 million objects, with
+depth reaching S/N ~ 10 for extended objects up to $i_{AB}\sim 23.0$, and
+top-of-the-atmosphere photometric uniformity $< 3$ mmag. Compared to DR1,
+photometric residuals with respect to Gaia are reduced by $50\%$, and
+per-object chromatic corrections are introduced. Y3 Gold augments DES DR1 with
+simultaneous fits to multi-epoch photometry for more robust galaxy color
+measurements and corresponding photometric redshift estimates. Y3 Gold features
+improved morphological star-galaxy classification with efficiency $>98\%$ and
+purity $>99\%$ for galaxies with $19 < i_{AB} < 22.5$. Additionally, it
+includes per-object quality information, and accompanying maps of the footprint
+coverage, masked regions, imaging depth, survey conditions, and astrophysical
+foregrounds that are used to select the cosmology analysis samples. This paper
+will be complemented by online resources.

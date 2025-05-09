@@ -1,0 +1,29 @@
+Title: DES J0454-4448: Discovery of the First Luminous z > 6 Quasar from the Dark Energy Survey
+Authors: S. L. Reed, R. G. McMahon, M. Banerji, G. D. Becker, E. Gonzalez-Solares, P. Martini, F. Ostrovski, M. Rauch, T. Abbott, F. B. Abdalla, S. Allam, A. Benoit-Levy, E. Bertin, E. Buckley-Geer, D. Burke, A. Carnero Rosell, L. N. da Costa, C. ĎAndrea, D. L. DePoy, S. Desai, H. T. Diehl, P. Doel, C. E Cunha, J. Estrada, A. E. Evrard, A. Fausti Neto, D. A. Finley, P. Fosalba, J. Frieman, D. Gruen, K. Honscheid, D. James, S. Kent, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, M. Makler, J. Marshall, K. Merritt, R. Miquel, J. Mohr, B. Nord, R. Ogando, A. Plazas, K. Romer, A. Roodman, E. Rykoff, M. Sako, E. Sanchez, B. Santiago, M. Schubnell, I. Sevilla, C. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. Tucker, A. Walker, R. H. Wechsler
+Published: 2015-04-13 17:24:33+00:00
+Updated: 2015-12-04 13:58:54+00:00
+DOI: 10.1093/mnras/stv2031
+arXiv ID: http://arxiv.org/abs/1504.03264v3
+arXiv URL: http://arxiv.org/pdf/1504.03264v3
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 62
+
+Abstract:
+We present the first results of a survey for high redshift, z $\ge$ 6,
+quasars using izY multi-colour photometric observations from the Dark Energy
+Survey (DES). Here we report the discovery and spectroscopic confirmation of
+the $\rm z_{AB}, Y_{AB}$ = 20.2, 20.2 (M$_{1450}$ = $-$26.5) quasar DES
+J0454$-$4448 with an emission line redshift of z = 6.10$\pm$0.03 and a HI near
+zone size of 4.6 $\pm$ 1.7 Mpc.The quasar was selected as an i-band drop out
+with i$-$z = 2.46 and z$_{AB} < 21.5$ from an area of $\rm \sim$300 deg$^2$. It
+is the brightest of our 43 candidates and was identified for follow-up
+spectroscopically solely based on the DES i$-$z and z$-$Y colours. The quasar
+is detected by WISE and has $W1_{AB} = 19.68$. The discovery of one
+spectroscopically confirmed quasar with 5.7 $<$ z $<$ 6.5 and z$_{AB} \leq$
+20.2 is consistent with recent determinations of the luminosity function at z
+$\sim$ 6. DES when completed will have imaged $\rm \sim$5000 deg$^2$ to
+$Y_{AB}$ = 23.0 ($5\sigma$ point source) and we expect to discover $>$ 50-100
+new quasars with z $>$ 6 including 3-10 with z $>$ 7 dramatically increasing
+the numbers of quasars currently known that are suitable for detailed studies
+including determination of the neutral HI fraction of the intergalactic medium
+(IGM) during the epoch of Hydrogen reionization.

@@ -1,0 +1,35 @@
+Title: The connection between the host halo and the satellite galaxies of the Milky Way
+Authors: Yu Lu, Andrew Benson, Yao-Yuan Mao, Stephanie Tonnesen, Annika H. G. Peter, Andrew R. Wetzel, Michael Boylan-Kolchin, Risa H. Wechsler
+Published: 2016-05-06 20:00:03+00:00
+Updated: 2016-07-27 22:34:03+00:00
+DOI: 10.3847/0004-637X/830/2/59
+arXiv ID: http://arxiv.org/abs/1605.02075v2
+arXiv URL: http://arxiv.org/pdf/1605.02075v2
+Categories: astro-ph.GA
+Author Position: 8
+
+Abstract:
+Many properties of the Milky Way's dark matter halo, including its mass
+assembly history, concentration, and subhalo population, remain poorly
+constrained. We explore the connection between these properties of the Milky
+Way and its satellite galaxy population, especially the implication of the
+presence of the Magellanic Clouds for the properties of the Milky Way halo.
+Using a suite of high-resolution $N$-body simulations of Milky Way-mass halos
+with a fixed final Mvir ~ 10^{12.1}Msun, we find that the presence of
+Magellanic Cloud-like satellites strongly correlates with the assembly history,
+concentration, and subhalo population of the host halo, such that Milky
+Way-mass systems with Magellanic Clouds have lower concentration, more rapid
+recent accretion, and more massive subhalos than typical halos of the same
+mass. Using a flexible semi-analytic galaxy formation model that is tuned to
+reproduce the stellar mass function of the classical dwarf galaxies of the
+Milky Way with Markov-Chain Monte-Carlo, we show that adopting host halos with
+different mass-assembly histories and concentrations can lead to different
+best-fit models for galaxy-formation physics, especially for the strength of
+feedback. These biases arise because the presence of the Magellanic Clouds
+boosts the overall population of high-mass subhalos, thus requiring a different
+stellar-mass-to-halo-mass ratio to match the data. These biases also lead to
+significant differences in the mass--metallicity relation, the kinematics of
+low-mass satellites, the number counts of small satellites associated with the
+Magellanic Clouds, and the stellar mass of Milky Way itself. Observations of
+these galaxy properties can thus provide useful constraints on the properties
+of the Milky Way halo.

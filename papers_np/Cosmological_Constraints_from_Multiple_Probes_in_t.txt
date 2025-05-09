@@ -1,0 +1,27 @@
+Title: Cosmological Constraints from Multiple Probes in the Dark Energy Survey
+Authors: DES Collaboration, T. M. C. Abbott, A. Alarcon, S. Allam, P. Andersen, F. Andrade-Oliveira, J. Annis, J. Asorey, A. Avelino, S. Avila, D. Bacon, N. Banik, B. A. Bassett, E. Baxter, K. Bechtol, M. R. Becker, G. M. Bernstein, E. Bertin, J. Blazek, S. L. Bridle, D. Brooks, D. Brout, D. L. Burke, J. Calcino, H. Camacho, A. Campos, A. Carnero Rosell, D. Carollo, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, P. Challis, K. C. Chan, C. Chang, M. Childress, A. Clocchiatti, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, T. M. Davis, J. De Vicente, D. L. DePoy, J. DeRose, S. Desai, H. T. Diehl, J. P. Dietrich, S. Dodelson, P. Doel, A. Drlica-Wagner, T. F. Eifler, J. Elvin-Poole, J. Estrada, A. E. Evrard, E. Fernandez, A. V. Filippenko, B. Flaugher, R. J. Foley, P. Fosalba, J. Frieman, L. Galbany, J. García-Bellido, M. Gatti, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, K. Glazebrook, D. A. Goldstein, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, S. R. Hinton, D. L. Hollowood, K. Honscheid, J. K. Hoormann, B. Hoyle, D. Huterer, B. Jain, D. J. James, M. Jarvis, T. Jeltema, E. Kasai, S. Kent, R. Kessler, A. G. Kim, R. P. Kirshner, N. Kokron, E. Krause, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, J. Lasker, P. Lemos, G. F. Lewis, T. S. Li, C. Lidman, M. Lima, H. Lin, E. Macaulay, N. MacCrann, M. A. G. Maia, K. S. Mandel, M. March, J. Marriner, J. L. Marshall, P. Martini, R. G. McMahon, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, E. Morganson, J. Muir, A. Möller, E. Neilsen, R. C. Nichol, B. Nord, R. L. C. Ogando, A. Palmese, Y. -C. Pan, H. V. Peiris, W. J. Percival, A. A. Plazas, A. Porredon, J. Prat, A. K. Romer, A. Roodman, R. Rosenfeld, A. J. Ross, E. S. Rykoff, S. Samuroff, C. Sánchez, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, D. Scolnic, L. F. Secco, S. Serrano, I. Sevilla-Noarbe, R. Sharp, E. Sheldon, M. Smith, M. Soares-Santos, F. Sobreira, N. E. Sommer, E. Swann, M. E. C. Swanson, G. Tarle, D. Thomas, R. C. Thomas, M. A. Troxel, B. E. Tucker, S. A. Uddin, P. Vielzeuf, A. R. Walker, M. Wang, N. Weaverdyck, R. H. Wechsler, J. Weller, B. Yanny, B. Zhang, Y. Zhang, J. Zuntz
+Published: 2018-11-06 14:42:50+00:00
+Updated: 2019-05-06 15:22:58+00:00
+DOI: 10.1103/PhysRevLett.122.171301
+arXiv ID: http://arxiv.org/abs/1811.02375v3
+arXiv URL: http://arxiv.org/pdf/1811.02375v3
+Categories: astro-ph.CO
+Author Position: 164
+
+Abstract:
+The combination of multiple observational probes has long been advocated as a
+powerful technique to constrain cosmological parameters, in particular dark
+energy. The Dark Energy Survey has measured 207 spectroscopically--confirmed
+Type Ia supernova lightcurves; the baryon acoustic oscillation feature; weak
+gravitational lensing; and galaxy clustering. Here we present combined results
+from these probes, deriving constraints on the equation of state, $w$, of dark
+energy and its energy density in the Universe. Independently of other
+experiments, such as those that measure the cosmic microwave background, the
+probes from this single photometric survey rule out a Universe with no dark
+energy, finding $w=-0.80^{+0.09}_{-0.11}$. The geometry is shown to be
+consistent with a spatially flat Universe, and we obtain a constraint on the
+baryon density of $\Omega_b=0.069^{+0.009}_{-0.012}$ that is independent of
+early Universe measurements. These results demonstrate the potential power of
+large multi-probe photometric surveys and pave the way for order of magnitude
+advances in our constraints on properties of dark energy and cosmology over the
+next decade.

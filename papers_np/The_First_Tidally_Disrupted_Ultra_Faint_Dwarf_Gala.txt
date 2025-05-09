@@ -1,0 +1,32 @@
+Title: The First Tidally Disrupted Ultra-Faint Dwarf Galaxy? - Spectroscopic Analysis of the Tucana III Stream
+Authors: T. S. Li, J. D. Simon, K. Kuehn, A. B. Pace, D. Erkal, K. Bechtol, B. Yanny, A. Drlica-Wagner, J. L. Marshall, C. Lidman, E. Balbinot, D. Carollo, S. Jenkins, C. E. Martinez-Vazquez, N. Shipp, K. M. Stringer, A. K. Vivas, A. R. Walker, R. H. Wechsler, F. B. Abdalla, S. Allam, J. Annis, S. Avila, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, J. De Vicente, P. Doel, T. F. Eifler, A. E. Evrard, B. Flaugher, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, D. L. Hollowood, K. Honscheid, D. J. James, E. Krause, M. A. G. Maia, M. March, F. Menanteau, R. Miquel, A. A. Plazas, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. L. Tucker
+Published: 2018-04-20 18:00:00+00:00
+Updated: 2019-03-06 04:34:26+00:00
+DOI: 10.3847/1538-4357/aadf91
+arXiv ID: http://arxiv.org/abs/1804.07761v2
+arXiv URL: http://arxiv.org/pdf/1804.07761v2
+Categories: astro-ph.GA
+Author Position: 19
+
+Abstract:
+We present a spectroscopic study of the tidal tails and core of the Milky Way
+satellite Tucana III, collectively referred to as the Tucana III stream, using
+the 2dF+AAOmega spectrograph on the Anglo-Australian Telescope and the IMACS
+spectrograph on the Magellan/Baade Telescope. In addition to recovering the
+brightest 9 previously known member stars in the Tucana III core, we identify
+22 members in the tidal tails. We observe strong evidence for a velocity
+gradient of 8.0 km/s/deg (or 18.3 km/s/kpc over at least 3$^{\circ}$ (or 1.3
+kpc) on the sky. Based on the continuity in velocity we confirm that the Tucana
+III tails are real tidal extensions of Tucana III. The large velocity gradient
+of the stream implies that Tucana III is likely on a radial orbit. We
+successfully obtain metallicities for 4 members in the core and 12 members in
+the tails. We find that members close to the ends of the stream tend to be more
+metal-poor than members in the core, indicating a possible metallicity gradient
+between the center of the progenitor halo and its edge. The spread in
+metallicity suggests that the progenitor of the Tucana III stream is a dwarf
+galaxy rather than a star cluster. Furthermore, we find that with the precise
+photometry of the Dark Energy Survey data, there is a discernible color offset
+between metal-rich disk stars and metal-poor stream members. This
+metallicity-dependent color offers a more efficient method to recognize
+metal-poor targets and will increase the selection efficiency of stream members
+for future spectroscopic follow-up programs on stellar streams.

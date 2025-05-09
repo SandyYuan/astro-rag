@@ -1,0 +1,25 @@
+Title: Search for Gamma-Ray Emission from DES Dwarf Spheroidal Galaxy Candidates with Fermi-LAT Data
+Authors: The Fermi-LAT Collaboration, The DES Collaboration, :, A. Drlica-Wagner, A. Albert, K. Bechtol, M. Wood, L. Strigari, M. Sanchez-Conde, L. Baldini, R. Essig, J. Cohen-Tanugi, B. Anderson, R. Bellazzini, E. D. Bloom, R. Caputo, C. Cecchi, E. Charles, J. Chiang, A. de Angelis, S. Funk, P. Fusco, F. Gargano, N. Giglietto, F. Giordano, S. Guiriec, M. Gustafsson, M. Kuss, F. Loparco, P. Lubrano, N. Mirabal, T. Mizuno, A. Morselli, T. Ohsugi, E. Orlando, M. Persic, S. Raino, N. Sehgal, F. Spada, D. J. Suson, G. Zaharijas, S. Zimmer, T. Abbott, S. Allam, E. Balbinot, A. H. Bauer, A. Benoit-Levy, R. A. Bernstein, G. M. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, F. J. Castander, R. Covarrubias, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, C. E Cunha, T. F. Eifler, J. Estrada, A. E. Evrard, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, J. Frieman, E. Gaztanaga, D. Gerdes, D. Gruen, R. A. Gruendl, G. Gutierrez, K. Honscheid, B. Jain, D. James, T. Jeltema, S. Kent, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, E. Luque, M. A. G. Maia, M. Makler, M. March, J. Marshall, P. Martini, K. W. Merritt, C. Miller, R. Miquel, J. Mohr, E. Neilsen, B. Nord, R. Ogando, J. Peoples, D. Petravick, A. Pieres, A. A. Plazas, A. Queiroz, A. K. Romer, A. Roodman, E. S. Rykoff, M. Sako, E. Sanchez, B. Santiago, V. Scarpine, M. Schubnell, I. Sevilla, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, D. Tucker, A. Walker, R. H. Wechsler, W. Wester, P. Williams, B. Yanny, J. Zuntz
+Published: 2015-03-09 19:30:06+00:00
+Updated: 2015-08-16 17:40:58+00:00
+DOI: 10.1088/2041-8205/809/1/L4
+arXiv ID: http://arxiv.org/abs/1503.02632v3
+arXiv URL: http://arxiv.org/pdf/1503.02632v3
+Categories: astro-ph.HE, astro-ph.GA, hep-ex
+Author Position: 123
+
+Abstract:
+Due to their proximity, high dark-matter content, and apparent absence of
+non-thermal processes, Milky Way dwarf spheroidal satellite galaxies (dSphs)
+are excellent targets for the indirect detection of dark matter. Recently,
+eight new dSph candidates were discovered using the first year of data from the
+Dark Energy Survey (DES). We searched for gamma-ray emission coincident with
+the positions of these new objects in six years of Fermi Large Area Telescope
+data. We found no significant excesses of gamma-ray emission. Under the
+assumption that the DES candidates are dSphs with dark matter halo properties
+similar to the known dSphs, we computed individual and combined limits on the
+velocity-averaged dark matter annihilation cross section for these new targets.
+If the estimated dark-matter content of these dSph candidates is confirmed,
+they will constrain the annihilation cross section to lie below the thermal
+relic cross section for dark matter particles with masses < 20 GeV annihilating
+via the b-bbar or tau+tau- channels.

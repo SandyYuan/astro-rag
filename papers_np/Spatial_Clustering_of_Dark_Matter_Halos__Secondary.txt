@@ -1,0 +1,30 @@
+Title: Spatial Clustering of Dark Matter Halos: Secondary Bias, Neighbor Bias, and the Influence of Massive Neighbors on Halo Properties
+Authors: Andrés N. Salcedo, Ariyeh H. Maller, Andreas A. Berlind, Manodeep Sinha, Cameron K. McBride, Peter S. Behroozi, Risa H. Wechsler, David H. Weinberg
+Published: 2017-08-28 18:00:00+00:00
+Updated: 2018-01-09 18:14:22+00:00
+DOI: 10.1093/mnras/sty109
+arXiv ID: http://arxiv.org/abs/1708.08451v2
+arXiv URL: http://arxiv.org/pdf/1708.08451v2
+Categories: astro-ph.CO
+Author Position: 7
+
+Abstract:
+We explore the phenomenon commonly known as halo assembly bias, whereby dark
+matter halos of the same mass are found to be more or less clustered when a
+second halo property is considered, for halos in the mass range $3.7 \times
+10^{11} \; h^{-1} \mathrm{M_{\odot}} - 5.0 \times 10^{13} \; h^{-1}
+\mathrm{M_{\odot}}$. Using the Large Suite of Dark Matter Simulations
+(LasDamas) we consider nine commonly used halo properties and find that a
+clustering bias exists if halos are binned by mass or by any other halo
+property. This secondary bias implies that no single halo property encompasses
+all the spatial clustering information of the halo population. The mean values
+of some halo properties depend on their halo's distance to a more massive
+neighbor. Halo samples selected by having high values of one of these
+properties therefore inherit a neighbor bias such that they are much more
+likely to be close to a much more massive neighbor. This neighbor bias largely
+accounts for the secondary bias seen in halos binned by mass and split by
+concentration or age. However, halos binned by other mass-like properties still
+show a secondary bias even when the neighbor bias is removed. The secondary
+bias of halos selected by their spin behaves differently than that for other
+halo properties, suggesting that the origin of the spin bias is different than
+of other secondary biases.

@@ -1,0 +1,29 @@
+Title: Overview of the DESI Milky Way Survey
+Authors: Andrew P. Cooper, Sergey E. Koposov, Carlos Allende Prieto, Christopher J. Manser, Namitha Kizhuprakkat, Adam D. Myers, Arjun Dey, Boris T. Gaensicke, Ting S. Li, Constance Rockosi, Monica Valluri, Joan Najita, Alis Deason, Anand Raichoor, Mei-Yu Wang, Yuan-Sen Ting, Bokyoung Kim, Andreia Carrillo, Wenting Wang, Leandro Beraldo e Silva, Jiwon Jesse Han, Jiani Ding, Miguel Sanchez-Conde, Jessica N. Aguilar, Steven Ahlen, Stephen Bailey, Vasily Belokurov, David Brooks, Katia Cunha, Kyle Dawson, Axel de la Macorra, Peter Doel, Daniel J. Eisenstein, Parker Fagrelius, Kevin Fanning, Andreu Font-Ribera, Jaime E. Forero-Romero, Enrique Gaztanaga, Satya Gontcho A Gontcho, Julien Guy, Klaus Honscheid, Robert Kehoe, Theodore Kisner, Anthony Kremin, Martin Landriau, Michael E. Levi, Paul Martini, Aaron M. Meisner, Ramon Miquel, John Moustakas, Jundan Nie, Nathalie Palanque-Delabrouille, Will J. Percival, Claire Poppett, Francisco Prada, Nabeel Rehemtulla, Edward Schlafly, David Schlegel, Michael Schubnell, Ray M. Sharples, Gregory Tarle, Risa H. Wechsler, David H. Weinberg, Zhimin Zhou, Hu Zou
+Published: 2022-08-17 20:11:47+00:00
+Updated: 2023-02-20 13:36:00+00:00
+DOI: 10.3847/1538-4357/acb3c0
+arXiv ID: http://arxiv.org/abs/2208.08514v4
+arXiv URL: http://arxiv.org/pdf/2208.08514v4
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 62
+
+Abstract:
+We describe the Milky Way Survey (MWS) that will be undertaken with the Dark
+Energy Spectroscopic Instrument (DESI) on the Mayall 4m telescope at the Kitt
+Peak National Observatory. Over the next 5 yr DESI MWS will observe
+approximately seven million stars at Galactic latitudes |b|>20 degrees, with an
+inclusive target selection scheme focused on the thick disk and stellar halo.
+MWS will also include several high-completeness samples of rare stellar types,
+including white dwarfs, low-mass stars within 100pc of the Sun, and horizontal
+branch stars. We summarize the potential of DESI to advance understanding of
+Galactic structure and stellar evolution. We introduce the final definitions of
+the main MWS target classes and estimate the number of stars in each class that
+will be observed. We describe our pipelines for deriving radial velocities,
+atmospheric parameters, and chemical abundances. We use ~500,000 spectra of
+unique stellar targets from the DESI Survey Validation program (SV) to
+demonstrate that our pipelines can measure radial velocities to ~1 km/s and
+[Fe/H] accurate to ~0.2 dex for typical stars in our main sample. We find the
+stellar parameter distributions from ~100 sq. deg of SV observations with >90%
+completeness on our main sample are in good agreement with expectations from
+mock catalogs and previous surveys.

@@ -1,0 +1,30 @@
+Title: The Aemulus Project III: Emulation of the Galaxy Correlation Function
+Authors: Zhongxu Zhai, Jeremy L. Tinker, Matthew R. Becker, Joseph DeRose, Yao-Yuan Mao, Thomas McClintock, Sean McLaughlin, Eduardo Rozo, Risa H. Wechsler
+Published: 2018-04-16 18:05:14+00:00
+Updated: 2018-04-24 01:07:02+00:00
+DOI: 10.3847/1538-4357/ab0d7b
+arXiv ID: http://arxiv.org/abs/1804.05867v2
+arXiv URL: http://arxiv.org/pdf/1804.05867v2
+Categories: astro-ph.CO, astro-ph.GA, astro-ph.IM
+Author Position: 9
+
+Abstract:
+Using the N-body simulations of the AEMULUS Project, we construct an emulator
+for the non-linear clustering of galaxies in real and redshift space. We
+construct our model of galaxy bias using the halo occupation framework,
+accounting for possible velocity bias. The model includes 15 parameters,
+including both cosmological and galaxy bias parameters. We demonstrate that our
+emulator achieves ~ 1% precision at the scales of interest, 0.1<r<10 h^{-1}
+Mpc, and recovers the true cosmology when tested against independent
+simulations. Our primary parameters of interest are related to the growth rate
+of structure, f, and its degenerate combination fsigma_8. Using this emulator,
+we show that the constraining power on these parameters monotonically increases
+as smaller scales are included in the analysis, all the way down to 0.1 h^{-1}
+Mpc. For a BOSS-like survey, the constraints on fsigma_8 from r<30 h^{-1} Mpc
+scales alone are more than a factor of two tighter than those from the fiducial
+BOSS analysis of redshift-space clustering using perturbation theory at larger
+scales. The combination of real- and redshift-space clustering allows us to
+break the degeneracy between f and sigma_8, yielding a 9% constraint on f alone
+for a BOSS-like analysis. The current AEMULUS simulations limit this model to
+surveys of massive galaxies. Future simulations will allow this framework to be
+extended to all galaxy target types, including emission-line galaxies.

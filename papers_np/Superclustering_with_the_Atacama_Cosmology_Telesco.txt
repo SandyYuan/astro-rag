@@ -1,0 +1,27 @@
+Title: Superclustering with the Atacama Cosmology Telescope and Dark Energy Survey: I. Evidence for thermal energy anisotropy using oriented stacking
+Authors: M. Lokken, R. Hložek, A. van Engelen, M. Madhavacheril, E. Baxter, J. DeRose, C. Doux, S. Pandey, E. S. Rykoff, G. Stein, C. To, T. M. C. Abbott, S. Adhikari, M. Aguena, S. Allam, F. Andrade-Oliveira, J. Annis, N. Battaglia, G. M. Bernstein, E. Bertin, J. R. Bond, D. Brooks, E. Calabrese, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, R. Cawthon, A. Choi, M. Costanzi, M. Crocce, L. N. da Costa, M. E. da Silva Pereira, J. De Vicente, S. Desai, J. P. Dietrich, P. Doel, J. Dunkley, S. Everett, A. E. Evrard, S. Ferraro, B. Flaugher, P. Fosalba, J. Frieman, P. A. Gallardo, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, J. C. Hill, M. Hilton, A. D. Hincks, S. R. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, Z. Huang, J. P. Hughes, D. Huterer, B. Jain, D. J. James, T. Jeltema, K. Kuehn, M. Lima, M. A. G. Maia, J. L. Marshall, J. McMahon, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, K. Moodley, R. Morgan, F. Nati, L. Page, R. L. C. Ogando, A. Palmese, F. Paz Chinchón, A. A. Plazas Malagón, A. Pieres, A. K. Romer, E. Rozo, E. Sanchez, V. Scarpine, A. Schillaci, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, E. Sheldon, T. Shin, C. Sifón, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, T. N. Varga, J. Weller, R. H. Wechsler, R. D. Wilkinson, E. J. Wollack, Z. Xu
+Published: 2021-07-12 15:51:20+00:00
+Updated: 2022-07-18 05:23:20+00:00
+DOI: 10.3847/1538-4357/ac7043
+arXiv ID: http://arxiv.org/abs/2107.05523v3
+arXiv URL: http://arxiv.org/pdf/2107.05523v3
+Categories: astro-ph.CO
+Author Position: 104
+
+Abstract:
+The cosmic web contains filamentary structure on a wide range of scales. On
+the largest scales, superclustering aligns multiple galaxy clusters along
+inter-cluster bridges, visible through their thermal Sunyaev-Zel'dovich signal
+in the Cosmic Microwave Background. We demonstrate a new, flexible method to
+analyze the hot gas signal from multi-scale extended structures. We use a
+Compton-$y$ map from the Atacama Cosmology Telescope (ACT) stacked on redMaPPer
+cluster positions from the optical Dark Energy Survey (DES). Cutout images from
+the $y$ map are oriented with large-scale structure information from DES galaxy
+data such that the superclustering signal is aligned before being overlaid. We
+find evidence for an extended quadrupole moment of the stacked $y$ signal at
+the 3.5$\sigma$ level, demonstrating that the large-scale thermal energy
+surrounding galaxy clusters is anisotropically distributed. We compare our
+ACT$\times$DES results with the Buzzard simulations, finding broad agreement.
+Using simulations, we highlight the promise of this novel technique for
+constraining the evolution of anisotropic, non-Gaussian structure using future
+combinations of microwave and optical surveys.

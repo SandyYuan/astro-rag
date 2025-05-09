@@ -1,0 +1,34 @@
+Title: CANDELS: The Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey - The Hubble Space Telescope Observations, Imaging Data Products and Mosaics
+Authors: Anton M. Koekemoer, S. M. Faber, Henry C. Ferguson, Norman A. Grogin, Dale D. Kocevski, David C. Koo, Kamson Lai, Jennifer M. Lotz, Ray A. Lucas, Elizabeth J. McGrath, Sara Ogaz, Abhijith Rajan, Adam G. Riess, Steve A. Rodney, Louis Strolger, Stefano Casertano, Marco Castellano, Tomas Dahlen, Mark Dickinson, Timothy Dolch, Adriano Fontana, Mauro Giavalisco, Andrea Grazian, Yicheng Guo, Nimish P. Hathi, Kuang-Han Huang, Arjen van der Wel, Hao-Jing Yan, Viviana Acquaviva, David M. Alexander Omar Almaini, Matthew L. N. Ashby, Marco Barden, Eric F. Bell, Frédéric Bournaud, Thomas M. Brown, Karina I. Caputi, Paolo Cassata, Peter Challis, Ranga-Ram Chary, Edmond Cheung, Michele Cirasuolo, Christopher J. Conselice, Asantha Roshan Cooray, Darren J. Croton, Emanuele Daddi, Romeel Davé, Duilia F. de Mello, Loic de Ravel, Avishai Dekel, Jennifer L. Donley, James S. Dunlop, Aaron A. Dutton, David Elbaz, Giovanni G. Fazio, Alex V. Filippenko, Steven L. Finkelstein, Chris Frazer, Jonathan P. Gardner, Peter M. Garnavich, Eric Gawiser, Ruth Gruetzbauch, Will G. Hartley, Boris Häussler, Jessica Herrington, Philip F. Hopkins, Jia-Sheng Huang, Saurabh Jha, Andrew Johnson, Jeyhan S. Kartaltepe, Ali Ahmad Khostovan, Robert P. Kirshner, Caterina Lani, Kyoung-Soo Lee, Weidong Li, Piero Madau, Patrick J. McCarthy, Daniel H. McIntosh, Ross J. McLure, Conor McPartland, Bahram Mobasher, Heidi Moreira, Alice Mortlock, Leonidas A. Moustakas, Mark Mozena, Kirpal Nandra, Jeffrey A. Newman, Jennifer L. Nielsen, Sami Niemi, Kai G. Noeske, Casey J. Papovich, Laura Pentericci, Alexandra Pope, Joel R. Primack, Swara Ravindranath, Naveen A. Reddy, Alvio Renzini, Hans-Walter Rix, Aday R. Robaina, David J. Rosario, Piero Rosati, Sara Salimbeni, Claudia Scarlata, Brian Siana, Luc Simard, Joseph Smidt, Diana Snyder, Rachel S. Somerville, Hyron Spinrad, Amber N. Straughn, Olivia Telford, Harry I. Teplitz, Jonathan R. Trump, Carlos Vargas, Carolin Villforth, Cory R. Wagner, Pat Wandro, Risa H. Wechsler, Benjamin J. Weiner, Tommy Wiklind, Vivienne Wild, Grant Wilson, Stijn Wuyts, Min S. Yun
+Published: 2011-05-18 21:42:03+00:00
+Updated: 2011-10-20 19:43:00+00:00
+DOI: 10.1088/0067-0049/197/2/36
+arXiv ID: http://arxiv.org/abs/1105.3754v2
+arXiv URL: http://arxiv.org/pdf/1105.3754v2
+Categories: astro-ph.CO
+Author Position: 117
+
+Abstract:
+This paper describes the Hubble Space Telescope imaging data products and
+data reduction procedures for the Cosmic Assembly Near-IR Deep Extragalactic
+Legacy Survey (CANDELS). This survey is designed to document the evolution of
+galaxies and black holes at $z\sim1.5-8$, and to study Type Ia SNe beyond
+$z>1.5$. Five premier multi-wavelength sky regions are selected, each with
+extensive multiwavelength observations. The primary CANDELS data consist of
+imaging obtained in the Wide Field Camera 3 / infrared channel (WFC3/IR) and
+UVIS channel, along with the Advanced Camera for Surveys (ACS). The
+CANDELS/Deep survey covers \sim125 square arcminutes within GOODS-N and
+GOODS-S, while the remainder consists of the CANDELS/Wide survey, achieving a
+total of \sim800 square arcminutes across GOODS and three additional fields
+(EGS, COSMOS, and UDS). We summarize the observational aspects of the survey as
+motivated by the scientific goals and present a detailed description of the
+data reduction procedures and products from the survey. Our data reduction
+methods utilize the most up to date calibration files and image combination
+procedures. We have paid special attention to correcting a range of
+instrumental effects, including CTE degradation for ACS, removal of electronic
+bias-striping present in ACS data after SM4, and persistence effects and other
+artifacts in WFC3/IR. For each field, we release mosaics for individual epochs
+and eventual mosaics containing data from all epochs combined, to facilitate
+photometric variability studies and the deepest possible photometry. A more
+detailed overview of the science goals and observational design of the survey
+are presented in a companion paper.

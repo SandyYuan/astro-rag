@@ -1,0 +1,31 @@
+Title: Is diffuse intracluster light a good tracer of the galaxy cluster matter distribution?
+Authors: H. Sampaio-Santos, Y. Zhang, R. L. C. Ogando, T. Shin, Jesse B. Golden-Marx, B. Yanny, K. Herner, M. Hilton, A. Choi, M. Gatti, D. Gruen, B. Hoyle, M. M. Rau, J. De Vicente, J. Zuntz, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, S. Avila, E. Bertin, D. Brooks, D. L. Burke, M. Carrasco Kind, J. Carretero, C. Chang, M. Costanzi, L. N. da Costa, H. T. Diehl, P. Doel, S. Everett, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, R. A. Gruendl, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, M. Jarvis, T. Jeltema, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, M. March, J. L. Marshall, R. Miquel, A. Palmese, F. Paz-Chinchon, A. A. Plazas, E. Sanchez, B. Santiago, V. Scarpine, M. Schubnell, M. Smith, E. Suchyta, G. Tarle, D. L. Tucker, T. N. Varga, R. H. Wechsler
+Published: 2020-05-25 18:00:00+00:00
+Updated: 2021-01-04 21:11:27+00:00
+DOI: 10.1093/mnras/staa3680
+arXiv ID: http://arxiv.org/abs/2005.12275v2
+arXiv URL: http://arxiv.org/pdf/2005.12275v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 67
+
+Abstract:
+We explore the relation between diffuse intracluster light (central galaxy
+included) and the galaxy cluster (baryonic and dark) matter distribution using
+a sample of 528 clusters at $0.2\leq z \leq 0.35$ found in the Dark Energy
+Survey (DES) Year 1 data. The surface brightness of the diffuse light shows an
+increasing dependence on cluster total mass at larger radius, and appears to be
+self-similar with a universal radial dependence after scaling by cluster
+radius. We also compare the diffuse light radial profiles to the cluster
+(baryonic and dark) matter distribution measured through weak lensing and find
+them to be comparable. The IllustrisTNG galaxy formation simulation, TNG300,
+offers further insight into the connection between diffuse stellar mass and
+cluster matter distributions -- the simulation radial profile of the diffuse
+stellar component does not have a similar slope with the total cluster matter
+content, although that of the cluster satellite galaxies does. Regardless of
+the radial trends, the amount of diffuse stellar mass has a low-scatter scaling
+relation with cluster's total mass in the simulation, out-performing the total
+stellar mass of cluster satellite galaxies. We conclude that there is no
+consistent evidence yet on whether or not diffuse light is a faithful radial
+tracer of the cluster matter distribution. Nevertheless, both observational and
+simulation results reveal that diffuse light is an excellent indicator of the
+cluster's total mass.

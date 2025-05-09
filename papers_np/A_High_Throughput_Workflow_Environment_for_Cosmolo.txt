@@ -1,0 +1,25 @@
+Title: A High Throughput Workflow Environment for Cosmological Simulations
+Authors: Brandon M. S. Erickson, Raminderjeet Singh, August E. Evrard, Matthew R. Becker, Michael T. Busha, Andrey V. Kravtsov, Suresh Marru, Marlon Pierce, Risa H. Wechsler
+Published: 2012-10-11 18:43:44+00:00
+Updated: 2012-11-13 20:37:32+00:00
+DOI: 10.1145/2335755.2335830
+arXiv ID: http://arxiv.org/abs/1210.3317v2
+arXiv URL: http://arxiv.org/pdf/1210.3317v2
+Categories: astro-ph.CO, D.2; D.2.11
+Author Position: 9
+
+Abstract:
+The next generation of wide-area sky surveys offer the power to place
+extremely precise constraints on cosmological parameters and to test the source
+of cosmic acceleration. These observational programs will employ multiple
+techniques based on a variety of statistical signatures of galaxies and
+large-scale structure. These techniques have sources of systematic error that
+need to be understood at the percent-level in order to fully leverage the power
+of next-generation catalogs. Simulations of large-scale structure provide the
+means to characterize these uncertainties. We are using XSEDE resources to
+produce multiple synthetic sky surveys of galaxies and large-scale structure in
+support of science analysis for the Dark Energy Survey. In order to scale up
+our production to the level of fifty 10^10-particle simulations, we are working
+to embed production control within the Apache Airavata workflow environment. We
+explain our methods and report how the workflow has reduced production time by
+40% compared to manual management.

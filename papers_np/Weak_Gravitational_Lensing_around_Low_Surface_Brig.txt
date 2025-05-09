@@ -1,0 +1,35 @@
+Title: Weak Gravitational Lensing around Low Surface Brightness Galaxies in the DES Year 3 Data
+Authors: N. Chicoine, J. Prat, G. Zacharegkas, C. Chang, D. Tanoglidis, A. Drlica-Wagner, D. Anbajagane, S. Adhikari, A. Amon, R. H. Wechsler, A. Alarcon, K. Bechtol, M. R. Becker, G. M. Bernstein, A. Campos, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, R. Chen, A. Choi, J. Cordero, C. Davis, J. DeRose, S. Dodelson, C. Doux, K. Eckert, J. Elvin-Poole, S. Everett, A. Ferté, M. Gatti, G. Giannini, D. Gruen, R. A. Gruendl, I. Harrison, K. Herner, M. Jarvis, P. -F. Leget, N. MacCrann, J. McCullough, J. Myles, A. Navarro-Alsina, S. Pandey, M. Raveri, R. P. Rollins, A. Roodman, A. J. Ross, E. S. Rykoff, C. Sánchez, L. F. Secco, I. Sevilla-Noarbe, E. Sheldon, T. Shin, M. A. Troxel, I. Tutusaus, T. N. Varga, B. Yanny, B. Yin, J. Zuntz, M. Aguena, O. Alves, D. Bacon, D. Brooks, J. Carretero, F. J. Castander, C. Conselice, S. Desai, J. De Vicente, P. Doel, I. Ferrero, B. Flaugher, J. Frieman, J. García-Bellido, E. Gaztanaga, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, S. Lee, C. Lidman, M. Lima, J. L. Marshall, J. Mena-Fernández, R. Miquel, J. Muir, R. L. C. Ogando, A. Palmese, M. E. S. Pereira, A. Pieres, A. A. Plazas Malagón, A. Porredon, A. R. Walker, S. Samuroff, E. Sanchez, D. Sanchez Cid, M. Smith, E. Suchyta, M. E. C. Swanson, G. Tarle, C. To, D. L. Tucker, V. Vikram, N. Weaverdyck, P. Wiseman
+Published: 2024-07-26 21:00:24+00:00
+Updated: 2024-10-14 17:46:40+00:00
+DOI: 10.33232/001c.124536
+arXiv ID: http://arxiv.org/abs/2407.19081v2
+arXiv URL: http://arxiv.org/pdf/2407.19081v2
+Categories: astro-ph.GA
+Author Position: 10
+
+Abstract:
+We present galaxy-galaxy lensing measurements using a sample of low surface
+brightness galaxies (LSBGs) drawn from the Dark Energy Survey Year 3 (Y3) data
+as lenses. LSBGs are diffuse galaxies with a surface brightness dimmer than the
+ambient night sky. These dark-matter-dominated objects are intriguing due to
+potentially unusual formation channels that lead to their diffuse stellar
+component. Given the faintness of LSBGs, using standard observational
+techniques to characterize their total masses proves challenging. Weak
+gravitational lensing, which is less sensitive to the stellar component of
+galaxies, could be a promising avenue to estimate the masses of LSBGs. Our LSBG
+sample consists of 23,790 galaxies separated into red and blue color types at
+$g-i\ge 0.60$ and $g-i< 0.60$, respectively. Combined with the DES Y3 shear
+catalog, we measure the tangential shear around these LSBGs and find
+signal-to-noise ratios of 6.67 for the red sample, 2.17 for the blue sample,
+and 5.30 for the full sample. We use the clustering redshifts method to obtain
+redshift distributions for the red and blue LSBG samples. Assuming all red
+LSBGs are satellites, we fit a simple model to the measurements and estimate
+the host halo mass of these LSBGs to be $\log(M_{\rm host}/M_{\odot}) = 12.98
+^{+0.10}_{-0.11}$. We place a 95% upper bound on the subhalo mass at
+$\log(M_{\rm sub}/M_{\odot})<11.51$. By contrast, we assume the blue LSBGs are
+centrals, and place a 95% upper bound on the halo mass at
+$\log(M_\mathrm{host}/M_\odot) < 11.84$. We find that the stellar-to-halo mass
+ratio of the LSBG samples is consistent with that of the general galaxy
+population. This work illustrates the viability of using weak gravitational
+lensing to constrain the halo masses of LSBGs.

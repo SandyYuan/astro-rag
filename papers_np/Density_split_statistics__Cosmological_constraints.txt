@@ -1,0 +1,36 @@
+Title: Density split statistics: Cosmological constraints from counts and lensing in cells in DES Y1 and SDSS data
+Authors: D. Gruen, O. Friedrich, E. Krause, J. DeRose, R. Cawthon, C. Davis, J. Elvin-Poole, E. S. Rykoff, R. H. Wechsler, A. Alarcon, G. M. Bernstein, J. Blazek, C. Chang, J. Clampitt, M. Crocce, J. De Vicente, M. Gatti, M. S. S. Gill, W. G. Hartley, S. Hilbert, B. Hoyle, B. Jain, M. Jarvis, O. Lahav, N. MacCrann, T. McClintock, J. Prat, R. P. Rollins, A. J. Ross, E. Rozo, S. Samuroff, C. Sánchez, E. Sheldon, M. A. Troxel, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, K. Bechtol, A. Benoit-Lévy, E. Bertin, S. L. Bridle, D. Brooks, E. Buckley-Geer, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. Drlica-Wagner, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, T. Giannantonio, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, T. Jeltema, K. Kuehn, N. Kuropatkin, M. Lima, M. March, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, A. A. Plazas, A. Roodman, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, M. E. C. Swanson, G. Tarle, D. Thomas, V. Vikram, A. R. Walker, J. Weller, Y. Zhang
+Published: 2017-10-13 18:14:49+00:00
+Updated: 2018-07-24 18:00:04+00:00
+DOI: 10.1103/PhysRevD.98.023507
+arXiv ID: http://arxiv.org/abs/1710.05045v2
+arXiv URL: http://arxiv.org/pdf/1710.05045v2
+Categories: astro-ph.CO
+Author Position: 9
+
+Abstract:
+We derive cosmological constraints from the probability distribution function
+(PDF) of evolved large-scale matter density fluctuations. We do this by
+splitting lines of sight by density based on their count of tracer galaxies,
+and by measuring both gravitational shear around and counts-in-cells in
+overdense and underdense lines of sight, in Dark Energy Survey (DES) First Year
+and Sloan Digital Sky Survey (SDSS) data. Our analysis uses a perturbation
+theory model (see companion paper Friedrich at al.) and is validated using
+N-body simulation realizations and log-normal mocks. It allows us to constrain
+cosmology, bias and stochasticity of galaxies w.r.t. matter density and, in
+addition, the skewness of the matter density field.
+  From a Bayesian model comparison, we find that the data weakly prefer a
+connection of galaxies and matter that is stochastic beyond Poisson
+fluctuations on <=20 arcmin angular smoothing scale. The two stochasticity
+models we fit yield DES constraints on the matter density
+$\Omega_m=0.26^{+0.04}_{-0.03}$ and $\Omega_m=0.28^{+0.05}_{-0.04}$ that are
+consistent with each other. These values also agree with the DES analysis of
+galaxy and shear two-point functions (3x2pt) that only uses second moments of
+the PDF. Constraints on $\sigma_8$ are model dependent
+($\sigma_8=0.97^{+0.07}_{-0.06}$ and $0.80^{+0.06}_{-0.07}$ for the two
+stochasticity models), but consistent with each other and with the 3x2pt
+results if stochasticity is at the low end of the posterior range.
+  As an additional test of gravity, counts and lensing in cells allow to
+compare the skewness $S_3$ of the matter density PDF to its LCDM prediction. We
+find no evidence of excess skewness in any model or data set, with better than
+25 per cent relative precision in the skewness estimate from DES alone.

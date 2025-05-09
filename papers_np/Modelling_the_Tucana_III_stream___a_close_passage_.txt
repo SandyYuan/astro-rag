@@ -1,0 +1,25 @@
+Title: Modelling the Tucana III stream - a close passage with the LMC
+Authors: D. Erkal, T. S. Li, S. E. Koposov, V. Belokurov, E. Balbinot, K. Bechtol, B. Buncher, A. Drlica-Wagner, K. Kuehn, J. L. Marshall, C. E. Martinez-Vazquez, A. B. Pace, N. Shipp, J. D. Simon, K. M. Stringer, A. K. Vivas, R. H. Wechsler, B. Yanny, F. B. Abdalla, S. Allam, J. Annis, S. Avila, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. B. D'Andrea, L. N. da Costa, C. Davis, J. De Vicente, P. Doel, T. F. Eifler, A. E. Evrard, B. Flaugher, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, D. L. Hollowood, K. Honscheid, D. J. James, E. Krause, M. A. G. Maia, M. March, F. Menanteau, R. Miquel, R. L. C. Ogando, A. A. Plazas, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. L. Tucker, A. R. Walker
+Published: 2018-04-20 18:00:00+00:00
+Updated: 2018-04-20 18:00:00+00:00
+DOI: 10.1093/mnras/sty2518
+arXiv ID: http://arxiv.org/abs/1804.07762v1
+arXiv URL: http://arxiv.org/pdf/1804.07762v1
+Categories: astro-ph.GA
+Author Position: 17
+
+Abstract:
+We present results of the first dynamical stream fits to the recently
+discovered Tucana III stream. These fits assume a fixed Milky Way potential and
+give proper motion predictions, which can be tested with the upcoming Gaia Data
+Release 2. These fits reveal that Tucana III is on an eccentric orbit around
+the Milky Way and, more interestingly, that Tucana III passed within 15 kpc of
+the Large Magellanic Cloud (LMC) approximately 75 Myr ago. Given this close
+passage, we fit the Tucana III stream in the combined presence of the Milky Way
+and the LMC. We find that the predicted proper motions depend on the assumed
+mass of the LMC and that the LMC can induce a substantial proper motion
+perpendicular to the stream track. A detection of this misalignment will
+directly probe the extent of the LMC's influence on our Galaxy, and has
+implications for nearly all methods which attempt to constraint the Milky Way
+potential. Such a measurement will be possible with the upcoming Gaia DR2,
+allowing for a measurement of the LMC's mass.

@@ -1,0 +1,30 @@
+Title: Approximating photo-$z$ PDFs for large surveys
+Authors: A. I. Malz, P. J. Marshall, S. J. Schmidt, M. L. Graham, J. DeRose, R. Wechsler
+Published: 2018-05-31 18:00:03+00:00
+Updated: 2021-07-31 17:18:32+00:00
+DOI: 10.3847/1538-3881/aac6b5
+arXiv ID: http://arxiv.org/abs/1806.00014v2
+arXiv URL: http://arxiv.org/pdf/1806.00014v2
+Categories: astro-ph.IM
+Author Position: 6
+
+Abstract:
+Modern galaxy surveys produce redshift probability density functions (PDFs)
+in addition to traditional photometric redshift (photo-$z$) point estimates.
+However, the storage of photo-$z$ PDFs may present a challenge with
+increasingly large catalogs, as we face a trade-off between the accuracy of
+subsequent science measurements and the limitation of finite storage resources.
+This paper presents $\texttt{qp}$, a Python package for manipulating
+parametrizations of 1-dimensional PDFs, as suitable for photo-$z$ PDF
+compression. We use $\texttt{qp}$ to investigate the performance of three
+simple PDF storage formats (quantiles, samples, and step functions) as a
+function of the number of stored parameters on two realistic mock datasets,
+representative of upcoming surveys with different data qualities. We propose
+some best practices for choosing a photo-$z$ PDF approximation scheme and
+demonstrate the approach on a science case using performance metrics on both
+ensembles of individual photo-$z$ PDFs and an estimator of the overall redshift
+distribution function. We show that both the properties of the set of PDFs we
+wish to approximate and the chosen fidelity metric(s) affect the optimal
+parametrization. Additionally, we find that quantiles and samples outperform
+step functions, and we encourage further consideration of these formats for PDF
+approximation.

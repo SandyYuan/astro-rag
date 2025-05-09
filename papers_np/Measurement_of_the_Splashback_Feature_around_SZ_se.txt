@@ -1,0 +1,37 @@
+Title: Measurement of the Splashback Feature around SZ-selected Galaxy Clusters with DES, SPT and ACT
+Authors: T. Shin, S. Adhikari, E. J. Baxter, C. Chang, B. Jain, N. Battaglia, L. Bleem, S. Bocquet, J. DeRose, D. Gruen, M. Hilton, A. Kravtsov, T. McClintock, E. Rozo, E. S. Rykoff, T. N. Varga, R. H. Wechsler, H. Wu, S. Aiola, S. Allam, K. Bechtol, B. A. Benson, E. Bertin, J. R. Bond, M. Brodwin, D. Brooks, E. Buckley-Geer, D. L. Burke, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, S. K. Choi, C. E. Cunha, T. M. Crawford, L. N. da Costa, J. De Vicente, S. Desai, M. J. Devlin, J. P. Dietrich, P. Doel, J. Dunkley, T. F. Eifler, A. E. Evrard, B. Flaugher, P. Fosalba, P. A. Gallardo, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, M. Gralla, R. A. Gruendl, J. Gschwend, N. Gupta, G. Gutierrez, W. G. Hartley, J. C. Hill, S. P. Ho, D. L. Hollowood, K. Honscheid, B. Hoyle, K. Huffenberger, J. P. Hughes, D. J. James, T. Jeltema, A. G. Kim, E. Krause, K. Kuehn, O. Lahav, M. Lima, M. S. Madhavacheril, M. A. G. Maia, J. L. Marshall, L. Maurin, J. McMahon, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, S. Naess, F. Nati, L. Newburgh, M. D. Niemack, R. L. C. Ogando, L. A. Page B. Partridge, S. Patil, A. A. Plazas, D. Rapetti, C. L. Reichardt, A. K. Romer, E. Sanchez, V. Scarpine, R. Schindler, S. Serrano, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, S. T. Staggs, A. Stark, G. Stein, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, A. van Engelen, E. J. Wollack, Z. Xu, Z. Zhang
+Published: 2018-11-14 21:44:36+00:00
+Updated: 2019-05-24 17:16:01+00:00
+DOI: 10.1093/mnras/stz1434
+arXiv ID: http://arxiv.org/abs/1811.06081v2
+arXiv URL: http://arxiv.org/pdf/1811.06081v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 17
+
+Abstract:
+We present a detection of the splashback feature around galaxy clusters
+selected using their Sunyaev-Zel'dovich (SZ) signal. Recent measurements of the
+splashback feature around optically selected galaxy clusters have found that
+the splashback radius, $r_{\rm sp}$, is smaller than predicted by N-body
+simulations. A possible explanation for this discrepancy is that $r_{\rm sp}$
+inferred from the observed radial distribution of galaxies is affected by
+selection effects related to the optical cluster-finding algorithms. We test
+this possibility by measuring the splashback feature in clusters selected via
+the SZ effect in data from the South Pole Telescope SZ survey and the Atacama
+Cosmology Telescope Polarimeter survey. The measurement is accomplished by
+correlating these clusters with galaxies detected in the Dark Energy Survey
+Year 3 data. The SZ observable used to select clusters in this analysis is
+expected to have a tighter correlation with halo mass and to be more immune to
+projection effects and aperture-induced biases than optically selected
+clusters. We find that the measured $r_{\rm sp}$ for SZ-selected clusters is
+consistent with the expectations from simulations, although the small number of
+SZ-selected clusters makes a precise comparison difficult. In agreement with
+previous work, when using optically selected redMaPPer clusters, $r_{\rm sp}$
+is $\sim$ $2\sigma$ smaller than in the simulations. These results motivate
+detailed investigations of selection biases in optically selected cluster
+catalogs and exploration of the splashback feature around larger samples of
+SZ-selected clusters. Additionally, we investigate trends in the galaxy profile
+and splashback feature as a function of galaxy color, finding that blue
+galaxies have profiles close to a power law with no discernible splashback
+feature, which is consistent with them being on their first infall into the
+cluster.

@@ -1,0 +1,29 @@
+Title: Cosmic Shear Measurements with DES Science Verification Data
+Authors: M. R. Becker, M. A. Troxel, N. MacCrann, E. Krause, T. F. Eifler, O. Friedrich, A. Nicola, A. Refregier, A. Amara, D. Bacon, G. M. Bernstein, C. Bonnett, S. L. Bridle, M. T. Busha, C. Chang, S. Dodelson, B. Erickson, A. E. Evrard, J. Frieman, E. Gaztanaga, D. Gruen, W. Hartley, B. Jain, M. Jarvis, T. Kacprzak, D. Kirk, A. Kravtsov, B. Leistedt, E. S. Rykoff, C. Sabiu, C. Sanchez, H. Seo, E. Sheldon, R. H. Wechsler, J. Zuntz, T. Abbott, F. B. Abdalla, S. Allam, R. Armstrong, M. Banerji, A. H. Bauer, A. Benoit-Levy, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, P. Fosalba, D. W. Gerdes, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, M. March, P. Martini, P. Melchior, C. J. Miller, R. Miquel, J. J. Mohr, R. C. Nichol, B. Nord, R. Ogando, A. A. Plazas, K. Reil, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, V. Vikram, A. R. Walker, The DES Collaboration
+Published: 2015-07-20 19:23:44+00:00
+Updated: 2016-07-27 10:02:22+00:00
+DOI: 10.1103/PhysRevD.94.022002
+arXiv ID: http://arxiv.org/abs/1507.05598v2
+arXiv URL: http://arxiv.org/pdf/1507.05598v2
+Categories: astro-ph.CO
+Author Position: 34
+
+Abstract:
+We present measurements of weak gravitational lensing cosmic shear two-point
+statistics using Dark Energy Survey Science Verification data. We demonstrate
+that our results are robust to the choice of shear measurement pipeline, either
+ngmix or im3shape, and robust to the choice of two-point statistic, including
+both real and Fourier-space statistics. Our results pass a suite of null tests
+including tests for B-mode contamination and direct tests for any dependence of
+the two-point functions on a set of 16 observing conditions and galaxy
+properties, such as seeing, airmass, galaxy color, galaxy magnitude, etc. We
+furthermore use a large suite of simulations to compute the covariance matrix
+of the cosmic shear measurements and assign statistical significance to our
+null tests. We find that our covariance matrix is consistent with the halo
+model prediction, indicating that it has the appropriate level of halo sample
+variance. We compare the same jackknife procedure applied to the data and the
+simulations in order to search for additional sources of noise not captured by
+the simulations. We find no statistically significant extra sources of noise in
+the data. The overall detection significance with tomography for our highest
+source density catalog is 9.7sigma. Cosmological constraints from the
+measurements in this work are presented in a companion paper (DES et al. 2015).

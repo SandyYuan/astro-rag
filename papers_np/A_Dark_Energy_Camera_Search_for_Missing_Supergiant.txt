@@ -1,0 +1,31 @@
+Title: A Dark Energy Camera Search for Missing Supergiants in the LMC After the Advanced LIGO Gravitational Wave Event GW150914
+Authors: J. Annis, M. Soares-Santos, E. Berger, D. Brout, H. Chen, R. Chornock, P. S. Cowperthwaite, H. T. Diehl, Z. Doctor, A. Drlica-Wagner, M. R. Drout, B. Farr, D. A. Finley, B. Flaugher, R. J. Foley, J. Frieman, R. A. Gruendl, K. Herner, D. Holz, R. Kessler, H. Lin, J. Marriner, E. Neilsen, A. Rest, M. Sako, M. Smith, N. Smith, F. Sobreira, A. R. Walker, B. Yanny, T. M. C. Abbott, F. B. Abdalla, S. Allam, A. Benoit-Levy, R. A. Bernstein, E. Bertin, E. Bertin, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, S. B. Cenko, M. Crocce, C. E. Cunha, C. B. D'Andrea, C. B. D'Andrea, L. N. da Costa, L. N. da Costa, S. Desai, J. P. Dietrich, T. F. Eifler, A. E. Evrard, E. Fernandez, J. Fischer, W. Fong, P. Fosalba, D. B. Fox, C. L. Fryer, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, D. A. Goldstein, D. Gruen, G. Gutierrez, K. Honscheid, D. J. James, I. Karliner, D. Kasen, S. Kent, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, P. Martini, B. D. Metzger, C. J. Miller, R. Miquel, J. J. Mohr, R. C. Nichol, B. Nord, R. Ogando, R. Ogando, J. Peoples, A. A. Plazas, E. Quataert, A. K. Romer, A. Roodman, E. S. Rykoff, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, E. Sheldon, R. C. Smith, A. Stebbins, M. E. C. Swanson, G. Tarle, J. Thaler, R. C. Thomas, D. L. Tucker, V. Vikram, R. H. Wechsler, J. Weller, W. Wester
+Published: 2016-02-12 20:38:09+00:00
+Updated: 2016-02-18 09:40:08+00:00
+DOI: 10.3847/2041-8205/823/2/L34
+arXiv ID: http://arxiv.org/abs/1602.04199v2
+arXiv URL: http://arxiv.org/pdf/1602.04199v2
+Categories: astro-ph.HE, astro-ph.CO
+Author Position: 109
+
+Abstract:
+The collapse of the core of a star is expected to produce gravitational
+radiation. While this process will usually produce a luminous supernova, the
+optical signatue could be subluminous and a direct collapse to a black hole,
+with the star just disappearing, is possible. The gravitational wave event
+GW150914 reported by the LIGO Virgo Collaboration (LVC) on 2015 September 16,
+was detected by a burst analysis and whose high probability spatial
+localization included the Large Magellanic Cloud. Shortly after the
+announcement of the event, we used the Dark Energy Camera to observe 102
+deg$^2$ of the localization area, including a 38 deg$^2$ area centered on the
+LMC. Using a catalog of 152 LMC luminous red supergiants, candidates to undergo
+a core collapse without a visible supernova, we find that the positions of 144
+of these are inside our images, and that all are detected - none have
+disappeared. There are other classes of candidates: we searched existing
+catalogs of red supergiants, yellow supergiants, Wolf-Rayet stars, and luminous
+blue variable stars, recovering all that were inside the imaging area. Based on
+our observations, we conclude that it is unlikely that GW150914 was caused by
+the core collapse of a supergiant in the LMC, consistent with the LIGO
+Collaboration analyses of the gravitational wave form as best described by a
+binary black hole merger. We discuss how to generalize this search for future
+very nearby core collapse candidates.

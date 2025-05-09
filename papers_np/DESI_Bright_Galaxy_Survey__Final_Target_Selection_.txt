@@ -1,0 +1,36 @@
+Title: DESI Bright Galaxy Survey: Final Target Selection, Design, and Validation
+Authors: ChangHoon Hahn, Michael J. Wilson, Omar Ruiz-Macias, Shaun Cole, David H. Weinberg, John Moustakas, Anthony Kremin, Jeremy L. Tinker, Alex Smith, Risa H. Wechsler, Steven Ahlen, Shadab Alam, Stephen Bailey, David Brooks, Andrew P. Cooper, Tamara M. Davis, Kyle Dawson, Arjun Dey, Biprateep Dey, Sarah Eftekharzadeh, Daniel J. Eisenstein, Kevin Fanning, Jaime E. Forero-Romero, Carlos S. Frenk, Enrique Gaztañaga, Satya Gontcho A Gontcho, Julien Guy, Klaus Honscheid, Mustapha Ishak, Stéphanie Juneau, Robert Kehoe, Theodore Kisner, Ting-Wen Lan, Martin Landriau, Laurent Le Guillou, Michael E. Levi, Christophe Magneville, Paul Martini, Aaron Meisner, Adam D. Myers, Jundan Nie, Peder Norberg, Nathalie Palanque-Delabrouille, Will J. Percival, Claire Poppett, Francisco Prada, Anand Raichoor, Ashley J. Ross, Sasha Safonova, Christoph Saulder, Eddie Schlafly, David Schlegel, David Sierra-Porta, Gregory Tarle, Benjamin A. Weaver, Christophe Yèche, Pauline Zarrouk, Rongpu Zhou, Zhimin Zhou, Hu Zou
+Published: 2022-08-17 20:11:45+00:00
+Updated: 2022-08-17 20:11:45+00:00
+DOI: 10.3847/1538-3881/accff8
+arXiv ID: http://arxiv.org/abs/2208.08512v1
+arXiv URL: http://arxiv.org/pdf/2208.08512v1
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 10
+
+Abstract:
+Over the next five years, the Dark Energy Spectroscopic Instrument (DESI)
+will use 10 spectrographs with 5000 fibers on the 4m Mayall Telescope at Kitt
+Peak National Observatory to conduct the first Stage-IV dark energy galaxy
+survey. At $z < 0.6$, the DESI Bright Galaxy Survey (BGS) will produce the most
+detailed map of the Universe during the dark energy dominated epoch with
+redshifts of >10 million galaxies over 14,000 deg$^2$. In this work, we present
+and validate the final BGS target selection and survey design. From the Legacy
+Surveys, BGS will target a $r < 19.5$ magnitude-limited sample (BGS Bright); a
+fainter $19.5 < r < 20.175$ sample, color-selected to have high redshift
+efficiency (BGS Faint); and a smaller low-z quasar sample. BGS will observe
+these targets using exposure times, scaled to achieve uniform completeness, and
+visit each point on the footprint three times. We use observations from the
+Survey Validation programs conducted prior to the main survey along with
+realistic simulations to show that BGS can complete its strategy and make
+optimal use of `bright' time. We demonstrate that BGS targets have stellar
+contamination <1% and that their densities do not depend strongly on imaging
+properties. We also confirm that BGS Bright will achieve >80% fiber assignment
+efficiency. Finally, we show that BGS Bright and Faint will achieve >95%
+redshift success rates with no significant dependence on observing conditions.
+BGS meets the requirements for an extensive range of scientific applications.
+BGS will yield the most precise Baryon Acoustic Oscillations and Redshift-Space
+Distortions measurements at $z < 0.4$. It also presents opportunities to
+exploit new methods that require highly complete and dense galaxy samples (e.g.
+N-point statistics, multi-tracers). BGS further provides a powerful tool to
+study galaxy populations and the relations between galaxies and dark matter.

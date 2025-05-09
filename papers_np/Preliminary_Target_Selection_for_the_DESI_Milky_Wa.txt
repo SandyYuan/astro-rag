@@ -1,0 +1,21 @@
+Title: Preliminary Target Selection for the DESI Milky Way Survey (MWS)
+Authors: Carlos Allende Prieto, Andrew P. Cooper, Arjun Dey, Boris T. Gänsicke, Sergey E. Koposov, Ting Li, Christopher Manser, David L. Nidever, Constance Rockosi, Mei-Yu Wang, David S. Aguado, Robert Blum, David Brooks, Daniel J. Eisenstein, Yutong Duan, Sarah Eftekharzadeh, Enrique Gaztañaga, Robert Kehoe, Martin Landriau, Chien-Hsiu Lee, Michael E. Levi, Aaron M. Meisner, Adam D. Myers, Joan Najita, Knut Olsen, Nathalie Palanque-Delabrouille, Claire Poppett, Francisco Prada, David J. Schlegel, Michael Schubnell, Gregory Tarlé, Monica Valluri, Risa H. Wechsler, Christophe Yèche
+Published: 2020-10-21 19:49:26+00:00
+Updated: 2020-10-21 19:49:26+00:00
+DOI: 10.3847/2515-5172/abc1dc
+arXiv ID: http://arxiv.org/abs/2010.11284v1
+arXiv URL: http://arxiv.org/pdf/2010.11284v1
+Categories: astro-ph.GA, astro-ph.SR
+Author Position: 33
+
+Abstract:
+The DESI Milky Way Survey (MWS) will observe $\ge$8 million stars between $16
+< r < 19$ mag, supplemented by observations of brighter targets under poor
+observing conditions. The survey will permit an accurate determination of
+stellar kinematics and population gradients; characterize diffuse substructure
+in the thick disk and stellar halo; enable the discovery of extremely
+metal-poor stars and other rare stellar types; and improve constraints on the
+Galaxy's 3D dark matter distribution from halo star kinematics. MWS will also
+enable a detailed characterization of the stellar populations within 100 pc of
+the Sun, including a complete census of white dwarfs. The target catalog from
+the preliminary selection described here is public.

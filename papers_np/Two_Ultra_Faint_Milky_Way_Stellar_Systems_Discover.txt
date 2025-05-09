@@ -1,0 +1,36 @@
+Title: Two Ultra-Faint Milky Way Stellar Systems Discovered in Early Data from the DECam Local Volume Exploration Survey
+Authors: S. Mau, W. Cerny, A. B. Pace, Y. Choi, A. Drlica-Wagner, L. Santana-Silva, A. H. Riley, D. Erkal, G. S. Stringfellow, M. Adamów, J. L. Carlin, R. A. Gruendl, D. Hernandez-Lang, N. Kuropatkin, T. S. Li, C. E. Martínez-Vázquez, E. Morganson, B. Mutlu-Pakdil, E. H. Neilsen, D. L. Nidever, K. A. G. Olsen, D. J. Sand, E. J. Tollerud, D. L. Tucker, B. Yanny, A. Zenteno, S. Allam, W. A. Barkhouse, K. Bechtol, E. F. Bell, P. Balaji, D. Crnojević, J. Esteves, P. S. Ferguson, C. Gallart, A. K. Hughes, D. J. James, P. Jethwa, L. C. Johnson, K. Kuehn, S. Majewski, Y. -Y. Mao, P. Massana, M. McNanna, A. Monachesi, E. O. Nadler, N. E. D. Noël, A. Palmese, F. Paz-Chinchon, A. Pieres, J. Sanchez, N. Shipp, J. D. Simon, M. Soares-Santos, K. Tavangar, R. P. van der Marel, A. K. Vivas, A. R. Walker, R. H. Wechsler
+Published: 2019-12-06 19:01:05+00:00
+Updated: 2021-07-16 03:35:49+00:00
+DOI: 10.3847/1538-4357/ab6c67
+arXiv ID: http://arxiv.org/abs/1912.03301v3
+arXiv URL: http://arxiv.org/pdf/1912.03301v3
+Categories: astro-ph.GA
+Author Position: 59
+
+Abstract:
+We report the discovery of two ultra-faint stellar systems found in early
+data from the DECam Local Volume Exploration survey (DELVE). The first system,
+Centaurus I (DELVE J1238-4054), is identified as a resolved overdensity of old
+and metal-poor stars with a heliocentric distance of ${\rm D}_{\odot} =
+116.3_{-0.6}^{+0.6}$ kpc, a half-light radius of $r_h = 2.3_{-0.3}^{+0.4}$
+arcmin, an age of $\tau > 12.85$ Gyr, a metallicity of $Z =
+0.0002_{-0.0002}^{+0.0001}$, and an absolute magnitude of $M_V =
+-5.55_{-0.11}^{+0.11}$ mag. This characterization is consistent with the
+population of ultra-faint satellites, and confirmation of this system would
+make Centaurus I one of the brightest recently discovered ultra-faint dwarf
+galaxies. Centaurus I is detected in Gaia DR2 with a clear and distinct proper
+motion signal, confirming that it is a real association of stars distinct from
+the Milky Way foreground; this is further supported by the clustering of blue
+horizontal branch stars near the centroid of the system. The second system,
+DELVE 1 (DELVE J1630-0058), is identified as a resolved overdensity of stars
+with a heliocentric distance of ${\rm D}_{\odot} = 19.0_{-0.6}^{+0.5} kpc$, a
+half-light radius of $r_h = 0.97_{-0.17}^{+0.24}$ arcmin, an age of $\tau =
+12.5_{-0.7}^{+1.0}$ Gyr, a metallicity of $Z = 0.0005_{-0.0001}^{+0.0002}$, and
+an absolute magnitude of $M_V = -0.2_{-0.6}^{+0.8}$ mag, consistent with the
+known population of faint halo star clusters. Given the low number of probable
+member stars at magnitudes accessible with Gaia DR2, a proper motion signal for
+DELVE 1 is only marginally detected. We compare the spatial position and proper
+motion of both Centaurus I and DELVE 1 with simulations of the accreted
+satellite population of the Large Magellanic Cloud (LMC) and find that neither
+is likely to be associated with the LMC.

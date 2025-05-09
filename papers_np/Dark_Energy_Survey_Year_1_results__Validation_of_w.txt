@@ -1,0 +1,31 @@
+Title: Dark Energy Survey Year 1 results: Validation of weak lensing cluster member contamination estimates from P(z) decomposition
+Authors: T. N. Varga, J. DeRose, D. Gruen, T. McClintock, S. Seitz, E. Rozo, M. Costanzi, B. Hoyle, N. MacCrann, A. A. Plazas, E. S. Rykoff, M. Simet, A. von der Linden, R. H. Wechsler, J. Annis, S. Avila, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, J. De Vicente, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, D. L. Hollowood, K. Honscheid, D. J. James, T. Jeltema, K. Kuehn, N. Kuropatkin, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, R. L. C. Ogando, A. K. Romer, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, Y. Zhang
+Published: 2018-12-12 19:00:07+00:00
+Updated: 2018-12-12 19:00:07+00:00
+DOI: 10.1093/mnras/stz2185
+arXiv ID: http://arxiv.org/abs/1812.05116v1
+arXiv URL: http://arxiv.org/pdf/1812.05116v1
+Categories: astro-ph.CO
+Author Position: 14
+
+Abstract:
+Weak lensing source galaxy catalogs used in estimating the masses of galaxy
+clusters can be heavily contaminated by cluster members, prohibiting accurate
+mass calibration. In this study we test the performance of an estimator for the
+extent of cluster member contamination based on decomposing the photometric
+redshift $P(z)$ of source galaxies into contaminating and background
+components. We perform a full scale mock analysis on a simulated sky survey
+approximately mirroring the observational properties of the Dark Energy Survey
+Year One observations (DES Y1), and find excellent agreement between the true
+number profile of contaminating cluster member galaxies in the simulation and
+the estimated one. We further apply the method to estimate the cluster member
+contamination for the DES Y1 redMaPPer cluster mass calibration analysis, and
+compare the results to an alternative approach based on the angular correlation
+of weak lensing source galaxies. We find indications that the correlation based
+estimates are biased by the selection of the weak lensing sources in the
+cluster vicinity, which does not strongly impact the $P(z)$ decomposition
+method. Collectively, these benchmarks demonstrate the strength of the $P(z)$
+decomposition method in alleviating membership contamination and enabling
+highly accurate cluster weak lensing studies without broad exclusion of source
+galaxies, thereby improving the total constraining power of cluster mass
+calibration via weak lensing.

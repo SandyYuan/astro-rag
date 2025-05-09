@@ -1,0 +1,33 @@
+Title: Constraints on $S_8$ from a full-scale and full-shape analysis of redshift-space clustering and galaxy-galaxy lensing in BOSS
+Authors: Johannes U. Lange, Andrew P. Hearin, Alexie Leauthaud, Frank C. van den Bosch, Enia Xhakaj, Hong Guo, Risa H. Wechsler, Joseph DeRose
+Published: 2023-01-20 17:22:41+00:00
+Updated: 2023-01-20 17:22:41+00:00
+DOI: 10.1093/mnras/stad473
+arXiv ID: http://arxiv.org/abs/2301.08692v1
+arXiv URL: http://arxiv.org/pdf/2301.08692v1
+Categories: astro-ph.CO
+Author Position: 7
+
+Abstract:
+We present a novel simulation-based cosmological analysis of galaxy-galaxy
+lensing and galaxy redshift-space clustering. Compared to analysis methods
+based on perturbation theory, our simulation-based approach allows us to probe
+a much wider range of scales, $0.4 \, h^{-1} \, \mathrm{Mpc}$ to $63 \, h^{-1}
+\, \mathrm{Mpc}$, including highly non-linear scales, and marginalises over
+astrophysical effects such as assembly bias. We apply this framework to data
+from the Baryon Oscillation Spectroscopic Survey LOWZ sample cross-correlated
+with state-of-the-art gravitational lensing catalogues from the Kilo Degree
+Survey and the Dark Energy Survey. We show that gravitational lensing and
+redshift-space clustering when analysed over a large range of scales place
+tight constraints on the growth-of-structure parameter $S_8 = \sigma_8
+\sqrt{\Omega_{\rm m} / 0.3}$. Overall, we infer $S_8 = 0.792 \pm 0.022$ when
+analysing the combination of galaxy-galaxy lensing and projected galaxy
+clustering and $S_8 = 0.771 \pm 0.027$ for galaxy redshift-space clustering.
+These findings highlight the potential constraining power of full-scale studies
+over studies analysing only large scales, and also showcase the benefits of
+analysing multiple large-scale structure surveys jointly. Our inferred values
+for $S_8$ fall below the value inferred from the CMB, $S_8 = 0.834 \pm 0.016$.
+While this difference is not statistically significant by itself, our results
+mirror other findings in the literature whereby low-redshift large scale
+structure probes infer lower values for $S_8$ than the CMB, the so-called
+$S_8$-tension.

@@ -1,0 +1,37 @@
+Title: Symphony: Cosmological Zoom-in Simulation Suites over Four Decades of Host Halo Mass
+Authors: Ethan O. Nadler, Philip Mansfield, Yunchong Wang, Xiaolong Du, Susmita Adhikari, Arka Banerjee, Andrew Benson, Elise Darragh-Ford, Yao-Yuan Mao, Sebastian Wagner-Carena, Risa H. Wechsler, Hao-Yi Wu
+Published: 2022-09-06 17:38:20+00:00
+Updated: 2023-03-16 18:21:29+00:00
+DOI: 10.3847/1538-4357/acb68c
+arXiv ID: http://arxiv.org/abs/2209.02675v2
+arXiv URL: http://arxiv.org/pdf/2209.02675v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 11
+
+Abstract:
+We present Symphony, a compilation of $262$ cosmological,
+cold-dark-matter-only zoom-in simulations spanning four decades of host halo
+mass, from $10^{11}$$-$$10^{15}~M_{\mathrm{\odot}}$. This compilation includes
+three existing simulation suites at the cluster and Milky Way$-$mass scales,
+and two new suites: $39$ Large Magellanic Cloud-mass
+($10^{11}~M_{\mathrm{\odot}}$) and $49$ strong-lens-analog
+($10^{13}~M_{\mathrm{\odot}}$) group-mass hosts. Across the entire host halo
+mass range, the highest-resolution regions in these simulations are resolved
+with a dark matter particle mass of $\approx 3\times 10^{-7}$ times the host
+virial mass and a Plummer-equivalent gravitational softening length of $\approx
+9\times 10^{-4}$ times the host virial radius, on average. We measure
+correlations between subhalo abundance and host concentration, formation time,
+and maximum subhalo mass, all of which peak at the Milky Way host halo mass
+scale. Subhalo abundances are $\approx 50\%$ higher in clusters than in
+lower-mass hosts at fixed sub-to-host halo mass ratios. Subhalo radial
+distributions are approximately self-similar as a function of host mass and are
+less concentrated than hosts' underlying dark matter distributions. We compare
+our results to the semianalytic model $\mathrm{\texttt{Galacticus}}$, which
+predicts subhalo mass functions with a higher normalization at the low-mass end
+and radial distributions that are slightly more concentrated than Symphony. We
+use $\mathrm{\texttt{UniverseMachine}}$ to model halo and subhalo star
+formation histories in Symphony, and we demonstrate that these predictions
+resolve the formation histories of the halos that host nearly all currently
+observable satellite galaxies in the universe. To promote open use of Symphony,
+data products are publicly available at
+http://web.stanford.edu/group/gfc/symphony.

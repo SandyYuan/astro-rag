@@ -1,0 +1,28 @@
+Title: The Dark Energy Spectrometer (DESpec): A Multi-Fiber Spectroscopic Upgrade of the Dark Energy Camera and Survey for the Blanco Telescope
+Authors: F. Abdalla, J. Annis, D. Bacon, S. Bridle, F. Castander, M. Colless, D. DePoy, H. T. Diehl, M. Eriksen, B. Flaugher, J. Frieman, E. Gaztanaga, C. Hogan, S. Jouvel, S. Kent, D. Kirk, R. Kron, S. Kuhlmann, O. Lahav, J. Lawrence, H. Lin, J. Marriner, J. Marshall, J. Mohr, R. C. Nichol, M. Sako, W. Saunders, M. Soares-Santos, D. Thomas, R. Wechsler, A. West, H. Wu
+Published: 2012-09-11 22:00:17+00:00
+Updated: 2012-09-11 22:00:17+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1209.2451v1
+arXiv URL: http://arxiv.org/pdf/1209.2451v1
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 30
+
+Abstract:
+We describe an initiative to build and use the Dark Energy Spectrometer
+(DESpec), a wide-field spectroscopic survey instrument for the Blanco 4 meter
+telescope at Cerro Tololo InterAmerican Observatory (CTIO) in Chile. A new
+system with about 4000 robotically positioned optical fibers will be
+interchangeable with the CCD imager of the existing Dark Energy Camera (DECam),
+accessing a field of view of 3.8 square degrees in a single exposure. The
+proposed instrument will be operated by CTIO and available for use by the
+astronomy community. Our collaboration proposes to use DESpec to conduct a
+wide, deep spectroscopic survey to study Dark Energy. In a survey of about 350
+nights, the DESpec collaboration proposes to obtain spectroscopic redshifts for
+about 8 million galaxies over 5000 square degrees selected from the Dark Energy
+Survey (DES). This Dark Energy Spectroscopic Survey will advance our knowledge
+of cosmic expansion and structure growth significantly beyond that obtainable
+with imaging-only surveys. Since it adds a spectroscopic third dimension to the
+same sky as DES, DESpec will enable increasingly precise techniques to
+discriminate among alternative explanations of cosmic acceleration, such as
+Dark Energy and Modified Gravity.

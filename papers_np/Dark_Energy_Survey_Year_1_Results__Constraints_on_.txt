@@ -1,0 +1,37 @@
+Title: Dark Energy Survey Year 1 Results: Constraints on Extended Cosmological Models from Galaxy Clustering and Weak Lensing
+Authors: DES Collaboration, T. M. C. Abbott, F. B. Abdalla, S. Avila, M. Banerji, E. Baxter, K. Bechtol, M. R. Becker, E. Bertin, J. Blazek, S. L. Bridle, D. Brooks, D. Brout, D. L. Burke, A. Campos, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. Chang, A. Chen, M. Crocce, C. E. Cunha, L. N. da Costa, C. Davis, J. De Vicente, J. DeRose, S. Desai, E. Di Valentino, H. T. Diehl, J. P. Dietrich, S. Dodelson, P. Doel, A. Drlica-Wagner, T. F. Eifler, J. Elvin-Poole, A. E. Evrard, E. Fernandez, A. Ferté, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, D. L. Hollowood, K. Honscheid, B. Hoyle, D. Huterer, B. Jain, T. Jeltema, M. W. G. Johnson, M. D. Johnson, A. G. Kim, E. Krause, K. Kuehn, N. Kuropatkin, O. Lahav, S. Lee, P. Lemos, C. D. Leonard, T. S. Li, A. R. Liddle, M. Lima, H. Lin, M. A. G. Maia, J. L. Marshall, P. Martini, F. Menanteau, C. J. Miller, R. Miquel, V. Miranda, J. J. Mohr, J. Muir, R. C. Nichol, B. Nord, R. L. C. Ogando, A. A. Plazas, M. Raveri, R. P. Rollins, A. K. Romer, A. Roodman, R. Rosenfeld, S. Samuroff, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, D. Scolnic, L. F. Secco, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, M. A. Troxel, V. Vikram, A. R. Walker, N. Weaverdyck, R. H. Wechsler, J. Weller, B. Yanny, Y. Zhang, J. Zuntz
+Published: 2018-10-05 02:56:59+00:00
+Updated: 2019-11-08 17:39:00+00:00
+DOI: 10.1103/PhysRevD.99.123505
+arXiv ID: http://arxiv.org/abs/1810.02499v2
+arXiv URL: http://arxiv.org/pdf/1810.02499v2
+Categories: astro-ph.CO, gr-qc, hep-ph
+Author Position: 111
+
+Abstract:
+We present constraints on extensions of the minimal cosmological models
+dominated by dark matter and dark energy, $\Lambda$CDM and $w$CDM, by using a
+combined analysis of galaxy clustering and weak gravitational lensing from the
+first-year data of the Dark Energy Survey (DES Y1) in combination with external
+data. We consider four extensions of the minimal dark energy-dominated
+scenarios: 1) nonzero curvature $\Omega_k$, 2) number of relativistic species
+$N_{\rm eff}$ different from the standard value of 3.046, 3) time-varying
+equation-of-state of dark energy described by the parameters $w_0$ and $w_a$
+(alternatively quoted by the values at the pivot redshift, $w_p$, and $w_a$),
+and 4) modified gravity described by the parameters $\mu_0$ and $\Sigma_0$ that
+modify the metric potentials. We also consider external information from Planck
+CMB measurements; BAO measurements from SDSS, 6dF, and BOSS; RSD measurements
+from BOSS; and SNIa information from the Pantheon compilation. Constraints on
+curvature and the number of relativistic species are dominated by the external
+data; when these are combined with DES Y1, we find
+$\Omega_k=0.0020^{+0.0037}_{-0.0032}$ at the 68% confidence level, and $N_{\rm
+eff}<3.28\, (3.55)$ at 68% (95%) confidence. For the time-varying
+equation-of-state, we find the pivot value $(w_p, w_a)=(-0.91^{+0.19}_{-0.23},
+-0.57^{+0.93}_{-1.11})$ at pivot redshift $z_p=0.27$ from DES alone, and $(w_p,
+w_a)=(-1.01^{+0.04}_{-0.04}, -0.28^{+0.37}_{-0.48})$ at $z_p=0.20$ from DES Y1
+combined with external data; in either case we find no evidence for the
+temporal variation of the equation of state. For modified gravity, we find the
+present-day value of the relevant parameters to be $\Sigma_0=
+0.43^{+0.28}_{-0.29}$ from DES Y1 alone, and $(\Sigma_0,
+\mu_0)=(0.06^{+0.08}_{-0.07}, -0.11^{+0.42}_{-0.46})$ from DES Y1 combined with
+external data, consistent with predictions from GR.

@@ -1,0 +1,29 @@
+Title: Constraining Dark Energy with the Dark Energy Survey: Theoretical Challenges
+Authors: James Annis, Sarah Bridle, Francisco J. Castander, August E. Evrard, Pablo Fosalba, Joshua A. Frieman, Enrique Gaztanaga, Bhuvnesh Jain, Andrey V. Kravtsov, Ofer Lahav, Huan Lin, Joseph Mohr, Albert Stebbins, Terence P. Walker, Risa H. Wechsler, David H. Weinberg, Jochen Weller
+Published: 2005-10-06 21:11:52+00:00
+Updated: 2005-10-06 21:11:52+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/astro-ph/0510195v1
+arXiv URL: http://arxiv.org/pdf/astro-ph/0510195v1
+Categories: astro-ph
+Author Position: 15
+
+Abstract:
+The Dark Energy Survey (DES) will use a new imaging camera on the Blanco 4-m
+telescope at CTIO to image 5000 square degrees of sky in the South Galactic Cap
+in four optical bands, and to carry out repeat imaging over a smaller area to
+identify and measure lightcurves of Type Ia supernovae. The main imaging area
+overlaps the planned Sunyaev-Zel'dovich survey of the South Pole Telescope. The
+idea behind DES is to use four distinct and largely independent methods to
+probe the properties of dark energy: baryon oscillations of the power spectrum,
+abundance and spatial distribution of clusters, weak gravitational lensing, and
+Type Ia supernovae. This white paper outlines, in broad terms, some of the
+theoretical issues associated with the first three of these probes (the issues
+for supernovae are mostly different in character), and with the general task of
+characterizing dark energy and distinguishing it from alternative explanations
+for cosmic acceleration. A companion white paper discusses the kind of
+numerical simulations and other theoretical tools that will be needed to
+address the these issues and to create mock catalogs that allow end-to-end
+tests of analysis procedures. Although we have been thinking about these
+problems in the specific context of DES, many of them are also relevant to
+other planned dark energy studies.

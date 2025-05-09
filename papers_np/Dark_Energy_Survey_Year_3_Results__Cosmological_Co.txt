@@ -1,0 +1,35 @@
+Title: Dark Energy Survey Year 3 Results: Cosmological Constraints from Cluster Abundances, Weak Lensing, and Galaxy Clustering
+Authors: DES Collaboration, T. M. C. Abbott, M. Aguena, A. Alarcon, D. Anbajagane, F. Andrade-Oliveira, S. Avila, D. Bacon, M. R. Becker, S. Bhargava, J. Blazek, S. Bocquet, D. Brooks, A. Carnero Rosell, J. Carretero, F. J. Castander, C. Chang, A. Choi, C. Conselice, M. Costanzi, M. Crocce, L. N. da Costa, M. E. S. Pereira, T. M. Davis, S. Desai, H. T. Diehl, S. Dodelson, P. Doel, J. Elvin-Poole, J. Esteves, S. Everett, A. Farahi, A. Ferté, B. Flaugher, J. García-Bellido, M. Gatti, G. Giannini, P. Giles, S. Grandis, D. Gruen, R. A. Gruendl, G. Gutierrez, I. Harrison, S. R. Hinton, D. L. Hollowood, K. Honscheid, N. Jeffrey, T. Jeltema, E. Krause, O. Lahav, S. Lee, C. Lidman, M. Lima, H. Lin, J. J. Mohr, J. L. Marshall, J. McCullough, J. Mena-Fern, R. Miquel, J. Muir, J. Myles, R. L. C. Ogando, A. Palmese, M. Paterno, A. A. Plazas Malagón, A. Porredon, J. Prat, A. K. Romer, A. Roodman, E. Rozo, E. S. Rykoff, E. Sanchez, D. Sanchez Cid, I. Sevilla-Noarbe, M. Smith, E. Suchyta, G. Tarle, D. Thomas, Chun-Hao To, M. A. Troxel, V. Vikram, A. R. Walker, David H. Weinberg, N. Weaverdyck, R. H. Wechsler, J. Weller, H. -Y. Wu, M. Yamamoto, B. Yanny, Y. Zhang, C. Zhou
+Published: 2025-03-17 18:28:21+00:00
+Updated: 2025-03-17 18:28:21+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2503.13632v1
+arXiv URL: http://arxiv.org/pdf/2503.13632v1
+Categories: astro-ph.CO
+Author Position: 85
+
+Abstract:
+Galaxy clusters provide a unique probe of the late-time cosmic structure and
+serve as a powerful independent test of the $\Lambda$CDM model. This work
+presents the first set of cosmological constraints derived with ~16,000
+optically selected redMaPPer clusters across nearly 5,000 $\rm{deg}^2$ using
+DES Year 3 data sets. Our analysis leverages a consistent modeling framework
+for galaxy cluster cosmology and DES-Y3 joint analyses of galaxy clustering and
+weak lensing (3x2pt), ensuring direct comparability with the DES-Y3 3x2pt
+analysis. We obtain constraints of $S_8 = 0.864 \pm 0.035$ and $\Omega_{\rm{m}}
+= 0.265^{+0.019}_{-0.031}$ from the cluster-based data vector. We find that
+cluster constraints and 3x2pt constraints are consistent under the $\Lambda$CDM
+model with a Posterior Predictive Distribution (PPD) value of $0.53$. The
+consistency between clusters and 3x2pt provides a stringent test of
+$\Lambda$CDM across different mass and spatial scales. Jointly analyzing
+clusters with 3x2pt further improves cosmological constraints, yielding $S_8 =
+0.811^{+0.022}_{-0.020}$ and $\Omega_{\rm{m}} = 0.294^{+0.022}_{-0.033}$, a
+$24\%$ improvement in the $\Omega_{\rm{m}}-S_8$ figure-of-merit over 3x2pt
+alone. Moreover, we find no significant deviation from the Planck CMB
+constraints with a probability to exceed (PTE) value of $0.6$, significantly
+reducing previous $S_8$ tension claims. Finally, combining DES 3x2pt, DES
+clusters, and Planck CMB places an upper limit on the sum of neutrino masses of
+$\sum m_\nu < 0.26$ eV at 95% confidence under the $\Lambda$CDM model. These
+results establish optically selected clusters as a key cosmological probe and
+pave the way for cluster-based analyses in upcoming Stage-IV surveys such as
+LSST, Euclid, and Roman.

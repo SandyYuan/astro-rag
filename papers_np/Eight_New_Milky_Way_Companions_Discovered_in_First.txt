@@ -1,0 +1,26 @@
+Title: Eight New Milky Way Companions Discovered in First-Year Dark Energy Survey Data
+Authors: The DES Collaboration, K. Bechtol, A. Drlica-Wagner, E. Balbinot, A. Pieres, J. D. Simon, B. Yanny, B. Santiago, R. H. Wechsler, J. Frieman, A. R. Walker, P. Williams, E. Rozo, E. S. Rykoff, A. Queiroz, E. Luque, A. Benoit-Levy, D. Tucker, I. Sevilla, R. A. Gruendl, L. N. da Costa, A. Fausti Neto, M. A. G. Maia, T. Abbott, S. Allam, R. Armstrong, A. H. Bauer, G. M. Bernstein, R. A. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, F. J. Castander, R. Covarrubias, C. B. D'Andrea, D. L. DePoy, S. Desai, H. T. Diehl, T. F. Eifler, J. Estrada, A. E. Evrard, E. Fernandez, D. A. Finley, B. Flaugher, E. Gaztanaga, D. Gerdes, L. Girardi, M. Gladders, D. Gruen, G. Gutierrez, J. Hao, K. Honscheid, B. Jain, D. James, S. Kent, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, H. Lin, M. Makler, M. March, J. Marshall, P. Martini, K. W. Merritt, C. Miller, R. Miquel, J. Mohr, E. Neilsen, R. Nichol, B. Nord, R. Ogando, J. Peoples, D. Petravick, A. A. Plazas, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, W. Wester, J. Zuntz
+Published: 2015-03-09 17:54:00+00:00
+Updated: 2015-05-28 22:44:22+00:00
+DOI: 10.1088/0004-637X/807/1/50
+arXiv ID: http://arxiv.org/abs/1503.02584v2
+arXiv URL: http://arxiv.org/pdf/1503.02584v2
+Categories: astro-ph.GA
+Author Position: 9
+
+Abstract:
+We report the discovery of eight new Milky Way companions in ~1,800 deg^2 of
+optical imaging data collected during the first year of the Dark Energy Survey
+(DES). Each system is identified as a statistically significant over-density of
+individual stars consistent with the expected isochrone and luminosity function
+of an old and metal-poor stellar population. The objects span a wide range of
+absolute magnitudes (M_V from -2.2 mag to -7.4 mag), physical sizes (10 pc to
+170 pc), and heliocentric distances (30 kpc to 330 kpc). Based on the low
+surface brightnesses, large physical sizes, and/or large Galactocentric
+distances of these objects, several are likely to be new ultra-faint satellite
+galaxies of the Milky Way and/or Magellanic Clouds. We introduce a
+likelihood-based algorithm to search for and characterize stellar
+over-densities, as well as identify stars with high satellite membership
+probabilities. We also present completeness estimates for detecting ultra-faint
+galaxies of varying luminosities, sizes, and heliocentric distances in the
+first-year DES data.

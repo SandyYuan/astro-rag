@@ -1,0 +1,31 @@
+Title: $μ_{\star}$ Masses: Weak Lensing Calibration of the Dark Energy Survey Year 1 redMaPPer Clusters using Stellar Masses
+Authors: M. E. S. Pereira, A. Palmese, T. N. Varga, T. McClintock, M. Soares-Santos, J. Burgad, J. Annis, A. Farahi, H. Lin, A. Choi, J. DeRose, J. Esteves, M. Gatti, D. Gruen, W. G. Hartley, B. Hoyle, T. Jeltema, N. MacCrann, A. Roodman, C. Sánchez, T. Shin, A. von der Linden, J. Zuntz, T. M. C. Abbott, M. Aguena, S. Avila, E. Bertin, S. Bhargava, S. L. Bridle, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Costanzi, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, J. Estrada, S. Everett, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, R. A. Gruendl, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, R. L. C. Ogando, F. Paz-Chinchón, A. A. Plazas, A. K. Romer, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, E. Suchyta, M. E. C. Swanson, G. Tarle, R. H. Wechsler, J. Weller, Y. Zhang
+Published: 2020-06-17 21:06:04+00:00
+Updated: 2020-06-17 21:06:04+00:00
+DOI: 10.1093/mnras/staa2687
+arXiv ID: http://arxiv.org/abs/2006.10162v1
+arXiv URL: http://arxiv.org/pdf/2006.10162v1
+Categories: astro-ph.CO
+Author Position: 79
+
+Abstract:
+We present the weak lensing mass calibration of the stellar mass based
+$\mu_{\star}$ mass proxy for redMaPPer galaxy clusters in the Dark Energy
+Survey Year 1. For the first time we are able to perform a calibration of
+$\mu_{\star}$ at high redshifts, $z>0.33$. In a blinded analysis, we use $\sim
+6,000$ clusters split into 12 subsets spanning the ranges $0.1 \leqslant
+z<0.65$ and $\mu_{\star}$ up to $\sim 5.5 \times 10^{13} M_{\odot}$, and infer
+the average masses of these subsets through modelling of their stacked weak
+lensing signal. In our model we account for the following sources of systematic
+uncertainty: shear measurement and photometric redshift errors, miscentring,
+cluster-member contamination of the source sample, deviations from the NFW halo
+profile, halo triaxiality and projection effects. We use the inferred masses to
+estimate the joint mass--$\mu_{\star}$--$z$ scaling relation given by $\langle
+M_{200c} | \mu_{\star},z \rangle = M_0 (\mu_{\star}/5.16\times 10^{12}
+\mathrm{M_{\odot}})^{F_{\mu_{\star}}} ((1+z)/1.35)^{G_z}$. We find $M_0= (1.14
+\pm 0.07) \times 10^{14} \mathrm{M_{\odot}}$ with $F_{\mu_{\star}}= 0.76 \pm
+0.06$ and $G_z= -1.14 \pm 0.37$. We discuss the use of $\mu_{\star}$ as a
+complementary mass proxy to the well-studied richness $\lambda$ for: $i)$
+exploring the regimes of low $z$, $\lambda<20$ and high $\lambda$, $z \sim 1$;
+$ii)$ testing systematics such as projection effects for applications in
+cluster cosmology.

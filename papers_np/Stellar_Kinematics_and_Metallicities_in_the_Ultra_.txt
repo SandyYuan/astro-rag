@@ -1,0 +1,30 @@
+Title: Stellar Kinematics and Metallicities in the Ultra-Faint Dwarf Galaxy Reticulum II
+Authors: J. D. Simon, A. Drlica-Wagner, T. S. Li, B. Nord, M. Geha, K. Bechtol, E. Balbinot, E. Buckley-Geer, H. Lin, J. Marshall, B. Santiago, L. Strigari, M. Wang, R. H. Wechsler, B. Yanny, T. Abbott, A. H. Bauer, G. M. Bernstein, E. Bertin, D. Brooks, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, S. Dodelson, C. E Cunha, J. Estrada, A. E. Evrard, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, J. Frieman, E. Gaztanaga, D. Gerdes, D. Gruen, R. A. Gruendl, K. Honscheid, D. James, S. Kent, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, M. March, P. Martini, C. J. Miller, R. Miquel, R. Ogando, A. K. Romer, A. Roodman, E. S. Rykoff, M. Sako, E. Sanchez, M. Schubnell, I. Sevilla, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Tucker, V. Vikram, A. R. Walker, W. Wester
+Published: 2015-04-11 15:27:29+00:00
+Updated: 2015-06-17 16:54:46+00:00
+DOI: 10.1088/0004-637X/808/1/95
+arXiv ID: http://arxiv.org/abs/1504.02889v2
+arXiv URL: http://arxiv.org/pdf/1504.02889v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 14
+
+Abstract:
+We present Magellan/M2FS, VLT/GIRAFFE, and Gemini South/GMOS spectroscopy of
+the newly discovered Milky Way satellite Reticulum II. Based on the spectra of
+25 Ret II member stars selected from Dark Energy Survey imaging, we measure a
+mean heliocentric velocity of 62.8 +/- 0.5 km/s and a velocity dispersion of
+3.3 +/- 0.7 km/s. The mass-to-light ratio of Ret II within its half-light
+radius is 470 +/- 210 Msun/Lsun, demonstrating that it is a strongly dark
+matter-dominated system. Despite its spatial proximity to the Magellanic
+Clouds, the radial velocity of Ret II differs from that of the LMC and SMC by
+199 and 83 km/s, respectively, suggesting that it is not gravitationally bound
+to the Magellanic system. The likely member stars of Ret II span 1.3 dex in
+metallicity, with a dispersion of 0.28 +/- 0.09 dex, and we identify several
+extremely metal-poor stars with [Fe/H] < -3. In combination with its
+luminosity, size, and ellipticity, these results confirm that Ret II is an
+ultra-faint dwarf galaxy. With a mean metallicity of [Fe/H] = -2.65 +/- 0.07,
+Ret II matches Segue~1 as the most metal-poor galaxy known. Although Ret II is
+the third-closest dwarf galaxy to the Milky Way, the line-of-sight integral of
+the dark matter density squared is log J = 18.8 +/- 0.6 Gev^2/cm^5 within 0.2
+degrees, indicating that the predicted gamma-ray flux from dark matter
+annihilation in Ret II is lower than that of several other dwarf galaxies.

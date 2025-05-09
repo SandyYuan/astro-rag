@@ -1,0 +1,30 @@
+Title: Data Release 1 of the Dark Energy Spectroscopic Instrument
+Authors: DESI Collaboration, M. Abdul-Karim, A. G. Adame, D. Aguado, J. Aguilar, S. Ahlen, S. Alam, G. Aldering, D. M. Alexander, R. Alfarsy, L. Allen, C. Allende Prieto, O. Alves, A. Anand, U. Andrade, E. Armengaud, S. Avila, A. Aviles, H. Awan, S. Bailey, A. Baleato Lizancos, O. Ballester, A. Bault, J. Bautista, S. BenZvi, L. Beraldo e Silva, J. R. Bermejo-Climent, F. Beutler, D. Bianchi, C. Blake, R. Blum, A. S. Bolton, M. Bonici, S. Brieden, A. Brodzeller, D. Brooks, E. Buckley-Geer, E. Burtin, R. Canning, A. Carnero Rosell, A. Carr, P. Carrilho, L. Casas, F. J. Castander, R. Cereskaite, J. L. Cervantes-Cota, E. Chaussidon, J. Chaves-Montero, S. Chen, X. Chen, T. Claybaugh, S. Cole, A. P. Cooper, M. -C. Cousinou, A. Cuceu, T. M. Davis, K. S. Dawson, R. de Belsunce, R. de la Cruz, A. de la Macorra, A. de Mattia, N. Deiosso, J. Della Costa, R. Demina, U. Demirbozan, J. DeRose, A. Dey, B. Dey, J. Ding, Z. Ding, P. Doel, K. Douglass, M. Dowicz, H. Ebina, J. Edelstein, D. J. Eisenstein, W. Elbers, N. Emas, S. Escoffier, P. Fagrelius, X. Fan, K. Fanning, V. A. Fawcett, E. Fernández-García, S. Ferraro, N. Findlay, A. Font-Ribera, J. E. Forero-Romero, D. Forero-Sánchez, C. S. Frenk, B. T. Gänsicke, L. Galbany, J. García-Bellido, C. Garcia-Quintero, L. H. Garrison, E. Gaztañaga, H. Gil-Marín, O. Y. Gnedin, S. Gontcho A Gontcho, A. X. Gonzalez-Morales, V. Gonzalez-Perez, C. Gordon, O. Graur, D. Green, D. Gruen, R. Gsponer, C. Guandalin, G. Gutierrez, J. Guy, C. Hahn, J. J. Han, J. Han, S. He, H. K. Herrera-Alcantar, K. Honscheid, J. Hou, C. Howlett, D. Huterer, V. Iršič, M. Ishak, A. Jacques, J. Jimenez, Y. P. Jing, B. Joachimi, S. Joudaki, R. Joyce, E. Jullo, S. Juneau, N. G. Karaçaylı, T. Karim, R. Kehoe, S. Kent, A. Khederlarian, D. Kirkby, T. Kisner, F. -S. Kitaura, N. Kizhuprakkat, H. Kong, S. E. Koposov, A. Kremin, A. Krolewski, O. Lahav, Y. Lai, C. Lamman, T. -W. Lan, M. Landriau, D. Lang, J. U. Lange, J. Lasker, J. M. Le Goff, L. Le Guillou, A. Leauthaud, M. E. Levi, S. Li, T. S. Li, K. Lodha, M. Lokken, Y. Luo, C. Magneville, M. Manera, C. J. Manser, D. Margala, P. Martini, M. Maus, J. McCullough, P. McDonald, G. E. Medina, L. Medina-Varela, A. Meisner, J. Mena-Fernández, A. Menegas, M. Mezcua, R. Miquel, P. Montero-Camacho, J. Moon, J. Moustakas, A. Muñoz-Gutiérrez, D. Muñoz-Santos, A. D. Myers, J. Myles, S. Nadathur, J. Najita, L. Napolitano, J. A. Newman, F. Nikakhtar, R. Nikutta, G. Niz, H. E. Noriega, N. Padmanabhan, E. Paillas, N. Palanque-Delabrouille, A. Palmese, J. Pan, Z. Pan, D. Parkinson, J. Peacock, W. J. Percival, A. Pérez-Fernández, I. Pérez-Ràfols, P. Peterson, J. Piat, M. M. Pieri, M. Pinon, C. Poppett, A. Porredon, F. Prada, R. Pucha, F. Qin, D. Rabinowitz, A. Raichoor, C. Ramírez-Pérez, S. Ramirez-Solano, M. Rashkovetskyi, C. Ravoux, A. H. Riley, A. Rocher, C. Rockosi, J. Rohlf, A. J. Ross, G. Rossi, R. Ruggeri, V. Ruhlmann-Kleider, C. G. Sabiu, K. Said, A. Saintonge, L. Samushia, E. Sanchez, N. Sanders, C. Saulder, E. F. Schlafly, D. Schlegel, D. Scholte, M. Schubnell, H. Seo, A. Shafieloo, R. Sharples, J. Silber, M. Siudek, A. Smith, D. Sprayberry, J. Suárez-Pérez, J. Swanson, T. Tan, G. Tarlé, P. Taylor, G. Thomas, R. Tojeiro, R. J. Turner, W. Turner, L. A. Ureña-López, R. Vaisakh, M. Valluri, M. Vargas-Magaña, L. Verde, M. Walther, B. Wang, M. S. Wang, W. Wang, B. A. Weaver, N. Weaverdyck, R. H. Wechsler, M. White, M. Wolfson, J. Yang, C. Yèche, S. Youles, J. Yu, S. Yuan, E. A. Zaborowski, P. Zarrouk, H. Zhang, C. Zhao, R. Zhao, Z. Zheng, R. Zhou, H. Zou, S. Zou, Y. Zu
+Published: 2025-03-18 21:14:19+00:00
+Updated: 2025-03-18 21:14:19+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2503.14745v1
+arXiv URL: http://arxiv.org/pdf/2503.14745v1
+Categories: astro-ph.CO
+Author Position: 261
+
+Abstract:
+In 2021 May the Dark Energy Spectroscopic Instrument (DESI) collaboration
+began a 5-year spectroscopic redshift survey to produce a detailed map of the
+evolving three-dimensional structure of the universe between $z=0$ and
+$z\approx4$. DESI's principle scientific objectives are to place precise
+constraints on the equation of state of dark energy, the gravitationally driven
+growth of large-scale structure, and the sum of the neutrino masses, and to
+explore the observational signatures of primordial inflation. We present DESI
+Data Release 1 (DR1), which consists of all data acquired during the first 13
+months of the DESI main survey, as well as a uniform reprocessing of the DESI
+Survey Validation data which was previously made public in the DESI Early Data
+Release. The DR1 main survey includes high-confidence redshifts for 18.7M
+objects, of which 13.1M are spectroscopically classified as galaxies, 1.6M as
+quasars, and 4M as stars, making DR1 the largest sample of extragalactic
+redshifts ever assembled. We summarize the DR1 observations, the spectroscopic
+data-reduction pipeline and data products, large-scale structure catalogs,
+value-added catalogs, and describe how to access and interact with the data. In
+addition to fulfilling its core cosmological objectives with unprecedented
+precision, we expect DR1 to enable a wide range of transformational
+astrophysical studies and discoveries.

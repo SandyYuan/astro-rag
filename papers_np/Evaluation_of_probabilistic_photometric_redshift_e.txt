@@ -1,0 +1,32 @@
+Title: Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)
+Authors: S. J. Schmidt, A. I. Malz, J. Y. H. Soo, I. A. Almosallam, M. Brescia, S. Cavuoti, J. Cohen-Tanugi, A. J. Connolly, J. DeRose, P. E. Freeman, M. L. Graham, K. G. Iyer, M. J. Jarvis, J. B. Kalmbach, E. Kovacs, A. B. Lee, G. Longo, C. B. Morrison, J. A. Newman, E. Nourbakhsh, E. Nuss, T. Pospisil, H. Tranin, R. H. Wechsler, R. Zhou, R. Izbicki, The LSST Dark Energy Science Collaboration
+Published: 2020-01-10 19:00:01+00:00
+Updated: 2021-07-31 17:17:18+00:00
+DOI: 10.1093/mnras/staa2799
+arXiv ID: http://arxiv.org/abs/2001.03621v2
+arXiv URL: http://arxiv.org/pdf/2001.03621v2
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 24
+
+Abstract:
+Many scientific investigations of photometric galaxy surveys require redshift
+estimates, whose uncertainty properties are best encapsulated by photometric
+redshift (photo-z) posterior probability density functions (PDFs). A plethora
+of photo-z PDF estimation methodologies abound, producing discrepant results
+with no consensus on a preferred approach. We present the results of a
+comprehensive experiment comparing twelve photo-z algorithms applied to mock
+data produced for The Rubin Observatory Legacy Survey of Space and Time (LSST)
+Dark Energy Science Collaboration (DESC). By supplying perfect prior
+information, in the form of the complete template library and a representative
+training set as inputs to each code, we demonstrate the impact of the
+assumptions underlying each technique on the output photo-z PDFs. In the
+absence of a notion of true, unbiased photo-z PDFs, we evaluate and interpret
+multiple metrics of the ensemble properties of the derived photo-z PDFs as well
+as traditional reductions to photo-z point estimates. We report systematic
+biases and overall over/under-breadth of the photo-z PDFs of many popular
+codes, which may indicate avenues for improvement in the algorithms or
+implementations. Furthermore, we raise attention to the limitations of
+established metrics for assessing photo-z PDF accuracy; though we identify the
+conditional density estimate (CDE) loss as a promising metric of photo-z PDF
+performance in the case where true redshifts are available but true photo-z
+PDFs are not, we emphasize the need for science-specific performancemetrics.

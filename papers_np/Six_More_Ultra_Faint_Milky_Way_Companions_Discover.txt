@@ -1,0 +1,33 @@
+Title: Six More Ultra-Faint Milky Way Companions Discovered in the DECam Local Volume Exploration Survey
+Authors: W. Cerny, C. E. Martínez-Vázquez, A. Drlica-Wagner, A. B. Pace, B. Mutlu-Pakdil, T. S. Li, A. H. Riley, D. Crnojević, C. R. Bom, J. A. Carballo-Bello, J. L. Carlin, A. Chiti, Y. Choi, M. L. M. Collins, E Darragh-Ford, P. S. Ferguson, M. Geha, D. Martínez-Delgado, P. Massana, S. Mau, G. E. Medina, R. R. Muñoz, E. O. Nadler, K. A. G. Olsen, A. Pieres, J. D. Sakowska, J. D. Simon, G. S. Stringfellow, A. K. Vivas, A. R. Walker, R. H. Wechsler
+Published: 2022-09-26 05:12:48+00:00
+Updated: 2022-09-26 05:12:48+00:00
+DOI: 10.3847/1538-4357/acdd78
+arXiv ID: http://arxiv.org/abs/2209.12422v1
+arXiv URL: http://arxiv.org/pdf/2209.12422v1
+Categories: astro-ph.GA
+Author Position: 31
+
+Abstract:
+We report the discovery of six ultra-faint Milky Way satellites discovered
+through matched-filter searches conducted using Dark Energy Camera (DECam) data
+processed as part of the second data release of the DECam Local Volume
+Exploration (DELVE) survey. Leveraging deep Gemini/GMOS-N imaging (for four
+candidates) as well as follow-up DECam imaging (for two candidates), we
+characterize the morphologies and stellar populations of these systems. We find
+that these candidates all share faint absolute magnitudes ($M_{V} \geq -3.2$
+mag) and old, metal-poor stellar populations ($\tau > 10$ Gyr, [Fe/H] $< -1.4$
+dex). Three of these systems are more extended ($r_{1/2} > 15$ pc), while the
+other three are compact ($r_{1/2} < 10$ pc). From these properties, we infer
+that the former three systems (Bo\"{o}tes V, Leo Minor I, and Virgo II) are
+consistent with ultra-faint dwarf galaxy classifications, whereas the latter
+three (DELVE 3, DELVE 4, and DELVE 5) are likely ultra-faint star clusters.
+Using data from the Gaia satellite, we confidently measure the proper motion of
+Bo\"{o}tes V, Leo Minor I, and DELVE 4, and tentatively detect a proper motion
+signal from DELVE 3 and DELVE 5; no signal is detected for Virgo II. We use
+these measurements to explore possible associations between the
+newly-discovered systems and the Sagittarius dwarf spheroidal, the Magellanic
+Clouds, and the Vast Polar Structure, finding several plausible associations.
+Our results offer a preview of the numerous ultra-faint stellar systems that
+will soon be discovered by the Vera C. Rubin Observatory and highlight the
+challenges of classifying the faintest stellar systems.

@@ -1,0 +1,25 @@
+Title: The Blanco Cosmology Survey: An Optically-Selected Galaxy Cluster Catalog and a Public Release of Optical Data Products
+Authors: L. E. Bleem, B. Stalder, M. Brodwin, M. T. Busha, M. D. Gladders, F. W. High, A. Rest, R. H. Wechsler
+Published: 2014-03-27 19:42:09+00:00
+Updated: 2014-03-27 19:42:09+00:00
+DOI: 10.1088/0067-0049/216/1/20
+arXiv ID: http://arxiv.org/abs/1403.7186v1
+arXiv URL: http://arxiv.org/pdf/1403.7186v1
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 8
+
+Abstract:
+The Blanco Cosmology Survey is 4-band (griz) optical-imaging survey that
+covers ~80 square degrees of the southern sky. The survey consists of two
+fields roughly centered at (RA,DEC) = (23h,-55d) and (5h30m,-53d) with imaging
+designed to reach depths sufficient for the detection of L* galaxies out to a
+redshift of one. In this paper we describe the reduction of the survey data,
+the creation of calibrated source catalogs and a new method for the separation
+of stars and galaxies. We search these catalogs for galaxy clusters at z< 0.75
+by identifying spatial over-densities of red-sequence galaxies. We report the
+coordinates, redshift, and optical richness, Lambda, for 764 detected galaxy
+clusters at z < 0.75. This sample, >85% of which are new discoveries, has a
+median redshift of 0.52 and median richness Lambda(0.4L*) of 16.4. Accompanying
+this paper we also release data products including the reduced images and
+calibrated source catalogs. These products are available at
+http://data.rcc.uchicago.edu/dataset/blanco-cosmology-survey .

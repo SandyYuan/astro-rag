@@ -1,0 +1,29 @@
+Title: OzDES multi-fibre spectroscopy for the Dark Energy Survey: first-year operation and results
+Authors: Fang Yuan, C. Lidman, T. M. Davis, M. Childress, F. B. Abdalla, M. Banerji, E. Buckley-Geer, A. Carnero Rosell, D. Carollo, F. J. Castander, C. B. D'Andrea, H. T. Diehl, C. E Cunha, R. J. Foley, J. Frieman, K. Glazebrook, J. Gschwend, S. Hinton, S. Jouvel, R. Kessler, A. G. Kim, A. L. King, K. Kuehn, S. Kuhlmann, G. F. Lewis, H. Lin, P. Martini, R. G. McMahon, J. Mould, R. C. Nichol, R. P. Norris, C. R. O'Neill, F. Ostrovski, A. Papadopoulos, D. Parkinson, S. Reed, A. K. Romer, P. J. Rooney, E. Rozo, E. S. Rykoff, M. Sako, R. Scalzo, B. P. Schmidt, D. Scolnic, N. Seymour, R. Sharp, F. Sobreira, M. Sullivan, R. C. Thomas, D. Tucker, S. A. Uddin, R. H. Wechsler, W. Wester, H. Wilcox, B. Zhang, T. Abbott, S. Allam, A. H. Bauer, A. Benoit-Levy, E. Bertin, D. Brooks, D. L. Burke, M. Carrasco Kind, R. Covarrubias, M. Crocce, L. N. da Costa, D. L. DePoy, S. Desai, P. Doel, T. F. Eifler, A. E. Evrard, A. Fausti Neto, B. Flaugher, P. Fosalba, E. Gaztanaga, D. Gerdes, D. Gruen, R. A. Gruendl, K. Honscheid, D. James, N. Kuropatkin, O. Lahav, T. S. Li, M. A. G. Maia, M. Makler, J. Marshall, C. J. Miller, R. Miquel, R. Ogando, A. A. Plazas, A. Roodman, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, A. R. Walker
+Published: 2015-04-13 00:37:00+00:00
+Updated: 2015-04-13 00:37:00+00:00
+DOI: 10.1093/mnras/stv1507
+arXiv ID: http://arxiv.org/abs/1504.03039v1
+arXiv URL: http://arxiv.org/pdf/1504.03039v1
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 52
+
+Abstract:
+OzDES is a five-year, 100-night, spectroscopic survey on the Anglo-Australian
+Telescope, whose primary aim is to measure redshifts of approximately 2,500
+Type Ia supernovae host galaxies over the redshift range 0.1 < z < 1.2, and
+derive reverberation-mapped black hole masses for approximately 500 active
+galactic nuclei and quasars over 0.3 < z < 4.5. This treasure trove of data
+forms a major part of the spectroscopic follow-up for the Dark Energy Survey
+for which we are also targeting cluster galaxies, radio galaxies, strong
+lenses, and unidentified transients, as well as measuring luminous red galaxies
+and emission line galaxies to help calibrate photometric redshifts.
+  Here we present an overview of the OzDES program and our first-year results.
+Between Dec 2012 and Dec 2013, we observed over 10,000 objects and measured
+more than 6,000 redshifts. Our strategy of retargeting faint objects across
+many observing runs has allowed us to measure redshifts for galaxies as faint
+as m_r=25 mag. We outline our target selection and observing strategy, quantify
+the redshift success rate for different types of targets, and discuss the
+implications for our main science goals. Finally, we highlight a few
+interesting objects as examples of the fortuitous yet not totally unexpected
+discoveries that can come from such a large spectroscopic survey.

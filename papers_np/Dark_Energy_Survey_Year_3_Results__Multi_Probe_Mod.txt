@@ -1,0 +1,28 @@
+Title: Dark Energy Survey Year 3 Results: Multi-Probe Modeling Strategy and Validation
+Authors: E. Krause, X. Fang, S. Pandey, L. F. Secco, O. Alves, H. Huang, J. Blazek, J. Prat, J. Zuntz, T. F. Eifler, N. MacCrann, J. DeRose, M. Crocce, A. Porredon, B. Jain, M. A. Troxel, S. Dodelson, D. Huterer, A. R. Liddle, C. D. Leonard, A. Amon, A. Chen, J. Elvin-Poole, A. Ferté, J. Muir, Y. Park, S. Samuroff, A. Brandao-Souza, N. Weaverdyck, G. Zacharegkas, R. Rosenfeld, A. Campos, P. Chintalapati, A. Choi, E. Di Valentino, C. Doux, K. Herner, P. Lemos, J. Mena-Fernández, Y. Omori, M. Paterno, M. Rodriguez-Monroy, P. Rogozenski, R. P. Rollins, A. Troja, I. Tutusaus, R. H. Wechsler, T. M. C. Abbott, M. Aguena, S. Allam, F. Andrade-Oliveira, J. Annis, D. Bacon, E. Baxter, K. Bechtol, G. M. Bernstein, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. Chang, M. Costanzi, L. N. da Costa, M. E. S. Pereira, J. De Vicente, S. Desai, H. T. Diehl, P. Doel, S. Everett, A. E. Evrard, I. Ferrero, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, S. R. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, E. M. Huff, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, R. Morgan, J. Myles, A. Palmese, F. Paz-Chinchón, D. Petravick, A. Pieres, A. A. Plazas Malagón, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, E. Suchyta, G. Tarle, D. Thomas, C. To, T. N. Varga, J. Weller
+Published: 2021-05-28 01:58:57+00:00
+Updated: 2021-05-28 01:58:57+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2105.13548v1
+arXiv URL: http://arxiv.org/pdf/2105.13548v1
+Categories: astro-ph.CO
+Author Position: 47
+
+Abstract:
+This paper details the modeling pipeline and validates the baseline analysis
+choices of the DES Year 3 joint analysis of galaxy clustering and weak lensing
+(a so-called "3$\times$2pt" analysis). These analysis choices include the
+specific combination of cosmological probes, priors on cosmological and
+systematics parameters, model parameterizations for systematic effects and
+related approximations, and angular scales where the model assumptions are
+validated. We run a large number of simulated likelihood analyses using
+synthetic data vectors to test the robustness of our baseline analysis. We
+demonstrate that the DES Year 3 modeling pipeline, including the calibrated
+scale cuts, is sufficiently accurate relative to the constraining power of the
+DES Year 3 analyses. Our systematics mitigation strategy accounts for
+astrophysical systematics, such as galaxy bias, intrinsic alignments, source
+and lens magnification, baryonic effects, and source clustering, as well as for
+uncertainties in modeling the matter power spectrum, reduced shear, and
+estimator effects. We further demonstrate excellent agreement between two
+independently-developed modeling pipelines, and thus rule out any residual
+uncertainties due to the numerical implementation.

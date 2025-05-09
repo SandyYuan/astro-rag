@@ -1,0 +1,26 @@
+Title: Astro2020: Empirically Constraining Galaxy Evolution
+Authors: Peter Behroozi, Matthew R. Becker, Frank C. van den Bosch, Jarle Brinchmann, Charlie Conroy, Mark Dickinson, Christopher M. Hirata, Andrew Hearin, Alexie Leauthaud, Chun Ly, Yao-Yuan Mao, Benjamin P. Moster, Christine O'Donnell, Casey Papovich, Aldo Rodríguez-Puebla, Rachel Somerville, Erik Tollerud, Jeremy Tinker, Yun Wang, Risa H. Wechsler, Charity Woodrum, Ann Zabludoff, Dennis Zaritsky, Andrew R. Zentner, Huanian Zhang
+Published: 2019-03-11 18:00:22+00:00
+Updated: 2019-03-11 18:00:22+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1903.04509v1
+arXiv URL: http://arxiv.org/pdf/1903.04509v1
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 20
+
+Abstract:
+Over the past decade, empirical constraints on the galaxy-dark matter halo
+connection have significantly advanced our understanding of galaxy evolution.
+Past techniques have focused on connections between halo properties and galaxy
+stellar mass and/or star formation rates. Empirical techniques in the next
+decade will link halo assembly histories with galaxies' circumgalactic media,
+supermassive black holes, morphologies, kinematics, sizes, colors,
+metallicities, and transient rates. Uncovering these links will resolve many
+critical uncertainties in galaxy formation and will enable much higher-fidelity
+mock catalogs essential for interpreting observations. Achieving these results
+will require broader and deeper spectroscopic coverage of galaxies and their
+circumgalactic media; survey teams will also need to meet several criteria
+(cross-comparisons, public access, and covariance matrices) to facilitate
+combining data across different surveys. Acting on these recommendations will
+continue enabling dramatic progress in both empirical modeling and galaxy
+evolution for the next decade.

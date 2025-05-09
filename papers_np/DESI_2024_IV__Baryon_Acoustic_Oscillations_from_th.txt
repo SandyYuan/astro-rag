@@ -1,0 +1,28 @@
+Title: DESI 2024 IV: Baryon Acoustic Oscillations from the Lyman Alpha Forest
+Authors: DESI Collaboration, A. G. Adame, J. Aguilar, S. Ahlen, S. Alam, D. M. Alexander, M. Alvarez, O. Alves, A. Anand, U. Andrade, E. Armengaud, S. Avila, A. Aviles, H. Awan, S. Bailey, C. Baltay, A. Bault, J. Bautista, J. Behera, S. BenZvi, F. Beutler, D. Bianchi, C. Blake, R. Blum, S. Brieden, A. Brodzeller, D. Brooks, E. Buckley-Geer, E. Burtin, R. Calderon, R. Canning, A. Carnero Rosell, R. Cereskaite, J. L. Cervantes-Cota, S. Chabanier, E. Chaussidon, J. Chaves-Montero, S. Chen, X. Chen, T. Claybaugh, S. Cole, A. Cuceu, T. M. Davis, K. Dawson, R. de la Cruz, A. de la Macorra, A. de Mattia, N. Deiosso, A. Dey, B. Dey, J. Ding, Z. Ding, P. Doel, J. Edelstein, S. Eftekharzadeh, D. J. Eisenstein, A. Elliott, P. Fagrelius, K. Fanning, S. Ferraro, J. Ereza, N. Findlay, B. Flaugher, A. Font-Ribera, D. Forero-Sánchez, J. E. Forero-Romero, C. Garcia-Quintero, E. Gaztañaga, H. Gil-Marín, S. Gontcho A Gontcho, A. X. Gonzalez-Morales, V. Gonzalez-Perez, C. Gordon, D. Green, D. Gruen, R. Gsponer, G. Gutierrez, J. Guy, B. Hadzhiyska, C. Hahn, M. M. S Hanif, H. K. Herrera-Alcantar, K. Honscheid, C. Howlett, D. Huterer, V. Iršič, M. Ishak, S. Juneau, N. G. Karaçayli, R. Kehoe, S. Kent, D. Kirkby, A. Kremin, A. Krolewski, Y. Lai, T. -W. Lan, M. Landriau, D. Lang, J. Lasker, J. M. Le Goff, L. Le Guillou, A. Leauthaud, M. E. Levi, T. S. Li, E. Linder, K. Lodha, C. Magneville, M. Manera, D. Margala, P. Martini, M. Maus, P. McDonald, L. Medina-Varela, A. Meisner, J. Mena-Fernández, R. Miquel, J. Moon, S. Moore, J. Moustakas, E. Mueller, A. Muñoz-Gutiérrez, A. D. Myers, S. Nadathur, L. Napolitano, R. Neveux, J. A. Newman, N. M. Nguyen, J. Nie, G. Niz, H. E. Noriega, N. Padmanabhan, E. Paillas, N. Palanque-Delabrouille, J. Pan, S. Penmetsa, W. J. Percival, M. M. Pieri, M. Pinon, C. Poppett, A. Porredon, F. Prada, A. Pérez-Fernández, I. Pérez-Ràfols, D. Rabinowitz, A. Raichoor, C. Ramírez-Pérez, S. Ramirez-Solano, M. Rashkovetskyi, C. Ravoux, M. Rezaie, J. Rich, A. Rocher, C. Rockosi, N. A. Roe, A. Rosado-Marin, A. J. Ross, G. Rossi, R. Ruggeri, V. Ruhlmann-Kleider, L. Samushia, E. Sanchez, C. Saulder, E. F. Schlafly, D. Schlegel, M. Schubnell, H. Seo, R. Sharples, J. Silber, F. Sinigaglia, A. Slosar, A. Smith, D. Sprayberry, T. Tan, G. Tarlé, S. Trusov, R. Vaisakh, D. Valcin, F. Valdes, M. Vargas-Magaña, L. Verde, M. Walther, B. Wang, M. S. Wang, B. A. Weaver, N. Weaverdyck, R. H. Wechsler, D. H. Weinberg, M. White, J. Yu, Y. Yu, S. Yuan, C. Yèche, E. A. Zaborowski, P. Zarrouk, H. Zhang, C. Zhao, R. Zhao, R. Zhou, H. Zou
+Published: 2024-04-03 18:41:50+00:00
+Updated: 2024-09-27 07:18:27+00:00
+DOI: 10.1088/1475-7516/2025/01/124
+arXiv ID: http://arxiv.org/abs/2404.03001v4
+arXiv URL: http://arxiv.org/pdf/2404.03001v4
+Categories: astro-ph.CO
+Author Position: 186
+
+Abstract:
+We present the measurement of Baryon Acoustic Oscillations (BAO) from the
+Lyman-$\alpha$ (Ly$\alpha$) forest of high-redshift quasars with the first-year
+dataset of the Dark Energy Spectroscopic Instrument (DESI). Our analysis uses
+over $420\,000$ Ly$\alpha$ forest spectra and their correlation with the
+spatial distribution of more than $700\,000$ quasars. An essential facet of
+this work is the development of a new analysis methodology on a blinded
+dataset. We conducted rigorous tests using synthetic data to ensure the
+reliability of our methodology and findings before unblinding. Additionally, we
+conducted multiple data splits to assess the consistency of the results and
+scrutinized various analysis approaches to confirm their robustness. For a
+given value of the sound horizon ($r_d$), we measure the expansion at $z_{\rm
+eff}=2.33$ with 2\% precision, $H(z_{\rm eff}) = (239.2 \pm 4.8) (147.09~{\rm
+Mpc} /r_d)$ km/s/Mpc. Similarly, we present a 2.4\% measurement of the
+transverse comoving distance to the same redshift, $D_M(z_{\rm eff}) = (5.84
+\pm 0.14) (r_d/147.09~{\rm Mpc})$ Gpc. Together with other DESI BAO
+measurements at lower redshifts, these results are used in a companion paper to
+constrain cosmological parameters.

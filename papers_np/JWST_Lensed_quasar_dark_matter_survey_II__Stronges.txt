@@ -1,0 +1,28 @@
+Title: JWST Lensed quasar dark matter survey II: Strongest gravitational lensing limit on the dark matter free streaming length to date
+Authors: Ryan E. Keeley, Anna M. Nierenberg, Daniel Gilman, Charles Gannon, Simon Birrer, Tommaso Treu, Andrew J. Benson, Xiaolong Du, K. N. Abazajian, T. Anguita, V. N. Bennert, S. G. Djorgovski, K. K. Gupta, S. F. Hoenig, A. Kusenko, C. Lemon, M. Malkan, V. Motta, L. A. Moustakas, M. S. H. Oh, D. Sluse, D. Stern, R. H. Wechsler
+Published: 2024-05-02 17:50:31+00:00
+Updated: 2024-05-02 17:50:31+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2405.01620v1
+arXiv URL: http://arxiv.org/pdf/2405.01620v1
+Categories: astro-ph.CO
+Author Position: 23
+
+Abstract:
+This is the second in a series of papers in which we use JWST MIRI multiband
+imaging to measure the warm dust emission in a sample of 31 multiply imaged
+quasars, to be used as a probe of the particle nature of dark matter. We
+present measurements of the relative magnifications of the strongly lensed warm
+dust emission in a sample of 9 systems. The warm dust region is compact and
+sensitive to perturbations by populations of halos down to masses $\sim 10^6$
+M$_{\odot}$. Using these warm dust flux-ratio measurements in combination with
+5 previous narrow-line flux-ratio measurements, we constrain the halo mass
+function. In our model, we allow for complex deflector macromodels with
+flexible third and fourth-order multipole deviations from ellipticity, and we
+introduce an improved model of the tidal evolution of subhalos. We constrain a
+WDM model and find an upper limit on the half-mode mass of $10^{7.6} M_\odot$
+at posterior odds of 10:1. This corresponds to a lower limit on a thermally
+produced dark matter particle mass of 6.1 keV. This is the strongest
+gravitational lensing constraint to date, and comparable to those from
+independent probes such as the Ly$\alpha$ forest and Milky Way satellite
+galaxies.

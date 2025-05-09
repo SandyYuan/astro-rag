@@ -1,0 +1,32 @@
+Title: Inference from the small scales of cosmic shear with current and future Dark Energy Survey data
+Authors: N. MacCrann, J. Aleksić, A. Amara, S. L. Bridle, C. Bruderer, C. Chang, S. Dodelson, T. F. Eifler, E. M. Huff, D. Huterer, T. Kacprzak, A. Refregier, E. Suchyta, R. H. Wechsler, J. Zuntz, T. M. C. Abbott, S. Allam, J. Annis, R. Armstrong, A. Benoit-Lévy, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, M. Crocce, C. E. Cunha, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. E. Evrard, B. Flaugher, P. Fosalba, D. W. Gerdes, D. A. Goldstein, D. Gruen, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, M. Jarvis, E. Krause, K. Kuehn, N. Kuropatkin, M. Lima, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, A. A. Plazas, A. K. Romer, E. S. Rykoff, E. Sanchez, V. Scarpine, I. Sevilla-Noarbe, E. Sheldon, M. Soares-Santos, M. E. C. Swanson, G. Tarle, D. Thomas, V. Vikram
+Published: 2016-08-05 11:31:55+00:00
+Updated: 2016-08-05 11:31:55+00:00
+DOI: 10.1093/mnras/stw2849
+arXiv ID: http://arxiv.org/abs/1608.01838v1
+arXiv URL: http://arxiv.org/pdf/1608.01838v1
+Categories: astro-ph.CO
+Author Position: 14
+
+Abstract:
+Cosmic shear is sensitive to fluctuations in the cosmological matter density
+field, including on small physical scales, where matter clustering is affected
+by baryonic physics in galaxies and galaxy clusters, such as star formation,
+supernovae feedback and AGN feedback. While muddying any cosmological
+information that is contained in small scale cosmic shear measurements, this
+does mean that cosmic shear has the potential to constrain baryonic physics and
+galaxy formation. We perform an analysis of the Dark Energy Survey (DES)
+Science Verification (SV) cosmic shear measurements, now extended to smaller
+scales, and using the Mead et al. 2015 halo model to account for baryonic
+feedback. While the SV data has limited statistical power, we demonstrate using
+a simulated likelihood analysis that the final DES data will have the
+statistical power to differentiate among baryonic feedback scenarios. We also
+explore some of the difficulties in interpreting the small scales in cosmic
+shear measurements, presenting estimates of the size of several other
+systematic effects that make inference from small scales difficult, including
+uncertainty in the modelling of intrinsic alignment on nonlinear scales,
+`lensing bias', and shape measurement selection effects. For the latter two, we
+make use of novel image simulations. While future cosmic shear datasets have
+the statistical power to constrain baryonic feedback scenarios, there are
+several systematic effects that require improved treatments, in order to make
+robust conclusions about baryonic feedback.

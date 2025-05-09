@@ -1,0 +1,28 @@
+Title: Deep Realistic Extragalactic Model (DREaM) Galaxy Catalogs: Predictions for a Roman Ultra-Deep Field
+Authors: Nicole E. Drakos, Bruno Villasenor, Brant E. Robertson, Ryan Hausen, Mark E. Dickinson, Henry C. Ferguson, Steven R. Furlanetto, Jenny E. Greene, Piero Madau, Alice E. Shapley, Daniel P. Stark, Risa H. Wechsler
+Published: 2021-10-20 18:00:30+00:00
+Updated: 2021-10-20 18:00:30+00:00
+DOI: 10.3847/1538-4357/ac46fb
+arXiv ID: http://arxiv.org/abs/2110.10703v1
+arXiv URL: http://arxiv.org/pdf/2110.10703v1
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 12
+
+Abstract:
+In the next decade, deep galaxy surveys from telescopes such as the James
+Webb Space Telescope and Roman Space Telescope will provide transformational
+data sets that will greatly enhance the understanding of galaxy formation
+during the epoch of reionization (EoR). In this work, we present the Deep
+Realistic Extragalactic Model (DREaM) for creating synthetic galaxy catalogs.
+Our model combines dark matter simulations, subhalo abundance matching and
+empirical models, and includes galaxy positions, morphologies, and spectral
+energy distributions (SEDs). The resulting synthetic catalog extends to
+redshifts $z \sim 12 $, and galaxy masses $\log_{10}(M/M_{\odot}) = 5 $
+covering an area of $1\, {\rm deg}^2$ on the sky. We use DREaM to explore the
+science returns of a $1\, {\rm deg}^2$ \emph{Roman} UDF, and to provide a
+resource for optimizing ultra-deep survey designs. We find that a \emph{Roman}
+UDF to $\sim 30\,m_{\rm AB}$ will potentially detect more than $10^6$ $M_{\rm
+UV}<-17$ galaxies, with more than $10^4$ at redshifts $z>7$, offering an
+unparalleled dataset for constraining galaxy properties during the EoR. Our
+synthetic catalogs and simulated images are made publicly available to provide
+the community with a tool to prepare for upcoming data.

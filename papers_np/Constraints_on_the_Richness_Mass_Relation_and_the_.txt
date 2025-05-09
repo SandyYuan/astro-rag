@@ -1,0 +1,37 @@
+Title: Constraints on the Richness-Mass Relation and the Optical-SZE Positional Offset Distribution for SZE-Selected Clusters
+Authors: A. Saro, S. Bocquet, E. Rozo, B. A. Benson, J. Mohr, E. S. Rykoff, M. Soares-Santos, L. Bleem, S. Dodelson, P. Melchior, F. Sobreira, V. Upadhyay, J. Weller, T. Abbott, F. B. Abdalla, S. Allam, R. Armstrong, M. Banerji, A. H. Bauer, M. Bayliss, A. Benoit-Levy, G. M. Bernstein, E. Bertin, M. Brodwin, D. Brooks, E. Buckley-Geer, D. L. Burke, J. E. Carlstrom, R. Capasso, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, I. Chiu, R. Covarrubias, T. M. Crawford, M. Crocce, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, T. de Haan, H. T. Diehl, J. P. Dietrich, P. Doel, C. E Cunha, T. F. Eifler, A. E. Evrard, A. Fausti Neto, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, C. Gangkofner, E. Gaztanaga, D. Gerdes, D. Gruen, R. A. Gruendl, N. Gupta, C. Hennig, W. L. Holzapfel, K. Honscheid, B. Jain, D. James, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, H. Lin, M. A. G. Maia, M. March, J. L. Marshall, Paul Martini, M. McDonald, C. J. Miller, R. Miquel, B. Nord, R. Ogando, A. A. Plazas, C. L. Reichardt, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, M. Schubnell, I. Sevilla, R. C. Smith, B. Stalder, A. A. Stark, V. Strazzullo, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, D. Tucker, V. Vikram, A. von der Linden, A. R. Walker, R. H. Wechsler, W. Wester, A. Zenteno, K. E. Ziegler
+Published: 2015-06-25 17:00:43+00:00
+Updated: 2015-06-25 17:00:43+00:00
+DOI: 10.1093/mnras/stv2141
+arXiv ID: http://arxiv.org/abs/1506.07814v1
+arXiv URL: http://arxiv.org/pdf/1506.07814v1
+Categories: astro-ph.CO
+Author Position: 99
+
+Abstract:
+We cross-match galaxy cluster candidates selected via their
+Sunyaev-Zel'dovich effect (SZE) signatures in 129.1 deg$^2$ of the South Pole
+Telescope 2500d SPT-SZ survey with optically identified clusters selected from
+the Dark Energy Survey (DES) science verification data. We identify 25 clusters
+between $0.1\lesssim z\lesssim 0.8$ in the union of the SPT-SZ and redMaPPer
+(RM) samples. RM is an optical cluster finding algorithm that also returns a
+richness estimate for each cluster. We model the richness $\lambda$-mass
+relation with the following function $\langle\ln\lambda|M_{500}\rangle\propto
+B_\lambda\ln M_{500}+C_\lambda\ln E(z)$ and use SPT-SZ cluster masses and RM
+richnesses $\lambda$ to constrain the parameters. We find $B_\lambda=
+1.14^{+0.21}_{-0.18}$ and $C_\lambda=0.73^{+0.77}_{-0.75}$. The associated
+scatter in mass at fixed richness is $\sigma_{\ln M|\lambda} =
+0.18^{+0.08}_{-0.05}$ at a characteristic richness $\lambda=70$. We demonstrate
+that our model provides an adequate description of the matched sample, showing
+that the fraction of SPT-SZ selected clusters with RM counterparts is
+consistent with expectations and that the fraction of RM selected clusters with
+SPT-SZ counterparts is in mild tension with expectation. We model the
+optical-SZE cluster positional offset distribution with the sum of two
+Gaussians, showing that it is consistent with a dominant, centrally peaked
+population and a sub-dominant population characterized by larger offsets. We
+also cross-match the RM catalog with SPT-SZ candidates below the official
+catalog threshold significance $\xi=4.5$, using the RM catalog to provide
+optical confirmation and redshifts for additional low-$\xi$ SPT-SZ
+candidates.In this way, we identify 15 additional clusters with $\xi\in
+[4,4.5]$ over the redshift regime explored by RM in the overlapping region
+between DES science verification data and the SPT-SZ survey.

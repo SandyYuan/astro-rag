@@ -1,0 +1,34 @@
+Title: The Dark Energy Survey: more than dark energy - an overview
+Authors: Dark Energy Survey Collaboration, T. Abbott, F. B. Abdalla, J. Aleksic, S. Allam, A. Amara, D. Bacon, E. Balbinot, M. Banerji, K. Bechtol, A. Benoit-Levy, G. M. Bernstein, E. Bertin, J. Blazek, C. Bonnett, S. Bridle, D. Brooks, R. J. Brunner, E. Buckley-Geer, D. L. Burke, G. B. Caminha, D. Capozzi, J. Carlsen, A. Carnero-Rosell, M. Carollo, M. Carrasco-Kind, J. Carretero, F. J. Castander, L. Clerkin, T. Collett, C. Conselice, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, T. M. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, S. Dodelson, P. Doel, A. Drlica-Wagner, J. Estrada, J. Etherington, A. E. Evrard, J. Fabbri, D. A. Finley, B. Flaugher, R. J. Foley, P. Rosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. A. Goldstein, D. Gruen, R. A. Gruendl, P. Guarnieri, G. Gutierrez, W. Hartley, K. Honscheid, B. Jain, D. J. James, T. Jeltema, S. Jouvel, R. Kessler, A. King, D. Kirk, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, H. Lin, M. A. G. Maia, M. Makler, M. Manera, C. Maraston, J. L. Marshall, P. Martini, R. G. McMahon, P. Melchior, A. Merson, C. J. Miller, R. Miquel, J. J. Mohr, X. Morice-Atkinson, K. Naidoo, E. Neilsen, R. C. Nichol, B. Nord, R. Ogando, F. Ostrovski, A. Palmese, A. Papadopoulos, H. Peiris, J. Peoples, W. J. Percival, A. A. Plazas, S. L. Reed, A. Refregier, A. K. Romer, A. Roodman, A. Ross, E. Rozo, E. S. Rykoff, I. Sadeh, M. Sako, C. Sanchez, E. Sanchez, B. Santiago, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, E. Sheldon, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, M. Soumagnac, E. Suchyta, M. Sullivan, M. Swanson, G. Tarle, J. Thaler, D. Thomas, R. C. Thomas, D. Tucker, J. D. Vieira, V. Vikram, A. R. Walker, R. H. Wechsler, J. Weller, W. Wester, L. Whiteway, H. Wilcox, B. Yanny, Y. Zhang, J. Zuntz
+Published: 2016-01-03 19:33:10+00:00
+Updated: 2016-08-19 15:43:52+00:00
+DOI: 10.1093/mnras/stw641
+arXiv ID: http://arxiv.org/abs/1601.00329v3
+arXiv URL: http://arxiv.org/pdf/1601.00329v3
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 134
+
+Abstract:
+This overview article describes the legacy prospect and discovery potential
+of the Dark Energy Survey (DES) beyond cosmological studies, illustrating it
+with examples from the DES early data. DES is using a wide-field camera (DECam)
+on the 4m Blanco Telescope in Chile to image 5000 sq deg of the sky in five
+filters (grizY). By its completion the survey is expected to have generated a
+catalogue of 300 million galaxies with photometric redshifts and 100 million
+stars. In addition, a time-domain survey search over 27 sq deg is expected to
+yield a sample of thousands of Type Ia supernovae and other transients. The
+main goals of DES are to characterise dark energy and dark matter, and to test
+alternative models of gravity; these goals will be pursued by studying large
+scale structure, cluster counts, weak gravitational lensing and Type Ia
+supernovae. However, DES also provides a rich data set which allows us to study
+many other aspects of astrophysics. In this paper we focus on additional
+science with DES, emphasizing areas where the survey makes a difference with
+respect to other current surveys. The paper illustrates, using early data (from
+`Science Verification', and from the first, second and third seasons of
+observations), what DES can tell us about the solar system, the Milky Way,
+galaxy evolution, quasars, and other topics. In addition, we show that if the
+cosmological model is assumed to be Lambda+ Cold Dark Matter (LCDM) then
+important astrophysics can be deduced from the primary DES probes. Highlights
+from DES early data include the discovery of 34 Trans Neptunian Objects, 17
+dwarf satellites of the Milky Way, one published z > 6 quasar (and more
+confirmed) and two published superluminous supernovae (and more confirmed).

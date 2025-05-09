@@ -1,0 +1,34 @@
+Title: Dark Energy Survey Year 1 Results: Galaxy-Galaxy Lensing
+Authors: J. Prat, C. Sánchez, Y. Fang, D. Gruen, J. Elvin-Poole, N. Kokron, L. F. Secco, B. Jain, R. Miquel, N. MacCrann, M. A. Troxel, A. Alarcon, D. Bacon, G. M. Bernstein, J. Blazek, R. Cawthon, C. Chang, M. Crocce, C. Davis, J. De Vicente, J. P. Dietrich, A. Drlica-Wagner, O. Friedrich, M. Gatti, W. G. Hartley, B. Hoyle, E. M. Huff, M. Jarvis, M. M. Rau, R. P. Rollins, A. J. Ross, E. Rozo, E. S. Rykoff, S. Samuroff, E. Sheldon, T. N. Varga, P. Vielzeuf, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, K. Bechtol, A. Benoit-Lévy, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desai, H. T. Diehl, S. Dodelson, T. F. Eifler, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. A. Goldstein, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, T. Jeltema, M. W. G. Johnson, M. D. Johnson, D. Kirk, E. Krause, K. Kuehn, S. Kuhlmann, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, J. J. Mohr, R. C. Nichol, B. Nord, A. A. Plazas, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, V. Vikram, A. R. Walker, R. H. Wechsler, B. Yanny, Y. Zhang
+Published: 2017-08-04 14:52:34+00:00
+Updated: 2018-09-04 13:58:22+00:00
+DOI: 10.1103/PhysRevD.98.042005
+arXiv ID: http://arxiv.org/abs/1708.01537v2
+arXiv URL: http://arxiv.org/pdf/1708.01537v2
+Categories: astro-ph.CO
+Author Position: 113
+
+Abstract:
+We present galaxy-galaxy lensing measurements from 1321 sq. deg. of the Dark
+Energy Survey (DES) Year 1 (Y1) data. The lens sample consists of a selection
+of 660,000 red galaxies with high-precision photometric redshifts, known as
+redMaGiC, split into five tomographic bins in the redshift range $0.15 < z <
+0.9$. We use two different source samples, obtained from the Metacalibration
+(26 million galaxies) and Im3shape (18 million galaxies) shear estimation
+codes, which are split into four photometric redshift bins in the range $0.2 <
+z < 1.3$. We perform extensive testing of potential systematic effects that can
+bias the galaxy-galaxy lensing signal, including those from shear estimation,
+photometric redshifts, and observational properties. Covariances are obtained
+from jackknife subsamples of the data and validated with a suite of log-normal
+simulations. We use the shear-ratio geometric test to obtain independent
+constraints on the mean of the source redshift distributions, providing
+validation of those obtained from other photo-$z$ studies with the same data.
+We find consistency between the galaxy bias estimates obtained from our
+galaxy-galaxy lensing measurements and from galaxy clustering, therefore
+showing the galaxy-matter cross-correlation coefficient $r$ to be consistent
+with one, measured over the scales used for the cosmological analysis. The
+results in this work present one of the three two-point correlation functions,
+along with galaxy clustering and cosmic shear, used in the DES cosmological
+analysis of Y1 data, and hence the methodology and the systematics tests
+presented here provide a critical input for that study as well as for future
+cosmological analyses in DES and other photometric galaxy surveys.

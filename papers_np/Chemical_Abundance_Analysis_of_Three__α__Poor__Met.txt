@@ -1,0 +1,25 @@
+Title: Chemical Abundance Analysis of Three $α$-Poor, Metal-Poor Stars in the Ultra-Faint Dwarf Galaxy Horologium I
+Authors: D. Q. Nagasawa, J. L. Marshall, J. D. Simon, T. T. Hansen, T. S. Li, R. A. Bernstein, E. Balbinot, A. Drlica-Wagner, A. B. Pace, L. E. Strigari, C. M. Pellegrino, D. L. DePoy, N. B. Suntzeff, K. Bechtol, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, A. Benoit-Lévy, E. Bertin, D. Brooks, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, S. Desai, P. Doel, T. F. Eifler, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, K. Honscheid, D. J. James, T. Jeltema, E. Krause, K. Kuehn, S. Kuhlmann, N. Kuropatkin, M. March, R. Miquel, B. Nord, A. Roodman, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, D. Thomas, D. L. Tucker, A. R. Walker, R. H. Wechsler, R. C. Wolf, B. Yanny
+Published: 2017-08-07 20:05:00+00:00
+Updated: 2017-08-07 20:05:00+00:00
+DOI: 10.3847/1538-4357/aaa01d
+arXiv ID: http://arxiv.org/abs/1708.02290v1
+arXiv URL: http://arxiv.org/pdf/1708.02290v1
+Categories: astro-ph.SR, astro-ph.GA
+Author Position: 69
+
+Abstract:
+We present chemical abundance measurements of three stars in the ultra-faint
+dwarf galaxy Horologium I, a Milky Way satellite discovered by the Dark Energy
+Survey. Using high resolution spectroscopic observations we measure the
+metallicity of the three stars as well as abundance ratios of several
+$\alpha$-elements, iron-peak elements, and neutron-capture elements. The
+abundance pattern is relatively consistent among all three stars, which have a
+low average metallicity of [Fe/H] $\sim -2.6$ and are not $\alpha$-enhanced
+([$\alpha$/Fe] $\sim 0.0$). This result is unexpected when compared to other
+low-metallicity stars in the Galactic halo and other ultra-faint dwarfs and
+hints at an entirely different mechanism for the enrichment of Hor I compared
+to other satellites. We discuss possible scenarios that could lead to this
+observed nucleosynthetic signature including extended star formation, a
+Population III supernova, and a possible association with the Large Magellanic
+Cloud.

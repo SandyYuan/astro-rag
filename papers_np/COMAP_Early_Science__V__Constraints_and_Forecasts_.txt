@@ -1,0 +1,34 @@
+Title: COMAP Early Science: V. Constraints and Forecasts at $z \sim 3$
+Authors: Dongwoo T. Chung, Patrick C. Breysse, Kieran A. Cleary, Håvard T. Ihle, Hamsa Padmanabhan, Marta B. Silva, J. Richard Bond, Jowita Borowska, Morgan Catha, Sarah E. Church, Delaney A. Dunne, Hans Kristian Eriksen, Marie Kristine Foss, Todd Gaier, Joshua Ott Gundersen, Stuart E. Harper, Andrew I. Harris, Brandon Hensley, Richard Hobbs, Laura C. Keating, Junhan Kim, James W. Lamb, Charles R. Lawrence, Jonas Gahr Sturtzel Lunde, Norman Murray, Timothy J. Pearson, Liju Philip, Maren Rasmussen, Anthony C. S. Readhead, Thomas J. Rennie, Nils-Ole Stutzer, Bade D. Uzgil, Marco P. Viero, Duncan J. Watts, Risa H. Wechsler, Ingunn Kathrine Wehus, David P. Woody
+Published: 2021-11-10 20:45:36+00:00
+Updated: 2022-03-04 13:42:46+00:00
+DOI: 10.3847/1538-4357/ac63c7
+arXiv ID: http://arxiv.org/abs/2111.05931v3
+arXiv URL: http://arxiv.org/pdf/2111.05931v3
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 35
+
+Abstract:
+We present the current state of models for the $z\sim3$ carbon monoxide (CO)
+line-intensity signal targeted by the CO Mapping Array Project (COMAP)
+Pathfinder in the context of its early science results. Our fiducial model,
+relating dark matter halo properties to CO luminosities, informs parameter
+priors with empirical models of the galaxy-halo connection and previous CO(1-0)
+observations. The Pathfinder early science data spanning wavenumbers
+$k=0.051$-$0.62\,$Mpc$^{-1}$ represent the first direct 3D constraint on the
+clustering component of the CO(1-0) power spectrum. Our 95% upper limit on the
+redshift-space clustering amplitude $A_{\rm clust}\lesssim70\,\mu$K$^2$ greatly
+improves on the indirect upper limit of $420\,\mu$K$^2$ reported from the CO
+Power Spectrum Survey (COPSS) measurement at $k\sim1\,$Mpc$^{-1}$. The COMAP
+limit excludes a subset of models from previous literature, and constrains
+interpretation of the COPSS results, demonstrating the complementary nature of
+COMAP and interferometric CO surveys. Using line bias expectations from our
+priors, we also constrain the squared mean line intensity-bias product,
+$\langle{Tb}\rangle^2\lesssim50\,\mu$K$^2$, and the cosmic molecular gas
+density, $\rho_\text{H2}<2.5\times10^8\,M_\odot\,$Mpc$^{-3}$ (95% upper
+limits). Based on early instrument performance and our current CO signal
+estimates, we forecast that the five-year Pathfinder campaign will detect the
+CO power spectrum with overall signal-to-noise of 9-17. Between then and now,
+we also expect to detect the CO-galaxy cross-spectrum using overlapping galaxy
+survey data, enabling enhanced inferences of cosmic star-formation and
+galaxy-evolution history.

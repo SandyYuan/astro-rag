@@ -1,0 +1,34 @@
+Title: Galaxies in X-ray Groups I: Robust Membership Assignment and the Impact of Group Environments on Quenching
+Authors: Matthew R. George, Alexie Leauthaud, Kevin Bundy, Alexis Finoguenov, Jeremy Tinker, Yen-Ting Lin, Simona Mei, Jean-Paul Kneib, Hervé Aussel, Peter S. Behroozi, Michael T. Busha, Peter Capak, Lodovico Coccato, Giovanni Covone, Cecile Faure, Stephanie L. Fiorenza, Olivier Ilbert, Emeric Le Floc'h, Anton M. Koekemoer, Masayuki Tanaka, Risa H. Wechsler, Melody Wolk
+Published: 2011-09-27 21:16:36+00:00
+Updated: 2011-09-27 21:16:36+00:00
+DOI: 10.1088/0004-637X/742/2/125
+arXiv ID: http://arxiv.org/abs/1109.6040v1
+arXiv URL: http://arxiv.org/pdf/1109.6040v1
+Categories: astro-ph.CO
+Author Position: 21
+
+Abstract:
+Understanding the mechanisms that lead dense environments to host galaxies
+with redder colors, more spheroidal morphologies, and lower star formation
+rates than field populations remains an important problem. As most candidate
+processes ultimately depend on host halo mass, accurate characterizations of
+the local environment, ideally tied to halo mass estimates and spanning a range
+in halo mass and redshift are needed. In this work, we present and test a
+rigorous, probabalistic method for assigning galaxies to groups based on
+precise photometric redshifts and X-ray selected groups drawn from the COSMOS
+field. The groups have masses in the range 10^13 < M_200c/M_sun < 10^14 and
+span redshifts 0<z<1. We characterize our selection algorithm via tests on
+spectroscopic subsamples, including new data obtained at the VLT, and by
+applying our method to detailed mock catalogs. We find that our group member
+galaxy sample has a purity of 84% and completeness of 92% within 0.5 R200c. We
+measure the impact of uncertainties in redshifts and group centering on the
+quality of the member selection with simulations based on current data as well
+as future imaging and spectroscopic surveys. As a first application of our new
+group member catalog which will be made publicly available, we show that member
+galaxies exhibit a higher quenched fraction compared to the field at fixed
+stellar mass out to z~1, indicating a significant relationship between star
+formation and environment at group scales. We also address the suggestion that
+dusty star forming galaxies in such groups may impact the high-l power spectrum
+of the cosmic microwave background and find that such a population cannot
+explain the low power seen in recent SZ measurements.

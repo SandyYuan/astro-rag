@@ -1,0 +1,36 @@
+Title: Cluster Cosmology Without Cluster Finding
+Authors: Enia Xhakaj, Alexie Leauthaud, Johannes Lange, Elisabeth Krause, Andrew Hearin, Song Huang, Risa H. Wechsler, Sven Heydenreich
+Published: 2023-05-26 21:44:09+00:00
+Updated: 2023-05-26 21:44:09+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2306.03777v1
+arXiv URL: http://arxiv.org/pdf/2306.03777v1
+Categories: astro-ph.CO
+Author Position: 7
+
+Abstract:
+We propose that observations of super-massive galaxies contain cosmological
+constraining power similar to conventional cluster cosmology, and we provide
+promising indications that the associated systematic errors are comparably
+easier to control. We consider a fiducial spectroscopic and stellar mass
+complete sample of galaxies drawn from the Dark Energy Spectroscopic Survey
+(DESI) and forecast how constraints on Omega_m-sigma_8 from this sample will
+compare with those from number counts of clusters based on richness. At fixed
+number density, we find that massive galaxies offer similar constraints to
+galaxy clusters. However, a mass-complete galaxy sample from DESI has the
+potential to probe lower halo masses than standard optical cluster samples
+(which are typically limited to richness above 20 and halo mass above 10^13.5);
+additionally, it is straightforward to cleanly measure projected galaxy
+clustering for such a DESI sample, which we show can substantially improve the
+constraining power on Omega_m. We also compare the constraining power of
+stellar mass-limited samples to those from larger but mass-incomplete samples
+(e.g., the DESI Bright Galaxy Survey, BGS, Sample); relative to a lower number
+density stellar mass-limited samples, we find that a BGS-like sample improves
+statistical constraints by 60% for Omega_m and 40% for sigma_8, but this uses
+small scale information which will be harder to model for BGS. Our initial
+assessment of the systematics associated with supermassive galaxy cosmology
+yields promising results. The proposed samples have a 10% satellite fraction,
+but we show that cosmological constraints may be robust to the impact of
+satellites. These findings motivate future work to realize the potential of
+super-massive galaxies to probe lower halo masses than richness-based clusters
+and to avoid persistent systematics associated with optical cluster finding.

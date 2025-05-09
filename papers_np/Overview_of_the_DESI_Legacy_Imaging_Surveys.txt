@@ -1,0 +1,29 @@
+Title: Overview of the DESI Legacy Imaging Surveys
+Authors: Arjun Dey, David J. Schlegel, Dustin Lang, Robert Blum, Kaylan Burleigh, Xiaohui Fan, Joseph R. Findlay, Doug Finkbeiner, David Herrera, Stephanie Juneau, Martin Landriau, Michael Levi, Ian McGreer, Aaron Meisner, Adam D. Myers, John Moustakas, Peter Nugent, Anna Patej, Edward F. Schlafly, Alistair R. Walker, Francisco Valdes, Benjamin A. Weaver, Christophe Yeche Hu Zou, Xu Zhou, Behzad Abareshi, T. M. C. Abbott, Bela Abolfathi, C. Aguilera, Shadab Alam, Lori Allen, A. Alvarez, James Annis, Behzad Ansarinejad, Marie Aubert, Jacqueline Beechert, Eric F. Bell, Segev Y. BenZvi, Florian Beutler, Richard M. Bielby, Adam S. Bolton, Cesar Briceno Elizabeth J. Buckley-Geer, Karen Butler, Annalisa Calamida, Raymond G. Carlberg, Paul Carter, Ricard Casas, Francisco J. Castander, Yumi Choi, Johan Comparat, Elena Cukanovaite, Timothee Delubac, Kaitlin DeVries, Sharmila Dey, Govinda Dhungana, Mark Dickinson, Zhejie Ding, John B. Donaldson, Yutong Duan, Christopher J. Duckworth, Sarah Eftekharzadeh, Daniel J. Eisenstein, Thomas Etourneau, Parker A. Fagrelius, Jay Farihi, Mike Fitzpatrick, Andreu Font-Ribera, Leah Fulmer, Boris T. Gansicke, Enrique Gaztanaga, Koshy George, David W. Gerdes, Satya Gontcho A Gontcho, Claudio Gorgoni, Gregory Green, Julien Guy, Diane Harmer, M. Hernandez, Klaus Honscheid, Lijuan, Huang, David James, Buell T. Jannuzi, Linhua Jiang, Richard Joyce, Armin Karcher, Sonia Karkar, Robert Kehoe, Jean-Paul Kneib, Andrea Kueter-Young, Ting-Wen Lan, Tod Lauer, Laurent Le Guillou, Auguste Le Van Suu, Jae Hyeon Lee, Michael Lesser, Laurence Perreault Levasseur, Ting S. Li, Justin L. Mann, Bob Marshall, C. E. Martinez-Vazquez, Paul Martini, Helion du Mas des Bourboux, Sean McManus, Tobias Gabriel Meier, Brice Menard, Nigel Metcalfe, Andrea Munoz-Gutierrez, Joan Najita, Kevin Napier, Gautham Narayan, Jeffrey A. Newman, Jundan Nie, Brian Nord, Dara J. Norman, Knut A. G. Olsen, Anthony Paat, Nathalie Palanque-Delabrouille, Xiyan Peng, Claire L. Poppett, Megan R. Poremba, Abhishek Prakash, David Rabinowitz, Anand Raichoor, Mehdi Rezaie, A. N. Robertson, Natalie A. Roe, Ashley J. Ross, Nicholas P. Ross, Gregory Rudnick, Sasha Safonova, Abhijit Saha, F. Javier Sanchez, Elodie Savary, Heidi Schweiker, Adam Scott, Hee-Jong Seo, Huanyuan Shan, David R. Silva, Zachary Slepian, Christian Soto, David Sprayberry, Ryan Staten, Coley M. Stillman, Robert J. Stupak, David L. Summers, Suk Sien Tie, H. Tirado, Mariana Vargas-Magana, A. Katherina Vivas, Risa H. Wechsler, Doug Williams, Jinyi Yang, Qian Yang, Tolga Yapici, Dennis Zaritsky, A. Zenteno, Kai Zhang, Tianmeng Zhang, Rongpu Zhou, Zhimin Zhou
+Published: 2018-04-23 18:33:16+00:00
+Updated: 2019-02-19 17:09:12+00:00
+DOI: 10.3847/1538-3881/ab089d
+arXiv ID: http://arxiv.org/abs/1804.08657v2
+arXiv URL: http://arxiv.org/pdf/1804.08657v2
+Categories: astro-ph.IM
+Author Position: 150
+
+Abstract:
+The DESI Legacy Imaging Surveys are a combination of three public projects
+(the Dark Energy Camera Legacy Survey, the Beijing-Arizona Sky Survey, and the
+Mayall z-band Legacy Survey) that will jointly image approximately 14,000 deg^2
+of the extragalactic sky visible from the northern hemisphere in three optical
+bands (g, r, and z) using telescopes at the Kitt Peak National Observatory and
+the Cerro Tololo Inter-American Observatory. The combined survey footprint is
+split into two contiguous areas by the Galactic plane. The optical imaging is
+conducted using a unique strategy of dynamically adjusting the exposure times
+and pointing selection during observing that results in a survey of nearly
+uniform depth. In addition to calibrated images, the project is delivering a
+catalog, constructed by using a probabilistic inference-based approach to
+estimate source shapes and brightnesses. The catalog includes photometry from
+the grz optical bands and from four mid-infrared bands (at 3.4, 4.6, 12 and 22
+micorons) observed by the Wide-field Infrared Survey Explorer (WISE) satellite
+during its full operational lifetime. The project plans two public data
+releases each year. All the software used to generate the catalogs is also
+released with the data. This paper provides an overview of the Legacy Surveys
+project.

@@ -1,0 +1,34 @@
+Title: Dark Energy Survey Year 3 Results: High-precision measurement and modeling of galaxy-galaxy lensing
+Authors: J. Prat, J. Blazek, C. Sánchez, I. Tutusaus, S. Pandey, J. Elvin-Poole, E. Krause, M. A. Troxel, L. F. Secco, A. Amon, J. DeRose, G. Zacharegkas, C. Chang, B. Jain, N. MacCrann, Y. Park, E. Sheldon, G. Giannini, S. Bocquet, C. To, A. Alarcon, O. Alves, F. Andrade-Oliveira, E. Baxter, K. Bechtol, M. R. Becker, G. M. Bernstein, H. Camacho, A. Campos, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, R. Chen, A. Choi, J. Cordero, M. Crocce, C. Davis, J. De Vicente, H. T. Diehl, S. Dodelson, C. Doux, A. Drlica-Wagner, K. Eckert, T. F. Eifler, F. Elsner, S. Everett, X. Fang, A. Farahi, A. Ferté, P. Fosalba, O. Friedrich, M. Gatti, D. Gruen, R. A. Gruendl, I. Harrison, W. G. Hartley, K. Herner, H. Huang, E. M. Huff, D. Huterer, M. Jarvis, N. Kuropatkin, P. -F. Leget, P. Lemos, A. R. Liddle, J. McCullough, J. Muir, J. Myles, A. Navarro-Alsina, A. Porredon, M. Raveri, M. Rodriguez-Monroy, R. P. Rollins, A. Roodman, R. Rosenfeld, A. J. Ross, E. S. Rykoff, J. Sanchez, I. Sevilla-Noarbe, T. Shin, A. Troja, T. N. Varga, N. Weaverdyck, R. H. Wechsler, B. Yanny, B. Yin, J. Zuntz, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, D. Bacon, D. Brooks, D. L. Burke, J. Carretero, C. Conselice, M. Costanzi, L. N. da Costa, M. E. S. Pereira, S. Desai, J. P. Dietrich, P. Doel, A. E. Evrard, I. Ferrero, B. Flaugher, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, O. Lahav, H. Lin, M. A. G. Maia, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, R. Morgan, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, D. Petravick, A. A. Plazas Malagón, E. Sanchez, S. Serrano, M. Smith, M. Soares-Santos, E. Suchyta, G. Tarle, D. Thomas, J. Weller
+Published: 2021-05-28 01:58:50+00:00
+Updated: 2022-04-05 19:46:23+00:00
+DOI: 10.1103/PhysRevD.105.083528
+arXiv ID: http://arxiv.org/abs/2105.13541v2
+arXiv URL: http://arxiv.org/pdf/2105.13541v2
+Categories: astro-ph.CO
+Author Position: 84
+
+Abstract:
+We present and characterize the galaxy-galaxy lensing signal measured using
+the first three years of data from the Dark Energy Survey (DES Y3) covering
+4132 deg$^2$. These galaxy-galaxy measurements are used in the DES Y3
+3$\times$2pt cosmological analysis, which combines weak lensing and galaxy
+clustering information. We use two lens samples: a magnitude-limited sample and
+the redMaGic sample, which span the redshift range $\sim 0.2-1$ with 10.7 M and
+2.6 M galaxies respectively. For the source catalog, we use the Metacalibration
+shape sample, consisting of $\simeq$100 M galaxies separated into 4 tomographic
+bins. Our galaxy-galaxy lensing estimator is the mean tangential shear, for
+which we obtain a total S/N of $\sim$148 for MagLim ($\sim$120 for redMaGic),
+and $\sim$67 ($\sim$55) after applying the scale cuts of 6 Mpc/$h$. Thus we
+reach percent-level statistical precision, which requires that our modeling and
+systematic-error control be of comparable accuracy. The tangential shear model
+used in the 3$\times$2pt cosmological analysis includes lens magnification, a
+five-parameter intrinsic alignment model (TATT), marginalization over a
+point-mass to remove information from small scales and a linear galaxy bias
+model validated with higher-order terms. We explore the impact of these choices
+on the tangential shear observable and study the significance of effects not
+included in our model, such as reduced shear, source magnification and source
+clustering. We also test the robustness of our measurements to various
+observational and systematics effects, such as the impact of observing
+conditions, lens-source clustering, random-point subtraction, scale-dependent
+Metacalibration responses, PSF residuals, and B-modes.

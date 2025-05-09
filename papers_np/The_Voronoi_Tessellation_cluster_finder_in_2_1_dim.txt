@@ -1,0 +1,30 @@
+Title: The Voronoi Tessellation cluster finder in 2+1 dimensions
+Authors: Marcelle Soares-Santos, Reinaldo R. de Carvalho, James Annis, Roy R. Gal, Francesco La Barbera, Paulo A. A. Lopes, Risa H. Wechsler, Michael T. Busha, Brian F. Gerke
+Published: 2010-11-15 17:18:21+00:00
+Updated: 2010-11-15 17:18:21+00:00
+DOI: 10.1088/0004-637X/727/1/45
+arXiv ID: http://arxiv.org/abs/1011.3458v1
+arXiv URL: http://arxiv.org/pdf/1011.3458v1
+Categories: astro-ph.CO
+Author Position: 7
+
+Abstract:
+We present a detailed description of the Voronoi Tessellation (VT) cluster
+finder algorithm in 2+1 dimensions, which improves on past implementations of
+this technique. The need for cluster finder algorithms able to produce reliable
+cluster catalogs up to redshift 1 or beyond and down to $10^{13.5}$ solar
+masses is paramount especially in light of upcoming surveys aiming at
+cosmological constraints from galaxy cluster number counts. We build the VT in
+photometric redshift shells and use the two-point correlation function of the
+galaxies in the field to both determine the density threshold for detection of
+cluster candidates and to establish their significance. This allows us to
+detect clusters in a self consistent way without any assumptions about their
+astrophysical properties. We apply the VT to mock catalogs which extend to
+redshift 1.4 reproducing the $\Lambda$CDM cosmology and the clustering
+properties observed in the SDSS data. An objective estimate of the cluster
+selection function in terms of the completeness and purity as a function of
+mass and redshift is as important as having a reliable cluster finder. We
+measure these quantities by matching the VT cluster catalog with the mock truth
+table. We show that the VT can produce a cluster catalog with completeness and
+purity $>80%$ for the redshift range up to $\sim 1$ and mass range down to
+$\sim 10^{13.5}$ solar masses.

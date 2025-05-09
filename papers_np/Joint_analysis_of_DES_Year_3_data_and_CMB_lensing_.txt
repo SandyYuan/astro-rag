@@ -1,0 +1,33 @@
+Title: Joint analysis of DES Year 3 data and CMB lensing from SPT and Planck III: Combined cosmological constraints
+Authors: T. M. C. Abbott, M. Aguena, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, J. Annis, B. Ansarinejad, S. Avila, D. Bacon, E. J. Baxter, K. Bechtol, M. R. Becker, B. A. Benson, G. M. Bernstein, E. Bertin, J. Blazek, L. E. Bleem, S. Bocquet, D. Brooks, E. Buckley-Geer, D. L. Burke, H. Camacho, A. Campos, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, R. Cawthon, C. Chang, C. L. Chang, R. Chen, A. Choi, R. Chown, C. Conselice, J. Cordero, M. Costanzi, T. Crawford, A. T. Crites, M. Crocce, L. N. da Costa, C. Davis, T. M. Davis, T. de Haan, J. De Vicente, J. DeRose, S. Desai, H. T. Diehl, M. A. Dobbs, S. Dodelson, P. Doel, C. Doux, A. Drlica-Wagner, K. Eckert, T. F. Eifler, F. Elsner, J. Elvin-Poole, S. Everett, W. Everett, X. Fang, I. Ferrero, A. Ferté, B. Flaugher, P. Fosalba, O. Friedrich, J. Frieman, J. García-Bellido, M. Gatti, E. M. George, T. Giannantonio, G. Giannini, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, N. W. Halverson, I. Harrison, K. Herner, S. R. Hinton, G. P. Holder, D. L. Hollowood, W. L. Holzapfel, K. Honscheid, J. D. Hrubes, H. Huang, E. M. Huff, D. Huterer, B. Jain, D. J. James, M. Jarvis, T. Jeltema, S. Kent, L. Knox, A. Kovacs, E. Krause, K. Kuehn, N. Kuropatkin, O. Lahav, A. T. Lee, P. -F. Leget, P. Lemos, A. R. Liddle, C. Lidman, D. Luong-Van, J. J. McMahon, N. MacCrann, M. March, J. L. Marshall, P. Martini, J. McCullough, P. Melchior, F. Menanteau, S. S. Meyer, R. Miquel, L. Mocanu, J. J. Mohr, R. Morgan, J. Muir, J. Myles, T. Natoli, A. Navarro-Alsina, R. C. Nichol, Y. Omori, S. Padin, S. Pandey, Y. Park, F. Paz-Chinchón, M. E. S. Pereira, A. Pieres, A. A. Plazas Malagón, A. Porredon, J. Prat, C. Pryke, M. Raveri, C. L. Reichardt, R. P. Rollins, A. K. Romer, A. Roodman, R. Rosenfeld, A. J. Ross, J. E. Ruhl, E. S. Rykoff, C. Sánchez, E. Sanchez, J. Sanchez, K. K. Schaffer, L. F. Secco, I. Sevilla-Noarbe, E. Sheldon, T. Shin, E. Shirokoff, M. Smith, Z. Staniszewski, A. A. Stark, E. Suchyta, M. E. C. Swanson, G. Tarle, C. To, M. A. Troxel, I. Tutusaus, T. N. Varga, J. D. Vieira, N. Weaverdyck, R. H. Wechsler, J. Weller, R. Williamson, W. L. K. Wu, B. Yanny, B. Yin, Y. Zhang, J. Zuntz
+Published: 2022-06-22 03:46:19+00:00
+Updated: 2022-06-22 03:46:19+00:00
+DOI: 10.1103/PhysRevD.107.023531
+arXiv ID: http://arxiv.org/abs/2206.10824v1
+arXiv URL: http://arxiv.org/pdf/2206.10824v1
+Categories: astro-ph.CO
+Author Position: 164
+
+Abstract:
+We present cosmological constraints from the analysis of two-point
+correlation functions between galaxy positions and galaxy lensing measured in
+Dark Energy Survey (DES) Year 3 data and measurements of cosmic microwave
+background (CMB) lensing from the South Pole Telescope (SPT) and Planck. When
+jointly analyzing the DES-only two-point functions and the DES
+cross-correlations with SPT+Planck CMB lensing, we find $\Omega_{\rm m} =
+0.344\pm 0.030$ and $S_8 \equiv \sigma_8 (\Omega_{\rm m}/0.3)^{0.5} = 0.773\pm
+0.016$, assuming $\Lambda$CDM. When additionally combining with measurements of
+the CMB lensing autospectrum, we find $\Omega_{\rm m} =
+0.306^{+0.018}_{-0.021}$ and $S_8 = 0.792\pm 0.012$. The high signal-to-noise
+of the CMB lensing cross-correlations enables several powerful consistency
+tests of these results, including comparisons with constraints derived from
+cross-correlations only, and comparisons designed to test the robustness of the
+galaxy lensing and clustering measurements from DES. Applying these tests to
+our measurements, we find no evidence of significant biases in the baseline
+cosmological constraints from the DES-only analyses or from the joint analyses
+with CMB lensing cross-correlations. However, the CMB lensing
+cross-correlations suggest possible problems with the correlation function
+measurements using alternative lens galaxy samples, in particular the redMaGiC
+galaxies and high-redshift MagLim galaxies, consistent with the findings of
+previous studies. We use the CMB lensing cross-correlations to identify
+directions for further investigating these problems.

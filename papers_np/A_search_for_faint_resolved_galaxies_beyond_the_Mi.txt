@@ -1,0 +1,28 @@
+Title: A search for faint resolved galaxies beyond the Milky Way in DES Year 6: A new faint, diffuse dwarf satellite of NGC 55
+Authors: M. McNanna, K. Bechtol, S. Mau, E. O. Nadler, J. Medoff, A. Drlica-Wagner, W. Cerny, D. Crnojevic, B. Mutlu-Pakdil, A. K. Vivas, A. B. Pace, J. L. Carlin, M. L. M. Collins, P. S. Ferguson, D. Martinez-Delgado, C. E. Martinez-Vazquez, N. E. D. Noel, A. H. Riley, D. J. Sand, A. Smercina, E. Tollerud, R. H. Wechsler, T. M. C. Abbott, M. Aguena, O. Alves, D. Bacon, C. R. Bom, D. Brooks, D. L. Burke, J. A. Carballo-Bello, A. Carnero Rosell, J. Carretero, L. N. da Costa, T. M. Davis, J. De Vicente, H. T. Diehl, P. Doel, I. Ferrero, J. Frieman, G. Giannini, D. Gruen, G. Gutierrez, R. A. Gruendl, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, J. L. Marshall, J. Mena-Fernandez, R. Miquel, M. E. S. Pereira, A. Pieres, A. A. Plazas Malagon, J. D. Sakowska, E. Sanchez, D. Sanchez Cid, B. Santiago, I. Sevilla-Noarbe, M. Smith, G. S. Stringfellow, E. Suchyta, M. E. C. Swanson, G. Tarle, N. Weaverdyck, P. Wiseman
+Published: 2023-09-08 17:54:49+00:00
+Updated: 2023-12-04 21:36:02+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2309.04467v3
+arXiv URL: http://arxiv.org/pdf/2309.04467v3
+Categories: astro-ph.GA
+Author Position: 22
+
+Abstract:
+We report results from a systematic wide-area search for faint dwarf galaxies
+at heliocentric distances from 0.3 to 2 Mpc using the full six years of data
+from the Dark Energy Survey (DES). Unlike previous searches over the DES data,
+this search specifically targeted a field population of faint galaxies located
+beyond the Milky Way virial radius. We derive our detection efficiency for
+faint, resolved dwarf galaxies in the Local Volume with a set of synthetic
+galaxies and expect our search to be complete to $M_V$ ~ $(-7, -10)$ mag for
+galaxies at $D = (0.3, 2.0)$ Mpc respectively. We find no new field dwarfs in
+the DES footprint, but we report the discovery of one high-significance
+candidate dwarf galaxy at a distance of $2.2\substack{+0.05\\-0.12}$ Mpc, a
+potential satellite of the Local Volume galaxy NGC 55, separated by $47$ arcmin
+(physical separation as small as 30 kpc). We estimate this dwarf galaxy to have
+an absolute V-band magnitude of $-8.0\substack{+0.5\\-0.3}$ mag and an
+azimuthally averaged physical half-light radius of $2.2\substack{+0.5\\-0.4}$
+kpc, making this one of the lowest surface brightness galaxies ever found with
+$\mu = 32.3$ mag ${\rm arcsec}^{-2}$. This is the largest, most diffuse galaxy
+known at this luminosity, suggesting possible tidal interactions with its host.

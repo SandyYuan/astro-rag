@@ -1,0 +1,28 @@
+Title: DES meets Gaia: discovery of strongly lensed quasars from a multiplet search
+Authors: A. Agnello, H. Lin, N. Kuropatkin, E. Buckley-Geer, T. Anguita, P. L. Schechter, T. Morishita, V. Motta, K. Rojas, T. Treu, A. Amara, M. W. Auger, F. Courbin, C. D. Fassnacht, J. Frieman, A. More, P. J. Marshall, R. G. McMahon, G. Meylan, S. H. Suyu, K. Glazebrook, N. Morgan, B. Nord, T. M. C. Abbott, F. B. Abdalla, J. Annis, K. Bechtol, A. Benoit-Lévy, E. Bertin, R. A. Bernstein, D. Brooks, D. L. Burke, A. Carnero Rosell, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desai, A. Drlica-Wagner, T. F. Eifler, B. Flaughe, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, K. Kuehn, O. Lahav, M. Lima, M. A. G. Maia, M. March, F. Menanteau, R. Miquel, R. L. C. Ogando, A. A. Plazas, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnel, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Tucker, R. Wechsler
+Published: 2017-11-10 19:00:02+00:00
+Updated: 2017-11-10 19:00:02+00:00
+DOI: 10.1093/mnras/sty1419
+arXiv ID: http://arxiv.org/abs/1711.03971v1
+arXiv URL: http://arxiv.org/pdf/1711.03971v1
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 72
+
+Abstract:
+We report the discovery, spectroscopic confirmation and first lens models of
+the first two, strongly lensed quasars from a combined search in WISE and Gaia
+over the DES footprint.
+  The four-image lensWGD2038-4008 (r.a.=20:38:02.65, dec.=-40:08:14.64) has
+source- and lens-redshifts $z_{s}=0.777 \pm 0.001$ and $z_l = 0.230 \pm 0.002$
+respectively. Its deflector has effective radius $R_{\rm eff} \approx
+3.4^{\prime\prime}$, stellar mass $\log(M_{\star}/M_{\odot}) =
+11.64^{+0.20}_{-0.43}$, and shows extended isophotal shape variation. Simple
+lens models yield Einstein radii $R_{\rm E}=(1.30\pm0.04)^{\prime\prime},$ axis
+ratio $q=0.75\pm0.1$ (compatible with that of the starlight) and considerable
+shear-ellipticity degeneracies. The two-image lensWGD2021-4115
+(r.a.=20:21:39.45, dec.=--41:15:57.11) has $z_{s}=1.390\pm0.001$ and $z_l =
+0.335 \pm 0.002$, and Einstein radius $R_{\rm E} = (1.1\pm0.1)^{\prime\prime},$
+but higher-resolution imaging is needed to accurately separate the deflector
+and faint quasar image. We also show high-rank candidate doubles selected this
+way, some of which have been independently identified with different
+techniques, and discuss a DES+WISE quasar multiplet selection.

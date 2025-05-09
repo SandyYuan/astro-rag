@@ -1,0 +1,29 @@
+Title: GD-1 Stellar Stream and Cocoon in the DESI Early Data Release
+Authors: Monica Valluri, Parker Fagrelius, Sergey. E. Koposov, Ting S. Li, Oleg Y. Gnedin, Eric F. Bell, Raymond G. Carlberg, Andrew P. Cooper, Jessia N. Aguilar, Carlos Allende Prieto, Vasily Belokurov, Leandro Beraldo e Silva, David Brooks, Amanda Byström, Todd Claybaugh, Kyle Dawson, Arjun Dey, Peter Doel, Jaime E. Forero-Romero, Enrique Gaztañaga, Satya Gontcho A Gontcho, Klaus Honscheid, T . Kisner, Anthony Kremin, A. Lambert, Martin Landriau, L. Le Guillou, Michael E. Levi, Axel de la Macorra, Mark Manera, Paul Martini, Gustavo E. Medina, Aaron Meisner, Ramon Miquel, John Moustakas, Adam D. Myer, Joan Najita, Claire Poppett, Francisco Prada, Mehdi Rezaie, Graziano Rossi, Alex H. Riley, Eusebio Sanchez, David Schlegel, Michael Schubnell, David Sprayberry, Gregory Tarlé, Guillaume Thomas, Benjamin A. Weaver, Risa H. Wechsler, Rongpu Zhou, Hu Zou
+Published: 2024-07-08 19:04:49+00:00
+Updated: 2025-01-30 20:22:19+00:00
+DOI: 10.3847/1538-4357/ada690
+arXiv ID: http://arxiv.org/abs/2407.06336v2
+arXiv URL: http://arxiv.org/pdf/2407.06336v2
+Categories: astro-ph.GA
+Author Position: 50
+
+Abstract:
+We present 115 new spectroscopically identified members of the GD-1 tidal
+stream observed with the 5000-fiber Dark Energy Spectroscopic Instrument
+(DESI). We confirm the existence of a ``cocoon'' which is a broad (FWHM~2.932
+deg ~ 460 pc) and kinematically hot (velocity dispersion, sigma ~ 5-8 km/s)
+component that surrounds a narrower (FWHM~ 0.353 deg ~ 55) and colder (sigma =
+3.09+/-0.76 km/s) thin stream component (based on a median per star velocity
+precision of 2.7 km/s). The cocoon extends over at least a 30 degree segment of
+the stream observed by DESI. The thin and cocoon components have similar mean
+values of [Fe/H]: -2.54+/- 0.04 dex and -2.47+/- 0.06 dex suggestive of a
+common origin. The data are consistent with the following scenarios for the
+origin of the cocoon. The progenitor of the GD-1 stream was an accreted
+globular cluster (GC) and: (a) the cocoon was produced by pre-accretion tidal
+stripping of the GC while it was still inside its parent dwarf galaxy; (b) the
+cocoon is debris from the parent dwarf galaxy; (c) an initially thin GC tidal
+stream was heated by impacts from dark subhalos in the Milky Way; (d) an
+initially thin GC stream was heated by a massive Sagittarius dwarf galaxy; or a
+combination of some these. Future DESI spectroscopy and detailed modeling may
+enable us to distinguish between these possible origins.

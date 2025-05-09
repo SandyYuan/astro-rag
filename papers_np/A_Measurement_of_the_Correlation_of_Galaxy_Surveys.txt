@@ -1,0 +1,24 @@
+Title: A Measurement of the Correlation of Galaxy Surveys with CMB Lensing Convergence Maps from the South Pole Telescope
+Authors: L. E. Bleem, A. van Engelen, G. P. Holder, K. A. Aird, R. Armstrong, M. L. N. Ashby, M. R. Becker, B. A. Benson, T. Biesiadzinski, M. Brodwin, M. T. Busha, J. E. Carlstrom, C. L. Chang, H. M. Cho, T. M. Crawford, A. T. Crites, T. de Haan, S. Desai, M. A. Dobbs, O. Doré, J. Dudley, J. E. Geach, E. M. George, M. D. Gladders, A. H. Gonzalez, N. W. Halverson, N. Harrington, F. W. High, B. P. Holden, W. L. Holzapfel, S. Hoover, J. D. Hrubes, M. Joy, R. Keisler, L. Knox, A. T. Lee, E. M. Leitch, M. Lueker, D. Luong-Van, D. P. Marrone, J. Martinez-Manso, J. J. McMahon, J. Mehl, S. S. Meyer, J. J. Mohr, T. E. Montroy, T. Natoli, S. Padin, T. Plagge, C. Pryke, C. L. Reichardt, A. Rest, J. E. Ruhl, B. R. Saliwanchik, J. T. Sayre, K. K. Schaffer, L. Shaw, E. Shirokoff, H. G. Spieler, B. Stalder, S. A. Stanford, Z. Staniszewski, A. A. Stark, D. Stern, K. Story, A. Vallinotto, K. Vanderlinde, J. D. Vieira, R. H. Wechsler, R. Williamson, O. Zahn
+Published: 2012-03-21 19:51:47+00:00
+Updated: 2012-11-09 22:47:17+00:00
+DOI: 10.1088/2041-8205/753/1/L9
+arXiv ID: http://arxiv.org/abs/1203.4808v3
+arXiv URL: http://arxiv.org/pdf/1203.4808v3
+Categories: astro-ph.CO
+Author Position: 69
+
+Abstract:
+We compare cosmic microwave background lensing convergence maps derived from
+South Pole Telescope (SPT) data with galaxy survey data from the Blanco
+Cosmology Survey, the Wide-field Infrared Survey Explorer, and a new large
+Spitzer/IRAC field designed to overlap with the SPT survey. Using optical and
+infrared catalogs covering between 17 and 68 square degrees of sky, we detect
+correlation between the SPT convergence maps and each of the galaxy density
+maps at >4 sigma, with zero cross-correlation robustly ruled out in all cases.
+The amplitude and shape of the cross-power spectra are in good agreement with
+theoretical expectations and the measured galaxy bias is consistent with
+previous work. The detections reported here utilize a small fraction of the
+full 2500 square degree SPT survey data and serve as both a proof of principle
+of the technique and an illustration of the potential of this emerging
+cosmological probe.

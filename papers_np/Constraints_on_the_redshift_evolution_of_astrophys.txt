@@ -1,0 +1,29 @@
+Title: Constraints on the redshift evolution of astrophysical feedback with Sunyaev-Zeldovich effect cross-correlations
+Authors: S. Pandey, E. J. Baxter, Z. Xu, J. Orlowski-Scherer, N. Zhu, A. Lidz, J. Aguirre, J. DeRose, M. Devlin, J. C. Hill, B. Jain, R. K. Sheth, S. Avila, E. Bertin, D. Brooks, E. Buckley-Geer, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, L. N. da Costa, J. De Vicente, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, D. W. Gerdes, T. Giannantonio, R. A. Gruendl, J. Gschwend, W. G. Hartley, D. L. Hollowood, D. J. James, E. Krause, K. Kuehn, N. Kuropatkin, M. A. G. Maia, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, A. A. Plazas, A. Roodman, E. Sanchez, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, R. H. Wechsler
+Published: 2019-04-30 16:21:05+00:00
+Updated: 2019-04-30 16:21:05+00:00
+DOI: 10.1103/PhysRevD.100.063519
+arXiv ID: http://arxiv.org/abs/1904.13347v1
+arXiv URL: http://arxiv.org/pdf/1904.13347v1
+Categories: astro-ph.CO
+Author Position: 59
+
+Abstract:
+An understanding of astrophysical feedback is important for constraining
+models of galaxy formation and for extracting cosmological information from
+current and future weak lensing surveys. The thermal Sunyaev-Zel'dovich effect,
+quantified via the Compton-$y$ parameter, is a powerful tool for studying
+feedback, because it directly probes the pressure of the hot, ionized gas
+residing in dark matter halos. Cross-correlations between galaxies and maps of
+Compton-$y$ obtained from cosmic microwave background surveys are sensitive to
+the redshift evolution of the gas pressure, and its dependence on halo mass. In
+this work, we use galaxies identified in year one data from the Dark Energy
+Survey and Compton-$y$ maps constructed from Planck observations. We find
+highly significant (roughly $12\sigma$) detections of galaxy-$y$
+cross-correlation in multiple redshift bins. By jointly fitting these
+measurements as well as measurements of galaxy clustering, we constrain the
+halo bias-weighted, gas pressure of the Universe as a function of redshift
+between $0.15 \lesssim z \lesssim 0.75$. We compare these measurements to
+predictions from hydrodynamical simulations, allowing us to constrain the
+amount of thermal energy in the halo gas relative to that resulting from
+gravitational collapse.

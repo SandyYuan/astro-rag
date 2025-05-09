@@ -1,0 +1,36 @@
+Title: A Critical Assessment of Stellar Mass Measurement Methods
+Authors: Bahram Mobasher, Tomas Dahlen, Henry C. Ferguson, Viviana Acquaviva, Guillermo Barro, Steven L. Finkelstein, Adriano Fontana, Ruth Gruetzbauch, Seth Johnson, Yu Lu, Casey J. Papovich, Janine Pforr, Mara Salvato, Rachel S. Somerville, Tommy Wiklind, Stijn Wuyts, Matthew L. N. Ashby, Eric Bell, Christopher J. Conselice, Mark E. Dickinson, Sandra M. Faber, Giovanni Fazio, Kristian Finlator, Audrey Galametz, Eric Gawiser, Mauro Giavalisco, Andrea Grazian, Norman A. Grogin, Yicheng Guo, Nimish Hathi, Dale Kocevski, Anton M. Koekemoer, David C. Koo, Jeffrey A. Newman, Naveen Reddy, Paola Santini, Risa H. Wechsler
+Published: 2015-05-06 20:05:34+00:00
+Updated: 2015-05-06 20:05:34+00:00
+DOI: 10.1088/0004-637X/808/1/101
+arXiv ID: http://arxiv.org/abs/1505.01501v1
+arXiv URL: http://arxiv.org/pdf/1505.01501v1
+Categories: astro-ph.GA
+Author Position: 37
+
+Abstract:
+In this paper we perform a comprehensive study of the main sources of random
+and systematic errors in stellar mass measurement for galaxies using their
+Spectral Energy Distributions (SEDs). We use mock galaxy catalogs with
+simulated multi-waveband photometry (from U-band to mid-infrared) and known
+redshift, stellar mass, age and extinction for individual galaxies. Given
+different parameters affecting stellar mass measurement (photometric S/N
+ratios, SED fitting errors, systematic effects, the inherent degeneracies and
+correlated errors), we formulated different simulated galaxy catalogs to
+quantify these effects individually. We studied the sensitivity of stellar mass
+estimates to the codes/methods used, population synthesis models, star
+formation histories, nebular emission line contributions, photometric
+uncertainties, extinction and age. For each simulated galaxy, the difference
+between the input stellar masses and those estimated using different simulation
+catalogs, $\Delta\log(M)$, was calculated and used to identify the most
+fundamental parameters affecting stellar masses. We measured different
+components of the error budget, with the results listed as follows: (1). no
+significant bias was found among different codes/methods, with all having
+comparable scatter; (2). A source of error is found to be due to photometric
+uncertainties and low resolution in age and extinction grids; (3). The median
+of stellar masses among different methods provides a stable measure of the mass
+associated with any given galaxy; (4). The deviations in stellar mass strongly
+correlate with those in age, with a weaker correlation with extinction; (5).
+the scatter in the stellar masses due to free parameters are quantified, with
+the sensitivity of the stellar mass to both the population synthesis codes and
+inclusion of nebular emission lines studied.

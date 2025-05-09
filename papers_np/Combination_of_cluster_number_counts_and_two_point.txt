@@ -1,0 +1,26 @@
+Title: Combination of cluster number counts and two-point correlations: Validation on Mock Dark Energy Survey
+Authors: C. To, E. Krause, E. Rozo, H. Wu, D. Gruen, J. DeRose, E. S. Rykoff, R. H. Wechsler, M. R. Becker, M. Costanzi, T. Eifler, M. E. S. Pereira, N. Kokron
+Published: 2020-08-25 00:23:29+00:00
+Updated: 2021-01-24 22:09:49+00:00
+DOI: 10.1093/mnras/stab239
+arXiv ID: http://arxiv.org/abs/2008.10757v2
+arXiv URL: http://arxiv.org/pdf/2008.10757v2
+Categories: astro-ph.CO
+Author Position: 8
+
+Abstract:
+We present a method of combining cluster abundances and large-scale two-point
+correlations, namely galaxy clustering, galaxy--cluster cross-correlations,
+cluster auto-correlations, and cluster lensing. This data vector yields
+comparable cosmological constraints to traditional analyses that rely on
+small-scale cluster lensing for mass calibration. We use cosmological survey
+simulations designed to resemble the Dark Energy Survey Year One (DES-Y1) data
+to validate the analytical covariance matrix and the parameter inferences. The
+posterior distribution from the analysis of simulations is statistically
+consistent with the absence of systematic biases detectable at the precision of
+the DES Y1 experiment. We compare the $\chi^2$ values in simulations to their
+expectation and find no significant difference. The robustness of our results
+against a variety of systematic effects is verified using a simulated
+likelihood analysis of a Dark Energy Survey Year 1-like data vectors. This work
+presents the first-ever end-to-end validation of a cluster abundance
+cosmological analysis on galaxy catalog-level simulations.

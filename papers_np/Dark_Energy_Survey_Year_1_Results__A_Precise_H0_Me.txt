@@ -1,0 +1,26 @@
+Title: Dark Energy Survey Year 1 Results: A Precise H0 Measurement from DES Y1, BAO, and D/H Data
+Authors: DES Collaboration, T. M. C. Abbott, F. B. Abdalla, J. Annis, K. Bechtol, B. A. Benson, R. A. Bernstein, G. M. Bernstein, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. L. Chang, T. M. Crawford, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. Drlica-Wagner, A. E. Evrard, E. Fernandez, B. Flaugher, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, J. W. Henning, K. Honscheid, B. Hoyle, B. Jain, D. J. James, M. Jarvis, T. Jeltema, M. D. Johnson, M. W. G. Johnson, E. Krause, K. Kuehn, S. Kuhlmann, N. Kuropatkin, O. Lahav, A. R. Liddle, M. Lima, H. Lin, M. A. G. Maia, A. Manzotti, M. March, J. L. Marshall, R. Miquel, J. J. Mohr, T. Natoli, P. Nugent, R. L. C. Ogando, Y. Park, A. A. Plazas, C. L. Reichardt, K. Reil, A. Roodman, A. J. Ross, E. Rozo, E. S. Rykoff, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, D. Thomas, M. A. Troxel, A. R. Walker, R. H. Wechsler, J. Weller, W. Wester, W. L. K. Wu, J. Zuntz
+Published: 2017-11-01 15:42:57+00:00
+Updated: 2017-11-01 15:42:57+00:00
+DOI: 10.1093/mnras/sty1939
+arXiv ID: http://arxiv.org/abs/1711.00403v1
+arXiv URL: http://arxiv.org/pdf/1711.00403v1
+Categories: astro-ph.CO
+Author Position: 87
+
+Abstract:
+We combine Dark Energy Survey Year 1 clustering and weak lensing data with
+Baryon Acoustic Oscillations (BAO) and Big Bang Nucleosynthesis (BBN)
+experiments to constrain the Hubble constant. Assuming a flat $\Lambda$CDM
+model with minimal neutrino mass ($\sum m_\nu = 0.06$ eV) we find
+$H_0=67.2^{+1.2}_{-1.0}$ km/s/Mpc (68% CL). This result is completely
+independent of Hubble constant measurements based on the distance ladder,
+Cosmic Microwave Background (CMB) anisotropies (both temperature and
+polarization), and strong lensing constraints. There are now five data sets
+that: a) have no shared observational systematics; and b) each constrain the
+Hubble constant with a few percent level precision. We compare these five
+independent measurements, and find that, as a set, the differences between them
+are significant at the $2.1\sigma$ level ($\chi^2/dof=20.1/11$, probability to
+exceed=4%). This difference is low enough that we consider the data sets
+statistically consistent with each other. The best fit Hubble constant obtained
+by combining all five data sets is $H_0 = 69.1^{+0.4}_{-0.6}$ km/s/Mpc.

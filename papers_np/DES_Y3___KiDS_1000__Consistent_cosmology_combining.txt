@@ -1,0 +1,26 @@
+Title: DES Y3 + KiDS-1000: Consistent cosmology combining cosmic shear surveys
+Authors: Dark Energy Survey, Kilo-Degree Survey Collaboration, :, T. M. C. Abbott, M. Aguena, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, M. Asgari, S. Avila, D. Bacon, K. Bechtol, M. R. Becker, G. M. Bernstein, E. Bertin, M. Bilicki, J. Blazek, S. Bocquet, D. Brooks, P. Burger, D. L. Burke, H. Camacho, A. Campos, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. Chang, R. Chen, A. Choi, C. Conselice, J. Cordero, M. Crocce, L. N. da Costa, M. E. da Silva Pereira, R. Dalal, C. Davis, J. T. A. de Jong, J. DeRose, S. Desai, H. T. Diehl, S. Dodelson, P. Doel, C. Doux, A. Drlica-Wagner, A. Dvornik, K. Eckert, T. F. Eifler, J. Elvin-Poole, S. Everett, X. Fang, I. Ferrero, A. Ferté, B. Flaugher, O. Friedrich, J. Frieman, J. García-Bellido, M. Gatti, G. Giannini, B. Giblin, D. Gruen, R. A. Gruendl, G. Gutierrez, I. Harrison, W. G. Hartley, K. Herner, C. Heymans, H. Hildebrandt, S. R. Hinton, H. Hoekstra, D. L. Hollowood, K. Honscheid, H. Huang, E. M. Huff, D. Huterer, D. J. James, M. Jarvis, N. Jeffrey, T. Jeltema, B. Joachimi, S. Joudaki, A. Kannawadi, E. Krause, K. Kuehn, K. Kuijken, N. Kuropatkin, O. Lahav, P. -F. Leget, P. Lemos, S. -S. Li, X. Li, A. R. Liddle, M. Lima, C. -A Lin, H. Lin, N. MacCrann, C. Mahony, J. L. Marshall, J. McCullough, J. Mena-Fernández, F. Menanteau, R. Miquel, J. J. Mohr, J. Muir, J. Myles, N. Napolitano, A. Navarro-Alsina, R. L. C. Ogando, A. Palmese, S. Pandey, Y. Park, M. Paterno, J. A. Peacock, D. Petravick, A. Pieres, A. A. Plazas Malagón, A. Porredon, J. Prat, M. Radovich, M. Raveri, R. Reischke, N. C. Robertson, R. P. Rollins, A. K. Romer, A. Roodman, E. S. Rykoff, S. Samuroff, C. Sánchez, E. Sanchez, J. Sanchez, P. Schneider, L. F. Secco, I. Sevilla-Noarbe, H. -Y. Shan, E. Sheldon, T. Shin, C. Sifón, M. Smith, M. Soares-Santos, B. Stölzner, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, M. A. Troxel, T. Tröster, I. Tutusaus, J. L. van den Busch, T. N. Varga, A. R. Walker, N. Weaverdyck, R. H. Wechsler, J. Weller, P. Wiseman, A. H. Wright, B. Yanny, B. Yin, M. Yoon, Y. Zhang, J. Zuntz
+Published: 2023-05-26 18:00:27+00:00
+Updated: 2023-10-19 16:14:33+00:00
+DOI: 10.21105/astro.2305.17173
+arXiv ID: http://arxiv.org/abs/2305.17173v2
+arXiv URL: http://arxiv.org/pdf/2305.17173v2
+Categories: astro-ph.CO
+Author Position: 155
+
+Abstract:
+We present a joint cosmic shear analysis of the Dark Energy Survey (DES Y3)
+and the Kilo-Degree Survey (KiDS-1000) in a collaborative effort between the
+two survey teams. We find consistent cosmological parameter constraints between
+DES Y3 and KiDS-1000 which, when combined in a joint-survey analysis, constrain
+the parameter $S_8 = \sigma_8 \sqrt{\Omega_{\rm m}/0.3}$ with a mean value of
+$0.790^{+0.018}_{-0.014}$. The mean marginal is lower than the maximum a
+posteriori estimate, $S_8=0.801$, owing to skewness in the marginal
+distribution and projection effects in the multi-dimensional parameter space.
+Our results are consistent with $S_8$ constraints from observations of the
+cosmic microwave background by Planck, with agreement at the $1.7\sigma$ level.
+We use a Hybrid analysis pipeline, defined from a mock survey study quantifying
+the impact of the different analysis choices originally adopted by each survey
+team. We review intrinsic alignment models, baryon feedback mitigation
+strategies, priors, samplers and models of the non-linear matter power
+spectrum.

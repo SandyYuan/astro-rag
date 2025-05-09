@@ -1,0 +1,28 @@
+Title: A Dark Energy Camera Search for an Optical Counterpart to the First Advanced LIGO Gravitational Wave Event GW150914
+Authors: M. Soares-Santos, R. Kessler, E. Berger, J. Annis, D. Brout, E. Buckley-Geer, H. Chen, P. S. Cowperthwaite, H. T. Diehl, Z. Doctor, A. Drlica-Wagner, B. Farr, D. A. Finley, B. Flaugher, R. J. Foley, J. Frieman, R. A. Gruendl, K. Herner, D. Holz, H. Lin, J. Marriner, E. Neilsen, A. Rest, M. Sako, D. Scolnic, F. Sobreira, A. R. Walker, W. Wester, B. Yanny, T. M. C. Abbott, F. B. Abdalla, F. B. Abdalla, S. Allam, R. Armstrong, M. Banerji, A. Benoit-Lévy, R. A. Bernstein, E. Bertin, D. A. Brown, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, S. B. Cenko, R. Chornock, M. Crocce, C. B. D'Andrea, C. B. D'Andrea, L. N. da Costa, S. Desai, J. P. Dietrich, M. R. Drout, T. F. Eifler, J. Estrada, A. E. Evrard, S. Fairhurst, E. Fernandez, J. Fischer, W. Fong, P. Fosalba, D. B. Fox, C. L. Fryer, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, D. A. Goldstein, D. Gruen, G. Gutierrez, K. Honscheid, D. J. James, I. Karliner, D. Kasen, S. Kent, N. Kuropatkin, K. Kuehn, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, R. Margutti, P. Martini, T. Matheson, R. G. McMahon, B. D. Metzger, C. J. Miller, R. Miquel, J. J. Mohr, R. C. Nichol, B. Nord, R. Ogando, J. Peoples, A. A. Plazas, E. Quataert, A. K. Romer, A. Roodman, A. Roodman, E. S. Rykoff, E. S. Rykoff, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, E. Sheldon, M. Smith, N. Smith, R. C. Smith, A. Stebbins, P. J. Sutton, M. E. C. Swanson, G. Tarle, J. Thaler, R. C. Thomas, D. L. Tucker, V. Vikram, R. H. Wechsler, J. Weller
+Published: 2016-02-12 20:38:09+00:00
+Updated: 2016-02-18 18:18:07+00:00
+DOI: 10.3847/2041-8205/823/2/L33
+arXiv ID: http://arxiv.org/abs/1602.04198v2
+arXiv URL: http://arxiv.org/pdf/1602.04198v2
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 118
+
+Abstract:
+We report initial results of a deep search for an optical counterpart to the
+gravitational wave event GW150914, the first trigger from the Advanced LIGO
+gravitational wave detectors. We used the Dark Energy Camera (DECam) to image a
+102 deg$^2$ area, corresponding to 38% of the initial trigger high-probability
+sky region and to 11% of the revised high-probability region. We observed in i
+and z bands at 4-5, 7, and 24 days after the trigger. The median $5\sigma$
+point-source limiting magnitudes of our search images are i=22.5 and z=21.8
+mag. We processed the images through a difference-imaging pipeline using
+templates from pre-existing Dark Energy Survey data and publicly available
+DECam data. Due to missing template observations and other losses, our
+effective search area subtends 40 deg$^{2}$, corresponding to 12% total
+probability in the initial map and 3% of the final map. In this area, we search
+for objects that decline significantly between days 4-5 and day 7, and are
+undetectable by day 24, finding none to typical magnitude limits of i=
+21.5,21.1,20.1 for object colors (i-z)=1,0,-1, respectively. Our search
+demonstrates the feasibility of a dedicated search program with DECam and bodes
+well for future research in this emerging field.

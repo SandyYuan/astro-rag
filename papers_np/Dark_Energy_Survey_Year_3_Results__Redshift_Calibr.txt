@@ -1,0 +1,29 @@
+Title: Dark Energy Survey Year 3 Results: Redshift Calibration of the Weak Lensing Source Galaxies
+Authors: J. Myles, A. Alarcon, A. Amon, C. Sánchez, S. Everett, J. DeRose, J. McCullough, D. Gruen, G. M. Bernstein, M. A. Troxel, S. Dodelson, A. Campos, N. MacCrann, B. Yin, M. Raveri, A. Amara, M. R. Becker, A. Choi, J. Cordero, K. Eckert, M. Gatti, G. Giannini, J. Gschwend, R. A. Gruendl, I. Harrison, W. G. Hartley, E. M. Huff, N. Kuropatkin, H. Lin, D. Masters, R. Miquel, J. Prat, A. Roodman, E. S. Rykoff, I. Sevilla-Noarbe, E. Sheldon, R. H. Wechsler, B. Yanny, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, D. Bacon, E. Bertin, S. Bhargava, S. L. Bridle, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. Conselice, M. Costanzi, M. Crocce, L. N. da Costa, M. E. S. Pereira, S. Desai, H. T. Diehl, T. F. Eifler, J. Elvin-Poole, A. E. Evrard, I. Ferrero, A. Ferté, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, T. Giannantonio, S. R. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, D. Huterer, D. J. James, E. Krause, K. Kuehn, O. Lahav, M. Lima, M. A. G. Maia, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, J. J. Mohr, R. Morgan, J. Muir, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, A. A. Plazas, M. Rodriguez-Monroy, S. Samuroff, E. Sanchez, V. Scarpine, L. F. Secco, S. Serrano, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, T. N. Varga, J. Weller, W. Wester
+Published: 2020-12-15 19:30:42+00:00
+Updated: 2021-06-14 16:01:50+00:00
+DOI: 10.1093/mnras/stab1515
+arXiv ID: http://arxiv.org/abs/2012.08566v2
+arXiv URL: http://arxiv.org/pdf/2012.08566v2
+Categories: astro-ph.CO
+Author Position: 37
+
+Abstract:
+Determining the distribution of redshifts of galaxies observed by wide-field
+photometric experiments like the Dark Energy Survey is an essential component
+to mapping the matter density field with gravitational lensing. In this work we
+describe the methods used to assign individual weak lensing source galaxies
+from the Dark Energy Survey Year 3 Weak Lensing Source Catalogue to four
+tomographic bins and to estimate the redshift distributions in these bins. As
+the first application of these methods to data, we validate that the
+assumptions made apply to the DES Y3 weak lensing source galaxies and develop a
+full treatment of systematic uncertainties. Our method consists of combining
+information from three independent likelihood functions: Self-Organizing Map
+$p(z)$ (SOMPZ), a method for constraining redshifts from galaxy photometry;
+clustering redshifts (WZ), constraints on redshifts from cross-correlations of
+galaxy density functions; and shear ratios (SR), which provide constraints on
+redshifts from the ratios of the galaxy-shear correlation functions at small
+scales. Finally, we describe how these independent probes are combined to yield
+an ensemble of redshift distributions encapsulating our full uncertainty. We
+calibrate redshifts with combined effective uncertainties of $\sigma_{\langle z
+\rangle}\sim 0.01$ on the mean redshift in each tomographic bin.

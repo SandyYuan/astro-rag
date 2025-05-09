@@ -1,0 +1,33 @@
+Title: Dark Energy Survey Year 3 results: Marginalisation over redshift distribution uncertainties using ranking of discrete realisations
+Authors: Juan P. Cordero, Ian Harrison, Richard P. Rollins, G. M. Bernstein, S. L. Bridle, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, H. Camacho, A. Campos, A. Choi, J. DeRose, S. Dodelson, K. Eckert, T. F. Eifler, S. Everett, X. Fang, O. Friedrich, D. Gruen, R. A. Gruendl, W. G. Hartley, E. M. Huff, E. Krause, N. Kuropatkin, N. MacCrann, J. McCullough, J. Myles, S. Pandey, M. Raveri, R. Rosenfeld, E. S. Rykoff, C. Sánchez, J. Sánchez, I. Sevilla-Noarbe, E. Sheldon, M. Troxel, R. Wechsler, B. Yanny, B. Yin, Y. Zhang, M. Aguena, S. Allam, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, M. Costanzi, L. da Costa, M. E. da Silva Pereira, J. De Vicente, H. T. Diehl, J. Dietrich, P. Doel, J. Elvin-Poole, I. Ferrero, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, D. Gerdes, J. Gschwend, G. Gutierrez, S. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, D. James, K. Kuehn, O. Lahav, M. A. G. Maia, M. March, F. Menanteau, R. Miquel, R. Morgan, J. Muir, A. Palmese, F. Paz-Chinchon, A. Pieres, A. Plazas Malagón, E. Sánchez, V. Scarpine, S. Serrano, M. Smith, M. Soares-Santos, E. Suchyta, M. Swanson, G. Tarle, D. Thomas, C. To, T. N. Varga
+Published: 2021-09-20 15:43:17+00:00
+Updated: 2022-01-17 12:51:12+00:00
+DOI: 10.1093/mnras/stac147
+arXiv ID: http://arxiv.org/abs/2109.09636v2
+arXiv URL: http://arxiv.org/pdf/2109.09636v2
+Categories: astro-ph.CO
+Author Position: 38
+
+Abstract:
+Cosmological information from weak lensing surveys is maximised by dividing
+source galaxies into tomographic sub-samples for which the redshift
+distributions are estimated. Uncertainties on these redshift distributions must
+be correctly propagated into the cosmological results. We present hyperrank, a
+new method for marginalising over redshift distribution uncertainties in
+cosmological analyses, using discrete samples from the space of all possible
+redshift distributions. This is demonstrated in contrast to previous highly
+simplified parametric models of the redshift distribution uncertainty. In
+hyperrank the set of proposed redshift distributions is ranked according to a
+small (in this work between one and four) number of summary values, which are
+then sampled along with other nuisance parameters and cosmological parameters
+in the Monte Carlo chain used for inference. This can be regarded as a general
+method for marginalising over discrete realisations of data vector variation
+with nuisance parameters, which can consequently be sampled separately to the
+main parameters of interest, allowing for increased computational efficiency.
+We focus on the case of weak lensing cosmic shear analyses and demonstrate our
+method using simulations made for the Dark Energy Survey (DES). We show the
+method can correctly and efficiently marginalise over a range of models for the
+redshift distribution uncertainty. Finally, we compare hyperrank to the common
+mean-shifting method of marginalising over redshift uncertainty, validating
+that this simpler model is sufficient for use in the DES Year 3 cosmology
+results presented in companion papers.

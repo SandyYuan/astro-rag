@@ -1,0 +1,24 @@
+Title: An Ultra-Faint Galaxy Candidate Discovered in Early Data from the Magellanic Satellites Survey
+Authors: A. Drlica-Wagner, K. Bechtol, S. Allam, D. L. Tucker, R. A. Gruendl, M. D. Johnson, A. R. Walker, D. J. James, D. L. Nidever, K. A. G. Olsen, R. H. Wechsler, M. R. L. Cioni, B. C. Conn, K. Kuehn, T. S. Li, Y. -Y. Mao, N. F. Martin, E. Neilsen, N. E. D. Noël, A. Pieres, J. D. Simon, G. S. Stringfellow, R. P. van der Marel, B. Yanny
+Published: 2016-09-07 20:00:01+00:00
+Updated: 2016-11-29 23:34:21+00:00
+DOI: 10.3847/2041-8205/833/1/L5
+arXiv ID: http://arxiv.org/abs/1609.02148v2
+arXiv URL: http://arxiv.org/pdf/1609.02148v2
+Categories: astro-ph.GA, astro-ph.CO, astro-ph.HE
+Author Position: 11
+
+Abstract:
+We report a new ultra-faint stellar system found in Dark Energy Camera data
+from the first observing run of the Magellanic Satellites Survey (MagLiteS).
+MagLiteS J0644-5953 (Pictor II or Pic II) is a low surface brightness ({\mu} =
+28.5 mag arcsec$^{-2}$ within its half-light radius) resolved overdensity of
+old and metal-poor stars located at a heliocentric distance of 45 kpc. The
+physical size (r$_{1/2}$ = 46 pc) and low luminosity (Mv = -3.2 mag) of this
+satellite are consistent with the locus of spectroscopically confirmed
+ultra-faint galaxies. MagLiteS J0644-5953 (Pic II) is located 11.3 kpc from the
+Large Magellanic Cloud (LMC), and comparisons with simulation results in the
+literature suggest that this satellite was likely accreted with the LMC. The
+close proximity of MagLiteS J0644-5953 (Pic II) to the LMC also makes it the
+most likely ultra-faint galaxy candidate to still be gravitationally bound to
+the LMC.

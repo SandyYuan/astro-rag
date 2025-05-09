@@ -1,0 +1,31 @@
+Title: The Aemulus Project IV: Emulating Halo Bias
+Authors: Thomas McClintock, Eduardo Rozo, Arka Banerjee, Matthew R. Becker, Joseph DeRose, Sean McLaughlin, Jeremy L. Tinker, Risa H. Wechsler, Zhongxu Zhai
+Published: 2019-07-30 18:32:35+00:00
+Updated: 2019-07-30 18:32:35+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1907.13167v1
+arXiv URL: http://arxiv.org/pdf/1907.13167v1
+Categories: astro-ph.CO
+Author Position: 8
+
+Abstract:
+Models of the spatial distribution of dark matter halos must achieve new
+levels of precision and accuracy in order to satisfy the requirements of
+upcoming experiments. In this work, we present a halo bias emulator for
+modeling the clustering of halos on large scales. It incorporates the
+cosmological dependence of the bias beyond the mapping of halo mass to peak
+height. The emulator makes substantial improvements in accuracy compared to the
+widely used Tinker et al. (2010) model. Halos in this work are defined using an
+overdensity criteria of 200 relative to the mean background density. Halo
+catalogs are produced for 40 N-body simulations as part of the Aemulus project
+at snapshots from z=3 to z=0. The emulator is trained over the mass range
+$6\times10^{12}-7\times10^{15}\ h^{-1}M_{\odot}$. Using an additional suite of
+35 simulations, we determine that the precision of the emulator is redshift
+dependent, achieving sub-percent levels for a majority of the redshift range.
+Two additional simulation suites are used to test the ability of the emulator
+to extrapolate to higher and lower masses. Our high-resolution simulation suite
+is used to develop an extrapolation scheme in which the emulator asymptotes to
+the Tinker et al. (2010) model at low mass, achieving ~3% accuracy down to
+$10^{11}\ h^{-1}M_{\odot}$. Finally, we present a method to propagate emulator
+modeling uncertainty into an error budget. Our emulator is made publicly
+available at \url{https://github.com/AemulusProject/bias_emulator}.

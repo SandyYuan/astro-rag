@@ -1,0 +1,23 @@
+Title: Probing the Fundamental Nature of Dark Matter with the Large Synoptic Survey Telescope
+Authors: Alex Drlica-Wagner, Yao-Yuan Mao, Susmita Adhikari, Robert Armstrong, Arka Banerjee, Nilanjan Banik, Keith Bechtol, Simeon Bird, Kimberly K. Boddy, Ana Bonaca, Jo Bovy, Matthew R. Buckley, Esra Bulbul, Chihway Chang, George Chapline, Johann Cohen-Tanugi, Alessandro Cuoco, Francis-Yan Cyr-Racine, William A. Dawson, Ana Díaz Rivero, Cora Dvorkin, Denis Erkal, Christopher D. Fassnacht, Juan García-Bellido, Maurizio Giannotti, Vera Gluscevic, Nathan Golovich, David Hendel, Yashar D. Hezaveh, Shunsaku Horiuchi, M. James Jee, Manoj Kaplinghat, Charles R. Keeton, Sergey E. Koposov, Casey Y. Lam, Ting S. Li, Jessica R. Lu, Rachel Mandelbaum, Samuel D. McDermott, Mitch McNanna, Michael Medford, Manuel Meyer, Moniez Marc, Simona Murgia, Ethan O. Nadler, Lina Necib, Eric Nuss, Andrew B. Pace, Annika H. G. Peter, Daniel A. Polin, Chanda Prescod-Weinstein, Justin I. Read, Rogerio Rosenfeld, Nora Shipp, Joshua D. Simon, Tracy R. Slatyer, Oscar Straniero, Louis E. Strigari, Erik Tollerud, J. Anthony Tyson, Mei-Yu Wang, Risa H. Wechsler, David Wittman, Hai-Bo Yu, Gabrijela Zaharijas, Yacine Ali-Haïmoud, James Annis, Simon Birrer, Rahul Biswas, Jonathan Blazek, Alyson M. Brooks, Elizabeth Buckley-Geer, Regina Caputo, Eric Charles, Seth Digel, Scott Dodelson, Brenna Flaugher, Joshua Frieman, Eric Gawiser, Andrew P. Hearin, Renee Hložek, Bhuvnesh Jain, Tesla E. Jeltema, Savvas M. Koushiappas, Mariangela Lisanti, Marilena LoVerde, Siddharth Mishra-Sharma, Jeffrey A. Newman, Brian Nord, Erfan Nourbakhsh, Steven Ritz, Brant E. Robertson, Miguel A. Sánchez-Conde, Anže Slosar, Tim M. P. Tait, Aprajita Verma, Ricardo Vilalta, Christopher W. Walter, Brian Yanny, Andrew R. Zentner
+Published: 2019-02-04 07:13:42+00:00
+Updated: 2019-04-24 04:48:54+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1902.01055v2
+arXiv URL: http://arxiv.org/pdf/1902.01055v2
+Categories: astro-ph.CO, astro-ph.GA, astro-ph.HE, hep-ex, hep-ph
+Author Position: 62
+
+Abstract:
+Astrophysical and cosmological observations currently provide the only
+robust, empirical measurements of dark matter. Future observations with Large
+Synoptic Survey Telescope (LSST) will provide necessary guidance for the
+experimental dark matter program. This white paper represents a community
+effort to summarize the science case for studying the fundamental physics of
+dark matter with LSST. We discuss how LSST will inform our understanding of the
+fundamental properties of dark matter, such as particle mass, self-interaction
+strength, non-gravitational couplings to the Standard Model, and compact object
+abundances. Additionally, we discuss the ways that LSST will complement other
+experiments to strengthen our understanding of the fundamental characteristics
+of dark matter. More information on the LSST dark matter effort can be found at
+https://lsstdarkmatter.github.io/ .

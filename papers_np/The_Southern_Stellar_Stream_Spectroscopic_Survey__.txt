@@ -1,0 +1,33 @@
+Title: The Southern Stellar Stream Spectroscopic Survey (${S}^5$): Overview, Target Selection, Data Reduction, Validation, and Early Science
+Authors: T. S. Li, S. E. Koposov, D. B. Zucker, G. F. Lewis, K. Kuehn, J. D. Simpson, A. P. Ji, N. Shipp, Y. -Y. Mao, M. Geha, A. B. Pace, A. D. Mackey, S. Allam, D. L. Tucker, G. S. Da Costa, D. Erkal, J. D. Simon, J. R. Mould, S. L. Martell, Z. Wan, G. M. De Silva, K. Bechtol, E. Balbinot, V. Belokurov, J. Bland-Hawthorn, A. R. Casey, L. Cullinane, A. Drlica-Wagner, S. Sharma, A. K. Vivas, R. H. Wechsler, B. Yanny
+Published: 2019-07-22 18:00:00+00:00
+Updated: 2019-11-11 21:22:27+00:00
+DOI: 10.1093/mnras/stz2731
+arXiv ID: http://arxiv.org/abs/1907.09481v2
+arXiv URL: http://arxiv.org/pdf/1907.09481v2
+Categories: astro-ph.GA
+Author Position: 31
+
+Abstract:
+We introduce the Southern Stellar Stream Spectroscopy Survey (${S}^5$), an
+on-going program to map the kinematics and chemistry of stellar streams in the
+Southern Hemisphere. The initial focus of ${S}^5$ has been spectroscopic
+observations of recently identified streams within the footprint of the Dark
+Energy Survey (DES), with the eventual goal of surveying streams across the
+entire southern sky. Stellar streams are composed of material that has been
+tidally striped from dwarf galaxies and globular clusters and hence are
+excellent dynamical probes of the gravitational potential of the Milky Way, as
+well as providing a detailed snapshot of its accretion history. Observing with
+the 3.9-m Anglo-Australian Telescope's 2-degree-Field fibre positioner and
+AAOmega spectrograph, and combining the precise photometry of DES DR1 with the
+superb proper motions from $Gaia$ DR2, allows us to conduct an efficient
+spectroscopic survey to map these stellar streams. So far ${S}^5$ has mapped 9
+DES streams and 3 streams outside of DES; the former are the first
+spectroscopic observations of these recently discovered streams. In addition to
+the stream survey, we use spare fibres to undertake a Milky Way halo survey and
+a low-redshift galaxy survey. This paper presents an overview of the ${S}^5$
+program, describing the scientific motivation for the survey, target selection,
+observation strategy, data reduction and survey validation. Finally, we
+describe early science results on stellar streams and Milky Way halo stars
+drawn from the survey. Updates on ${S}^5$, including future public data
+release, can be found at \url{http://s5collab.github.io}.

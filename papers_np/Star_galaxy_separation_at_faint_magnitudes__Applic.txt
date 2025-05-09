@@ -1,0 +1,29 @@
+Title: Star/galaxy separation at faint magnitudes: Application to a simulated Dark Energy Survey
+Authors: M. T. Soumagnac, F. B. Abdalla, O. Lahav, D. Kirk, I. Sevilla, E. Bertin, B. T. P. Rowe, J. Annis, M. T. Busha, L. N. Da Costa, J. A. Frieman, E. Gaztanaga, M. Jarvis, H. Lin, W. J. Percival, B. X. Santiago, C. G. Sabiu, R. H. Wechsler, L. Wolz, B. Yanny
+Published: 2013-06-21 20:00:00+00:00
+Updated: 2015-05-13 05:34:36+00:00
+DOI: 10.1093/mnras/stu1410
+arXiv ID: http://arxiv.org/abs/1306.5236v3
+arXiv URL: http://arxiv.org/pdf/1306.5236v3
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 18
+
+Abstract:
+We address the problem of separating stars from galaxies in future large
+photometric surveys. We focus our analysis on simulations of the Dark Energy
+Survey (DES). In the first part of the paper, we derive the science
+requirements on star/galaxy separation, for measurement of the cosmological
+parameters with the Gravitational Weak Lensing and Large Scale Structure
+probes. These requirements are dictated by the need to control both the
+statistical and systematic errors on the cosmological parameters, and by Point
+Spread Function calibration. We formulate the requirements in terms of the
+completeness and purity provided by a given star/galaxy classifier. In order to
+achieve these requirements at faint magnitudes, we propose a new method for
+star/galaxy separation in the second part of the paper. We first use Principal
+Component Analysis to outline the correlations between the objects parameters
+and extract from it the most relevant information. We then use the reduced set
+of parameters as input to an Artificial Neural Network. This multi-parameter
+approach improves upon purely morphometric classifiers (such as the classifier
+implemented in SExtractor), especially at faint magnitudes: it increases the
+purity by up to 20% for stars and by up to 12% for galaxies, at i-magnitude
+fainter than 23.

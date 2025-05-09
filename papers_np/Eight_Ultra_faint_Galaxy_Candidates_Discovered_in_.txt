@@ -1,0 +1,32 @@
+Title: Eight Ultra-faint Galaxy Candidates Discovered in Year Two of the Dark Energy Survey
+Authors: The DES Collaboration, A. Drlica-Wagner, K. Bechtol, E. S. Rykoff, E. Luque, A. Queiroz, Y. -Y. Mao, R. H. Wechsler, J. D. Simon, B. Santiago, B. Yanny, E. Balbinot, S. Dodelson, A. Fausti Neto, D. J. James, T. S. Li, M. A. G. Maia, J. L. Marshall, A. Pieres, K. Stringer, A. R. Walker, T. M. C. Abbott, F. B. Abdalla, S. Allam, A. Benoit-Levy, G. M. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Crocce, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, A. E. Evrard, D. A. Finley, B. Flaugher, P. Fosalba, J. Frieman, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, G. Gutierrez, K. Honscheid, K. Kuehn, N. Kuropatkin, O. Lahav, P. Martini, R. Miquel, B. Nord, R. Ogando, A. A. Plazas, K. Reil, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Tucker, V. Vikram, W. Wester, Y. Zhang, J. Zuntz
+Published: 2015-08-14 19:51:01+00:00
+Updated: 2015-11-06 23:31:31+00:00
+DOI: 10.1088/0004-637X/813/2/109
+arXiv ID: http://arxiv.org/abs/1508.03622v2
+arXiv URL: http://arxiv.org/pdf/1508.03622v2
+Categories: astro-ph.GA, astro-ph.HE, astro-ph.IM, hep-ph
+Author Position: 8
+
+Abstract:
+We report the discovery of eight new ultra-faint dwarf galaxy candidates in
+the second year of optical imaging data from the Dark Energy Survey (DES). Six
+of these candidates are detected at high confidence, while two lower-confidence
+candidates are identified in regions of non-uniform survey coverage. The new
+stellar systems are found by three independent automated search techniques and
+are identified as overdensities of stars, consistent with the isochrone and
+luminosity function of an old and metal-poor simple stellar population. The new
+systems are faint (Mv > -4.7 mag) and span a range of physical sizes (17 pc <
+$r_{1/2}$ < 181 pc) and heliocentric distances (25 kpc < D < 214 kpc). All of
+the new systems have central surface brightnesses consistent with known
+ultra-faint dwarf galaxies (\mu < 27.5 mag arcsec$^{-2}$). Roughly half of the
+DES candidates are more distant, less luminous, and/or have lower surface
+brightnesses than previously known Milky Way satellite galaxies. Most of the
+candidates are found in the southern part of the DES footprint close to the
+Magellanic Clouds. We find that the DES data alone exclude (p < 0.001) a
+spatially isotropic distribution of Milky Way satellites and that the observed
+distribution can be well, though not uniquely, described by an association
+between several of the DES satellites and the Magellanic system. Our model
+predicts that the full sky may hold ~100 ultra-faint galaxies with physical
+properties comparable to the DES satellites and that 20-30% of these would be
+spatially associated with the Magellanic Clouds.

@@ -1,0 +1,33 @@
+Title: The Correlated Formation Histories of Massive Galaxies and Their Dark Matter Halos
+Authors: Jeremy L. Tinker, Matthew R. George, Alexie Leauthaud, Kevin Bundy, Alexis Finoguenov, Richard Massey, Jason Rhodes, Risa H. Wechsler
+Published: 2012-05-18 20:00:06+00:00
+Updated: 2012-05-18 20:00:06+00:00
+DOI: 10.1088/2041-8205/755/1/L5
+arXiv ID: http://arxiv.org/abs/1205.4245v1
+arXiv URL: http://arxiv.org/pdf/1205.4245v1
+Categories: astro-ph.CO
+Author Position: 8
+
+Abstract:
+Using observations in the COSMOS field, we report an intriguing correlation
+between the star formation activity of massive (~10^{11.4}\msol) central
+galaxies, their stellar masses, and the large-scale (~10 Mpc) environments of
+their group-mass (~10^{13.6}\msol) dark matter halos. Probing the redshift
+range z=[0.2,1.0], our measurements come from two independent sources: an X-ray
+detected group catalog and constraints on the stellar-to-halo mass relation
+derived from a combination of clustering and weak lensing statistics. At z=1,
+we find that the stellar mass in star-forming centrals is a factor of two less
+than in passive centrals at the same halo mass. This implies that the presence
+or lack of star formation in group-scale centrals cannot be a stochastic
+process. By z=0, the offset reverses, probably as a result of the different
+growth rates of these objects. A similar but weaker trend is observed when
+dividing the sample by morphology rather than star formation. Remarkably, we
+find that star-forming centrals at z~1 live in groups that are significantly
+more clustered on 10 Mpc scales than similar mass groups hosting passive
+centrals. We discuss this signal in the context of halo assembly and recent
+simulations, suggesting that star-forming centrals prefer halos with higher
+angular momentum and/or formation histories with more recent growth; such halos
+are known to evolve in denser large-scale environments. If confirmed, this
+would be evidence of an early established link between the assembly history of
+halos on large scales and the future properties of the galaxies that form
+inside them.

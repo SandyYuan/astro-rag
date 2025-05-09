@@ -1,0 +1,22 @@
+Title: A Spectroscopic Road Map for Cosmic Frontier: DESI, DESI-II, Stage-5
+Authors: David J. Schlegel, Simone Ferraro, Greg Aldering, Charles Baltay, Segev BenZvi, Robert Besuner, Guillermo A. Blanc, Adam S. Bolton, Ana Bonaca, David Brooks, Elizabeth Buckley-Geer, Zheng Cai, Joseph DeRose, Arjun Dey, Peter Doel, Alex Drlica-Wagner, Xiaohui Fan, Gaston Gutierrez, Daniel Green, Julien Guy, Dragan Huterer, Leopoldo Infante, Patrick Jelinsky, Dionysios Karagiannis, Stephen M. Kent, Alex G. Kim, Jean-Paul Kneib, Juna A. Kollmeier, Anthony Kremin, Ofer Lahav, Martin Landriau, Dustin Lang, Alexie Leauthaud, Michael E. Levi, Eric V. Linder, Christophe Magneville, Paul Martini, Patrick McDonald, Christopher J. Miller, Adam D. Myers, Jeffrey A. Newman, Peter E. Nugent, Nathalie Palanque-Delabrouille, Nikhil Padmanabhan, Antonella Palmese, Claire Poppett, Jason X. Prochaska, Anand Raichoor, Solange Ramirez, Noah Sailer, Emmanuel Schaan, Michael Schubnell, Uros Seljak, Hee-Jong Seo, Joseph Silber, Joshua D. Simon, Zachary Slepian, Marcelle Soares-Santos, Greg Tarle, Monica Valluri, Noah J. Weaverdyck, Risa H. Wechsler, Martin White, Christophe Yeche, Rongpu Zhou
+Published: 2022-09-08 06:18:05+00:00
+Updated: 2022-09-08 06:18:05+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2209.03585v1
+arXiv URL: http://arxiv.org/pdf/2209.03585v1
+Categories: astro-ph.CO, hep-ex
+Author Position: 62
+
+Abstract:
+In this white paper, we present an experimental road map for spectroscopic
+experiments beyond DESI. DESI will be a transformative cosmological survey in
+the 2020s, mapping 40 million galaxies and quasars and capturing a significant
+fraction of the available linear modes up to z=1.2. DESI-II will pilot
+observations of galaxies both at much higher densities and extending to higher
+redshifts. A Stage-5 experiment would build out those high-density and
+high-redshift observations, mapping hundreds of millions of stars and galaxies
+in three dimensions, to address the problems of inflation, dark energy, light
+relativistic species, and dark matter. These spectroscopic data will also
+complement the next generation of weak lensing, line intensity mapping and CMB
+experiments and allow them to reach their full potential.

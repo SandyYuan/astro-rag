@@ -1,0 +1,23 @@
+Title: Tracing Cosmic Evolution with the Las Campanas Distant Cluster Survey
+Authors: Anthony H. Gonzalez, Julianne J. Dalcanton, Amy E. Nelson, Luc Simard, Dennis Zaritsky, Risa H. Wechsler
+Published: 2001-10-12 20:39:20+00:00
+Updated: 2001-10-12 20:39:20+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/astro-ph/0110309v1
+arXiv URL: http://arxiv.org/pdf/astro-ph/0110309v1
+Categories: astro-ph
+Author Position: 6
+
+Abstract:
+The Las Campanas Distant Cluster Survey (LCDCS), which contains over 1000
+cluster candidates at z>0.3, is a unique sample with which to probe the
+evolution of both cluster galaxies and the properties of the cluster
+population. Programs are now underway to utilize the LCDCS for both purposes.
+We provide a brief overview of these programs, and also present new results for
+the LCDCS cluster correlation function. Utilizing well-defined, approximately
+dispersion-limited subsamples, we measure the angular correlation function for
+clusters at z~0.5. Spatial correlation lengths are then derived via Limber
+inversion. We find that the correlation length depends upon mass, as
+parameterized by the mean cluster separation, in a manner that is consistent
+with both local observations and CDM predictions for the clustering strength at
+z=0.5.

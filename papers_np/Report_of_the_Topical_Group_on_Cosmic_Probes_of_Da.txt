@@ -1,0 +1,18 @@
+Title: Report of the Topical Group on Cosmic Probes of Dark Matter for Snowmass 2021
+Authors: Alex Drlica-Wagner, Chanda Prescod-Weinstein, Hai-Bo Yu, Andrea Albert, Mustafa Amin, Arka Banerjee, Masha Baryakhtar, Keith Bechtol, Simeon Bird, Simon Birrer, Torsten Bringmann, Regina Caputo, Sukanya Chakrabarti, Thomas Y. Chen, Djuna Croon, Francis-Yan Cyr-Racine, William A. Dawson, Cora Dvorkin, Vera Gluscevic, Daniel Gilman, Daniel Grin, Renée Hložek, Rebecca K. Leane, Ting S. Li, Yao-Yuan Mao, Joel Meyers, Siddharth Mishra-Sharma, Julian B. Muñoz, Ferah Munshi, Ethan O. Nadler, Aditya Parikh, Kerstin Perez, Annika H. G. Peter, Stefano Profumo, Katelin Schutz, Neelima Sehgal, Joshua D. Simon, Kuver Sinha, Monica Valluri, Risa H. Wechsler
+Published: 2022-09-17 02:09:33+00:00
+Updated: 2022-12-14 04:14:44+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2209.08215v3
+arXiv URL: http://arxiv.org/pdf/2209.08215v3
+Categories: hep-ph, astro-ph.CO, hep-ex
+Author Position: 40
+
+Abstract:
+Cosmological and astrophysical observations currently provide the only
+robust, positive evidence for dark matter. Cosmic probes of dark matter, which
+seek to determine the fundamental properties of dark matter through
+observations of the cosmos, have emerged as a promising means to reveal the
+nature of dark matter. This report summarizes the current status and future
+potential of cosmic probes to inform our understanding of the fundamental
+nature of dark matter in the coming decade.

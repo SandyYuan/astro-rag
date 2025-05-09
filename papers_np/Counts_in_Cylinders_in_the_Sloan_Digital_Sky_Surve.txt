@@ -1,0 +1,34 @@
+Title: Counts-in-Cylinders in the Sloan Digital Sky Survey with Comparisons to N-body Simulations
+Authors: Heather D. Berrier, Elizabeth J. Barton, Joel C. Berrier, James S. Bullock, Andrew R. Zentner, Risa H. Wechsler
+Published: 2010-10-26 20:57:16+00:00
+Updated: 2010-10-26 20:57:16+00:00
+DOI: 10.1088/0004-637X/726/1/1
+arXiv ID: http://arxiv.org/abs/1010.5518v1
+arXiv URL: http://arxiv.org/pdf/1010.5518v1
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+Environmental statistics provide a necessary means of comparing the
+properties of galaxies in different environments and a vital test of models of
+galaxy formation within the prevailing, hierarchical cosmological model. We
+explore counts-in-cylinders, a common statistic defined as the number of
+companions of a particular galaxy found within a given projected radius and
+redshift interval. Galaxy distributions with the same two-point correlation
+functions do not necessarily have the same companion count distributions. We
+use this statistic to examine the environments of galaxies in the Sloan Digital
+Sky Survey, Data Release 4. We also make preliminary comparisons to four models
+for the spatial distributions of galaxies, based on N-body simulations, and
+data from SDSS DR4 to study the utility of the counts-in-cylinders statistic.
+There is a very large scatter between the number of companions a galaxy has and
+the mass of its parent dark matter halo and the halo occupation, limiting the
+utility of this statistic for certain kinds of environmental studies. We also
+show that prevalent, empirical models of galaxy clustering that match observed
+two- and three-point clustering statistics well fail to reproduce some aspects
+of the observed distribution of counts-in-cylinders on 1, 3 and 6-Mpc/h scales.
+All models that we explore underpredict the fraction of galaxies with few or no
+companions in 3 and 6-Mpc/h cylinders. Roughly 7% of galaxies in the real
+universe are significantly more isolated within a 6 Mpc/h cylinder than the
+galaxies in any of the models we use. Simple, phenomenological models that map
+galaxies to dark matter halos fail to reproduce high-order clustering
+statistics in low-density environments.

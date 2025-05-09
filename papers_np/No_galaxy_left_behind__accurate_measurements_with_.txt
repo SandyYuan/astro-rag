@@ -1,0 +1,36 @@
+Title: No galaxy left behind: accurate measurements with the faintest objects in the Dark Energy Survey
+Authors: E. Suchyta, E. M. Huff, J. Aleksić, P. Melchior, S. Jouvel, N. MacCrann, M. Crocce, E. Gaztanaga, K. Honscheid, B. Leistedt, H. V. Peiris, A. J. Ross, E. S. Rykoff, E. Sheldon, T. Abbott, F. B. Abdalla, S. Allam, M. Banerji, A. Benoit-Lévy, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, J. Estrada, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, D. W. Gerdes, D. Gruen, R. A. Gruendl, D. J. James, M. Jarvis, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, C. J. Miller, R. Miquel, E. Neilsen, R. C. Nichol, B. Nord, R. Ogando, W. J. Percival, K. Reil, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, V. Vikram, A. R. Walker, R. H. Wechsler, Y. Zhang
+Published: 2015-07-29 22:41:21+00:00
+Updated: 2016-01-28 17:26:43+00:00
+DOI: 10.1093/mnras/stv2953
+arXiv ID: http://arxiv.org/abs/1507.08336v2
+arXiv URL: http://arxiv.org/pdf/1507.08336v2
+Categories: astro-ph.GA, astro-ph.CO, astro-ph.IM
+Author Position: 74
+
+Abstract:
+Accurate statistical measurement with large imaging surveys has traditionally
+required throwing away a sizable fraction of the data. This is because most
+measurements have have relied on selecting nearly complete samples, where
+variations in the composition of the galaxy population with seeing, depth, or
+other survey characteristics are small.
+  We introduce a new measurement method that aims to minimize this wastage,
+allowing precision measurement for any class of stars or galaxies detectable in
+an imaging survey. We have implemented our proposal in Balrog, a software
+package which embeds fake objects in real imaging in order to accurately
+characterize measurement biases.
+  We demonstrate this technique with an angular clustering measurement using
+Dark Energy Survey (DES) data. We first show that recovery of our injected
+galaxies depends on a wide variety of survey characteristics in the same way as
+the real data. We then construct a flux-limited sample of the faintest galaxies
+in DES, chosen specifically for their sensitivity to depth and seeing
+variations. Using the synthetic galaxies as randoms in the standard
+Landy-Szalay correlation function estimator suppresses the effects of variable
+survey selection by at least two orders of magnitude. With this correction, our
+measured angular clustering is found to be in excellent agreement with that of
+a matched sample drawn from much deeper, higher-resolution space-based
+Cosmological Evolution Survey (COSMOS) imaging; over angular scales of
+$0.004^{\circ} < \theta < 0.2^{\circ}$, we find a best-fit scaling amplitude
+between the DES and COSMOS measurements of $1.00 \pm 0.09$.
+  We expect this methodology to be broadly useful for extending the statistical
+reach of measurements in a wide variety of coming imaging surveys.

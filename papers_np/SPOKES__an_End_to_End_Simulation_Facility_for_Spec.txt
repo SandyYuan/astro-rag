@@ -1,0 +1,33 @@
+Title: SPOKES: an End-to-End Simulation Facility for Spectroscopic Cosmological Surveys
+Authors: B. Nord, A. Amara, A. Refregier, La. Gamper, Lu. Gamper, B. Hambrecht, C. Chang, J. E. Forero-Romero, S. Serrano, C. Cunha, O. Coles, A. Nicola, M. Busha, A. Bauer, W. Saunders, S. Jouvel, D. Kirk, R. Wechsler
+Published: 2016-02-03 21:04:25+00:00
+Updated: 2016-02-03 21:04:25+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1602.01480v1
+arXiv URL: http://arxiv.org/pdf/1602.01480v1
+Categories: astro-ph.IM, astro-ph.CO
+Author Position: 18
+
+Abstract:
+The nature of dark matter, dark energy and large-scale gravity pose some of
+the most pressing questions in cosmology today. These fundamental questions
+require highly precise measurements, and a number of wide-field spectroscopic
+survey instruments are being designed to meet this requirement. A key component
+in these experiments is the development of a simulation tool to forecast
+science performance, define requirement flow-downs, optimize implementation,
+demonstrate feasibility, and prepare for exploitation. We present SPOKES
+(SPectrOscopic KEn Simulation), an end-to-end simulation facility for
+spectroscopic cosmological surveys designed to address this challenge. SPOKES
+is based on an integrated infrastructure, modular function organization,
+coherent data handling and fast data access. These key features allow
+reproducibility of pipeline runs, enable ease of use and provide flexibility to
+update functions within the pipeline. The cyclic nature of the pipeline offers
+the possibility to make the science output an efficient measure for design
+optimization and feasibility testing. We present the architecture, first
+science, and computational performance results of the simulation pipeline. The
+framework is general, but for the benchmark tests, we use the Dark Energy
+Spectrometer (DESpec), one of the early concepts for the upcoming project, the
+Dark Energy Spectroscopic Instrument (DESI). We discuss how the SPOKES
+framework enables a rigorous process to optimize and exploit spectroscopic
+survey experiments in order to derive high-precision cosmological measurements
+optimally.

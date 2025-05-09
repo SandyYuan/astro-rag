@@ -1,0 +1,27 @@
+Title: Dark Energy Survey Year 1 Results: Cosmological Constraints from Cluster Abundances, Weak Lensing, and Galaxy Correlations
+Authors: C. To, E. Krause, E. Rozo, H. Wu, D. Gruen, R. H. Wechsler, T. F. Eifler, E. S. Rykoff, M. Costanzi, M. R. Becker, G. M. Bernstein, J. Blazek, S. Bocquet, S. L. Bridle, R. Cawthon, A. Choi, M. Crocce, C. Davis, J. DeRose, A. Drlica-Wagner, J. Elvin-Poole, X. Fang, A. Farahi, O. Friedrich, M. Gatti, E. Gaztanaga, T. Giannantonio, W. G. Hartley, B. Hoyle, M. Jarvis, N. MacCrann, T. McClintock, V. Miranda, M. E. S. Pereira, Y. Park, A. Porredon, J. Prat, M. M. Rau, A. J. Ross, S. Samuroff, C. Sánchez, I. Sevilla-Noarbe, E. Sheldon, M. A. Troxel, T. N. Varga, P. Vielzeuf, Y. Zhang, J. Zuntz, T. M. C. Abbott, M. Aguena, J. Annis, S. Avila, E. Bertin, S. Bhargava, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. Chang, C. Conselice, L. N. da Costa, T. M. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, S. Everett, A. E. Evrard, I. Ferrero, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, R. A. Gruendl, G. Gutierrez, S. R. Hinton, D. L. Hollowood, D. Huterer, D. J. James, T. Jeltema, R. Kron, K. Kuehn, N. Kuropatkin, M. Lima, M. A. G. Maia, J. L. Marshall, F. Menanteau, R. Miquel, R. Morgan, J. Muir, J. Myles, A. Palmese, F. Paz-Chinchón, A. A. Plazas, A. K. Romer, A. Roodman, E. Sanchez, B. Santiago, V. Scarpine, S. Serrano, M. Smith, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, J. Weller, W. Wester
+Published: 2020-10-02 18:00:04+00:00
+Updated: 2020-10-02 18:00:04+00:00
+DOI: 10.1103/PhysRevLett.126.141301
+arXiv ID: http://arxiv.org/abs/2010.01138v1
+arXiv URL: http://arxiv.org/pdf/2010.01138v1
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+Combining multiple observational probes is a powerful technique to provide
+robust and precise constraints on cosmological parameters. In this letter, we
+present the first joint analysis of cluster abundances and auto/cross
+correlations of three cosmic tracer fields measured from the first year data of
+the Dark Energy Survey: galaxy density, weak gravitational lensing shear, and
+cluster density split by optical richness. From a joint analysis of cluster
+abundances, three cluster cross-correlations, and auto correlations of galaxy
+density, we obtain $\Omega_{\rm{m}}=0.305^{+0.055}_{-0.038}$ and
+$\sigma_8=0.783^{+0.064}_{-0.054}$. This result is consistent with constraints
+from the DES-Y1 galaxy clustering and weak lensing two-point correlation
+functions for the flat $\nu\Lambda$CDM model. We thus combine cluster
+abundances and all two-point correlations from three cosmic tracer fields and
+find improved constraints on cosmological parameters as well as on the cluster
+observable--mass scaling relation. This analysis is an important advance in
+both optical cluster cosmology and multi-probe analyses of upcoming wide
+imaging surveys.

@@ -1,0 +1,37 @@
+Title: DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations
+Authors: DESI Collaboration, A. G. Adame, J. Aguilar, S. Ahlen, S. Alam, D. M. Alexander, M. Alvarez, O. Alves, A. Anand, U. Andrade, E. Armengaud, S. Avila, A. Aviles, H. Awan, B. Bahr-Kalus, S. Bailey, C. Baltay, A. Bault, J. Behera, S. BenZvi, A. Bera, F. Beutler, D. Bianchi, C. Blake, R. Blum, S. Brieden, A. Brodzeller, D. Brooks, E. Buckley-Geer, E. Burtin, R. Calderon, R. Canning, A. Carnero Rosell, R. Cereskaite, J. L. Cervantes-Cota, S. Chabanier, E. Chaussidon, J. Chaves-Montero, S. Chen, X. Chen, T. Claybaugh, S. Cole, A. Cuceu, T. M. Davis, K. Dawson, A. de la Macorra, A. de Mattia, N. Deiosso, A. Dey, B. Dey, Z. Ding, P. Doel, J. Edelstein, S. Eftekharzadeh, D. J. Eisenstein, A. Elliott, P. Fagrelius, K. Fanning, S. Ferraro, J. Ereza, N. Findlay, B. Flaugher, A. Font-Ribera, D. Forero-Sánchez, J. E. Forero-Romero, C. S. Frenk, C. Garcia-Quintero, E. Gaztañaga, H. Gil-Marín, S. Gontcho A Gontcho, A. X. Gonzalez-Morales, V. Gonzalez-Perez, C. Gordon, D. Green, D. Gruen, R. Gsponer, G. Gutierrez, J. Guy, B. Hadzhiyska, C. Hahn, M. M. S Hanif, H. K. Herrera-Alcantar, K. Honscheid, C. Howlett, D. Huterer, V. Iršič, M. Ishak, S. Juneau, N. G. Karaçaylı, R. Kehoe, S. Kent, D. Kirkby, A. Kremin, A. Krolewski, Y. Lai, T. -W. Lan, M. Landriau, D. Lang, J. Lasker, J. M. Le Goff, L. Le Guillou, A. Leauthaud, M. E. Levi, T. S. Li, E. Linder, K. Lodha, C. Magneville, M. Manera, D. Margala, P. Martini, M. Maus, P. McDonald, L. Medina-Varela, A. Meisner, J. Mena-Fernández, R. Miquel, J. Moon, S. Moore, J. Moustakas, N. Mudur, E. Mueller, A. Muñoz-Gutiérrez, A. D. Myers, S. Nadathur, L. Napolitano, R. Neveux, J. A. Newman, N. M. Nguyen, J. Nie, G. Niz, H. E. Noriega, N. Padmanabhan, E. Paillas, N. Palanque-Delabrouille, J. Pan, S. Penmetsa, W. J. Percival, M. M. Pieri, M. Pinon, C. Poppett, A. Porredon, F. Prada, A. Pérez-Fernández, I. Pérez-Ràfols, D. Rabinowitz, A. Raichoor, C. Ramírez-Pérez, S. Ramirez-Solano, C. Ravoux, M. Rashkovetskyi, M. Rezaie, J. Rich, A. Rocher, C. Rockosi, N. A. Roe, A. Rosado-Marin, A. J. Ross, G. Rossi, R. Ruggeri, V. Ruhlmann-Kleider, L. Samushia, E. Sanchez, C. Saulder, E. F. Schlafly, D. Schlegel, M. Schubnell, H. Seo, A. Shafieloo, R. Sharples, J. Silber, A. Slosar, A. Smith, D. Sprayberry, T. Tan, G. Tarlé, P. Taylor, S. Trusov, L. A. Ureña-López, R. Vaisakh, D. Valcin, F. Valdes, M. Vargas-Magaña, L. Verde, M. Walther, B. Wang, M. S. Wang, B. A. Weaver, N. Weaverdyck, R. H. Wechsler, D. H. Weinberg, M. White, J. Yu, Y. Yu, S. Yuan, C. Yèche, E. A. Zaborowski, P. Zarrouk, H. Zhang, C. Zhao, R. Zhao, R. Zhou, T. Zhuang, H. Zou
+Published: 2024-04-03 18:41:51+00:00
+Updated: 2024-11-04 16:43:36+00:00
+DOI: 10.1088/1475-7516/2025/02/021
+arXiv ID: http://arxiv.org/abs/2404.03002v3
+arXiv URL: http://arxiv.org/pdf/2404.03002v3
+Categories: astro-ph.CO
+Author Position: 189
+
+Abstract:
+We present cosmological results from the measurement of baryon acoustic
+oscillations (BAO) in galaxy, quasar and Lyman-$\alpha$ forest tracers from the
+first year of observations from the Dark Energy Spectroscopic Instrument
+(DESI), to be released in the DESI Data Release 1. DESI BAO provide robust
+measurements of the transverse comoving distance and Hubble rate, or their
+combination, relative to the sound horizon, in seven redshift bins from over 6
+million extragalactic objects in the redshift range $0.1<z<4.2$. DESI BAO data
+alone are consistent with the standard flat $\Lambda$CDM cosmological model
+with a matter density $\Omega_\mathrm{m}=0.295\pm 0.015$. Paired with a BBN
+prior and the robustly measured acoustic angular scale from the CMB, DESI
+requires $H_0=(68.52\pm0.62)$ km/s/Mpc. In conjunction with CMB anisotropies
+from Planck and CMB lensing data from Planck and ACT, we find
+$\Omega_\mathrm{m}=0.307\pm 0.005$ and $H_0=(67.97\pm0.38)$ km/s/Mpc. Extending
+the baseline model with a constant dark energy equation of state parameter $w$,
+DESI BAO alone require $w=-0.99^{+0.15}_{-0.13}$. In models with a time-varying
+dark energy equation of state parametrized by $w_0$ and $w_a$, combinations of
+DESI with CMB or with SN~Ia individually prefer $w_0>-1$ and $w_a<0$. This
+preference is 2.6$\sigma$ for the DESI+CMB combination, and persists or grows
+when SN~Ia are added in, giving results discrepant with the $\Lambda$CDM model
+at the $2.5\sigma$, $3.5\sigma$ or $3.9\sigma$ levels for the addition of
+Pantheon+, Union3, or DES-SN5YR datasets respectively. For the flat
+$\Lambda$CDM model with the sum of neutrino mass $\sum m_\nu$ free, combining
+the DESI and CMB data yields an upper limit $\sum m_\nu < 0.072$ $(0.113)$ eV
+at 95% confidence for a $\sum m_\nu>0$ $(\sum m_\nu>0.059)$ eV prior. These
+neutrino-mass constraints are substantially relaxed in models beyond
+$\Lambda$CDM. [Abridged.]

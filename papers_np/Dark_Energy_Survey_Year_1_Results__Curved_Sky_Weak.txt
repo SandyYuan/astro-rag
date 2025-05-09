@@ -1,0 +1,26 @@
+Title: Dark Energy Survey Year 1 Results: Curved-Sky Weak Lensing Mass Map
+Authors: C. Chang, A. Pujol, B. Mawdsley, D. Bacon, J. Elvin-Poole, P. Melchior, A. Kovács, B. Jain, B. Leistedt, T. Giannantonio, A. Alarcon, E. Baxter, K. Bechtol, M. R. Becker, A. Benoit-Lévy, G. M. Bernstein, C. Bonnett, M. T. Busha, A. Carnero Rosell, F. J. Castander, R. Cawthon, L. N. da Costa, C. Davis, J. De Vicente, J. DeRose, A. Drlica-Wagner, P. Fosalba, M. Gatti, E. Gaztanaga, D. Gruen, J. Gschwend, W. G. Hartley, B. Hoyle, E. M. Huff, M. Jarvis, N. Jeffrey, T. Kacprzak, H. Lin, N. MacCrann, M. A. G. Maia, R. L. C. Ogando, J. Prat, M. M. Rau, R. P. Rollins, A. Roodman, E. Rozo, E. S. Rykoff, S. Samuroff, C. Sánchez, I. Sevilla-Noarbe, E. Sheldon, M. A. Troxel, T. N. Varga, P. Vielzeuf, V. Vikram, R. H. Wechsler, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, M. Carrasco Kind, J. Carretero, M. Crocce, C. E. Cunha, C. B. D'Andrea, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, J. Estrada, A. Fausti Neto, E. Fernandez, B. Flaugher, J. Frieman, J. García-Bellido, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, T. Jeltema, M. W. G. Johnson, M. D. Johnson, S. Kent, D. Kirk, E. Krause, K. Kuehn, S. Kuhlmann, O. Lahav, T. S. Li, M. Lima, M. March, P. Martini, F. Menanteau, R. Miquel, J. J. Mohr, E. Neilsen, R. C. Nichol, D. Petravick, A. A. Plazas, A. K. Romer, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, D. Thomas, D. L. Tucker, A. R. Walker, W. Wester, Y. Zhang
+Published: 2017-08-04 14:52:32+00:00
+Updated: 2017-12-19 20:19:28+00:00
+DOI: 10.1093/mnras/stx3363
+arXiv ID: http://arxiv.org/abs/1708.01535v2
+arXiv URL: http://arxiv.org/pdf/1708.01535v2
+Categories: astro-ph.CO
+Author Position: 56
+
+Abstract:
+We construct the largest curved-sky galaxy weak lensing mass map to date from
+the DES first-year (DES Y1) data. The map, about 10 times larger than previous
+work, is constructed over a contiguous $\approx1,500 $deg$^2$, covering a
+comoving volume of $\approx10 $Gpc$^3$. The effects of masking, sampling, and
+noise are tested using simulations. We generate weak lensing maps from two DES
+Y1 shear catalogs, Metacalibration and Im3shape, with sources at redshift
+$0.2<z<1.3,$ and in each of four bins in this range. In the highest
+signal-to-noise map, the ratio between the mean signal-to-noise in the E-mode
+and the B-mode map is $\sim$1.5 ($\sim$2) when smoothed with a Gaussian filter
+of $\sigma_{G}=30$ (80) arcminutes. The second and third moments of the
+convergence $\kappa$ in the maps are in agreement with simulations. We also
+find no significant correlation of $\kappa$ with maps of potential systematic
+contaminants. Finally, we demonstrate two applications of the mass maps: (1)
+cross-correlation with different foreground tracers of mass and (2) exploration
+of the largest peaks and voids in the maps.

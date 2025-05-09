@@ -1,0 +1,29 @@
+Title: Target Selection and Validation of DESI Luminous Red Galaxies
+Authors: Rongpu Zhou, Biprateep Dey, Jeffrey A. Newman, Daniel J. Eisenstein, K. Dawson, S. Bailey, A. Berti, J. Guy, Ting-Wen Lan, H. Zou, J. Aguilar, S. Ahlen, Shadab Alam, D. Brooks, A. de la Macorra, A. Dey, G. Dhungana, K. Fanning, A. Font-Ribera, S. Gontcho A Gontcho, K. Honscheid, Mustapha Ishak, T. Kisner, A. Kovács, A. Kremin, M. Landriau, Michael E. Levi, C. Magneville, Marc Manera, P. Martini, Aaron M. Meisner, R. Miquel, J. Moustakas, Adam D. Myers, Jundan Nie, N. Palanque-Delabrouille, W. J. Percival, C. Poppett, F. Prada, A. Raichoor, A. J. Ross, E. Schlafly, D. Schlegel, M. Schubnell, Gregory Tarlé, B. A. Weaver, R. H. Wechsler, Christophe Yèche, Zhimin Zhou
+Published: 2022-08-17 20:11:48+00:00
+Updated: 2022-10-25 21:46:01+00:00
+DOI: 10.3847/1538-3881/aca5fb
+arXiv ID: http://arxiv.org/abs/2208.08515v2
+arXiv URL: http://arxiv.org/pdf/2208.08515v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 47
+
+Abstract:
+The Dark Energy Spectroscopic Instrument (DESI) is carrying out a 5-year
+survey that aims to measure the redshifts of tens of millions of galaxies and
+quasars, including 8 million luminous red galaxies (LRGs) in the redshift range
+of $0.4<z<{\sim}\,1.0$. Here we present the selection of the DESI LRG sample
+and assess its spectroscopic performance using data from Survey Validation (SV)
+and the first 2 months of the Main Survey. The DESI LRG sample, selected using
+$g$, $r$, $z$, and $W1$ photometry from the DESI Legacy Imaging Surveys, is
+highly robust against imaging systematics. The sample has a target density of
+605 deg$^{-2}$ and a comoving number density of $5\times10^{-4}\
+h^3\mathrm{Mpc}^{-3}$ in $0.4<z<0.8$; this is a significantly higher density
+than previous LRG surveys (such as SDSS, BOSS and eBOSS) while also extending
+to $z \sim 1$. After applying a bright star veto mask developed for the sample,
+$98.9\%$ of the observed LRG targets yield confident redshifts (with a
+catastrophic failure rate of $0.2\%$ in the confident redshifts), and only
+$0.5\%$ of the LRG targets are stellar contamination. The LRG redshift
+efficiency varies with source brightness and effective exposure time, and we
+present a simple model that accurately characterizes this dependence. In the
+appendices, we describe the extended LRG samples observed during SV.

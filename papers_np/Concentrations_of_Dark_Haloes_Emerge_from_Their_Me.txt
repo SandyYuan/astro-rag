@@ -1,0 +1,30 @@
+Title: Concentrations of Dark Haloes Emerge from Their Merger Histories
+Authors: Kuan Wang, Yao-Yuan Mao, Andrew R. Zentner, Johannes U. Lange, Frank C. van den Bosch, Risa H. Wechsler
+Published: 2020-04-28 18:00:02+00:00
+Updated: 2020-09-28 00:21:46+00:00
+DOI: 10.1093/mnras/staa2733
+arXiv ID: http://arxiv.org/abs/2004.13732v2
+arXiv URL: http://arxiv.org/pdf/2004.13732v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 6
+
+Abstract:
+The concentration parameter is a key characteristic of a dark matter halo
+that conveniently connects the halo's present-day structure with its assembly
+history. Using 'Dark Sky', a suite of cosmological $N$-body simulations, we
+investigate how halo concentration evolves with time and emerges from the mass
+assembly history. We also explore the origin of the scatter in the relation
+between concentration and assembly history. We show that the evolution of halo
+concentration has two primary modes: (1) smooth increase due to
+pseudo-evolution; and (2) intense responses to physical merger events. Merger
+events induce lasting and substantial changes in halo structures, and we
+observe a universal response in the concentration parameter. We argue that
+merger events are a major contributor to the uncertainty in halo concentration
+at fixed halo mass and formation time. In fact, even haloes that are typically
+classified as having quiescent formation histories experience multiple minor
+mergers. These minor mergers drive small deviations from pseudo-evolution,
+which cause fluctuations in the concentration parameters and result in
+effectively irreducible scatter in the relation between concentration and
+assembly history. Hence, caution should be taken when using present-day halo
+concentration parameter as a proxy for the halo assembly history, especially if
+the recent merger history is unknown.

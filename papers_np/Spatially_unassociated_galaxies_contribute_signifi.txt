@@ -1,0 +1,31 @@
+Title: Spatially unassociated galaxies contribute significantly to the blended submillimetre galaxy population: predictions for follow-up observations of ALMA sources
+Authors: Christopher C. Hayward, Peter S. Behroozi, Rachel S. Somerville, Joel R. Primack, Jorge Moreno, Risa H. Wechsler
+Published: 2013-04-17 20:00:01+00:00
+Updated: 2013-06-27 19:22:38+00:00
+DOI: 10.1093/mnras/stt1202
+arXiv ID: http://arxiv.org/abs/1304.4933v3
+arXiv URL: http://arxiv.org/pdf/1304.4933v3
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+There is anecdotal evidence that spatially and physically unassociated
+galaxies blended into a single submillimetre (submm) source contribute to the
+submm galaxy (SMG) population. This work is the first to theoretically predict
+the number counts of such sources. We generate mock SMG catalogues using
+lightcones derived from the Bolshoi cosmological simulation; to assign submm
+flux densities to the mock galaxies, we use a fitting function previously
+derived from the results of dust radiative transfer performed on hydrodynamical
+simulations of isolated disc and merging galaxies. We then calculate submm
+number counts for different beam sizes and without blending. We predict that >
+~50 per cent of blended SMGs have at least one spatially unassociated component
+with S_850 > 1 mJy. For a 15-arcsec beam, blends of >2 galaxies in which at
+least one component is spatially unassociated dominate the blended sources with
+total S_850 > ~3 mJy. The distribution of the redshift separations amongst the
+components is strongly bimodal. The typical redshift separation of spatially
+unassociated blended sources is ~1. Our predictions for the contributions of
+spatially unassociated components and the distribution of redshift separations
+are not testable with currently available data, but they will be easily tested
+once sufficiently accurate redshifts for the individual subcomponents (resolved
+by, e.g., ALMA) of a sufficient number of single-dish-detected blended SMGs are
+available.

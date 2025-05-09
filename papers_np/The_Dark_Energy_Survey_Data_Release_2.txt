@@ -1,0 +1,32 @@
+Title: The Dark Energy Survey Data Release 2
+Authors: DES Collaboration, T. M. C. Abbott, M. Adamow, M. Aguena, S. Allam, A. Amon, J. Annis, S. Avila, D. Bacon, M. Banerji, K. Bechtol, M. R. Becker, G. M. Bernstein, E. Bertin, S. Bhargava, S. L. Bridle, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. Chang, A. Choi, C. Conselice, M. Costanzi, M. Crocce, L. N. da Costa, T. M. Davis, J. De Vicente, J. DeRose, S. Desai, H. T. Diehl, J. P. Dietrich, A. Drlica-Wagner, K. Eckert, J. Elvin-Poole, S. Everett, A. E. Evrard, I. Ferrero, A. Ferté, B. Flaugher, P. Fosalba, D. Friedel, J. Frieman, J. García-Bellido, L. Gelman, D. W. Gerdes, T. Giannantonio, M. Gill, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. Huterer, D. J. James, T. Jeltema, M. D. Johnson, S. Kent, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, C. Lidman, H. Lin, N. MacCrann, M. A. G. Maia, T. Manning, M. March, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, R. Miquel, R. Morgan, J. Myles, E. Neilsen, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, D. Petravick, A. Pieres, A. A. Plazas, C. Pond, M. Rodriguez-Monroy, A. K. Romer, A. Roodman, E. S. Rykoff, M. Sako, E. Sanchez, B. Santiago, S. Serrano, I. Sevilla-Noarbe, J. Allyn. Smith, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, P. E. Tremblay, M. A. Troxel, D. L. Tucker, D. J Turner, T. N. Varga, A. R. Walker, R. H. Wechsler, J. Weller, W. Wester, R. D. Wilkinson, B. Yanny, Y. Zhang, R. Nikutta, M. Fitzpatrick, A. Jacques, A. Scott, K. Olsen, L. Huang, D. Herrera, S. Juneau, D. Nidever, B. A. Weaver, C. Adean, V. Correia, M. de Freitas, F. N. Freitas, C. Singulani, G. Vila-Verde
+Published: 2021-01-14 18:16:00+00:00
+Updated: 2021-09-06 14:45:53+00:00
+DOI: 10.3847/1538-4365/ac00b3
+arXiv ID: http://arxiv.org/abs/2101.05765v3
+arXiv URL: http://arxiv.org/pdf/2101.05765v3
+Categories: astro-ph.IM, astro-ph.CO, astro-ph.GA, astro-ph.SR
+Author Position: 114
+
+Abstract:
+We present the second public data release of the Dark Energy Survey, DES DR2,
+based on optical/near-infrared imaging by the Dark Energy Camera mounted on the
+4-m Blanco telescope at Cerro Tololo Inter-American Observatory in Chile. DES
+DR2 consists of reduced single-epoch and coadded images, a source catalog
+derived from coadded images, and associated data products assembled from 6
+years of DES science operations. This release includes data from the DES
+wide-area survey covering ~5000 deg2 of the southern Galactic cap in five broad
+photometric bands, grizY. DES DR2 has a median delivered point-spread function
+full-width at half maximum of g= 1.11, r= 0.95, i= 0.88, z= 0.83, and Y= 0.90
+arcsec photometric uniformity with a standard deviation of < 3 mmag with
+respect to Gaia DR2 G-band, a photometric accuracy of ~10 mmag, and a median
+internal astrometric precision of ~27 mas. The median coadded catalog depth for
+a 1.95 arcsec diameter aperture at S/N= 10 is g= 24.7, r= 24.4, i= 23.8, z=
+23.1 and Y= 21.7 mag. DES DR2 includes ~691 million distinct astronomical
+objects detected in 10,169 coadded image tiles of size 0.534 deg2 produced from
+76,217 single-epoch images. After a basic quality selection, benchmark galaxy
+and stellar samples contain 543 million and 145 million objects, respectively.
+These data are accessible through several interfaces, including interactive
+image visualization tools, web-based query clients, image cutout servers and
+Jupyter notebooks. DES DR2 constitutes the largest photometric data set to date
+at the achieved depth and photometric precision.

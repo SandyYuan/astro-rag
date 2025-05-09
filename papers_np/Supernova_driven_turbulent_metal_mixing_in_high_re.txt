@@ -1,0 +1,30 @@
+Title: Supernova-driven turbulent metal mixing in high redshift galactic disks: metallicity fluctuations in the interstellar medium and its imprints on metal poor stars in the Milky Way
+Authors: Anne Noer Kolborg, Davide Martizzi, Enrico Ramirez-Ruiz, Hugo Pfister, Charli Sakari, Risa H. Wechsler, Melinda Soares-Furtado
+Published: 2021-11-04 04:11:31+00:00
+Updated: 2022-09-12 23:12:21+00:00
+DOI: 10.3847/2041-8213/ac8c98
+arXiv ID: http://arxiv.org/abs/2111.02619v2
+arXiv URL: http://arxiv.org/pdf/2111.02619v2
+Categories: astro-ph.GA
+Author Position: 6
+
+Abstract:
+The extent to which turbulence mixes gas in the face of recurrent infusions
+of fresh metals by supernovae (SN) could help provide important constraints on
+the local star formation conditions. This includes predictions of the
+metallicity dispersion amongst metal poor stars, which suggests that the
+interstellar medium was not very well mixed at these early times. The purpose
+of this {\it Letter} is to help isolate, via a series of numerical experiments,
+some of the key processes that regulate turbulent mixing of SN elements in
+galactic disks. We study the gas interactions in small simulated patches of a
+galaxy disk with the goal of resolving the small-scale mixing effects of metals
+at pc scales, which enables us to measure the turbulent diffusion coefficient
+in various galaxy environments. By investigating the statistics of variations
+of $\alpha$ elements in these simulations, we are able to derive constraints
+not only on the allowed range of intrinsic yield variations in SN explosions
+but also on the star formation history of the Milky Way. We argue that the
+observed dispersion of [Mg/Fe] in metal poor halo stars is compatible with the
+star-forming conditions expected in dwarf satellites or in an early low
+star-forming Milky Way progenitor. In particular, metal variations in stars
+that have not been phase-mixed can be used to infer the star-forming conditions
+of disrupted dwarf satellites.

@@ -1,0 +1,28 @@
+Title: Snowmass2021: Vera C. Rubin Observatory as a Flagship Dark Matter Experiment
+Authors: Yao-Yuan Mao, Annika H. G. Peter, Susmita Adhikari, Keith Bechtol, Simeon Bird, Simon Birrer, Jonathan Blazek, Jeffrey L. Carlin, Nushkia Chamba, Johann Cohen-Tanugi, Francis-Yan Cyr-Racine, Tansu Daylan, Birendra Dhanasingham, Alex Drlica-Wagner, Cora Dvorkin, Christopher Fassnacht, Eric Gawiser, Maurizio Giannotti, Vera Gluscevic, Alma Gonzalez-Morales, Renee Hlozek, M. James Jee, Stacy Kim, Akhtar Mahmood, Rachel Mandelbaum, Siddharth Mishra-Sharma, Marc Moniez, Ethan O. Nadler, Chanda Prescod-Weinstein, J. Anthony Tyson, Risa H. Wechsler, Hai-Bo Yu, Gabrijela Zaharijas
+Published: 2022-03-14 16:33:21+00:00
+Updated: 2022-03-14 16:33:21+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2203.07252v1
+arXiv URL: http://arxiv.org/pdf/2203.07252v1
+Categories: hep-ex, astro-ph.CO
+Author Position: 31
+
+Abstract:
+Establishing that Vera C. Rubin Observatory is a flagship dark matter
+experiment is an essential pathway toward understanding the physical nature of
+dark matter. In the past two decades, wide-field astronomical surveys and
+terrestrial laboratories have jointly created a phase transition in the
+ecosystem of dark matter models and probes. Going forward, any robust
+understanding of dark matter requires astronomical observations, which still
+provide the only empirical evidence for dark matter to date. We have a unique
+opportunity right now to create a dark matter experiment with Rubin Observatory
+Legacy Survey of Space and Time (LSST). This experiment will be a coordinated
+effort to perform dark matter research, and provide a large collaborative team
+of scientists with the necessary organizational and funding supports. This
+approach leverages existing investments in Rubin. Studies of dark matter with
+Rubin LSST will also guide the design of, and confirm the results from, other
+dark matter experiments. Supporting a collaborative team to carry out a dark
+matter experiment with Rubin LSST is the key to achieving the dark matter
+science goals that have already been identified as high priority by the
+high-energy physics and astronomy communities.

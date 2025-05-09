@@ -1,0 +1,29 @@
+Title: Dark Energy Survey Year 1 Results: tomographic cross-correlations between DES galaxies and CMB lensing from SPT+Planck
+Authors: Y. Omori, T. Giannantonio, A. Porredon, E. Baxter, C. Chang, M. Crocce, P. Fosalba, A. Alarcon, N. Banik, J. Blazek, L. E. Bleem, S. L. Bridle, R. Cawthon, A. Choi, R. Chown, T. Crawford, S. Dodelson, A. Drlica-Wagner, T. F. Eifler, J. Elvin-Poole, O. Friedrich, D. Gruen, G. P. Holder, D. Huterer, B. Jain, M. Jarvis, D. Kirk, N. Kokron, E. Krause, N. MacCrann, J. Muir, J. Prat, C. L. Reichardt, A. J. Ross, E. Rozo, E. S. Rykoff, C. Sánchez, L. F. Secco, G. Simard, R. H. Wechsler, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, S. Allam, S. Avila, K. Aylor, B. A. Benson, G. M. Bernstein, E. Bertin, F. Bianchini, D. Brooks, E. Buckley-Geer, D. L. Burke, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. L. Chang, H-M. Cho, A. T. Crites, C. E. Cunha, L. N. da Costa, T. de Haan, C. Davis, J. De Vicente, S. Desai, H. T. Diehl, J. P. Dietrich, M. A. Dobbs, W. B. Everett, P. Doel, J. Estrada, B. Flaugher, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, E. M. George, R. A. Gruendl, J. Gschwend, G. Gutierrez, N. W. Halverson, N. L. Harrington, W. G. Hartley, D. L. Hollowood, W. L. Holzapfel, K. Honscheid, Z. Hou, B. Hoyle, J. D. Hrubes, D. J. James, T. Jeltema, K. Kuehn, N. Kuropatkin, A. T. Lee, E. M. Leitch, M. Lima, D. Luong-Van, A. Manzotti, D. P. Marrone, J. L. Marshall, J. J. McMahon, P. Melchior, F. Menanteau, S. S. Meyer, C. J. Miller, R. Miquel, L. M. Mocanu, J. J. Mohr, T. Natoli, S. Padin, A. A. Plazas, C. Pryke, A. K. Romer, A. Roodman, J. E. Ruhl, E. Sanchez, V. Scarpine, K. K. Schaffer, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, E. Shirokoff, M. Smith, M. Soares-Santos, F. Sobreira, Z. Staniszewski, A. A. Stark, K. T. Story, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, M. A. Troxel, K. Vanderlinde, J. D. Vieira, A. R. Walker, W. L. K. Wu, O. Zahn
+Published: 2018-10-04 17:47:28+00:00
+Updated: 2018-10-04 17:47:28+00:00
+DOI: 10.1103/PhysRevD.100.043501
+arXiv ID: http://arxiv.org/abs/1810.02342v1
+arXiv URL: http://arxiv.org/pdf/1810.02342v1
+Categories: astro-ph.CO
+Author Position: 40
+
+Abstract:
+We measure the cross-correlation between redMaGiC galaxies selected from the
+Dark Energy Survey (DES) Year-1 data and gravitational lensing of the cosmic
+microwave background (CMB) reconstructed from South Pole Telescope (SPT) and
+Planck data over 1289 sq. deg. When combining measurements across multiple
+galaxy redshift bins spanning the redshift range of $0.15<z<0.90$, we reject
+the hypothesis of no correlation at 19.9$\sigma$ significance. When removing
+small-scale data points where thermal Sunyaev-Zel'dovich signal and nonlinear
+galaxy bias could potentially bias our results, the detection significance is
+reduced to 9.9$\sigma$. We perform a joint analysis of galaxy-CMB lensing
+cross-correlations and galaxy clustering to constrain cosmology, finding
+$\Omega_{\rm m} = 0.276^{+0.029}_{-0.030}$ and
+$S_{8}=\sigma_{8}\sqrt{\mathstrut \Omega_{\rm m}/0.3} =
+0.800^{+0.090}_{-0.094}$. We also perform two alternate analyses aimed at
+constraining only the growth rate of cosmic structure as a function of
+redshift, finding consistency with predictions from the concordance
+$\Lambda$CDM model. The measurements presented here are part of a joint
+cosmological analysis that combines galaxy clustering, galaxy lensing and CMB
+lensing using data from DES, SPT and Planck.

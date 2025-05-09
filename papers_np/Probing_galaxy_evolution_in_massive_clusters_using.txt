@@ -1,0 +1,35 @@
+Title: Probing galaxy evolution in massive clusters using ACT and DES: splashback as a cosmic clock
+Authors: Susmita Adhikari, Tae-hyeon Shin, Bhuvnesh Jain, Matt Hilton, Eric Baxter, Chihway Chang, Risa H. Wechsler, Nick Battaglia, J. Richard Bond, Sebastian Bocquet, Joseph DeRose, Steve K. Choi, Mark Devlin, Jo Dunkley, August E. Evrard, Simone Ferraro, J. Colin Hill, John P. Hughes, Patricio A. Gallardo, Martine Lokken, Amanda MacInnis, Jeffrey McMahon, Mathew S. Madhavacheril, Frederico Nati, Laura B. Newburgh, Michael D. Niemack, Lyman A. Page, Antonella Palmese, Bruce Partridge, Eduardo Rozo, Eli Rykoff, Maria Salatino, Alessandro Schillaci, Neelima Sehgal, Cristóbal Sifón, Chun-Hao To, Ed Wollack, Hao-Yi Wu, Zhilei Xu, Michel Aguena, Sahar Allam, Alexandra Amon, James Annis, Santiago Avila, David Bacon, Emmanuel Bertin, Sunayana Bhargava, David Brooks, David L. Burke, Aurelio C. Rosell, Matias Carrasco Kind, Jorge Carretero, Francisco Javier Castander, Ami Choi, Matteo Costanzi, Luiz N. da Costa, Juan De Vicente, Shantanu Desai, Thomas H. Diehl, Peter Doel, Spencer Everett, Ismael Ferrero, Agnès Ferté, Brenna Flaugher, Pablo Fosalba, Josh Frieman, Juan García-Bellido, Enrique Gaztanaga, Daniel Gruen, Robert A. Gruendl, Julia Gschwend, Gaston Gutierrez, Will G. Hartley, Samuel R. Hinton, Devon L. Hollowood, Klaus Honscheid, David J. James, Tesla Jeltema, Kyler Kuehn, Nikolay Kuropatkin, Ofer Lahav, Marcos Lima, Marcio A. G. Maia, Jennifer L. Marshall, Paul Martini, Peter Melchior, Felipe Menanteau, Ramon Miquel, Robert Morgan, Ricardo L. C. Ogando, Francisco Paz-Chinchón, Andrés Plazas Malagón, Eusebio Sanchez, Basilio Santiago, Vic Scarpine, Santiago Serrano, Ignacio Sevilla-Noarbe, Mathew Smith, Marcelle Soares-Santos, Eric Suchyta, Molly E. C. Swanson, Tamas N. Varga, Reese D. Wilkinson, Yuanyuan Zhang, Jason E. Austermann, James A. Beall, Daniel T. Becker, Edward V. Denison, Shannon M. Duff, Gene C. Hilton, Johannes Hubmayr, Joel N. Ullom, Jeff Van Lanen, Leila R. Vale, DES Collaboration, ACT Collaboration
+Published: 2020-08-26 16:47:01+00:00
+Updated: 2020-08-26 16:47:01+00:00
+DOI: 10.3847/1538-4357/ac0bbc
+arXiv ID: http://arxiv.org/abs/2008.11663v1
+arXiv URL: http://arxiv.org/pdf/2008.11663v1
+Categories: astro-ph.GA
+Author Position: 7
+
+Abstract:
+We measure the projected number density profiles of galaxies and the
+splashback feature in clusters selected by the Sunyaev--Zeldovich (SZ) effect
+from the Advanced Atacama Cosmology Telescope (AdvACT) survey using galaxies
+observed by the Dark Energy Survey (DES). The splashback radius for the
+complete galaxy sample is consistent with theoretical measurements from
+CDM-only simulations, and is located at $2.4^{+0.3}_{-0.4}$ Mpc $h^{-1}$. We
+split the sample based on galaxy color and find significant differences in the
+profile shapes. Red galaxies and those in the green valley show a
+splashback-like minimum in their slope profile consistent with theoretical
+predictions, while the bluest galaxies show a weak feature that appears at a
+smaller radius. We develop a mapping of galaxies to subhalos in $N$-body
+simulations by splitting subhalos based on infall time onto the cluster halos.
+We find that the location of the steepest slope and differences in the shapes
+of the profiles can be mapped to differences in the average time of infall of
+galaxies of different colors. The minima of the slope in the galaxy profiles
+trace a discontinuity in the phase space of dark matter halos. By relating
+spatial profiles to infall time for galaxies of different colours, we can use
+splashback as a clock to understand galaxy quenching. We find that red galaxies
+have on average been in their clusters for over $3.2 ~\rm Gyrs$, green galaxies
+about $2.2 ~\rm Gyrs$, while blue galaxies have been accreted most recently and
+have not reached apocenter. Using the information from the complete radial
+profiles, we fit a simple quenching model and find that the onset of galaxy
+quenching in clusters occurs after a delay of about a gigayear, and that
+galaxies quench rapidly thereafter with an exponential timescale of $0.6$ Gyr.

@@ -1,0 +1,28 @@
+Title: Modeling projection effects in optically-selected cluster catalogues
+Authors: M. Costanzi, E. Rozo, E. S. Rykoff, A. Farahi, T. Jeltema, A. E. Evrard, A. Mantz, D. Gruen, R. Mandelbaum, J. DeRose, T. McClintock, T. N. Varga, Y. Zhang, J. Weller, R. H. Wechsler, M. Aguena
+Published: 2018-07-18 18:00:00+00:00
+Updated: 2018-07-18 18:00:00+00:00
+DOI: 10.1093/mnras/sty2665
+arXiv ID: http://arxiv.org/abs/1807.07072v1
+arXiv URL: http://arxiv.org/pdf/1807.07072v1
+Categories: astro-ph.CO
+Author Position: 15
+
+Abstract:
+The cosmological utility of galaxy cluster catalogues is primarily limited by
+our ability to calibrate the relation between halo mass and observable mass
+proxies such as cluster richness, X-ray luminosity or the Sunyaev-Zeldovich
+signal. Projection effects are a particularly pernicious systematic effect that
+can impact observable mass proxies; structure along the line of sight can both
+bias and increase the scatter of the observable mass proxies used in cluster
+abundance studies. In this work, we develop an empirical method to characterize
+the impact of projection effects on redMaPPer cluster catalogues. We use
+numerical simulations to validate our method and illustrate its robustness. We
+demonstrate that modeling of projection effects is a necessary component for
+cluster abundance studies capable of reaching $\approx 5\%$ mass calibration
+uncertainties (e.g. the Dark Energy Survey Year 1 sample). Specifically,
+ignoring the impact of projection effects in the observable--mass relation ---
+i.e. marginalizing over a log-normal model only --- biases the posterior of the
+cluster normalization condition $S_8 \equiv \sigma_8 (\Omega_{\rm
+m}/0.3)^{1/2}$ by $\Delta S_8 =0.05$, more than twice the uncertainty in the
+posterior for such an analysis.

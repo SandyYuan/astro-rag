@@ -1,0 +1,32 @@
+Title: Dark Energy Survey Year 3 results: Magnification modeling and impact on cosmological constraints from galaxy clustering and galaxy-galaxy lensing
+Authors: J. Elvin-Poole, N. MacCrann, S. Everett, J. Prat, E. S. Rykoff, J. De Vicente, B. Yanny, K. Herner, A. Ferté, E. Di Valentino, A. Choi, D. L. Burke, I. Sevilla-Noarbe, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, E. Baxter, K. Bechtol, M. R. Becker, G. M. Bernstein, J. Blazek, H. Camacho, A. Campos, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, C. Chang, R. Chen, J. Cordero, M. Crocce, C. Davis, J. DeRose, H. T. Diehl, S. Dodelson, C. Doux, A. Drlica-Wagner, K. Eckert, T. F. Eifler, F. Elsner, X. Fang, P. Fosalba, O. Friedrich, M. Gatti, G. Giannini, D. Gruen, R. A. Gruendl, I. Harrison, W. G. Hartley, H. Huang, E. M. Huff, D. Huterer, E. Krause, N. Kuropatkin, P. -F. Leget, P. Lemos, A. R. Liddle, J. McCullough, J. Muir, J. Myles, A. Navarro-Alsina, S. Pandey, Y. Park, A. Porredon, M. Raveri, M. Rodriguez-Monroy, R. P. Rollins, A. Roodman, R. Rosenfeld, A. J. Ross, C. Sánchez, J. Sanchez, L. F. Secco, E. Sheldon, T. Shin, M. A. Troxel, I. Tutusaus, T. N. Varga, N. Weaverdyck, R. H. Wechsler, B. Yin, Y. Zhang, J. Zuntz, M. Aguena, S. Avila, D. Bacon, E. Bertin, S. Bocquet, D. Brooks, J. García-Bellido, K. Honscheid, M. Jarvis, T. S. Li, J. Mena-Fernández, C. To, R. D. Wilkinson
+Published: 2022-09-20 15:10:48+00:00
+Updated: 2023-05-26 15:25:24+00:00
+DOI: 10.1093/mnras/stad1594
+arXiv ID: http://arxiv.org/abs/2209.09782v2
+arXiv URL: http://arxiv.org/pdf/2209.09782v2
+Categories: astro-ph.CO
+Author Position: 80
+
+Abstract:
+We study the effect of magnification in the Dark Energy Survey Year 3
+analysis of galaxy clustering and galaxy-galaxy lensing, using two different
+lens samples: a sample of Luminous red galaxies, redMaGiC, and a sample with a
+redshift-dependent magnitude limit, MagLim. We account for the effect of
+magnification on both the flux and size selection of galaxies, accounting for
+systematic effects using the Balrog image simulations. We estimate the impact
+of magnification on the galaxy clustering and galaxy-galaxy lensing cosmology
+analysis, finding it to be a significant systematic for the MagLim sample. We
+show cosmological constraints from the galaxy clustering auto-correlation and
+galaxy-galaxy lensing signal with different magnifications priors, finding
+broad consistency in cosmological parameters in $\Lambda$CDM and $w$CDM.
+However, when magnification bias amplitude is allowed to be free, we find the
+two-point correlations functions prefer a different amplitude to the fiducial
+input derived from the image simulations. We validate the magnification
+analysis by comparing the cross-clustering between lens bins with the
+prediction from the baseline analysis, which uses only the auto-correlation of
+the lens bins, indicating systematics other than magnification may be the cause
+of the discrepancy. We show adding the cross-clustering between lens redshift
+bins to the fit significantly improves the constraints on lens magnification
+parameters and allows uninformative priors to be used on magnification
+coefficients, without any loss of constraining power or prior volume concerns.

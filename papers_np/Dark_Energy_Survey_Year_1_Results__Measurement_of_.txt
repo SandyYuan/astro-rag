@@ -1,0 +1,31 @@
+Title: Dark Energy Survey Year 1 Results: Measurement of the Baryon Acoustic Oscillation scale in the distribution of galaxies to redshift 1
+Authors: The Dark Energy Survey Collaboration, T. M. C. Abbott, F. B. Abdalla, A. Alarcon, S. Allam, F. Andrade-Oliveira, J. Annis, S. Avila, M. Banerji, N. Banik, K. Bechtol, G. M. Bernstein, R. A. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, H. Camacho, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, K. C. Chan, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, J. De Vicente, D. L. DePoy, S. Desai, H. T. Diehl, P. Doel, A. Drlica-Wagner, T. F. Eifler, J. Elvin-Poole, J. Estrada, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, D. Hollowood, K. Honscheid, B. Hoyle, B. Jain, D. J. James, T. Jeltema, M. D. Johnson, S. Kent, N. Kokron, E. Krause, K. Kuehn, S. Kuhlmann, N. Kuropatkin, F. Lacasa, O. Lahav, M. Lima, H. Lin, M. A. G. Maia, M. Manera, J. Marriner, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, E. Neilsen, W. J. Percival, A. A. Plazas, A. Porredon, A. K. Romer, A. Roodman, R. Rosenfeld, A. J. Ross, E. Rozo, E. S. Rykoff, M. Sako, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, E. Sheldon, R. C. Smith, M. Smith, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, M. A. Troxel, D. L. Tucker, V. Vikram, A. R. Walker, R. H. Wechsler, J. Weller, B. Yanny, Y. Zhang
+Published: 2017-12-17 23:48:05+00:00
+Updated: 2018-12-09 15:23:15+00:00
+DOI: 10.1093/mnras/sty3351
+arXiv ID: http://arxiv.org/abs/1712.06209v2
+arXiv URL: http://arxiv.org/pdf/1712.06209v2
+Categories: astro-ph.CO
+Author Position: 109
+
+Abstract:
+We present angular diameter distance measurements obtained by locating the
+BAO scale in the distribution of galaxies selected from the first year of Dark
+Energy Survey data. We consider a sample of over 1.3 million galaxies
+distributed over a footprint of 1318 deg$^2$ with $0.6 < z_{\rm photo} < 1$ and
+a typical redshift uncertainty of $0.03(1+z)$. This sample was selected, as
+fully described in a companion paper, using a color/magnitude selection that
+optimizes trade-offs between number density and redshift uncertainty. We
+investigate the BAO signal in the projected clustering using three conventions,
+the angular separation, the co-moving transverse separation, and spherical
+harmonics. Further, we compare results obtained from template based and machine
+learning photometric redshift determinations. We use 1800 simulations that
+approximate our sample in order to produce covariance matrices and allow us to
+validate our distance scale measurement methodology. We measure the angular
+diameter distance, $D_A$, at the effective redshift of our sample divided by
+the true physical scale of the BAO feature, $r_{\rm d}$. We obtain close to a 4
+per cent distance measurement of $D_A(z_{\rm eff}=0.81)/r_{\rm d} = 10.75\pm
+0.43 $. These results are consistent with the flat $\Lambda$CDM concordance
+cosmological model supported by numerous other recent experimental results. All
+data products are publicly available here:
+https://des.ncsa.illinois.edu/releases/y1a1/bao

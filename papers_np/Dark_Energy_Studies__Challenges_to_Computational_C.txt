@@ -1,0 +1,21 @@
+Title: Dark Energy Studies: Challenges to Computational Cosmology
+Authors: James Annis, Francisco J. Castander, August E. Evrard, Joshua A. Frieman, Enrique Gaztanaga, Bhuvnesh Jain, Andrey V. Kravtsov, Ofer Lahav, Huan Lin, Joseph Mohr, Paul M. Ricker, Albert Stebbins, Risa H. Wechsler, David H. Weinberg, Jochen Weller
+Published: 2005-10-06 21:07:47+00:00
+Updated: 2005-10-06 21:07:47+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/astro-ph/0510194v1
+arXiv URL: http://arxiv.org/pdf/astro-ph/0510194v1
+Categories: astro-ph
+Author Position: 13
+
+Abstract:
+The ability to test the nature of dark mass-energy components in the universe
+through large-scale structure studies hinges on accurate predictions of sky
+survey expectations within a given world model. Numerical simulations predict
+key survey signatures with varying degrees of confidence, limited mainly by the
+complex astrophysics of galaxy formation. As surveys grow in size and scale,
+systematic uncertainties in theoretical modeling can become dominant. Dark
+energy studies will challenge the computational cosmology community to
+critically assess current techniques, develop new approaches to maximize
+accuracy, and establish new tools and practices to efficiently employ globally
+networked computing resources.

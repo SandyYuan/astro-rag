@@ -1,0 +1,37 @@
+Title: The DESI Y1 RR Lyrae catalog I: Empirical modeling of the cyclic variation of spectroscopic properties and a chemodynamical analysis of the outer halo
+Authors: Gustavo E. Medina, Ting S. Li, Sergey E. Koposov, A. H. Riley, L. Beraldo e Silva, M. Valluri, W. Wang, A. Byström, O. Y. Gnedin, R. G. Carlberg, N. Kizhuprakkat, B. A. Weaver, J. Aguilar, S. Ahlen, D. Bianchi, D. Brooks, T. Claybaugh, A. P. Cooper, A. de la Macorra, A. Dey, P. Doel, A. Font-Ribera, J. E. Forero-Romero, E. Gaztañaga, S. Gontcho A Gontcho, G. Gutierrez, J. Guy, K. Honscheid, M. Ishak, T. Kisner, M. Landriau, L. Le Guillou, A. Meisner, R. Miquel, A. D. Myers, S. Nadathur, C. Poppett, F. Prada, I. Pérez-Ràfols, G. Rossi, E. Sanchez, H. Seo, D. Sprayberry, G. Tarlé, R. H. Wechsler, R. Zhou, H. Zou
+Published: 2025-04-03 18:00:00+00:00
+Updated: 2025-04-03 18:00:00+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2504.02924v1
+arXiv URL: http://arxiv.org/pdf/2504.02924v1
+Categories: astro-ph.GA
+Author Position: 45
+
+Abstract:
+We present the catalog of RR Lyrae stars observed in the first year of
+operations of the Dark Energy Spectroscopic Instrument (DESI) survey. This
+catalog contains 6,240 RR Lyrae stars out to $\sim100$\,kpc from the Galactic
+center and over 12,000 individual epochs with homogeneously-derived stellar
+atmospheric parameters. We introduce a novel methodology to model the cyclical
+variation of the spectroscopic properties of RR Lyrae from single-epoch
+measurements. We employ this method to infer the radial velocity and effective
+temperature variation of fundamental mode and first-overtone RR Lyrae stars and
+to determine their systemic velocities and mean temperatures. For fundamental
+mode pulsators, we obtain radial velocity curves with amplitudes of
+$\sim$30--50\,km\,s$^{-1}$ and effective temperature curves with 300--1,000\,K
+variations, whereas for first-overtone pulsators these amplitudes are
+$\sim20$\,km\,s$^{-1}$ and $\sim 600$\,K, respectively. We use our sample to
+study the metallicity distribution of the halo and its dependence on
+Galactocentric distance ($R_{\rm GC}$). Using a radius-dependent mixture model,
+we split the data into chemodynamically distinct components and find that our
+inner halo sample ($R_{\rm GC}\lesssim50$\,kpc) is predominantly composed of
+stars with [Fe/H] $\sim-1.5$\,dex and largely radial orbits (with an anisotropy
+parameter $\beta\sim0.94$), that we associate with the Gaia-Sausage-Enceladus
+merger event. Stars in the outer halo field exhibit a broader and more
+metal-poor [Fe/H] distribution with more circular orbits ($\beta\sim0.39$). The
+metallicity gradient of the metal-rich and the metal-poor components is found
+to be $0.005$ and $0.010$\,dex\,kpc$^{-1}$, respectively. Our catalog
+highlights DESI's tantalizing potential for studying the Milky Way and the
+pulsation properties of RR Lyrae stars in the era of large spectroscopic
+surveys.

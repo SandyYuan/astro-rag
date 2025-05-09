@@ -1,0 +1,37 @@
+Title: Cosmological Constraints from DES Y1 Cluster Abundances and SPT Multi-wavelength data
+Authors: M. Costanzi, A. Saro, S. Bocquet, T. M. C. Abbott, M. Aguena, S. Allam, A. Amara, J. Annis, S. Avila, D. Bacon, B. A. Benson, S. Bhargava, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, A. Choi, L. N. da Costa, M. E. S. Pereira, J. De Vicente, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, S. Everett, I. Ferrero, A. Ferté, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, P. Giles, S. Grandis, D. Gruen, R. A. Gruendl, N. Gupta, G. Gutierrez, W. G. Hartley, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, T. Jeltema, E. Krause, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, N. MacCrann, M. A. G. Maia, J. L. Marshall, F. Menanteau, R. Miquel, J. J. Mohr, R. Morgan, J. Myles, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, A. A. Plazas, D. Rapetti, C. L. Reichardt, A. K. Romer, A. Roodman, F. Ruppin, L. Salvati, S. Samuroff, E. Sanchez, V. Scarpine, S. Serrano, I. Sevilla-Noarbe, P. Singh, M. Smith, M. Soares-Santos, A. A. Stark, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, D. L. Tucker, T. N. Varga, R. H. Wechsler, Z. Zhang
+Published: 2020-10-26 18:00:03+00:00
+Updated: 2022-02-15 08:49:14+00:00
+DOI: 10.1103/PhysRevD.103.043522
+arXiv ID: http://arxiv.org/abs/2010.13800v2
+arXiv URL: http://arxiv.org/pdf/2010.13800v2
+Categories: astro-ph.CO
+Author Position: 89
+
+Abstract:
+We perform a joint analysis of the counts of redMaPPer clusters selected from
+the Dark Energy Survey (DES) Y1 data and multi-wavelength follow-up data
+collected within the 2500 deg$^2$ South Pole Telescope (SPT) SZ survey. The SPT
+follow-up data, calibrating the richness--mass relation of the optically
+selected redMaPPer catalog, enable the cosmological exploitation of the DES
+cluster abundance data. To explore possible systematics related to the modeling
+of projection effects, we consider two calibrations of the observational
+scatter on richness estimates: a simple Gaussian model which account only for
+the background contamination (BKG), and a model which further includes
+contamination and incompleteness due to projection effects (PRJ). Assuming
+either a $\Lambda$CDM+$\sum m_\nu$ or $w$CDM+$\sum m_\nu$ cosmology, and for
+both scatter models, we derive cosmological constraints consistent with
+multiple cosmological probes of the low and high redshift Universe, and in
+particular with the SPT cluster abundance data. This result demonstrates that
+the DES Y1 and SPT cluster counts provide consistent cosmological constraints,
+if the same mass calibration data set is adopted. It thus supports the
+conclusion of the DES Y1 cluster cosmology analysis which interprets the
+tension observed with other cosmological probes in terms of systematics
+affecting the stacked weak lensing analysis of optically--selected
+low--richness clusters. Finally, we analyse the first combined optically-SZ
+selected cluster catalogue obtained by including the SPT sample above the
+maximum redshift probed by the DES Y1 redMaPPer sample. Besides providing a
+mild improvement of the cosmological constraints, this data combination serves
+as a stricter test of our scatter models: the PRJ model, providing scaling
+relations consistent between the two abundance and multi-wavelength follow-up
+data, is favored over the BKG model.

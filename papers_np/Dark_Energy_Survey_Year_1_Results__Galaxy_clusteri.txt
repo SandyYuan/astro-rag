@@ -1,0 +1,34 @@
+Title: Dark Energy Survey Year 1 Results: Galaxy clustering for combined probes
+Authors: J. Elvin-Poole, M. Crocce, A. J. Ross, T. Giannantonio, E. Rozo, E. S. Rykoff, S. Avila, N. Banik, J. Blazek, S. L. Bridle, R. Cawthon, A. Drlica-Wagner, O. Friedrich, N. Kokron, E. Krause, N. MacCrann, J. Prat, C. Sanchez, L. F. Secco, I. Sevilla-Noarbe, M. A. Troxel, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, J. Asorey, K. Bechtol, M. R. Becker, A. Benoit-Levy, G. M. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, D. Carollo, M. Carrasco Kind, J. Carretero, F. J. Castander, C. E. Cunha, C. B. DAndrea, L. N. da Costa, T. M. Davis, C. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, S. Dodelson, P. Doel, T. F. Eifler, A. E. Evrard, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, K. Glazebrook, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, S. R. Hinton, K. Honscheid, J. K. Hoormann, B. Jain, D. J. James, M. Jarvis, T. Jeltema, M. W. G. Johnson, M. D. Johnson, A. King, K. Kuehn, S. Kuhlmann, N. Kuropatkin, O. Lahav, G. Lewis, T. S. Li, C. Lidman, M. Lima, H. Lin, E. Macaulay, M. March, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, A. Moller, R. C. Nichol, B. Nord, C. R. ONeill, W. J. Percival, D. Petravick, A. A. Plazas, A. K. Romer, M. Sako, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, E. Sheldon, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, N. E. Sommer, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, B. E. Tucker, D. L. Tucker, S. A. Uddin, V. Vikram, A. R. Walker, R. H. Wechsler, J. Weller, W. Wester, R. C. Wolf, F. Yuan, B. Zhang, J. Zuntz
+Published: 2017-08-04 14:52:33+00:00
+Updated: 2018-08-28 14:57:53+00:00
+DOI: 10.1103/PhysRevD.98.042006
+arXiv ID: http://arxiv.org/abs/1708.01536v2
+arXiv URL: http://arxiv.org/pdf/1708.01536v2
+Categories: astro-ph.CO
+Author Position: 120
+
+Abstract:
+We measure the clustering of DES Year 1 galaxies that are intended to be
+combined with weak lensing samples in order to produce precise cosmological
+constraints from the joint analysis of large-scale structure and lensing
+correlations. Two-point correlation functions are measured for a sample of $6.6
+\times 10^{5}$ luminous red galaxies selected using the \textsc{redMaGiC}
+algorithm over an area of $1321$ square degrees, in the redshift range $0.15 <
+z < 0.9$, split into five tomographic redshift bins. The sample has a mean
+redshift uncertainty of $\sigma_{z}/(1+z) = 0.017$. We quantify and correct
+spurious correlations induced by spatially variable survey properties, testing
+their impact on the clustering measurements and covariance. We demonstrate the
+sample's robustness by testing for stellar contamination, for potential biases
+that could arise from the systematic correction, and for the consistency
+between the two-point auto- and cross-correlation functions. We show that the
+corrections we apply have a significant impact on the resultant measurement of
+cosmological parameters, but that the results are robust against arbitrary
+choices in the correction method. We find the linear galaxy bias in each
+redshift bin in a fiducial cosmology to be $b(z$=$0.24)=1.40 \pm 0.08$,
+$b(z$=$0.38)=1.61 \pm 0.05$, $b(z$=$0.53)=1.60 \pm 0.04$ for galaxies with
+luminosities $L/L_*>$$0.5$, $b(z$=$0.68)=1.93 \pm 0.05$ for $L/L_*>$$1$ and
+$b(z$=$0.83)=1.99 \pm 0.07$ for $L/L_*$$>1.5$, broadly consistent with
+expectations for the redshift and luminosity dependence of the bias of red
+galaxies. We show these measurements to be consistent with the linear bias
+obtained from tangential shear measurements.

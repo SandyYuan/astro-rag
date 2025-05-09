@@ -1,0 +1,23 @@
+Title: The DES Science Verification Weak Lensing Shear Catalogues
+Authors: M. Jarvis, E. Sheldon, J. Zuntz, T. Kacprzak, S. L. Bridle, A. Amara, R. Armstrong, M. R. Becker, G. M. Bernstein, C. Bonnett, C. Chang, R. Das, J. P. Dietrich, A. Drlica-Wagner, T. F. Eifler, C. Gangkofner, D. Gruen, M. Hirsch, E. M. Huff, B. Jain, S. Kent, D. Kirk, N. MacCrann, P. Melchior, A. A. Plazas, A. Refregier, B. Rowe, E. S. Rykoff, S. Samuroff, C. Sánchez, E. Suchyta, M. A. Troxel, V. Vikram, T. Abbott, F. B. Abdalla, S. Allam, J. Annis, A. Benoit-Lévy, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, J. Clampitt, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, P. Doel, A. Fausti Neto, B. Flaugher, P. Fosalba, J. Frieman, E. Gaztanaga, D. W. Gerdes, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. March, P. Martini, R. Miquel, J. J. Mohr, E. Neilsen, B. Nord, R. Ogando, K. Reil, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, A. R. Walker, R. H. Wechsler
+Published: 2015-07-20 19:48:14+00:00
+Updated: 2016-04-25 13:37:19+00:00
+DOI: 10.1093/mnras/stw990
+arXiv ID: http://arxiv.org/abs/1507.05603v3
+arXiv URL: http://arxiv.org/pdf/1507.05603v3
+Categories: astro-ph.IM, astro-ph.CO
+Author Position: 95
+
+Abstract:
+We present weak lensing shear catalogues for 139 square degrees of data taken
+during the Science Verification (SV) time for the new Dark Energy Camera
+(DECam) being used for the Dark Energy Survey (DES). We describe our object
+selection, point spread function estimation and shear measurement procedures
+using two independent shear pipelines, IM3SHAPE and NGMIX, which produce
+catalogues of 2.12 million and 3.44 million galaxies respectively. We detail a
+set of null tests for the shear measurements and find that they pass the
+requirements for systematic errors at the level necessary for weak lensing
+science applications using the SV data. We also discuss some of the planned
+algorithmic improvements that will be necessary to produce sufficiently
+accurate shear catalogues for the full 5-year DES, which is expected to cover
+5000 square degrees.

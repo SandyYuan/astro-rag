@@ -1,0 +1,32 @@
+Title: CANDELS Observations of the Environmental Dependence of the Color-Mass-Morphology Relation at z = 1.6
+Authors: Robert Bassett, Casey Papovich, Jennifer M. Lotz, Eric F. Bell, Steven L. Finkelstein, Jeffrey A. Newman, Kim-Vy Tran, Omar Almaini, Caterina Lani, Michael Cooper, Darren Croton, Avishai Dekel, Henry C. Ferguson, Dale D. Kocevski, Anton M. Koekemoer, David C. Koo, Elizabeth J. McGrath, Daniel H. McIntosh, Risa H. Wechsler
+Published: 2013-05-03 01:37:49+00:00
+Updated: 2013-05-03 01:37:49+00:00
+DOI: 10.1088/0004-637X/770/1/58
+arXiv ID: http://arxiv.org/abs/1305.0607v1
+arXiv URL: http://arxiv.org/pdf/1305.0607v1
+Categories: astro-ph.CO
+Author Position: 19
+
+Abstract:
+We study the environmental dependence of color, stellar mass, and morphology
+by comparing galaxies in a forming cluster to those in the field at z = 1:6
+with Hubble Space Telescope near-infrared imaging in the CANDELS/UDS field. We
+quantify the morphology of the galaxies using the effective radius, reff, and
+S\'ersic index, n. In both the cluster and field, approximately half of the
+bulge-dominated galaxies (n > 2) reside on the red sequence of the
+color-magnitude diagram, and most disk-dominated galaxies (n < 2) have colors
+expected for star-forming galaxies. There is weak evidence that cluster
+galaxies have redder rest-frame U - B colors and higher stellar masses compared
+to the field. Star-forming galaxies in both the cluster and field show no
+significant differences in their morphologies. In contrast, there is evidence
+that quiescent galaxies in the cluster have larger median effective radii and
+smaller S\'ersic indices compared to the field with a significance of 2?. These
+differences are most pronounced for galaxies at clustercentric distances 1 Mpc
+< Rproj < 1.5 Mpc, which have low S\'ersic indices and possibly larger
+effective radii, more consistent with star-forming galaxies at this epoch and
+in contrast to other quiescent galaxies. We argue that star-forming galaxies
+are processed under the influence of the cluster environment at distances
+greater than the cluster-halo virial radius. Our results are consistent with
+models where gas accretion onto these galaxies is suppressed from processes
+associated with the cluster environment.

@@ -1,0 +1,30 @@
+Title: Observing Galaxy Evolution in the Context of Large-Scale Structure
+Authors: Mark Dickinson, Yun Wang, James Bartlett, Peter Behroozi, Jarle Brinchmann, Peter Capak, Ranga Chary, Andrea Cimatti, Alison Coil, Charlie Conroy, Emanuele Daddi, Megan Donahue, Peter Eisenhardt, Henry C. Ferguson, Steve Furlanetto, Karl Glazebrook, Anthony Gonzalez, George Helou, Philip F. Hopkins, Jeyhan Kartaltepe, Janice Lee, Sangeeta Malhotra, Jennifer Marshall, Jeffrey A. Newman, Alvaro Orsi, James Rhoads, Jason Rhodes, Alice Shapley, Risa H. Wechsler
+Published: 2019-03-14 18:34:32+00:00
+Updated: 2019-03-14 18:34:32+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1903.07409v1
+arXiv URL: http://arxiv.org/pdf/1903.07409v1
+Categories: astro-ph.GA
+Author Position: 29
+
+Abstract:
+Galaxies form and evolve in the context of their local and large-scale
+environments. Their baryonic content that we observe with imaging and
+spectroscopy is intimately connected to the properties of their dark matter
+halos, and to their location in the "cosmic web" of large-scale structure. Very
+large spectroscopic surveys of the local universe (e.g., SDSS and GAMA) measure
+galaxy positions (location within large-scale structure), statistical
+clustering (a direct constraint on dark matter halo masses), and spectral
+features (measuring physical conditions of the gas and stars within the
+galaxies, as well as internal velocities). Deep surveys with the James Webb
+Space Telescope (JWST) will revolutionize spectroscopic measurements of
+redshifts and spectral properties for galaxies out to the epoch of
+reionization, but with numerical statistics and over cosmic volumes that are
+too small to map large-scale structure and to constrain halo properties via
+clustering. Here, we consider advances in understanding galaxy evolution that
+would be enabled by very large spectroscopic surveys at high redshifts: very
+large numbers of galaxies (outstanding statistics) over large co-moving volumes
+(large-scale structure on all scales) over broad redshift ranges (evolution
+over most of cosmic history). The required observational facility can be
+established as part of the probe portfolio by NASA within the next decade.

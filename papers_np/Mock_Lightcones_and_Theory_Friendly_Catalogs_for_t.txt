@@ -1,0 +1,29 @@
+Title: Mock Lightcones and Theory Friendly Catalogs for the CANDELS Survey
+Authors: Rachel S. Somerville, Charlotte Olsen, L. Y. Aaron Yung, Camilla Pacifici, Henry C. Ferguson, Peter Behroozi, Shannon Osborne, Risa H. Wechsler, Viraj Pandya, Sandra M. Faber, Joel R. Primack, Avishai Dekel
+Published: 2021-01-29 23:34:25+00:00
+Updated: 2021-01-29 23:34:25+00:00
+DOI: 10.1093/mnras/stab231
+arXiv ID: http://arxiv.org/abs/2102.00108v1
+arXiv URL: http://arxiv.org/pdf/2102.00108v1
+Categories: astro-ph.GA
+Author Position: 8
+
+Abstract:
+We present mock catalogs created to support the interpretation of the CANDELS
+survey. We extract halos along past lightcones from the Bolshoi Planck
+dissipationless N-body simulations and populate these halos with galaxies using
+two different independently developed semi-analytic models of galaxy formation
+and the empirical model UniverseMachine. Our mock catalogs have geometries that
+encompass the footprints of observations associated with the five CANDELS
+fields. In order to allow field-to-field variance to be explored, we have
+created eight realizations of each field. In this paper, we present comparisons
+with observable global galaxy properties, including counts in observed frame
+bands, luminosity functions, color-magnitude distributions and color-color
+distributions. We additionally present comparisons with physical galaxy
+parameters derived from SED fitting for the CANDELS observations, such as
+stellar masses and star formation rates. We find relatively good agreement
+between the model predictions and CANDELS observations for luminosity and
+stellar mass functions. We find poorer agreement for colors and star formation
+rate distributions. All of the mock lightcones as well as curated "theory
+friendly" versions of the observational CANDELS catalogs are made available
+through a web-based data hub.

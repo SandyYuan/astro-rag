@@ -1,0 +1,27 @@
+Title: CMB lensing tomography with the DES Science Verification galaxies
+Authors: T. Giannantonio, P. Fosalba, R. Cawthon, Y. Omori, M. Crocce, F. Elsner, B. Leistedt, S. Dodelson, A. Benoit-Levy, E. Gaztanaga, G. Holder, H. V. Peiris, W. J. Percival, D. Kirk, A. H. Bauer, B. A. Benson, G. M. Bernstein, J. Carretero, T. M. Crawford, R. Crittenden, D. Huterer, B. Jain, E. Krause, C. L. Reichardt, A. J. Ross, G. Simard, B. Soergel, A. Stark, K. T. Story, J. D. Vieira, J. Weller, T. Abbott, F. B. Abdalla, S. Allam, R. Armstrong, M. Banerji, R. A. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, F. J. Castander, C. L. Chang, C. E. Cunha, L. N. da Costa, C. B. D'Andrea, D. L. DePoy, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, A. E. Evrard, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, J. Frieman, D. Gerdes, D. Gruen, R. A. Gruendl, G. Gutierrez, W. L. Holzapfel, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. March, J. L. Marshall, P. Martini, P. Melchior, R. Miquel, J. J. Mohr, R. C. Nichol, B. Nord, R. Ogando, A. A. Plazas, A. K. Romer, A. Roodman, E. S. Rykoff, M. Sako, B. R. Saliwanchik, E. Sanchez, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, V. Vikram, A. R. Walker, R. H. Wechsler, J. Zuntz
+Published: 2015-07-20 16:15:45+00:00
+Updated: 2016-01-18 10:08:19+00:00
+DOI: 10.1093/mnras/stv2678
+arXiv ID: http://arxiv.org/abs/1507.05551v2
+arXiv URL: http://arxiv.org/pdf/1507.05551v2
+Categories: astro-ph.CO
+Author Position: 103
+
+Abstract:
+We measure the cross-correlation between the galaxy density in the Dark
+Energy Survey (DES) Science Verification data and the lensing of the cosmic
+microwave background (CMB) as reconstructed with the Planck satellite and the
+South Pole Telescope (SPT). When using the DES main galaxy sample over the full
+redshift range $0.2 < z < 1.2$, a cross-correlation signal is detected at $6
+\sigma$ and $4\sigma$ with SPT and Planck respectively. We then divide the DES
+galaxies into five photometric redshift bins, finding significant ($>$$2
+\sigma$) detections in all bins. Comparing to the fiducial Planck cosmology, we
+find the redshift evolution of the signal matches expectations, although the
+amplitude is consistently lower than predicted across redshift bins. We test
+for possible systematics that could affect our result and find no evidence for
+significant contamination. Finally, we demonstrate how these measurements can
+be used to constrain the growth of structure across cosmic time. We find the
+data are fit by a model in which the amplitude of structure in the $z<1.2$
+universe is $0.73 \pm 0.16$ times as large as predicted in the LCDM Planck
+cosmology, a $1.7\sigma$ deviation.

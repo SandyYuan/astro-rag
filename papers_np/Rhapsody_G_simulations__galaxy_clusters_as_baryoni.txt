@@ -1,0 +1,27 @@
+Title: Rhapsody-G simulations: galaxy clusters as baryonic closed boxes and the covariance between hot gas and galaxies
+Authors: Hao-Yi Wu, August E. Evrard, Oliver Hahn, Davide Martizzi, Romain Teyssier, Risa H. Wechsler
+Published: 2015-03-13 01:28:22+00:00
+Updated: 2015-07-22 21:03:09+00:00
+DOI: 10.1093/mnras/stv1434
+arXiv ID: http://arxiv.org/abs/1503.03924v2
+arXiv URL: http://arxiv.org/pdf/1503.03924v2
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+Within a sufficiently large cosmic volume, conservation of baryons implies a
+simple `closed box' view in which the sum of the baryonic components must equal
+a constant fraction of the total enclosed mass. We present evidence from
+Rhapsody-G hydrodynamic simulations of massive galaxy clusters that the
+closed-box expectation may hold to a surprising degree within the interior,
+non-linear regions of haloes. At a fixed halo mass, we find a significant
+anti-correlation between hot gas mass fraction and galaxy mass fraction (cold
+gas + stars), with a rank correlation coefficient of -0.69 within $R_{500c}$.
+Because of this anti-correlation, the total baryon mass serves as a low-scatter
+proxy for total cluster mass. The fractional scatter of total baryon fraction
+scales approximately as $0.02 (\Delta_c/100)^{0.6}$, while the scatter of
+either gas mass or stellar mass is larger in magnitude and declines more slowly
+with increasing radius. We discuss potential observational tests using cluster
+samples selected by optical and hot gas properties; the simulations suggest
+that joint selection on stellar and hot gas has potential to achieve 5% scatter
+in total halo mass.

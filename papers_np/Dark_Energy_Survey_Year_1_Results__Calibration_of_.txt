@@ -1,0 +1,26 @@
+Title: Dark Energy Survey Year 1 Results: Calibration of Cluster Mis-centering in the redMaPPer Catalogs
+Authors: Y. Zhang, T. Jeltema, D. L. Hollowood, S. Everett, E. Rozo, A. Farahi, A. Bermeo, S. Bhargava, P. Giles, A. K. Romer, R. Wilkinson, E. S. Rykoff, A. Mantz, H. T. Diehl, A. E. Evrard, C. Stern, D. Gruen, A. von der Linden, M. Splettstoesser, X. Chen, M. Costanzi, S. Allen, C. Collins, M. Hilton, M. Klein, R. G. Mann, M. Manolopoulou, G. Morris, J. Mayers, M. Sahlen, J. Stott, C. Vergara Cervantes, P. T. P. Viana, R. H. Wechsler, S. Allam, S. Avila, K. Bechtol, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, L. N. da Costa, J. De Vicente, S. Desai, J. P. Dietrich, P. Doel, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, K. Honscheid, B. Hoyle, E. Krause, K. Kuehn, N. Kuropatkin, M. Lima, M. A. G. Maia, J. L. Marshall, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, R. L. C. Ogando, A. A. Plazas, E. Sanchez, V. Scarpine, R. Schindler, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, V. Vikram, W. Wester
+Published: 2019-01-21 23:33:40+00:00
+Updated: 2019-06-01 21:52:02+00:00
+DOI: 10.1093/mnras/stz1361
+arXiv ID: http://arxiv.org/abs/1901.07119v2
+arXiv URL: http://arxiv.org/pdf/1901.07119v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 34
+
+Abstract:
+The center determination of a galaxy cluster from an optical cluster finding
+algorithm can be offset from theoretical prescriptions or $N$-body definitions
+of its host halo center. These offsets impact the recovered cluster statistics,
+affecting both richness measurements and the weak lensing shear profile around
+the clusters. This paper models the centering performance of the \RM~cluster
+finding algorithm using archival X-ray observations of \RM-selected clusters.
+Assuming the X-ray emission peaks as the fiducial halo centers, and through
+analyzing their offsets to the \RM~centers, we find that $\sim 75\pm 8 \%$ of
+the \RM~clusters are well centered and the mis-centered offset follows a Gamma
+distribution in normalized, projected distance. These mis-centering offsets
+cause a systematic underestimation of cluster richness relative to the
+well-centered clusters, for which we propose a descriptive model. Our results
+enable the DES Y1 cluster cosmology analysis by characterizing the necessary
+corrections to both the weak lensing and richness abundance functions of the
+DES Y1 redMaPPer cluster catalog.

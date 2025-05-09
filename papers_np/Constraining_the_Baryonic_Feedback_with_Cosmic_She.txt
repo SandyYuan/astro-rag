@@ -1,0 +1,29 @@
+Title: Constraining the Baryonic Feedback with Cosmic Shear Using the DES Year-3 Small-Scale Measurements
+Authors: A. Chen, G. Aricò, D. Huterer, R. Angulo, N. Weaverdyck, O. Friedrich, L. F. Secco, C. Hernández-Monteagudo, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, E. Baxter, K. Bechtol, M. R. Becker, G. M. Bernstein, J. Blazek, A. Brandao-Souza, S. L. Bridle, H. Camacho, A. Campos, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, C. Chang, R. Chen, P. Chintalapati, A. Choi, J. Cordero, M. Crocce, M. E. S. Pereira, C. Davis, J. DeRose, E. Di Valentino, H. T. Diehl, S. Dodelson, C. Doux, A. Drlica-Wagner, K. Eckert, T. F. Eifler, F. Elsner, J. Elvin-Poole, S. Everett, X. Fang, A. Ferté, P. Fosalba, M. Gatti, E. Gaztanaga, G. Giannini, D. Gruen, R. A. Gruendl, I. Harrison, W. G. Hartley, K. Herner, K. Hoffmann, H. Huang, E. M. Huff, B. Jain, M. Jarvis, N. Jeffrey, T. Kacprzak, E. Krause, N. Kuropatkin, P. -F. Leget, P. Lemos, A. R. Liddle, N. MacCrann, J. McCullough, J. Muir, J. Myles, A. Navarro-Alsina, Y. Omori, S. Pandey, Y. Park, A. Porredon, J. Prat, M. Raveri, A. Refregier, R. P. Rollins, A. Roodman, R. Rosenfeld, A. J. Ross, E. S. Rykoff, S. Samuroff, C. Sánchez, J. Sanchez, I. Sevilla-Noarbe, E. Sheldon, T. Shin, A. Troja, M. A. Troxel, I. Tutusaus, T. N. Varga, R. H. Wechsler, B. Yanny, B. Yin, Y. Zhang, J. Zuntz, M. Aguena, J. Annis, D. Bacon, E. Bertin, S. Bocquet, D. Brooks, D. L. Burke, J. Carretero, C. Conselice, M. Costanzi, L. N. da Costa, J. De Vicente, S. Desai, P. Doel, I. Ferrero, B. Flaugher, J. Frieman, J. García-Bellido, D. W. Gerdes, T. Giannantonio, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, O. Lahav, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, R. Morgan, F. Paz-Chinchón, A. Pieres, E. Sanchez, M. Smith, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To
+Published: 2022-06-17 07:25:45+00:00
+Updated: 2022-06-17 07:25:45+00:00
+DOI: 10.1093/mnras/stac3213
+arXiv ID: http://arxiv.org/abs/2206.08591v1
+arXiv URL: http://arxiv.org/pdf/2206.08591v1
+Categories: astro-ph.CO
+Author Position: 94
+
+Abstract:
+We use the small scales of the Dark Energy Survey (DES) Year-3 cosmic shear
+measurements, which are excluded from the DES Year-3 cosmological analysis, to
+constrain the baryonic feedback. To model the baryonic feedback, we adopt a
+baryonic correction model and use the numerical package \texttt{Baccoemu} to
+accelerate the evaluation of the baryonic nonlinear matter power spectrum. We
+design our analysis pipeline to focus on the constraints of the baryonic
+suppression effects, utilizing the implication given by a principal component
+analysis on the Fisher forecasts. Our constraint on the baryonic effects can
+then be used to better model and ameliorate the effects of baryons in producing
+cosmological constraints from the next generation large-scale structure
+surveys. We detect the baryonic suppression on the cosmic shear measurements
+with a $\sim 2 \sigma$ significance. The characteristic halo mass for which
+half of the gas is ejected by baryonic feedback is constrained to be $M_c >
+10^{13.2} h^{-1} M_{\odot}$ (95\% C.L.). The best-fit baryonic suppression is
+$\sim 5\%$ at $k=1.0 {\rm Mpc}\ h^{-1}$ and $\sim 15\%$ at $k=5.0 {\rm Mpc} \
+h^{-1}$. Our findings are robust with respect to the assumptions about the
+cosmological parameters, specifics of the baryonic model, and intrinsic
+alignments.

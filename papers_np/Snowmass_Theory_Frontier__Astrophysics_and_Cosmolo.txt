@@ -1,0 +1,15 @@
+Title: Snowmass Theory Frontier: Astrophysics and Cosmology
+Authors: Daniel Green, Joshua T. Ruderman, Benjamin R. Safdi, Jessie Shelton, Ana Achúcarro, Peter Adshead, Yashar Akrami, Masha Baryakhtar, Daniel Baumann, Asher Berlin, Nikita Blinov, Kimberly K. Boddy, Malte Buschmann, Giovanni Cabass, Robert Caldwell, Emanuele Castorina, Thomas Y. Chen, Xingang Chen, William Coulton, Djuna Croon, Yanou Cui, David Curtin, Francis-Yan Cyr-Racine, Christopher Dessert, Keith R. Dienes, Patrick Draper, Peizhi Du, Sebastian A. R. Ellis, Rouven Essig, Raphael Flauger, Chee Sheng Fong, Joshua W. Foster, Jacopo Fumagalli, Keisuke Harigaya, Shunsaku Horiuchi, Mikhail M. Ivanov, Yonatan Kahn, Simon Knapen, Rebecca K. Leane, Hayden Lee, Erik W. Lentz, Matthew Lewandowski, Mariangela Lisanti, Andrew J. Long, Marilena Loverde, Azadeh Maleknejad, Liam McAllister, Samuel D. McDermott, Robert McGehee, P. Daniel Meerburg, Joel Meyers, Azadeh Moradinezhad Dizgah, Moritz Münchmeyer, Nadav Joseph Outmezguine, Enrico Pajer, Gonzalo A. Palma, Aditya Parikh, Jong-Chul Park, Annika H. G. Peter, Guilherme L. Pimentel, Sébastien Renaux-Petel, Nicholas L. Rodd, Bibhushan Shakya, Gary Shiu, Eva Silverstein, Marko Simonovic, Rajeev Singh, Charlotte Sleight, Volodymyr Takhistov, Philip Tanedo, Massimo Taronna, Brooks Thomas, Natalia Toro, Yu-Dai Tsai, Edoardo Vitagliano, Mark Vogelsberger, Benjamin Wallisch, Benjamin D. Wandelt, Risa H. Wechsler, Christoph Weniger, W. L. Kimmy Wu, Weishuang Linda Xu, Masaki Yamada, Hai-Bo Yu, Zhengkang Zhang, Yi-Ming Zhong, Kathryn Zurek
+Published: 2022-09-14 18:13:04+00:00
+Updated: 2022-09-14 18:13:04+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2209.06854v1
+arXiv URL: http://arxiv.org/pdf/2209.06854v1
+Categories: hep-ph, astro-ph.CO, hep-th
+Author Position: 79
+
+Abstract:
+We summarize progress made in theoretical astrophysics and cosmology over the
+past decade and areas of interest for the coming decade. This Report is
+prepared as the TF09 "Astrophysics and Cosmology" topical group summary for the
+Theory Frontier as part of the Snowmass 2021 process.

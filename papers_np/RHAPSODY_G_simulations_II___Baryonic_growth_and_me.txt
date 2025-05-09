@@ -1,0 +1,31 @@
+Title: RHAPSODY-G simulations II - Baryonic growth and metal enrichment in massive galaxy clusters
+Authors: Davide Martizzi, Oliver Hahn, Hao-Yi Wu, August E. Evrard, Romain Teyssier, Risa H. Wechsler
+Published: 2015-10-02 20:04:55+00:00
+Updated: 2016-04-14 15:25:33+00:00
+DOI: 10.1093/mnras/stw897
+arXiv ID: http://arxiv.org/abs/1510.00718v2
+arXiv URL: http://arxiv.org/pdf/1510.00718v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 6
+
+Abstract:
+We study the evolution of the stellar component and the metallicity of both
+the intracluster medium and of stars in massive ($M_{\rm vir}\approx 6\times
+10^{14}$ M$_{\odot}/h$) simulated galaxy clusters from the Rhapsody-G suite in
+detail and compare them to observational results. The simulations were
+performed with the AMR code RAMSES and include the effect of AGN feedback at
+the sub-grid level. AGN feedback is required to produce realistic galaxy and
+cluster properties and plays a role in mixing material in the central regions
+and regulating star formation in the central galaxy. In both our low and high
+resolution runs with fiducial stellar yields, we find that stellar and ICM
+metallicities are a factor of two lower than in observations. We find that cool
+core clusters exhibit steeper metallicity gradients than non-cool core
+clusters, in qualitative agreement with observations. We verify that the ICM
+metallicities measured in the simulation can be explained by a simple
+"regulator" model in which the metallicity is set by a balance of stellar yield
+and gas accretion. It is plausible that a combination of higher resolution and
+higher metal yield in AMR simulation would allow the metallicity of simulated
+clusters to match observed values; however this hypothesis needs to be tested
+with future simulations. Comparison to recent literature highlights that
+results concerning the metallicity of clusters and cluster galaxies might
+depend sensitively on the scheme chosen to solve the hydrodynamics.

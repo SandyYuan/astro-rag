@@ -1,0 +1,36 @@
+Title: DES13S2cmm: The First Superluminous Supernova from the Dark Energy Survey
+Authors: A. Papadopoulos, C. B. D'Andrea, M. Sullivan, R. C. Nichol, K. Barbary, R. Biswas, P. J. Brown, R. A. Covarrubias, D. A. Finley, J. A. Fischer, R. J. Foley, D. Goldstein, R. R. Gupta, R. Kessler, E. Kovacs, S. E. Kuhlmann, C. Lidman, M. March, P. E. Nugent, M. Sako, R. C. Smith, H. Spinka, W. Wester, T. M. C. Abbott, F. Abdalla, S. S. Allam, M. Banerji, J. P. Bernstein, R. A. Bernstein, A. Carnero, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, T. Eifler, A. E. Evrard, B. Flaugher, J. A. Frieman, D. Gerdes, D. Gruen, K. Honscheid, D. James, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, M. Makler, J. L. Marshall, K. W. Merritt, C. J. Miller, R. Miquel, R. Ogando, A. A. Plazas, N. A. Roe, A. K. Romer, E. Rykoff, E. Sanchez, B. X. Santiago, V. Scarpine, M. Schubnell, I. Sevilla, M. Soares- Santos, E. Suchyta, M. Swanson, G. Tarle, J. Thaler, D. L. Tucker, R. H. Wechsler, J. Zuntz
+Published: 2015-01-23 18:04:19+00:00
+Updated: 2015-01-30 12:57:44+00:00
+DOI: 10.1093/mnras/stv174
+arXiv ID: http://arxiv.org/abs/1501.07232v2
+arXiv URL: http://arxiv.org/pdf/1501.07232v2
+Categories: astro-ph.HE
+Author Position: 68
+
+Abstract:
+We present DES13S2cmm, the first spectroscopically-confirmed superluminous
+supernova (SLSN) from the Dark Energy Survey (DES). We briefly discuss the data
+and search algorithm used to find this event in the first year of DES
+operations, and outline the spectroscopic data obtained from the European
+Southern Observatory (ESO) Very Large Telescope to confirm its redshift (z =
+0.663 +/- 0.001 based on the host-galaxy emission lines) and likely spectral
+type (type I). Using this redshift, we find M_U_peak = -21.05 +0.10 -0.09 for
+the peak, rest-frame U-band absolute magnitude, and find DES13S2cmm to be
+located in a faint, low metallicity (sub-solar), low stellar-mass host galaxy
+(log(M/M_sun) = 9.3 +/- 0.3); consistent with what is seen for other SLSNe-I.
+We compare the bolometric light curve of DES13S2cmm to fourteen similarly
+well-observed SLSNe-I in the literature and find it possesses one of the
+slowest declining tails (beyond +30 days rest frame past peak), and is the
+faintest at peak. Moreover, we find the bolometric light curves of all SLSNe-I
+studied herein possess a dispersion of only 0.2-0.3 magnitudes between +25 and
++30 days after peak (rest frame) depending on redshift range studied; this
+could be important for 'standardising' such supernovae, as is done with the
+more common type Ia. We fit the bolometric light curve of DES13S2cmm with two
+competing models for SLSNe-I - the radioactive decay of 56Ni, and a magnetar -
+and find that while the magnetar is formally a better fit, neither model
+provides a compelling match to the data. Although we are unable to conclusively
+differentiate between these two physical models for this particular SLSN-I,
+further DES observations of more SLSNe-I should break this degeneracy,
+especially if the light curves of SLSNe-I can be observed beyond 100 days in
+the rest frame of the supernova.

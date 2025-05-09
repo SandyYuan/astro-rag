@@ -1,0 +1,37 @@
+Title: A Sound Horizon-Free Measurement of $H_0$ in DESI 2024
+Authors: E. A. Zaborowski, P. Taylor, K. Honscheid, A. Cuceu, A. de Mattia, D. Huterer, A. Krolewski, P. Martini, A. J. Ross, C. To, A. Torres, S. Ahlen, D. Bianchi, D. Brooks, E. Buckley-Geer, E. Burtin, T. Claybaugh, S. Cole, A. de la Macorra, Arjun Dey, Biprateep Dey, P. Doel, S. Ferraro, A. Font-Ribera, J. E. Forero-Romero, E. Gaztañaga, H. Gil-Marín, G. Gutierrez, J. Guy, C. Hahn, C. Howlett, S. Juneau, R. Kehoe, D. Kirkby, T. Kisner, A. Kremin, M. Landriau, L. Le Guillou, M. E. Levi, C. Magneville, A. Meisner, R. Miquel, J. Moustakas, N. Palanque-Delabrouille, W. J. Percival, F. Prada, I. Pérez-Ràfols, G. Rossi, E. Sanchez, D. Schlegel, M. Schubnell, H. Seo, D. Sprayberry, G. Tarlé, B. A. Weaver, R. H. Wechsler
+Published: 2024-11-25 18:59:09+00:00
+Updated: 2024-11-25 18:59:09+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2411.16677v1
+arXiv URL: http://arxiv.org/pdf/2411.16677v1
+Categories: astro-ph.CO
+Author Position: 56
+
+Abstract:
+The physical size of the sound horizon at recombination is a powerful source
+of information for early-time measurements of the Hubble constant $H_0$, and
+many proposed solutions to the Hubble tension therefore involve modifications
+to this scale. In light of this, there has been growing interest in measuring
+$H_0$ independently of the sound horizon. We present the first such measurement
+to use data from the Dark Energy Spectroscopic Instrument (DESI), jointly
+analyzing the full-shape galaxy power spectra of DESI luminous red galaxies,
+emission line galaxies, quasars, and the bright galaxy sample, in a total of
+six redshift bins. Information from the sound horizon scale is removed from our
+constraints via a rescaling procedure at the power spectrum level, with our
+sound horizon-marginalized measurement being driven instead primarily by the
+matter-radiation equality scale. This measurement is then combined with
+additional sound horizon-free information from Planck+ACT CMB lensing,
+uncalibrated type Ia supernovae, and the DESI Lyman-$\alpha$ forest. We
+agnostically combine with the DESY5, Pantheon+, and Union3 supernova datasets,
+with our tightest respective constraints being
+$H_0=66.7^{+1.7}_{-1.9},~67.9^{+1.9}_{-2.1},$ and $67.8^{+2.0}_{-2.2}$ km s-1
+Mpc-1. This corresponds to a sub-3% sound horizon-free constraint of the Hubble
+constant, and is the most precise measurement of its kind to date. Even without
+including information from the sound horizon, our measurement is still in
+2.2-3.0$\sigma$ tension with SH0ES. Additionally, the consistency between our
+result and other measurements that do rely on the sound horizon scale provides
+no evidence for new early-Universe physics (e.g. early dark energy). Future
+DESI data releases will allow unprecedented measurements of $H_0$ and place
+strong constraints on models that use beyond-$\Lambda$CDM physics to ameliorate
+the Hubble tension.

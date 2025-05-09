@@ -1,0 +1,36 @@
+Title: Cosmic Voids and Void Lensing in the Dark Energy Survey Science Verification Data
+Authors: C. Sánchez, J. Clampitt, A. Kovacs, B. Jain, J. García-Bellido, S. Nadathur, D. Gruen, N. Hamaus, D. Huterer, P. Vielzeuf, A. Amara, C. Bonnett, J. DeRose, W. G. Hartley, M. Jarvis, O. Lahav, R. Miquel, E. Rozo, E. S. Rykoff, E. Sheldon, R. H. Wechsler, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, J. Annis, A. Benoit-Lévy, G. M. Bernstein, R. A. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. E. Evrard, A. Fausti Neto, B. Flaugher, P. Fosalba, J. Frieman, E. Gaztanaga, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, E. Krause, K. Kuehn, M. Lima, M. A. G. Maia, J. L. Marshall, P. Melchior, A. A. Plazas, K. Reil, A. K. Romer, E. Sanchez, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, D. Thomas, A. R. Walker, J. Weller
+Published: 2016-05-12 20:27:02+00:00
+Updated: 2016-10-21 14:26:26+00:00
+DOI: 10.1093/mnras/stw2745
+arXiv ID: http://arxiv.org/abs/1605.03982v3
+arXiv URL: http://arxiv.org/pdf/1605.03982v3
+Categories: astro-ph.CO
+Author Position: 21
+
+Abstract:
+Galaxies and their dark matter halos populate a complicated filamentary
+network around large, nearly empty regions known as cosmic voids. Cosmic voids
+are usually identified in spectroscopic galaxy surveys, where 3D information
+about the large-scale structure of the Universe is available. Although an
+increasing amount of photometric data is being produced, its potential for void
+studies is limited since photometric redshifts induce line-of-sight position
+errors of $\sim50$ Mpc/$h$ or more that can render many voids undetectable. In
+this paper we present a new void finder designed for photometric surveys,
+validate it using simulations, and apply it to the high-quality photo-$z$
+redMaGiC galaxy sample of the Dark Energy Survey Science Verification (DES-SV)
+data. The algorithm works by projecting galaxies into 2D slices and finding
+voids in the smoothed 2D galaxy density field of the slice. Fixing the
+line-of-sight size of the slices to be at least twice the photo-$z$ scatter,
+the number of voids found in these projected slices of simulated spectroscopic
+and photometric galaxy catalogs is within 20% for all transverse void sizes,
+and indistinguishable for the largest voids of radius $\sim 70$ Mpc/$h$ and
+larger. The positions, radii, and projected galaxy profiles of photometric
+voids also accurately match the spectroscopic void sample. Applying the
+algorithm to the DES-SV data in the redshift range $0.2<z<0.8$, we identify 87
+voids with comoving radii spanning the range 18-120 Mpc/$h$, and carry out a
+stacked weak lensing measurement. With a significance of $4.4\sigma$, the
+lensing measurement confirms the voids are truly underdense in the matter field
+and hence not a product of Poisson noise, tracer density effects or systematics
+in the data. It also demonstrates, for the first time in real data, the
+viability of void lensing studies in photometric surveys.

@@ -1,0 +1,33 @@
+Title: Rhapsody-G simulations I: the cool cores, hot gas and stellar content of massive galaxy clusters
+Authors: Oliver Hahn, Davide Martizzi, Hao-Yi Wu, August E. Evrard, Romain Teyssier, Risa H. Wechsler
+Published: 2015-09-14 20:13:31+00:00
+Updated: 2015-09-14 20:13:31+00:00
+DOI: 10.1093/mnras/stx001
+arXiv ID: http://arxiv.org/abs/1509.04289v1
+arXiv URL: http://arxiv.org/pdf/1509.04289v1
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 6
+
+Abstract:
+We present the Rhapsody-G suite of cosmological hydrodynamic AMR zoom
+simulations of ten massive galaxy clusters at the $M_{\rm vir}\sim10^{15}\,{\rm
+M}_\odot$ scale. These simulations include cooling and sub-resolution models
+for star formation and stellar and supermassive black hole feedback. The sample
+is selected to capture the whole gamut of assembly histories that produce
+clusters of similar final mass. We present an overview of the successes and
+shortcomings of such simulations in reproducing both the stellar properties of
+galaxies as well as properties of the hot plasma in clusters. In our
+simulations, a long-lived cool-core/non-cool core dichotomy arises naturally,
+and the emergence of non-cool cores is related to low angular momentum major
+mergers. Nevertheless, the cool-core clusters exhibit a low central entropy
+compared to observations, which cannot be alleviated by thermal AGN feedback.
+For cluster scaling relations we find that the simulations match well the
+$M_{500}-Y_{500}$ scaling of Planck SZ clusters but deviate somewhat from the
+observed X-ray luminosity and temperature scaling relations in the sense of
+being slightly too bright and too cool at fixed mass, respectively. Stars are
+produced at an efficiency consistent with abundance matching constraints and
+central galaxies have star formation rates consistent with recent observations.
+While our simulations thus match various key properties remarkably well, we
+conclude that the shortcomings strongly suggest an important role for
+non-thermal processes (through feedback or otherwise) or thermal conduction in
+shaping the intra-cluster medium.

@@ -1,0 +1,29 @@
+Title: Density split statistics: joint model of counts and lensing in cells
+Authors: O. Friedrich, D. Gruen, J. DeRose, D. Kirk, E. Krause, T. McClintock, E. S. Rykoff, S. Seitz, R. H. Wechsler, G. M. Bernstein, J. Blazek, C. Chang, S. Hilbert, B. Jain, A. Kovacs, O. Lahav, F. B. Abdalla, S. Allam, J. Annis, K. Bechtol, A. Benoit-Levy, E. Bertin, D. Brooks, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, A. Drlica-Wagner, T. F. Eifler, P. Fosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, M. Jarvis, K. Kuehn, N. Kuropatkin, M. Lima, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, B. Nord, A. A. Plazas, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, E. Sheldon, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, M. A. Troxel, V. Vikram, J. Weller
+Published: 2017-10-14 10:56:09+00:00
+Updated: 2021-07-30 18:43:31+00:00
+DOI: 10.1103/PhysRevD.98.023508
+arXiv ID: http://arxiv.org/abs/1710.05162v4
+arXiv URL: http://arxiv.org/pdf/1710.05162v4
+Categories: astro-ph.CO
+Author Position: 9
+
+Abstract:
+We present density split statistics, a framework that studies lensing and
+counts-in-cells as a function of foreground galaxy density, thereby providing a
+large-scale measurement of both 2-point and 3-point statistics. Our method
+extends our earlier work on trough lensing and is summarized as follows: given
+a foreground (low redshift) population of galaxies, we divide the sky into
+subareas of equal size but distinct galaxy density. We then measure lensing
+around uniformly spaced points separately in each of these subareas, as well as
+counts-in-cells statistics (CiC). The lensing signals trace the matter density
+contrast around regions of fixed galaxy density. Through the CiC measurements
+this can be related to the density profile around regions of fixed matter
+density. Together, these measurements constitute a powerful probe of cosmology,
+the skewness of the density field and the connection of galaxies and matter.
+  In this paper we show how to model both the density split lensing signal and
+CiC from basic ingredients: a non-linear power spectrum, clustering hierarchy
+coefficients from perturbation theory and a parametric model for galaxy bias
+and shot-noise. Using N-body simulations, we demonstrate that this model is
+sufficiently accurate for a cosmological analysis on year 1 data from the Dark
+Energy Survey.

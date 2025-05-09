@@ -1,0 +1,28 @@
+Title: CosmoDC2: A Synthetic Sky Catalog for Dark Energy Science with LSST
+Authors: Danila Korytov, Andrew Hearin, Eve Kovacs, Patricia Larsen, Esteban Rangel, Joseph Hollowed, Andrew J. Benson, Katrin Heitmann, Yao-Yuan Mao, Anita Bahmanyar, Chihway Chang, Duncan Campbell, Joseph Derose, Hal Finkel, Nicholas Frontiere, Eric Gawiser, Salman Habib, Benjamin Joachimi, François Lanusse, Nan Li, Rachel Mandelbaum, Christopher Morrison, Jeffrey A. Newman, Adrian Pope, Eli Rykoff, Melanie Simet, Chun-Hao To, Vinu Vikraman, Risa H. Wechsler, Martin White
+Published: 2019-07-15 14:57:03+00:00
+Updated: 2019-07-28 01:00:10+00:00
+DOI: 10.3847/1538-4365/ab510c
+arXiv ID: http://arxiv.org/abs/1907.06530v2
+arXiv URL: http://arxiv.org/pdf/1907.06530v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 29
+
+Abstract:
+This paper introduces cosmoDC2, a large synthetic galaxy catalog designed to
+support precision dark energy science with the Large Synoptic Survey Telescope
+(LSST). CosmoDC2 is the starting point for the second data challenge (DC2)
+carried out by the LSST Dark Energy Science Collaboration (LSST DESC). The
+catalog is based on a trillion-particle, 4.225 Gpc^3 box cosmological N-body
+simulation, the `Outer Rim' run. It covers 440 deg^2 of sky area to a redshift
+of z=3 and is complete to a magnitude depth of 28 in the r-band. Each galaxy is
+characterized by a multitude of properties including stellar mass, morphology,
+spectral energy distributions, broadband filter magnitudes, host halo
+information and weak lensing shear. The size and complexity of cosmoDC2
+requires an efficient catalog generation methodology; our approach is based on
+a new hybrid technique that combines data-driven empirical approaches with
+semi-analytic galaxy modeling. A wide range of observation-based validation
+tests has been implemented to ensure that cosmoDC2 enables the science goals of
+the planned LSST DESC DC2 analyses. This paper also represents the official
+release of the cosmoDC2 data set, including an efficient reader that
+facilitates interaction with the data.

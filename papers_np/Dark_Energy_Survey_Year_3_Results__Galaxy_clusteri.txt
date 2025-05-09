@@ -1,0 +1,33 @@
+Title: Dark Energy Survey Year 3 Results: Galaxy clustering and systematics treatment for lens galaxy samples
+Authors: M. Rodríguez-Monroy, N. Weaverdyck, J. Elvin-Poole, M. Crocce, A. Carnero Rosell, F. Andrade-Oliveira, S. Avila, K. Bechtol, G. M. Bernstein, J. Blazek, H. Camacho, R. Cawthon, J. De Vicente, J. DeRose, S. Dodelson, S. Everett, X. Fang, I. Ferrero, A. Ferté, O. Friedrich, E. Gaztanaga, G. Giannini, R. A. Gruendl, W. G. Hartley, K. Herner, E. M. Huff, M. Jarvis, E. Krause, N. MacCrann, J. Mena-Fernández, J. Muir, S. Pandey, Y. Park, A. Porredon, J. Prat, R. Rosenfeld, A. J. Ross, E. Rozo, E. S. Rykoff, E. Sanchez, D. Sanchez Cid, I. Sevilla-Noarbe, M. Tabbutt, C. To, E. L. Wagoner, R. H. Wechsler, M. Aguena, S. Allam, A. Amon, J. Annis, D. Bacon, E. Baxter, E. Bertin, S. Bhargava, D. Brooks, D. L. Burke, M. Carrasco Kind, J. Carretero, F. J. Castander, A. Choi, C. Conselice, M. Costanzi, L. N. da Costa, M. E. S. Pereira, S. Desai, H. T. Diehl, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, T. Giannantonio, D. Gruen, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. Huterer, B. Jain, D. J. James, K. Kuehn, N. Kuropatkin, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, R. Morgan, A. Palmese, F. Paz-Chinchón, A. Pieres, A. A. Plazas Malagón, A. Roodman, V. Scarpine, S. Serrano, M. Smith, M. Soares-Santos, E. Suchyta, G. Tarle, D. Thomas, T. N. Varga
+Published: 2021-05-28 01:58:49+00:00
+Updated: 2021-05-28 01:58:49+00:00
+DOI: 10.1093/mnras/stac104
+arXiv ID: http://arxiv.org/abs/2105.13540v1
+arXiv URL: http://arxiv.org/pdf/2105.13540v1
+Categories: astro-ph.CO
+Author Position: 46
+
+Abstract:
+In this work we present the galaxy clustering measurements of the two DES
+lens galaxy samples: a magnitude-limited sample optimized for the measurement
+of cosmological parameters, MagLim, and a sample of luminous red galaxies
+selected with the redMaGiC algorithm. MagLim / redMaGiC sample contains over 10
+million / 2.5 million galaxies and is divided into six / five photometric
+redshift bins spanning the range $z\in[0.20,1.05]$ / $z\in[0.15,0.90]$. Both
+samples cover 4143 deg$^2$ over which we perform our analysis blind, measuring
+the angular correlation function with a S/N $\sim 63$ for both samples. In a
+companion paper (DES Collaboration et al. 2021)), these measurements of galaxy
+clustering are combined with the correlation functions of cosmic shear and
+galaxy-galaxy lensing of each sample to place cosmological constraints with a
+3$\times$2pt analysis. We conduct a thorough study of the mitigation of
+systematic effects caused by the spatially varying survey properties and we
+correct the measurements to remove artificial clustering signals. We employ
+several decontamination methods with different configurations to ensure the
+robustness of our corrections and to determine the systematic uncertainty that
+needs to be considered for the final cosmology analyses. We validate our
+fiducial methodology using log-normal mocks, showing that our decontamination
+procedure induces biases no greater than $0.5\sigma$ in the $(\Omega_m, b)$
+plane, where $b$ is galaxy bias. We demonstrate that failure to remove the
+artificial clustering would introduce strong biases up to $\sim 7 \sigma$ in
+$\Omega_m$ and of more than $4 \sigma$ in galaxy bias.

@@ -1,0 +1,21 @@
+Title: Snowmass2021 Cosmic Frontier White Paper: Dark Matter Physics from Halo Measurements
+Authors: Keith Bechtol, Simon Birrer, Francis-Yan Cyr-Racine, Katelin Schutz, Susmita Adhikari, Mustafa Amin, Arka Banerjee, Simeon Bird, Nikita Blinov, Kimberly K. Boddy, Celine Boehm, Kevin Bundy, Malte Buschmann, Sukanya Chakrabarti, David Curtin, Liang Dai, Alex Drlica-Wagner, Cora Dvorkin, Adrienne L. Erickcek, Daniel Gilman, Saniya Heeba, Stacy Kim, Vid Iršič, Alexie Leauthaud, Mark Lovell, Zarija Lukić, Yao-Yuan Mao, Sidney Mau, Andrea Mitridate, Philip Mocz, Julian B. Muñoz, Ethan O. Nadler, Annika H. G. Peter, Adrian Price-Whelan, Andrew Robertson, Nashwan Sabti, Neelima Sehgal, Nora Shipp, Joshua D. Simon, Rajeev Singh, Ken Van Tilburg, Risa H. Wechsler, Axel Widmark, Hai-Bo Yu
+Published: 2022-03-14 17:53:02+00:00
+Updated: 2023-04-25 02:11:29+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2203.07354v2
+arXiv URL: http://arxiv.org/pdf/2203.07354v2
+Categories: hep-ph, astro-ph.CO, astro-ph.GA
+Author Position: 42
+
+Abstract:
+The non-linear process of cosmic structure formation produces gravitationally
+bound overdensities of dark matter known as halos. The abundances, density
+profiles, ellipticities, and spins of these halos can be tied to the underlying
+fundamental particle physics that governs dark matter at microscopic scales.
+Thus, macroscopic measurements of dark matter halos offer a unique opportunity
+to determine the underlying properties of dark matter across the vast landscape
+of dark matter theories. This white paper summarizes the ongoing rapid
+development of theoretical and experimental methods, as well as new
+opportunities, to use dark matter halo measurements as a pillar of dark matter
+physics.

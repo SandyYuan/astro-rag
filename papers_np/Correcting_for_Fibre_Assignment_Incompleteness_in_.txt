@@ -1,0 +1,31 @@
+Title: Correcting for Fibre Assignment Incompleteness in the DESI Bright Galaxy Survey
+Authors: Alex Smith, Jian-hua He, Shaun Cole, Lee Stothert, Peder Norberg, Carlton Baugh, Davide Bianchi, Michael J. Wilson, David Brooks, Jaime E. Forero-Romero, John Moustakas, Will J. Percival, Gregory Tarle, Risa H. Wechsler
+Published: 2018-09-19 18:07:03+00:00
+Updated: 2019-01-04 15:40:31+00:00
+DOI: 10.1093/mnras/stz059
+arXiv ID: http://arxiv.org/abs/1809.07355v2
+arXiv URL: http://arxiv.org/pdf/1809.07355v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 14
+
+Abstract:
+The Dark Energy Spectroscopic Instrument (DESI) Bright Galaxy Survey (BGS)
+will be a survey of bright, low redshift galaxies, which is planned to cover an
+area of ~14,000 sq deg in 3 passes. Each pass will cover the survey area with
+~2000 pointings, each of area ~8 sq deg. The BGS is currently proposed to
+consist of a bright high priority sample to an r-band magnitude limit r ~ 19.5,
+with a fainter low priority sample to r ~ 20. The geometry of the DESI fibre
+positioners in the focal plane of the telescope affects the completeness of the
+survey, and has a non-trivial impact on clustering measurements. Using a BGS
+mock catalogue, we show that completeness due to fibre assignment primarily
+depends on the surface density of galaxies. Completeness is high (>95%) in low
+density regions, but very low (<10%) in the centre of massive clusters. We
+apply the pair inverse probability (PIP) weighting correction to clustering
+measurements from a BGS mock which has been through the fibre assignment
+algorithm. This method is only unbiased if it is possible to observe every
+galaxy pair. To facilitate this, we randomly promote a small fraction of the
+fainter sample to be high priority, and dither the set of tile positions by a
+small angle. We show that inverse pair weighting combined with angular
+upweighting provides an unbiased correction to galaxy clustering measurements
+for the complete 3 pass survey, and also after 1 pass, which is highly
+incomplete.

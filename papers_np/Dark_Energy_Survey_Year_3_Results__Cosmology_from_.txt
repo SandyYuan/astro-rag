@@ -1,0 +1,34 @@
+Title: Dark Energy Survey Year 3 Results: Cosmology from Cosmic Shear and Robustness to Modeling Uncertainty
+Authors: L. F. Secco, S. Samuroff, E. Krause, B. Jain, J. Blazek, M. Raveri, A. Campos, A. Amon, A. Chen, C. Doux, A. Choi, D. Gruen, G. M. Bernstein, C. Chang, J. DeRose, J. Myles, A. Ferté, P. Lemos, D. Huterer, J. Prat, M. A. Troxel, N. MacCrann, A. R. Liddle, T. Kacprzak, X. Fang, C. Sánchez, S. Pandey, S. Dodelson, P. Chintalapati, K. Hoffmann, A. Alarcon, O. Alves, F. Andrade-Oliveira, E. J. Baxter, K. Bechtol, M. R. Becker, A. Brandao-Souza, H. Camacho, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, J. P. Cordero, M. Crocce, C. Davis, E. Di Valentino, A. Drlica-Wagner, K. Eckert, T. F. Eifler, M. Elidaiana, F. Elsner, J. Elvin-Poole, S. Everett, P. Fosalba, O. Friedrich, M. Gatti, G. Giannini, R. A. Gruendl, I. Harrison, W. G. Hartley, K. Herner, H. Huang, E. M. Huff, M. Jarvis, N. Jeffrey, N. Kuropatkin, P. -F. Leget, J. Muir, J. Mccullough, A. Navarro Alsina, Y. Omori, Y. Park, A. Porredon, R. Rollins, A. Roodman, R. Rosenfeld, A. J. Ross, E. S. Rykoff, J. Sanchez, I. Sevilla-Noarbe, E. S. Sheldon, T. Shin, I. Tutusaus, T. N. Varga, N. Weaverdyck, R. H. Wechsler, B. Yanny, B. Yin, Y. Zhang, J. Zuntz, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, D. Bacon, E. Bertin, S. Bhargava, S. L. Bridle, D. Brooks, E. Buckley-Geer, D. L. Burke, J. Carretero, M. Costanzi, L. N. da Costa, J. De Vicente, H. T. Diehl, J. P. Dietrich, P. Doel, I. Ferrero, B. Flaugher, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, D. J. James, T. Jeltema, K. Kuehn, O. Lahav, M. Lima, H. Lin, M. A. G. Maia, J. L. Marshall, P. Martini, P. Melchior, F. Menanteau, R. Miquel, J. J. Mohr, R. Morgan, R. L. C. Ogando, A. Palmese, F. Paz-Chinchón, D. Petravick, A. Pieres, A. A. Plazas Malagón, M. Rodriguez-Monroy, A. K. Romer, E. Sanchez, V. Scarpine, M. Schubnell, D. Scolnic, S. Serrano, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To
+Published: 2021-05-28 01:58:53+00:00
+Updated: 2022-01-13 20:51:24+00:00
+DOI: 10.1103/PhysRevD.105.023515
+arXiv ID: http://arxiv.org/abs/2105.13544v2
+arXiv URL: http://arxiv.org/pdf/2105.13544v2
+Categories: astro-ph.CO
+Author Position: 85
+
+Abstract:
+This work and its companion paper, Amon et al. (2021), present cosmic shear
+measurements and cosmological constraints from over 100 million source galaxies
+in the Dark Energy Survey (DES) Year 3 data. We constrain the lensing amplitude
+parameter $S_8\equiv\sigma_8\sqrt{\Omega_\textrm{m}/0.3}$ at the 3% level in
+$\Lambda$CDM: $S_8=0.759^{+0.025}_{-0.023}$ (68% CL). Our constraint is at the
+2% level when using angular scale cuts that are optimized for the $\Lambda$CDM
+analysis: $S_8=0.772^{+0.018}_{-0.017}$ (68% CL). With cosmic shear alone, we
+find no statistically significant constraint on the dark energy
+equation-of-state parameter at our present statistical power. We carry out our
+analysis blind, and compare our measurement with constraints from two other
+contemporary weak-lensing experiments: the Kilo-Degree Survey (KiDS) and
+Hyper-Suprime Camera Subaru Strategic Program (HSC). We additionally quantify
+the agreement between our data and external constraints from the Cosmic
+Microwave Background (CMB). Our DES Y3 result under the assumption of
+$\Lambda$CDM is found to be in statistical agreement with Planck 2018, although
+favors a lower $S_8$ than the CMB-inferred value by $2.3\sigma$ (a $p$-value of
+0.02). This paper explores the robustness of these cosmic shear results to
+modeling of intrinsic alignments, the matter power spectrum and baryonic
+physics. We additionally explore the statistical preference of our data for
+intrinsic alignment models of different complexity. The fiducial cosmic shear
+model is tested using synthetic data, and we report no biases greater than
+0.3$\sigma$ in the plane of $S_8\times\Omega_\textrm{m}$ caused by
+uncertainties in the theoretical models.

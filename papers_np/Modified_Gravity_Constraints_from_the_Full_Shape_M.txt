@@ -1,0 +1,37 @@
+Title: Modified Gravity Constraints from the Full Shape Modeling of Clustering Measurements from DESI 2024
+Authors: M. Ishak, J. Pan, R. Calderon, K. Lodha, G. Valogiannis, A. Aviles, G. Niz, L. Yi, C. Zheng, C. Garcia-Quintero, A. de Mattia, L. Medina-Varela, J. L. Cervantes-Cota, U. Andrade, D. Huterer, H. E. Noriega, G. Zhao, A. Shafieloo, W. Fang, S. Ahlen, D. Bianchi, D. Brooks, E. Burtin, E. Chaussidon, T. Claybaugh, S. Cole, A. de la Macorra, Arjun Dey, K. Fanning, S. Ferraro, A. Font-Ribera, J. E. Forero-Romero, E. Gaztañaga, H. Gil-Marín, G. Gutierrez, C. Hahn, K. Honscheid, C. Howlett, S. Juneau, D. Kirkby, T. Kisner, A. Kremin, M. Landriau, L. Le Guillou, A. Leauthaud, M. E. Levi, A. Meisner, R. Miquel, J. Moustakas, J. A. Newman, N. Palanque-Delabrouille, W. J. Percival, C. Poppett, F. Prada, I. Pérez-Ràfols, A. J. Ross, G. Rossi, E. Sanchez, D. Schlegel, M. Schubnell, H. Seo, D. Sprayberry, G. Tarlé, M. Vargas-Magana, B. A. Weaver, R. H. Wechsler, C. Yèche, P. Zarrouk, R. Zhou, H. Zou
+Published: 2024-11-18 20:03:39+00:00
+Updated: 2024-12-20 22:54:05+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2411.12026v2
+arXiv URL: http://arxiv.org/pdf/2411.12026v2
+Categories: astro-ph.CO
+Author Position: 66
+
+Abstract:
+We present cosmological constraints on deviations from general relativity
+(GR) from the first-year of clustering observations from the Dark Energy
+Spectroscopic Instrument (DESI) in combination with other datasets. We first
+consider the $\mu(a,k)$-$\Sigma(a,k)$ modified gravity (MG) parametrization (as
+well as $\eta(a,k)$) in flat $\Lambda$CDM and $w_0 w_a$CDM backgrounds. Using a
+functional form for time-only evolution gives $\mu_0= 0.11^{+0.44}_{-0.54}$
+from DESI(FS+BAO)+BBN and a wide prior on $n_{s}$. Using
+DESI(FS+BAO)+CMB+DESY3+DESY5-SN, we obtain $\mu_0 = 0.05\pm 0.22$ and $\Sigma_0
+= 0.008\pm 0.045$ in the $\Lambda$CDM background. In $w_0 w_a$CDM, we obtain
+$\mu_0 =-0.24^{+0.32}_{-0.28}$ and $\Sigma_0 = 0.006\pm 0.043$, consistent with
+GR, and we still find a preference of the data for dynamical dark energy with
+$w_0>-1$ and $w_a<0$. We then use binned forms in the two backgrounds starting
+with two bins in redshift and then combining them with two bins in scale for a
+total of 4 and 8 MG parameters, respectively. All MG parameters are found
+consistent with GR. We also find that the tension reported for $\Sigma_0$ with
+GR when using Planck PR3 goes away when we use the recent LoLLiPoP+HiLLiPoP
+likelihoods. As noted previously, this seems to indicate that the tension is
+related to the CMB lensing anomaly in PR3 which is also resolved when using
+these likelihoods. We then constrain the class of Horndeski theory in the
+effective field theory of dark energy. We consider both EFT-basis and
+$\alpha$-basis. Assuming a power law parametrization for the function $\Omega$,
+which controls non-minimal coupling, we obtain $\Omega_0 =
+0.012^{+0.001}_{-0.012}$ and $s_0 = 0.996^{+0.54}_{-0.20}$ from
+DESI(FS+BAO)+DESY5SN+CMB in a $\Lambda$CDM background. Similar results are
+obtained when using the $\alpha$-basis, where we constrain $c_M<1.14$, and are
+all consistent with GR. [Abridged.]

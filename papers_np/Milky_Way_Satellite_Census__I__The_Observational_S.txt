@@ -1,0 +1,32 @@
+Title: Milky Way Satellite Census. I. The Observational Selection Function for Milky Way Satellites in DES Y3 and Pan-STARRS DR1
+Authors: A. Drlica-Wagner, K. Bechtol, S. Mau, M. McNanna, E. O. Nadler, A. B. Pace, T. S. Li, A. Pieres, E. Rozo, J. D. Simon, A. R. Walker, R. H. Wechsler, T. M. C. Abbott, S. Allam, J. Annis, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Costanzi, L. N. da Costa, J. De Vicente, S. Desai, H. T. Diehl, P. Doel, T. F. Eifler, S. Everett, B. Flaugher, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, E. Krause, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, A. Palmese, A. A. Plazas, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, E. Suchyta, G. Tarle
+Published: 2019-12-06 19:01:06+00:00
+Updated: 2020-04-17 03:39:59+00:00
+DOI: 10.3847/1538-4357/ab7eb9
+arXiv ID: http://arxiv.org/abs/1912.03302v2
+arXiv URL: http://arxiv.org/pdf/1912.03302v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 12
+
+Abstract:
+We report the results of a systematic search for ultra-faint Milky Way
+satellite galaxies using data from the Dark Energy Survey (DES) and Pan-STARRS1
+(PS1). Together, DES and PS1 provide multi-band photometry in
+optical/near-infrared wavelengths over ~80% of the sky. Our search for
+satellite galaxies targets ~25,000 deg$^2$ of the high-Galactic-latitude sky
+reaching a 10$\sigma$ point-source depth of $\gtrsim$ 22.5 mag in the $g$ and
+$r$ bands. While satellite galaxy searches have been performed independently on
+DES and PS1 before, this is the first time that a self-consistent search is
+performed across both data sets. We do not detect any new high-significance
+satellite galaxy candidates, while recovering the majority of satellites
+previously detected in surveys of comparable depth. We characterize the
+sensitivity of our search using a large set of simulated satellites injected
+into the survey data. We use these simulations to derive both analytic and
+machine-learning models that accurately predict the detectability of Milky Way
+satellites as a function of their distance, size, luminosity, and location on
+the sky. To demonstrate the utility of this observational selection function,
+we calculate the luminosity function of Milky Way satellite galaxies, assuming
+that the known population of satellite galaxies is representative of the
+underlying distribution. We provide access to our observational selection
+function to facilitate comparisons with cosmological models of galaxy formation
+and evolution.

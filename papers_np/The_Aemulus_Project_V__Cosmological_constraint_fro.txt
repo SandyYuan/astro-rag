@@ -1,0 +1,33 @@
+Title: The Aemulus Project V: Cosmological constraint from small-scale clustering of BOSS galaxies
+Authors: Zhongxu Zhai, Jeremy L. Tinker, Arka Banerjee, Joseph DeRose, Hong Guo, Yao-Yuan Mao, Sean McLaughlin, Kate Storey-Fisher, Risa H. Wechsler
+Published: 2022-03-17 00:20:42+00:00
+Updated: 2023-03-21 15:49:08+00:00
+DOI: 10.3847/1538-4357/acc65b
+arXiv ID: http://arxiv.org/abs/2203.08999v2
+arXiv URL: http://arxiv.org/pdf/2203.08999v2
+Categories: astro-ph.CO
+Author Position: 9
+
+Abstract:
+We analyze clustering measurements of BOSS galaxies using a simulation-based
+emulator of two-point statistics. We focus on the monopole and quadrupole of
+the redshift-space correlation function, and the projected correlation
+function, at scales of $0.1\sim60~h^{-1}$Mpc. Although our simulations are
+based on $w$CDM with general relativity (GR), we include a scaling parameter of
+the halo velocity field, $\gamma_f$, defined as the amplitude of the halo
+velocity field relative to the GR prediction. We divide the BOSS data into
+three redshift bins. After marginalizing over other cosmological parameters,
+galaxy bias parameters, and the velocity scaling parameter, we find
+$f\sigma_{8}(z=0.25) = 0.413\pm0.031$, $f\sigma_{8}(z=0.4) = 0.470\pm0.026$ and
+$f\sigma_{8}(z=0.55) = 0.396\pm0.022$. Compared with Planck observations using
+a flat $\Lambda$CDM model, our results are lower by $1.9\sigma$, $0.3\sigma$
+and $3.4\sigma$ respectively. These results are consistent with other recent
+simulation-based results at non-linear scales, including weak lensing
+measurements of BOSS LOWZ galaxies, two-point clustering of eBOSS LRGs, and an
+independent clustering analysis of BOSS LOWZ. All these results are generally
+consistent with a combination of $\gamma_f^{1/2}\sigma_8\approx 0.75$. We note,
+however, that the BOSS data is well fit assuming GR, i.e. $\gamma_f=1$. We
+cannot rule out an unknown systematic error in the galaxy bias model at
+non-linear scales, but near-future data and modeling will enhance our
+understanding of the galaxy--halo connection, and provide a strong test of new
+physics beyond the standard model.

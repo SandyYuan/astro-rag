@@ -1,0 +1,24 @@
+Title: Wide-Field Lensing Mass Maps from DES Science Verification Data
+Authors: C. Chang, V. Vikram, B. Jain, D. Bacon, A. Amara, M. R. Becker, G. Bernstein, C. Bonnett, S. Bridle, D. Brout, M. Busha, J. Frieman, E. Gaztanaga, W. Hartley, M. Jarvis, T. Kacprzak, A. Kovacs, O. Lahav, H. Lin, P. Melchior, H. Peiris, E. Rozo, E. Rykoff, C. Sanchez, E. Sheldon, M. A. Troxel, R. Wechsler, J. Zuntz, T. Abbott, F. B. Abdalla, S. Allam, J. Annis, A. H. Bauer, A. Benoit-Levy, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, F. J. Castander, M. Crocce, C. B. D'Andrea, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, A. E. Evrard, A. Fausti Neto, B. Flaugher, P. Fosalba, D. Gruen, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. James, S. Kent, K. Kuehn, N. Kuropatkin, M. A. G. Maia, M. March, P. Martini, K. W. Merritt, C. J. Miller, R. Miquel, E. Neilsen, R. C. Nichol, R. Ogando, A. A. Plazas, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, I. Sevilla, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, J. Thaler, D. Thomas, D. Tucker, A. R. Walker
+Published: 2015-05-07 21:03:25+00:00
+Updated: 2015-07-20 06:56:40+00:00
+DOI: 10.1103/PhysRevLett.115.051301
+arXiv ID: http://arxiv.org/abs/1505.01871v2
+arXiv URL: http://arxiv.org/pdf/1505.01871v2
+Categories: astro-ph.CO
+Author Position: 27
+
+Abstract:
+We present a mass map reconstructed from weak gravitational lensing shear
+measurements over 139 sq. deg from the Dark Energy Survey (DES) Science
+Verification data. The mass map probes both luminous and dark matter, thus
+providing a tool for studying cosmology. We find good agreement between the
+mass map and the distribution of massive galaxy clusters identified using a
+red-sequence cluster finder. Potential candidates for super-clusters and voids
+are identified using these maps. We measure the cross-correlation between the
+mass map and a magnitude-limited foreground galaxy sample and find a detection
+at the 5-7 sigma level on a large range of scales. These measurements are
+consistent with simulated galaxy catalogs based on LCDM N-body simulations,
+suggesting low systematics uncertainties in the map. We summarize our key
+findings in this letter; the detailed methodology and tests for systematics are
+presented in a companion paper.

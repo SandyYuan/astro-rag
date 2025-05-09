@@ -1,0 +1,37 @@
+Title: Multiprobe Cosmology from the Abundance of SPT Clusters and DES Galaxy Clustering and Weak Lensing
+Authors: S. Bocquet, S. Grandis, E. Krause, C. To, L. E. Bleem, M. Klein, J. J. Mohr, T. Schrabback, A. Alarcon, O. Alves, A. Amon, F. Andrade-Oliveira, E. J. Baxter, K. Bechtol, M. R. Becker, G. M. Bernstein, J. Blazek, H. Camacho, A. Campos, A. Carnero Rosell, M. Carrasco Kind, R. Cawthon, C. Chang, R. Chen, A. Choi, J. Cordero, M. Crocce, C. Davis, J. DeRose, H. T. Diehl, S. Dodelson, C. Doux, A. Drlica-Wagner, K. Eckert, T. F. Eifler, F. Elsner, J. Elvin-Poole, S. Everett, X. Fang, A. Ferté, P. Fosalba, O. Friedrich, J. Frieman, M. Gatti, G. Giannini, D. Gruen, R. A. Gruendl, I. Harrison, W. G. Hartley, K. Herner, H. Huang, E. M. Huff, D. Huterer, M. Jarvis, N. Kuropatkin, P. -F. Leget, P. Lemos, A. R. Liddle, N. MacCrann, J. McCullough, J. Muir, J. Myles, A. Navarro-Alsina, S. Pandey, Y. Park, A. Porredon, J. Prat, M. Raveri, R. P. Rollins, A. Roodman, R. Rosenfeld, E. S. Rykoff, C. Sánchez, J. Sanchez, L. F. Secco, I. Sevilla-Noarbe, E. Sheldon, T. Shin, M. A. Troxel, I. Tutusaus, T. N. Varga, N. Weaverdyck, R. H. Wechsler, H. -Y. Wu, B. Yanny, B. Yin, Y. Zhang, J. Zuntz, T. M. C. Abbott, P. A. R. Ade, M. Aguena, S. Allam, S. W. Allen, A. J. Anderson, B. Ansarinejad, J. E. Austermann, M. Bayliss, J. A. Beall, A. N. Bender, B. A. Benson, F. Bianchini, M. Brodwin, D. Brooks, L. Bryant, D. L. Burke, R. E. A. Canning, J. E. Carlstrom, J. Carretero, F. J. Castander, C. L. Chang, P. Chaubal, H. C. Chiang, T-L. Chou, R. Citron, C. Corbett Moran, M. Costanzi, T. M. Crawford, A. T. Crites, L. N. da Costa, M. E. S. Pereira, T. M. Davis, T. de Haan, M. A. Dobbs, P. Doel, W. Everett, A. Farahi, B. Flaugher, A. M. Flores, B. Floyd, J. Gallicchio, E. Gaztanaga, E. M. George, M. D. Gladders, N. Gupta, G. Gutierrez, N. W. Halverson, S. R. Hinton, J. Hlavacek-Larrondo, G. P. Holder, D. L. Hollowood, W. L. Holzapfel, J. D. Hrubes, N. Huang, J. Hubmayr, K. D. Irwin, D. J. James, F. Kéruzoré, G. Khullar, K. Kim, L. Knox, R. Kraft, K. Kuehn, O. Lahav, A. T. Lee, S. Lee, D. Li, C. Lidman, M. Lima, A. Lowitz, G. Mahler, A. Mantz, J. L. Marshall, M. McDonald, J. J. McMahon, J. Mena-Fernández, S. S. Meyer, R. Miquel, J. Montgomery, T. Natoli, J. P. Nibarger, G. I. Noble, V. Novosad, R. L. C. Ogando, S. Padin, P. Paschos, S. Patil, A. A. Plazas Malagón, C. Pryke, C. L. Reichardt, J. Roberson, A. K. Romer, C. Romero, J. E. Ruhl, B. R. Saliwanchik, L. Salvati, S. Samuroff, E. Sanchez, B. Santiago, A. Sarkar, A. Saro, K. K. Schaffer, K. Sharon, C. Sievers, G. Smecher, M. Smith, T. Somboonpanyakul, M. Sommer, B. Stalder, A. A. Stark, J. Stephen, V. Strazzullo, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. Tucker, D. L. Tucker, T. Veach, J. D. Vieira, A. von der Linden, G. Wang, N. Whitehorn, W. L. K. Wu, V. Yefremenko, M. Young, J. A. Zebrowski, H. Zohren, DES Collaboration, SPT Collaboration
+Published: 2024-12-10 18:58:26+00:00
+Updated: 2025-03-13 10:37:55+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2412.07765v2
+arXiv URL: http://arxiv.org/pdf/2412.07765v2
+Categories: astro-ph.CO
+Author Position: 83
+
+Abstract:
+Cosmic shear, galaxy clustering, and the abundance of massive halos each
+probe the large-scale structure of the Universe in complementary ways. We
+present cosmological constraints from the joint analysis of the three probes,
+building on the latest analyses of the lensing-informed abundance of clusters
+identified by the South Pole Telescope (SPT) and of the auto- and
+cross-correlation of galaxy position and weak lensing measurements
+(3$\times$2pt) in the Dark Energy Survey (DES). We consider the cosmological
+correlation between the different tracers and we account for the systematic
+uncertainties that are shared between the large-scale lensing correlation
+functions and the small-scale lensing-based cluster mass calibration.
+Marginalized over the remaining $\Lambda$ cold dark matter ($\Lambda$CDM)
+parameters (including the sum of neutrino masses) and 52 astrophysical modeling
+parameters, we measure $\Omega_\mathrm{m}=0.300\pm0.017$ and
+$\sigma_8=0.797\pm0.026$. Compared to constraints from Planck primary cosmic
+microwave background (CMB) anisotropies, our constraints are only 15% wider
+with a probability to exceed of 0.22 ($1.2\sigma$) for the two-parameter
+difference. We further obtain
+$S_8\equiv\sigma_8(\Omega_\mathrm{m}/0.3)^{0.5}=0.796\pm0.013$ which is lower
+than the Planck measurement at the $1.6\sigma$ level. The combined SPT cluster,
+DES 3$\times$2pt, and Planck datasets mildly prefer a nonzero positive neutrino
+mass, with a 95% upper limit $\sum m_\nu<0.25~\mathrm{eV}$ on the sum of
+neutrino masses. Assuming a $w$CDM model, we constrain the dark energy equation
+of state parameter $w=-1.15^{+0.23}_{-0.17}$ and when combining with Planck
+primary CMB anisotropies, we recover $w=-1.20^{+0.15}_{-0.09}$, a $1.7\sigma$
+difference with a cosmological constant. The precision of our results
+highlights the benefits of multiwavelength multiprobe cosmology.

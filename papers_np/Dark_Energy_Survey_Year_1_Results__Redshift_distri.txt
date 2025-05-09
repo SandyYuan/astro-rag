@@ -1,0 +1,37 @@
+Title: Dark Energy Survey Year 1 Results: Redshift distributions of the weak lensing source galaxies
+Authors: B. Hoyle, D. Gruen, G. M. Bernstein, M. M. Rau, J. De Vicente, W. G. Hartley, E. Gaztanaga, J. DeRose, M. A. Troxel, C. Davis, A. Alarcon, N. MacCrann, J. Prat, C. Sánchez, E. Sheldon, R. H. Wechsler, J. Asorey, M. R. Becker, C. Bonnett, A. Carnero Rosell, D. Carollo, M. Carrasco Kind, F. J. Castander, R. Cawthon, C. Chang, M. Childress, T. M. Davis, A. Drlica-Wagner, M. Gatti, K. Glazebrook, J. Gschwend, S. R. Hinton, J. K. Hoormann, A. G. Kim, A. King, K. Kuehn, G. Lewis, C. Lidman, H. Lin, E. Macaulay, M. A. G. Maia, P. Martini, D. Mudd, A. Möller, R. C. Nichol, R. L. C. Ogando, R. P. Rollins, A. Roodman, A. J. Ross, E. Rozo, E. S. Rykoff, S. Samuroff, I. Sevilla-Noarbe, R. Sharp, N. E. Sommer, B. E. Tucker, S. A. Uddin, T. N. Varga, P. Vielzeuf, F. Yuan, B. Zhang, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, K. Bechtol, A. Benoit-Lévy, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, M. T. Busha, D. Capozzi, J. Carretero, M. Crocce, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, P. Doel, T. F. Eifler, J. Estrada, A. E. Evrard, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, D. W. Gerdes, T. Giannantonio, D. A. Goldstein, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, M. Jarvis, T. Jeltema, M. W. G. Johnson, M. D. Johnson, D. Kirk, E. Krause, S. Kuhlmann, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, B. Nord, C. R. O'Neill, A. A. Plazas, A. K. Romer, M. Sako, E. Sanchez, B. Santiago, V. Scarpine, R. Schindler, M. Schubnell, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, V. Vikram, A. R. Walker, J. Weller, W. Wester, R. C. Wolf, B. Yanny, J. Zuntz
+Published: 2017-08-04 14:52:29+00:00
+Updated: 2018-05-11 21:47:20+00:00
+DOI: 10.1093/mnras/sty957
+arXiv ID: http://arxiv.org/abs/1708.01532v2
+arXiv URL: http://arxiv.org/pdf/1708.01532v2
+Categories: astro-ph.CO
+Author Position: 16
+
+Abstract:
+We describe the derivation and validation of redshift distribution estimates
+and their uncertainties for the galaxies used as weak lensing sources in the
+Dark Energy Survey (DES) Year 1 cosmological analyses. The Bayesian Photometric
+Redshift (BPZ) code is used to assign galaxies to four redshift bins between
+z=0.2 and 1.3, and to produce initial estimates of the lensing-weighted
+redshift distributions $n^i_{PZ}(z)$ for bin i. Accurate determination of
+cosmological parameters depends critically on knowledge of $n^i$ but is
+insensitive to bin assignments or redshift errors for individual galaxies. The
+cosmological analyses allow for shifts $n^i(z)=n^i_{PZ}(z-\Delta z^i)$ to
+correct the mean redshift of $n^i(z)$ for biases in $n^i_{\rm PZ}$. The $\Delta
+z^i$ are constrained by comparison of independently estimated 30-band
+photometric redshifts of galaxies in the COSMOS field to BPZ estimates made
+from the DES griz fluxes, for a sample matched in fluxes, pre-seeing size, and
+lensing weight to the DES weak-lensing sources. In companion papers, the
+$\Delta z^i$ are further constrained by the angular clustering of the source
+galaxies around red galaxies with secure photometric redshifts at 0.15<z<0.9.
+This paper details the BPZ and COSMOS procedures, and demonstrates that the
+cosmological inference is insensitive to details of the $n^i(z)$ beyond the
+choice of $\Delta z^i$. The clustering and COSMOS validation methods produce
+consistent estimates of $\Delta z^i$, with combined uncertainties of
+$\sigma_{\Delta z^i}=$0.015, 0.013, 0.011, and 0.022 in the four bins. We
+marginalize over these in all analyses to follow, which does not diminish the
+constraining power significantly. Repeating the photo-z procedure using the
+Directional Neighborhood Fitting (DNF) algorithm instead of BPZ, or using the
+$n^i(z)$ directly estimated from COSMOS, yields no discernible difference in
+cosmological inferences.

@@ -1,0 +1,26 @@
+Title: From Images to Dark Matter: End-To-End Inference of Substructure From Hundreds of Strong Gravitational Lenses
+Authors: Sebastian Wagner-Carena, Jelle Aalbers, Simon Birrer, Ethan O. Nadler, Elise Darragh-Ford, Philip J. Marshall, Risa H. Wechsler
+Published: 2022-03-01 19:00:00+00:00
+Updated: 2023-03-07 00:38:38+00:00
+DOI: 10.3847/1538-4357/aca525
+arXiv ID: http://arxiv.org/abs/2203.00690v2
+arXiv URL: http://arxiv.org/pdf/2203.00690v2
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 7
+
+Abstract:
+Constraining the distribution of small-scale structure in our universe allows
+us to probe alternatives to the cold dark matter paradigm. Strong gravitational
+lensing offers a unique window into small dark matter halos ($<10^{10}
+M_\odot$) because these halos impart a gravitational lensing signal even if
+they do not host luminous galaxies. We create large datasets of strong lensing
+images with realistic low-mass halos, Hubble Space Telescope (HST)
+observational effects, and galaxy light from HST's COSMOS field. Using a
+simulation-based inference pipeline, we train a neural posterior estimator of
+the subhalo mass function (SHMF) and place constraints on populations of lenses
+generated using a separate set of galaxy sources. We find that by combining our
+network with a hierarchical inference framework, we can both reliably infer the
+SHMF across a variety of configurations and scale efficiently to populations
+with hundreds of lenses. By conducting precise inference on large and complex
+simulated datasets, our method lays a foundation for extracting dark matter
+constraints from the next generation of wide-field optical imaging surveys.

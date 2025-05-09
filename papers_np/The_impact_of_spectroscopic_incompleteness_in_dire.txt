@@ -1,0 +1,33 @@
+Title: The impact of spectroscopic incompleteness in direct calibration of redshift distributions for weak lensing surveys
+Authors: W. G. Hartley, C. Chang, S. Samani, A. Carnero Rosell, T. M. Davis, B. Hoyle, D. Gruen, J. Asorey, J. Gschwend, C. Lidman, K. Kuehn, A. King, M. M. Rau, R. H. Wechsler, J. DeRose, S. R. Hinton, L. Whiteway, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, S. Avila, G. M. Bernstein, E. Bertin, S. L. Bridle, D. Brooks, D. L. Burke, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, M. Costanzi, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, D. W. Gerdes, R. A. Gruendl, G. Gutierrez, D. L. Hollowood, K. Honscheid, D. J. James, S. Kent, E. Krause, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, R. L. C. Ogando, A. Palmese, F. Paz- Chinchon, A. A. Plazas, A. Roodman, E. S. Rykoff, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, E. Suchyta, G. Tarle, M. A. Troxel, D. L. Tucker, T. N. Varga, J. Weller, R. D. Wilkinson
+Published: 2020-03-23 18:00:02+00:00
+Updated: 2020-08-03 12:43:52+00:00
+DOI: 10.1093/mnras/staa1812
+arXiv ID: http://arxiv.org/abs/2003.10454v2
+arXiv URL: http://arxiv.org/pdf/2003.10454v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 14
+
+Abstract:
+Obtaining accurate distributions of galaxy redshifts is a critical aspect of
+weak lensing cosmology experiments. One of the methods used to estimate and
+validate redshift distributions is apply weights to a spectroscopic sample so
+that their weighted photometry distribution matches the target sample. In this
+work we estimate the \textit{selection bias} in redshift that is introduced in
+this procedure. We do so by simulating the process of assembling a
+spectroscopic sample (including observer-assigned confidence flags) and
+highlight the impacts of spectroscopic target selection and redshift failures.
+We use the first year (Y1) weak lensing analysis in DES as an example data set
+but the implications generalise to all similar weak lensing surveys. We find
+that using colour cuts that are not available to the weak lensing galaxies can
+introduce biases of $\Delta~z\sim0.015$ in the weighted mean redshift of
+different redshift intervals. To assess the impact of incompleteness in
+spectroscopic samples, we select only objects with high observer-defined
+confidence flags and compare the weighted mean redshift with the true mean. We
+find that the mean redshift of the DES Y1 weak lensing sample is typically
+biased at the $\Delta~z=0.005-0.05$ level after the weighting is applied. The
+bias we uncover can have either sign, depending on the samples and redshift
+interval considered. For the highest redshift bin, the bias is larger than the
+uncertainties in the other DES Y1 redshift calibration methods, justifying the
+decision of not using this method for the redshift estimations. We discuss
+several methods to mitigate this bias.

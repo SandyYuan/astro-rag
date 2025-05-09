@@ -1,0 +1,27 @@
+Title: Constraining the Scatter in the Mass-Richness Relation of maxBCG Clusters With Weak Lensing and X-ray Data
+Authors: Eduardo Rozo, Eli S. Rykoff, August Evrard, Matthew Becker, Timothy McKay, Risa H. Wechsler, Benjamin P. Koester, Jiangang Hao, Sarah Hansen, Erin Sheldon, David Johnston, James Annis, Joshua Frieman
+Published: 2008-09-16 23:18:53+00:00
+Updated: 2008-09-16 23:18:53+00:00
+DOI: 10.1088/0004-637X/699/1/768
+arXiv ID: http://arxiv.org/abs/0809.2794v1
+arXiv URL: http://arxiv.org/pdf/0809.2794v1
+Categories: astro-ph
+Author Position: 6
+
+Abstract:
+We measure the logarithmic scatter in mass at fixed richness for clusters in
+the maxBCG cluster catalog, an optically selected cluster sample drawn from
+SDSS imaging data. Our measurement is achieved by demanding consistency between
+available weak lensing and X-ray measurements of the maxBCG clusters, and the
+X-ray luminosity--mass relation inferred from the 400d X-ray cluster survey, a
+flux limited X-ray cluster survey. We find \sigma_{\ln
+M|N_{200}}=0.45^{+0.20}_{-0.18} (95% CL) at N_{200} ~ 40, where N_{200} is the
+number of red sequence galaxies in a cluster. As a byproduct of our analysis,
+we also obtain a constraint on the correlation coefficient between \ln Lx and
+\ln M at fixed richness, which is best expressed as a lower limit, r_{L,M|N} >=
+0.85 (95% CL). This is the first observational constraint placed on a
+correlation coefficient involving two different cluster mass tracers. We use
+our results to produce a state of the art estimate of the halo mass function at
+z=0.23 -- the median redshift of the maxBCG cluster sample -- and find that it
+is consistent with the WMAP5 cosmology. Both the mass function data and its
+covariance matrix are presented.

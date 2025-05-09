@@ -1,0 +1,22 @@
+Title: The MegaMapper: A Stage-5 Spectroscopic Instrument Concept for the Study of Inflation and Dark Energy
+Authors: David J. Schlegel, Juna A. Kollmeier, Greg Aldering, Stephen Bailey, Charles Baltay, Christopher Bebek, Segev BenZvi, Robert Besuner, Guillermo Blanc, Adam S. Bolton, Ana Bonaca, Mohamed Bouri, David Brooks, Elizabeth Buckley-Geer, Zheng Cai, Jeffrey Crane, Regina Demina, Joseph DeRose, Arjun Dey, Peter Doel, Xiaohui Fan, Simone Ferraro, Douglas Finkbeiner, Andreu Font-Ribera, Satya Gontcho A Gontcho, Daniel Green, Gaston Gutierrez, Julien Guy, Henry Heetderks, Dragan Huterer, Leopoldo Infante, Patrick Jelinsky, Dionysios Karagiannis, Stephen M. Kent, Alex G. Kim, Jean-Paul Kneib, Anthony Kremin, Luzius Kronig, Nick Konidaris, Ofer Lahav, Michael L. Lampton, Martin Landriau, Dustin Lang, Alexie Leauthaud, Michael E. Levi, Michele Liguori, Eric V. Linder, Christophe Magneville, Paul Martini, Mario Mateo, Patrick McDonald, Christopher J. Miller, John Moustakas, Adam D. Myers, John Mulchaey, Jeffrey A. Newman, Peter E. Nugent, Nikhil Padmanabhan, Nathalie Palanque-Delabrouille, Antonella Palmese Anthony L. Piro, Claire Poppett, Jason X. Prochaska, Anthony R. Pullen, David Rabinowitz, Anand Raichoor, Solange Ramirez, Hans-Walter Rix, Ashley J. Ross, Lado Samushia, Emmanuel Schaan, Michael Schubnell, Uros Seljak, Hee-Jong Seo, Stephen A. Shectman, Edward F. Schlafly, Joseph Silber, Joshua D. Simon, Zachary Slepian, Anže Slosar, Marcelle Soares-Santos, Greg Tarlé, Ian Thompson, Monica Valluri, Risa H. Wechsler, Martin White, Michael J. Wilson, Christophe Yèche, Dennis Zaritsky, Rongpu Zhou
+Published: 2022-09-09 14:25:02+00:00
+Updated: 2022-09-09 14:25:02+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2209.04322v1
+arXiv URL: http://arxiv.org/pdf/2209.04322v1
+Categories: astro-ph.IM, hep-ex
+Author Position: 84
+
+Abstract:
+In this white paper, we present the MegaMapper concept. The MegaMapper is a
+proposed ground-based experiment to measure Inflation parameters and Dark
+Energy from galaxy redshifts at $2<z<5$. In order to achieve path-breaking
+results with a mid-scale investment, the MegaMapper combines existing
+technologies for critical path elements and pushes innovative development in
+other design areas. To this aim, we envision a 6.5-m Magellan-like telescope,
+with a newly designed wide field, coupled with DESI spectrographs, and
+small-pitch robots to achieve multiplexing of at least 26,000. This will match
+the expected achievable target density in the redshift range of interest and
+provide a 10x capability over the existing state-of the art, without a 10x
+increase in project budget.

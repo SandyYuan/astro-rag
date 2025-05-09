@@ -1,0 +1,27 @@
+Title: The DECam Local Volume Exploration Survey: Overview and First Data Release
+Authors: A. Drlica-Wagner, J. L. Carlin, D. L. Nidever, P. S. Ferguson, N. Kuropatkin, M. Adamów, W. Cerny, Y. Choi, J. H. Esteves, C. E. Martínez-Vázquez, S. Mau, A. E. Miller, B. Mutlu-Pakdil, E. H. Neilsen, K. A. G. Olsen, A. B. Pace, A. H. Riley, J. D. Sakowska, D. J. Sand, L. Santana-Silva, E. J. Tollerud, D. L. Tucker, A. K. Vivas, E. Zaborowski, A. Zenteno, T. M. C. Abbott, S. Allam, K. Bechtol, C. P. M. Bell, E. F. Bell, P. Bilaji, C. R. Bom, J. A. Carballo-Bello, M. -R. L. Cioni, A. Diaz-Ocampo, T. J. L. de Boer, D. Erkal, R. A. Gruendl, D. Hernandez-Lang, A. K. Hughes, D. J. James, L. C. Johnson, T. S. Li, Y. -Y. Mao, D. Martínez-Delgado, P. Massana, M. McNanna, R. Morgan, E. O. Nadler, N. E. D. Noël, A. Palmese, A. H. G. Peter, E. S. Rykoff, J. Sánchez, N. Shipp, J. D. Simon, A. Smercina, M. Soares-Santos, G. S. Stringfellow, K. Tavangar, R. P. van der Marel, A. R. Walker, R. H. Wechsler, J. F. Wu, B. Yanny, M. Fitzpatrick, L. Huang, A. Jacques, R. Nikutta, A. Scott
+Published: 2021-03-12 19:00:01+00:00
+Updated: 2021-09-02 14:56:58+00:00
+DOI: 10.3847/1538-4365/ac079d
+arXiv ID: http://arxiv.org/abs/2103.07476v2
+arXiv URL: http://arxiv.org/pdf/2103.07476v2
+Categories: astro-ph.GA, astro-ph.CO, astro-ph.SR
+Author Position: 63
+
+Abstract:
+The DECam Local Volume Exploration survey (DELVE) is a 126-night survey
+program on the 4-m Blanco Telescope at the Cerro Tololo Inter-American
+Observatory in Chile. DELVE seeks to understand the characteristics of faint
+satellite galaxies and other resolved stellar substructures over a range of
+environments in the Local Volume. DELVE will combine new DECam observations
+with archival DECam data to cover ~15000 deg$^2$ of high-Galactic-latitude (|b|
+> 10 deg) southern sky to a 5$\sigma$ depth of g,r,i,z ~ 23.5 mag. In addition,
+DELVE will cover a region of ~2200 deg$^2$ around the Magellanic Clouds to a
+depth of g,r,i ~ 24.5 mag and an area of ~135 deg$^2$ around four Magellanic
+analogs to a depth of g,i ~ 25.5 mag. Here, we present an overview of the DELVE
+program and progress to date. We also summarize the first DELVE public data
+release (DELVE DR1), which provides point-source and automatic aperture
+photometry for ~520 million astronomical sources covering ~5000 deg$^2$ of the
+southern sky to a 5$\sigma$ point-source depth of g=24.3, r=23.9, i=23.3, and
+z=22.8 mag. DELVE DR1 is publicly available via the NOIRLab Astro Data Lab
+science platform.

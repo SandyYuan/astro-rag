@@ -1,0 +1,30 @@
+Title: Stellar mass as a galaxy cluster mass proxy: application to the Dark Energy Survey redMaPPer clusters
+Authors: A. Palmese, J. Annis, J. Burgad, A. Farahi, M. Soares-Santos, B. Welch, M. da Silva Pereira, H. Lin, S. Bhargava, D. L. Hollowood, R. Wilkinson, P. Giles, T. Jeltema, A. K. Romer, A. E. Evrard, M. Hilton, C. Vergara Cervantes, A. Bermeo, J. Mayers, J. DeRose, D. Gruen, W. G. Hartley, O. Lahav, B. Leistedt, T. McClintock, E. Rozo, E. S. Rykoff, T. N. Varga, R. H. Wechsler, Y. Zhang, S. Avila, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. Collins, L. N. da Costa, S. Desai, J. De Vicente, H. T. Diehl, J. P. Dietrich, P. Doel, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, D. W. Gerdes, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, E. Krause, K. Kuehn, N. Kuropatkin, A. Liddle, M. Lima, M. A. G. Maia, R. G. Mann, J. L. Marshall, F. Menanteau, R. Miquel, R. L. C. Ogando, A. A. Plazas, A. Roodman, P. Rooney, M. Sahlen, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, F. Sobreira, J. Stott, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, P. T. P. Viana, V. Vikram, A. R. Walker
+Published: 2019-03-21 02:51:48+00:00
+Updated: 2019-11-18 22:36:26+00:00
+DOI: 10.1093/mnras/staa526
+arXiv ID: http://arxiv.org/abs/1903.08813v2
+arXiv URL: http://arxiv.org/pdf/1903.08813v2
+Categories: astro-ph.CO
+Author Position: 29
+
+Abstract:
+We introduce a galaxy cluster mass observable, $\mu_\star$, based on the
+stellar masses of cluster members, and we present results for the Dark Energy
+Survey (DES) Year 1 observations. Stellar masses are computed using a Bayesian
+Model Averaging method, and are validated for DES data using simulations and
+COSMOS data. We show that $\mu_\star$ works as a promising mass proxy by
+comparing our predictions to X-ray measurements. We measure the X-ray
+temperature-$\mu_\star$ relation for a total of 150 clusters matched between
+the wide-field DES Year 1 redMaPPer catalogue, and Chandra and XMM archival
+observations, spanning the redshift range $0.1<z<0.7$. For a scaling relation
+which is linear in logarithmic space, we find a slope of $\alpha =
+0.488\pm0.043$ and a scatter in the X-ray temperature at fixed $\mu_\star$ of
+$\sigma_{{\rm ln} T_X|\mu_\star}=0.266^{+0.019}_{-0.020}$ for the joint sample.
+By using the halo mass scaling relations of the X-ray temperature from the
+Weighing the Giants program, we further derive the $\mu_\star$-conditioned
+scatter in mass, finding $\sigma_{{\rm ln} M|\mu_\star}=0.26^{+ 0.15}_{-
+0.10}$. These results are competitive with well-established cluster mass
+proxies used for cosmological analyses, showing that $\mu_\star$ can be used as
+a reliable and physically motivated mass proxy to derive cosmological
+constraints.

@@ -1,0 +1,29 @@
+Title: Dark Energy Survey Year 1 Results: Cross-correlation between DES Y1 galaxy weak lensing and SPT+Planck CMB weak lensing
+Authors: Y. Omori, E. Baxter, C. Chang, D. Kirk, A. Alarcon, G. M. Bernstein, L. E. Bleem, R. Cawthon, A. Choi, R. Chown, T. M. Crawford, C. Davis, J. De Vicente, J. DeRose, S. Dodelson, T. F. Eifler, P. Fosalba, O. Friedrich, M. Gatti, E. Gaztanaga, T. Giannantonio, D. Gruen, W. G. Hartley, G. P. Holder, B. Hoyle, D. Huterer, B. Jain, M. Jarvis, E. Krause, N. MacCrann, R. Miquel, J. Prat, M. M. Rau, C. L. Reichardt, E. Rozo, S. Samuroff, C. Sánchez, L. F. Secco, E. Sheldon, G. Simard, M. A. Troxel, P. Vielzeuf, R. H. Wechsler, J. Zuntz, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, S. Avila, K. Aylor, B. A. Benson, E. Bertin, S. L. Bridle, D. Brooks, D. L. Burke, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. L. Chang, H-M. Cho, A. T. Crites, M. Crocce, C. E. Cunha, L. N. da Costa, T. de Haan, S. Desai, H. T. Diehl, J. P. Dietrich, M. A. Dobbs, W. B. Everett, E. Fernandez, B. Flaugher, J. Frieman, J. García-Bellido, E. M. George, R. A. Gruendl, G. Gutierrez, N. W. Halverson, N. L. Harrington, D. L. Hollowood, K. Honscheid, W. L. Holzapfel, Z. Hou, J. D. Hrubes, D. J. James, T. Jeltema, K. Kuehn, N. Kuropatkin, M. Lima, H. Lin, A. T. Lee, E. M. Leitch, D. Luong-Van, M. A. G. Maia, A. Manzotti, D. P. Marrone, J. L. Marshall, P. Martini, J. J. McMahon, P. Melchior, F. Menanteau, S. S. Meyer, L. M. Mocanu, J. J. Mohr, T. Natoli, R. L. C. Ogando, S. Padin, A. A. Plazas, C. Pryke, A. K. Romer, A. Roodman, J. E. Ruhl, E. S. Rykoff, E. Sanchez, V. Scarpine, K. K. Schaffer, R. Schindler, I. Sevilla-Noarbe, E. Shirokoff, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, Z. Staniszewski, A. A. Stark, K. T. Story, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, K. Vanderlinde, J. D. Vieira, V. Vikram, A. R. Walker, J. Weller, R. Williamson, W. L. K. Wu, O. Zahn
+Published: 2018-10-04 22:16:50+00:00
+Updated: 2018-10-04 22:16:50+00:00
+DOI: 10.1103/PhysRevD.100.043517
+arXiv ID: http://arxiv.org/abs/1810.02441v1
+arXiv URL: http://arxiv.org/pdf/1810.02441v1
+Categories: astro-ph.CO
+Author Position: 43
+
+Abstract:
+We cross-correlate galaxy weak lensing measurements from the Dark Energy
+Survey (DES) year-one (Y1) data with a cosmic microwave background (CMB) weak
+lensing map derived from South Pole Telescope (SPT) and Planck data, with an
+effective overlapping area of 1289 deg$^{2}$. With the combined measurements
+from four source galaxy redshift bins, we reject the hypothesis of no lensing
+with a significance of $10.8\sigma$. When employing angular scale cuts, this
+significance is reduced to $6.8\sigma$, which remains the highest
+signal-to-noise measurement of its kind to date. We fit the amplitude of the
+correlation functions while fixing the cosmological parameters to a fiducial
+$\Lambda$CDM model, finding $A = 0.99 \pm 0.17$. We additionally use the
+correlation function measurements to constrain shear calibration bias,
+obtaining constraints that are consistent with previous DES analyses. Finally,
+when performing a cosmological analysis under the $\Lambda$CDM model, we obtain
+the marginalized constraints of $\Omega_{\rm m}=0.261^{+0.070}_{-0.051}$ and
+$S_{8}\equiv \sigma_{8}\sqrt{\Omega_{\rm m}/0.3} = 0.660^{+0.085}_{-0.100}$.
+These measurements are used in a companion work that presents cosmological
+constraints from the joint analysis of two-point functions among galaxies,
+galaxy shears, and CMB lensing using DES, SPT and Planck data.

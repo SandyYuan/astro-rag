@@ -1,0 +1,33 @@
+Title: Validation of the Scientific Program for the Dark Energy Spectroscopic Instrument
+Authors: DESI Collaboration, A. G. Adame, J. Aguilar, S. Ahlen, S. Alam, G. Aldering, D. M. Alexander, R. Alfarsy, C. Allende Prieto, M. Alvarez, O. Alves, A. Anand, F. Andrade-Oliveira, E. Armengaud, J. Asorey, S. Avila, A. Aviles, S. Bailey, A. Balaguera-Antolínez, O. Ballester, C. Baltay, A. Bault, J. Bautista, J. Behera, S. F. Beltran, S. BenZvi, L. Beraldo e Silva, J. R. Bermejo-Climent, A. Berti, R. Besuner, F. Beutler, D. Bianchi, C. Blake, R. Blum, A. S. Bolton, S. Brieden, A. Brodzeller, D. Brooks, Z. Brown, E. Buckley-Geer, E. Burtin, L. Cabayol-Garcia, Z. Cai, R. Canning, L. Cardiel-Sas, A. Carnero Rosell, F. J. Castander, J. L. Cervantes-Cota, S. Chabanier, E. Chaussidon, J. Chaves-Montero, S. Chen, C. Chuang, T. Claybaugh, S. Cole, A. P. Cooper, A. Cuceu, T. M. Davis, K. Dawson, R. de Belsunce, R. de la Cruz, A. de la Macorra, A. de Mattia, R. Demina, U. Demirbozan, J. DeRose, A. Dey, B. Dey, G. Dhungana, J. Ding, Z. Ding, P. Doel, R. Doshi, K. Douglass, A. Edge, S. Eftekharzadeh, D. J. Eisenstein, A. Elliott, S. Escoffier, P. Fagrelius, X. Fan, K. Fanning, V. A. Fawcett, S. Ferraro, J. Ereza, B. Flaugher, A. Font-Ribera, D. Forero-Sánchez, J. E. Forero-Romero, C. S. Frenk, B. T. Gänsicke, L. Á. García, J. García-Bellido, C. Garcia-Quintero, L. H. Garrison, H. Gil-Marín, J. Golden-Marx, S. Gontcho A Gontcho, A. X. Gonzalez-Morales, V. Gonzalez-Perez, C. Gordon, O. Graur, D. Green, D. Gruen, J. Guy, B. Hadzhiyska, C. Hahn, J. J. Han, M. M. S Hanif, H. K. Herrera-Alcantar, K. Honscheid, J. Hou, C. Howlett, D. Huterer, V. Iršič, M. Ishak, A. Jana, L. Jiang, J. Jimenez, Y. P. Jing, S. Joudaki, R. Joyce, E. Jullo, S. Juneau, N. Kizhuprakkat, N. G. Karaçaylı, T. Karim, R. Kehoe, S. Kent, A. Khederlarian, S. Kim, D. Kirkby, T. Kisner, F. Kitaura, J. Kneib, S. E. Koposov, A. Kovács, A. Kremin, A. Krolewski, B. L'Huillier, O. Lahav, A. Lambert, C. Lamman, T. -W. Lan, M. Landriau, D. Lang, J. U. Lange, J. Lasker, L. Le Guillou, A. Leauthaud, M. E. Levi, T. S. Li, E. Linder, A. Lyons, C. Magneville, M. Manera, C. J. Manser, D. Margala, P. Martini, P. McDonald, G. E. Medina, L. Medina-Varela, A. Meisner, J. Mena-Fernández, J. Meneses-Rizo, M. Mezcua, R. Miquel, P. Montero-Camacho, J. Moon, S. Moore, J. Moustakas, E. Mueller, J. Mundet, A. Muñoz-Gutiérrez, A. D. Myers, S. Nadathur, L. Napolitano, R. Neveux, J. A. Newman, J. Nie, G. Niz, P. Norberg, H. E. Noriega, E. Paillas, N. Palanque-Delabrouille, A. Palmese, P. Zhiwei, D. Parkinson, S. Penmetsa, W. J. Percival, A. Pérez-Fernández, I. Pérez-Ràfols, M. Pieri, C. Poppett, A. Porredon, F. Prada, R. Pucha, A. Raichoor, C. Ramírez-Pérez, S. Ramirez-Solano, M. Rashkovetskyi, C. Ravoux, A. Rocher, C. Rockosi, A. J. Ross, G. Rossi, R. Ruggeri, V. Ruhlmann-Kleider, C. G. Sabiu, K. Said, A. Saintonge, L. Samushia, E. Sanchez, C. Saulder, E. Schaan, E. F. Schlafly, D. Schlegel, D. Scholte, M. Schubnell, H. Seo, A. Shafieloo, R. Sharples, W. Sheu, J. Silber, F. Sinigaglia, M. Siudek, Z. Slepian, A. Smith, D. Sprayberry, L. Stephey, J. Suárez-Pérez, Z. Sun, T. Tan, G. Tarlé, R. Tojeiro, L. A. Ureña-López, R. Vaisakh, D. Valcin, F. Valdes, M. Valluri, M. Vargas-Magaña, A. Variu, L. Verde, M. Walther, B. Wang, M. S. Wang, B. A. Weaver, N. Weaverdyck, R. H. Wechsler, M. White, Y. Xie, J. Yang, C. Yèche, J. Yu, S. Yuan, H. Zhang, Z. Zhang, C. Zhao, Z. Zheng, R. Zhou, Z. Zhou, H. Zou, S. Zou, Y. Zu
+Published: 2023-06-09 23:55:36+00:00
+Updated: 2024-01-13 00:50:36+00:00
+DOI: 10.5281/zenodo.7858207
+arXiv ID: http://arxiv.org/abs/2306.06307v3
+arXiv URL: http://arxiv.org/pdf/2306.06307v3
+Categories: astro-ph.CO
+Author Position: 249
+
+Abstract:
+The Dark Energy Spectroscopic Instrument (DESI) was designed to conduct a
+survey covering 14,000 deg$^2$ over five years to constrain the cosmic
+expansion history through precise measurements of Baryon Acoustic Oscillations
+(BAO). The scientific program for DESI was evaluated during a five month Survey
+Validation (SV) campaign before beginning full operations. This program
+produced deep spectra of tens of thousands of objects from each of the stellar
+(MWS), bright galaxy (BGS), luminous red galaxy (LRG), emission line galaxy
+(ELG), and quasar target classes. These SV spectra were used to optimize
+redshift distributions, characterize exposure times, determine calibration
+procedures, and assess observational overheads for the five-year program. In
+this paper, we present the final target selection algorithms, redshift
+distributions, and projected cosmology constraints resulting from those
+studies. We also present a `One-Percent survey' conducted at the conclusion of
+Survey Validation covering 140 deg$^2$ using the final target selection
+algorithms with exposures of a depth typical of the main survey. The Survey
+Validation indicates that DESI will be able to complete the full 14,000 deg$^2$
+program with spectroscopically-confirmed targets from the MWS, BGS, LRG, ELG,
+and quasar programs with total sample sizes of 7.2, 13.8, 7.46, 15.7, and 2.87
+million, respectively. These samples will allow exploration of the Milky Way
+halo, clustering on all scales, and BAO measurements with a statistical
+precision of 0.28% over the redshift interval $z<1.1$, 0.39% over the redshift
+interval $1.1<z<1.9$, and 0.46% over the redshift interval $1.9<z<3.5$.

@@ -1,0 +1,30 @@
+Title: Systematic Effects in Galaxy-Galaxy Lensing with DESI
+Authors: J. U. Lange, C. Blake, C. Saulder, N. Jeffrey, J. DeRose, G. Beltz-Mohrmann, N. Emas, C. Garcia-Quintero, B. Hadzhiyska, S. Heydenreich, M. Ishak, S. Joudaki, E. Jullo, A. Krolewski, A. Leauthaud, L. Medina-Varela, A. Porredon, G. Rossi, R. Ruggeri, E. Xhakaj, S. Yuan, J. Aguilar, S. Ahlen, D. Brooks, T. Claybaugh, A. de la Macorra, P. Doel, K. Fanning, S. Ferraro, A. Font-Ribera, J. E. Forero-Romero, E. Gaztañaga, S. Gontcho A Gontcho, S. Juneau, R. Kehoe, T. Kisner, A. Kremin, M. Landriau, M. E. Levi, M. Manera, R. Miquel, J. Moustakas, E. Mueller, A. D. Myers, J. Nie, G. Niz, N. Palanque-Delabrouille, C. Poppett, M. Rezaie, E. Sanchez, M. Schubnell, H. Seo, J. Silber, D. Sprayberry, G. Tarlé, M. Vargas-Magaña, R. H. Wechsler, Z. Zhou, H. Zou
+Published: 2024-04-15 00:58:29+00:00
+Updated: 2024-07-15 15:33:00+00:00
+DOI: 10.33232/001c.121260
+arXiv ID: http://arxiv.org/abs/2404.09397v2
+arXiv URL: http://arxiv.org/pdf/2404.09397v2
+Categories: astro-ph.CO
+Author Position: 57
+
+Abstract:
+The Dark Energy Spectroscopic Instrument (DESI) survey will measure
+spectroscopic redshifts for millions of galaxies across roughly $14,000 \,
+\mathrm{deg}^2$ of the sky. Cross-correlating targets in the DESI survey with
+complementary imaging surveys allows us to measure and analyze shear
+distortions caused by gravitational lensing in unprecedented detail. In this
+work, we analyze a series of mock catalogs with ray-traced gravitational
+lensing and increasing sophistication to estimate systematic effects on
+galaxy-galaxy lensing estimators such as the tangential shear
+$\gamma_{\mathrm{t}}$ and the excess surface density $\Delta\Sigma$. We employ
+mock catalogs tailored to the specific imaging surveys overlapping with the
+DESI survey: the Dark Energy Survey (DES), the Hyper Suprime-Cam (HSC) survey,
+and the Kilo-Degree Survey (KiDS). Among others, we find that fiber
+incompleteness can have significant effects on galaxy-galaxy lensing estimators
+but can be corrected effectively by up-weighting DESI targets with fibers by
+the inverse of the fiber assignment probability. Similarly, we show that
+intrinsic alignment and lens magnification are expected to be statistically
+significant given the precision forecasted for the DESI year-1 data set. Our
+study informs several analysis choices for upcoming cross-correlation studies
+of DESI with DES, HSC, and KiDS.

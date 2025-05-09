@@ -1,0 +1,35 @@
+Title: The integrated stellar content of dark matter halos
+Authors: Alexie Leauthaud, Matthew R. George, Peter S. Behroozi, Kevin Bundy, Jeremy Tinker, Risa H. Wechsler, Charlie Conroy, Alexis Finoguenov, Masayuki Tanaka
+Published: 2011-08-31 20:00:06+00:00
+Updated: 2011-08-31 20:00:06+00:00
+DOI: 10.1088/0004-637X/746/1/95
+arXiv ID: http://arxiv.org/abs/1109.0010v1
+arXiv URL: http://arxiv.org/pdf/1109.0010v1
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+Measurements of the total amount of stars locked up in galaxies as a function
+of host halo mass contain key clues about the efficiency of processes that
+regulate star formation. We derive the total stellar mass fraction f_star as a
+function of halo mass M500c from z=0.2 to z=1 using two complementary methods.
+First, we derive f_star using a statistical Halo Occupation Distribution model
+jointly constrained by data from lensing, clustering, and the stellar mass
+function. This method enables us to probe f_star over a much wider halo mass
+range than with group or cluster catalogs. Second, we derive f_star at group
+scales using a COSMOS X-ray group catalog and we show that the two methods
+agree to within 30%. We quantify the systematic uncertainty on f_star using
+abundance matching methods and we show that the statistical uncertainty on
+f_star (~10%) is dwarfed by systematic uncertainties associated with stellar
+mass measurements (~45% excluding IMF uncertainties). Assuming a Chabrier IMF,
+we find 0.012<f_star<0.025 at M500c=10^13 Msun and 0.0057<f_star<0.015 at
+M500c=10^14 Msun. These values are significantly lower than previously
+published estimates. We investigate the cause of this difference and find that
+previous work has overestimated f_star due to a combination of inaccurate
+stellar mass estimators and/or because they have assumed that all galaxies in
+groups are early type galaxies with a constant mass-to-light ratio. Contrary to
+previous claims, our results suggest that the mean value of f_star is always
+significantly lower than f_gas for halos above 10^13 Msun. Combining our
+results with recently published gas mas fractions, we find a shortfall in
+f_star+f_gas at R500c compared to the cosmic mean. This shortfall varies with
+halo mass and becomes larger towards lower halos masses.

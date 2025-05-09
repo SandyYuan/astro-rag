@@ -1,0 +1,27 @@
+Title: Weak Lensing Measurement of the Mass--Richness Relation of SDSS redMaPPer Clusters
+Authors: Melanie Simet, Tom McClintock, Rachel Mandelbaum, Eduardo Rozo, Eli Rykoff, Erin Sheldon, Risa H. Wechsler
+Published: 2016-03-22 20:00:11+00:00
+Updated: 2017-04-03 18:21:16+00:00
+DOI: 10.1093/mnras/stw3250
+arXiv ID: http://arxiv.org/abs/1603.06953v2
+arXiv URL: http://arxiv.org/pdf/1603.06953v2
+Categories: astro-ph.CO
+Author Position: 7
+
+Abstract:
+We perform a measurement of the mass--richness relation of the redMaPPer
+galaxy cluster catalogue using weak lensing data from the Sloan Digital Sky
+Survey. We have carefully characterized a broad range of systematic
+uncertainties, including shear calibration errors, photo-$z$ biases, dilution
+by member galaxies, source obscuration, magnification bias, incorrect
+assumptions about cluster mass profiles, cluster centering, halo triaxiality,
+and projection effects. We also compare measurements of the lensing signal from
+two independently-produced shear and photometric redshift catalogues to
+characterize systematic errors in the lensing signal itself. Using a sample of
+5,570 clusters from $0.1\le z\le 0.33$, the normalization of our power-law mass
+vs.\ $\lambda$ relation is $\log_{10}[M_{200m}/h^{-1}\ M_{\odot}]$ = $14.344
+\pm 0.021$ (statistical) $\pm 0.023$ (systematic) at a richness $\lambda=40$, a
+7 per cent calibration uncertainty, with a power-law index of
+$1.33^{+0.09}_{-0.10}$ ($1\sigma$). The detailed systematics characterization
+in this work renders it the definitive weak lensing mass calibration for SDSS
+redMaPPer clusters at this time.

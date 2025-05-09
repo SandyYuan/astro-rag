@@ -1,0 +1,35 @@
+Title: Evolution of Galaxy Luminosity and Stellar-Mass Functions since $z=1$ with the Dark Energy Survey Science Verification Data
+Authors: D. Capozzi, J. Etherington, D. Thomas, C. Maraston, E. S. Rykoff, I. Sevilla-Noarbe, K. Bechtol, M. Carrasco Kind, A. Drlica-Wagner, J. Pforr, J. Gschwend, A. Carnero Rosell, P. Pellegrini, M. A. G. Maia, L. N. da Costa, A. Benoit-Lévy, M. E. C. Swanson, R. H. Wechsler, M. Banerji, C. Papovich, X. Morice-Atkinson, F. Abdalla, D. Brooks, J. Carretero, C. Cunha, C. D'Andrea, S. Desai, T. H. Diehl, A. Evrards, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, G. Gutierrez, W. G. Hartley, D. James, T. Jeltema, K. Kuehn, S. Kuhlmann, N. Kuropatkin, O. Lahav, M. Lima, J. L. Marshall, P. Martini, F. Menanteau, R. Miquel, B. Nord, R. L. C. Ogando, A. A. Plazas Malagòn, A. K. Romer, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle
+Published: 2017-07-27 22:42:22+00:00
+Updated: 2017-07-27 22:42:22+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1707.09066v1
+arXiv URL: http://arxiv.org/pdf/1707.09066v1
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 18
+
+Abstract:
+We present the first study of the evolution of the galaxy luminosity and
+stellar-mass functions (GLF and GSMF) carried out by the Dark Energy Survey
+(DES). We describe the COMMODORE galaxy catalogue selected from Science
+Verification images. This catalogue is made of $\sim 4\times 10^{6}$ galaxies
+at $0<z\lesssim1.3$ over a sky area of $\sim155\ {\rm sq. \ deg}$ with ${\it
+i}$-band limiting magnitude ${\it i}=23\ {\rm mag}$. Such characteristics are
+unprecedented for galaxy catalogues and they enable us to study the evolution
+of GLF and GSMF at $0<z<1$ homogeneously with the same statistically-rich
+data-set and free of cosmic variance effects. The aim of this study is twofold:
+i) we want to test our method based on the use of photometric-redshift
+probability density functions against literature results obtained with
+spectroscopic redshifts; ii) we want to shed light on the way galaxies build up
+their masses over cosmic time. We find that both the ${\it i}$-band galaxy
+luminosity and stellar mass functions are characterised by a double-Schechter
+shape at $z<0.2$. Both functions agree well with those based on spectroscopic
+redshifts. The DES GSMF agrees especially with those measured for the GAlaxy
+Mass Assembly and the PRism MUlti-object Survey out to $z\sim1$. At $0.2<z<1$,
+we find the ${\it i}$-band luminosity and stellar-mass densities respectively
+to be constant ($\rho_{\rm L}\propto (1+z)^{-0.12\pm0.11}$) and decreasing
+($\rho_{\rm Mstar}\propto (1+z)^{-0.5\pm0.1}$) with $z$. This indicates that,
+while at higher redshift galaxies have less stellar mass, their luminosities do
+not change substantially because of their younger and brighter stellar
+populations. Finally, we also find evidence for a top-down mass-dependent
+evolution of the GSMF.

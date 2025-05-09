@@ -1,0 +1,36 @@
+Title: Consistent lensing and clustering in a low-$S_8$ Universe with BOSS, DES Year 3, HSC Year 1 and KiDS-1000
+Authors: A. Amon, N. C. Robertson, H. Miyatake, C. Heymans, M. White, J. DeRose, S. Yuan, R. H. Wechsler, T. N. Varga, S. Bocquet, A. Dvornik, S. More, A. J. Ross, H. Hoekstra, A. Alarcon, M. Asgari, J. Blazek, A. Campos, R. Chen, A. Choi, M. Crocce, H. T. Diehl, C. Doux, K. Eckert, J. Elvin-Poole, S. Everett, A. Ferté, M. Gatti, G. Giannini, D. Gruen, R. A. Gruendl, W. G. Hartley, K. Herner, H. Hildebrandt, S. Huang, E. M. Huff, B. Joachimi, S. Lee, N. MacCrann, J. Myles, A. Navarro- Alsina, T. Nishimichi, J. Prat, L. F. Secco, I. Sevilla-Noarbe, E. Sheldon, T. Shin, T. Trster, M. A. Troxel, I. Tutusaus, A. H. Wright, B. Yin, M. Aguena, S. Allam, J. Annis, D. Bacon, M. Bilicki, D. Brooks, D. L. Burke, A. Carnero Rosell, J. Carretero, F. J. Castander, R. Cawthon, M. Costanzi, L. N. da Costa, M. E. S. Pereira, J. de Jong, J. De Vicente, S. Desai, J. P. Dietrich, P. Doel, I. Ferrero, J. Frieman, J. García-Bellido, D. W. Gerdes, J. Gschwend, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. Huterer, A. Kannawadi, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, J. L. Marshall, F. Menanteau, R. Miquel, J. J. Mohr, R. Morgan, J. Muir, F. Paz-Chinchon, A. Pieres, A. A. Plazas Malagón, A. Porredon, M. Rodriguez-Monroy, A. Roodman, E. Sanchez, S. Serrano, H. Shan, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, Y. Zhang
+Published: 2022-02-15 14:24:42+00:00
+Updated: 2022-10-13 16:07:35+00:00
+DOI: 10.1093/mnras/stac2938
+arXiv ID: http://arxiv.org/abs/2202.07440v2
+arXiv URL: http://arxiv.org/pdf/2202.07440v2
+Categories: astro-ph.CO
+Author Position: 8
+
+Abstract:
+We evaluate the consistency between lensing and clustering probes of
+large-scale structure based on measurements of projected galaxy clustering from
+BOSS combined with overlapping galaxy-galaxy lensing from three surveys: DES
+Y3, HSC Y1, and KiDS-1000. An intra-lensing-survey study finds good agreement
+between these lensing data. We model the observations using the Dark Emulator
+and fit the data at two fixed cosmologies: Planck, with $S_8=0.83$, and a
+Lensing cosmology with $S_8=0.76$. For a joint analysis limited to scales with
+$R>5.25h^{-1}$Mpc, we find that both cosmologies provide an acceptable fit to
+the data. Full utilisation of the small-scale clustering and lensing
+measurements is hindered by uncertainty in the impact of baryon feedback and
+assembly bias, which we account for with a reasoned theoretical error budget.
+We incorporate a systematic scaling parameter for each redshift bin, $A$, that
+decouples the lensing and clustering to capture any inconsistency. When a wide
+range of scales ($0.15<R<60h^{-1}$Mpc) are incorporated, we find different
+results for the consistency of clustering and lensing between the two
+cosmologies. Limiting the analysis to the bins for which the impact of the
+selection of the lens sample is expected to be minimal, for the low-$S_8$
+Lensing cosmology, the measurements are consistent with $A$=1; $A=0.91\pm0.04$
+using DES+KiDS and $A=0.97\pm0.06$ using HSC. For the Planck cosmology case, we
+find a discrepancy: $A=0.79\pm0.03$ using DES+KiDS and $A=0.84\pm0.05$ using
+HSC. We demonstrate that a kSZ-based estimate for baryonic effects alleviates
+some of the discrepancy in the Planck cosmology. This analysis demonstrates the
+statistical power of these small-scale measurements, but also indicates that
+caution is still warranted given current uncertainties in modelling baryonic
+effects, assembly bias, and selection effects in the foreground sample.

@@ -1,0 +1,32 @@
+Title: Galaxies in X-ray Selected Clusters and Groups in Dark Energy Survey Data II: Hierarchical Bayesian Modeling of the Red-Sequence Galaxy Luminosity Function
+Authors: Y. Zhang, C. J. Miller, P. Rooney, A. Bermeo, A. K. Romer, C. Vergara cervantes, E. S. Rykoff, C. Hennig, R. Das, T. Mckay, J. Song, H. Wilcox, D. Bacon, S. L. Bridle, C. Collins, C. Conselice, M. Hilton, B. Hoyle, S. Kay, A. R. Liddle, R. G. Mann, N. Mehrtens, J. Mayers, R. C. Nichol, M. Sahlen, J. Stott, P. T. P. Viana, R. H. Wechsler, T. Abbott, F. B. Abdalla, S. Allam, A. Benoit-levy, D. Brooks, E. Buckley-geer, D. L. Burke, A. Carnero rosell, M. Carrasco kind, J. Carretero, F. J. Castander, M. Crocce, C. E. Cunha, C. B. Dandrea, L. N. Da costa, H. T. Diehl, J. P. Dietrich, T. F. Eifler, B. Flaugher, P. Fosalba, J. Garcia-bellido, E. Gaztanaga, D. W. Gerdes, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, T. Jeltema, K. Kuehn, N. Kuropatkin, M. Lima, H. Lin, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, R. L. C. Ogando, A. A. Plazas, E. Sanchez, M. Schubnell, I. Sevilla-noarbe, M. Smith, M. Soares-santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, A. R. Walker
+Published: 2017-10-16 17:59:59+00:00
+Updated: 2019-06-30 02:22:32+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1710.05908v2
+arXiv URL: http://arxiv.org/pdf/1710.05908v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 28
+
+Abstract:
+Using $\sim 100$ X-ray selected clusters in the Dark Energy Survey Science
+Verification data, we constrain the luminosity function (LF) of cluster red
+sequence galaxies as a function of redshift. This is the first homogeneous
+optical/X-ray sample large enough to constrain the evolution of the luminosity
+function simultaneously in redshift ($0.1<z<1.05$) and cluster mass ($13.5 \le
+\rm{log_{10}}(M_{200crit}) \sim< 15.0$). We pay particular attention to
+completeness issues and the detection limit of the galaxy sample. We then apply
+a hierarchical Bayesian model to fit the cluster galaxy LFs via a Schecter
+function, including its characteristic break ($m^*$) to a faint end power-law
+slope ($\alpha$). Our method enables us to avoid known issues in similar
+analyses based on stacking or binning the clusters. We find weak and
+statistically insignificant ($\sim 1.9 \sigma$) evolution in the faint end
+slope $\alpha$ versus redshift. We also find no dependence in $\alpha$ or $m^*$
+with the X-ray inferred cluster masses. However, the amplitude of the LF as a
+function of cluster mass is constrained to $\sim 20\%$ precision. As a
+by-product of our algorithm, we utilize the correlation between the LF and
+cluster mass to provide an improved estimate of the individual cluster masses
+as well as the scatter in true mass given the X-ray inferred masses. This
+technique can be applied to a larger sample of X-ray or optically selected
+clusters from the Dark Energy Survey, significantly improving the sensitivity
+of the analysis.

@@ -1,0 +1,16 @@
+Title: Astro2020 APC White Paper: The MegaMapper: a z > 2 spectroscopic instrument for the study of Inflation and Dark Energy
+Authors: David J. Schlegel, Juna A. Kollmeier, Greg Aldering, Stephen Bailey, Charles Baltay, Christopher Bebek, Segev BenZvi, Robert Besuner, Guillermo Blanc, Adam S. Bolton, Mohamed Bouri, David Brooks, Elizabeth Buckley-Geer, Zheng Cai, Jeffrey Crane, Arjun Dey, Peter Doel, Xiaohui Fan, Simone Ferraro, Andreu Font-Ribera, Gaston Gutierrez, Julien Guy, Henry Heetderks, Dragan Huterer, Leopoldo Infante, Patrick Jelinsky, Matthew Johns, Dionysios Karagiannis, Stephen M. Kent, Alex G. Kim, Jean-Paul Kneib, Luzius Kronig, Nick Konidaris, Ofer Lahav, Michael L. Lampton, Dustin Lang, Alexie Leauthaud, Michele Liguori, Eric V. Linder, Christophe Magneville, Paul Martini, Mario Mateo, Patrick McDonald, Christopher J. Miller, John Moustakas, Adam D. Myers, John Mulchaey, Jeffrey A. Newman, Peter E. Nugent, Nathalie Palanque-Delabrouille, Nikhil Padmanabhan, Anthony L. Piro, Claire Poppett, Jason X. Prochaska, Anthony R. Pullen, David Rabinowitz, Solange Ramirez, Hans-Walter Rix, Ashley J. Ross, Lado Samushia, Emmanuel Schaan, Michael Schubnell, Uros Seljak, Hee-Jong Seo, Stephen A. Shectman, Joseph Silber, Joshua D. Simon, Zachary Slepian, Marcelle Soares-Santos, Greg Tarle, Ian Thompson, Monica Valluri, Risa H. Wechsler, Martin White, Michael J. Wilson, Christophe Yeche, Dennis Zaritsky
+Published: 2019-07-25 16:21:42+00:00
+Updated: 2019-07-25 16:21:42+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1907.11171v1
+arXiv URL: http://arxiv.org/pdf/1907.11171v1
+Categories: astro-ph.IM, hep-ex
+Author Position: 73
+
+Abstract:
+MegaMapper is a proposed ground-based experiment to measure Inflation
+parameters and Dark Energy from galaxy redshifts at 2<z<5. A 6.5-m Magellan
+telescope will be coupled with DESI spectrographs to achieve multiplexing of
+20,000. MegaMapper would be located at Las Campanas Observatory to fully access
+LSST imaging for target selection.

@@ -1,0 +1,36 @@
+Title: The Electromagnetic Counterpart of the Binary Neutron Star Merger LIGO/VIRGO GW170817. II. UV, Optical, and Near-IR Light Curves and Comparison to Kilonova Models
+Authors: P. S. Cowperthwaite, E. Berger, V. A. Villar, B. D. Metzger, M. Nicholl, R. Chornock, P. K. Blanchard, W. Fong, R. Margutti, M. Soares-Santos, K. D. Alexander, S. Allam, J. Annis, D. Brout, D. A. Brown, R. E. Butler, H. -Y. Chen, H. T. Diehl, Z. Doctor, M. R. Drout, T. Eftekhari, B. Farr, D. A. Finley, R. J. Foley, J. A. Frieman, C. L. Fryer, J. García-Bellido, M. S. S. Gill, J. Guillochon, K. Herner, D. E. Holz, D. Kasen, R. Kessler, J. Marriner, T. Matheson, E. H. Neilsen, Jr., E. Quataert, A. Palmese, A. Rest, M. Sako, D. M. Scolnic, N. Smith, D. L. Tucker, P. K. G. Williams, E. Balbinot, J. L. Carlin, E. R. Cook, F. Durret, T. S. Li, P. A. A. Lopes, A. C. C. Lourenço, J. L. Marshall, G. E. Medina, J. Muir, R. R. Muñoz, M. Sauseda, D. J. Schlegel, L. F. Secco, A. K. Vivas, W. Wester, A. Zenteno, Y. Zhang, T. M. C. Abbott, M. Banerji, K. Bechtol, A. Benoit-Lévy, E. Bertin, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, F. J. Castander, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, D. L. DePoy, S. Desai, J. P. Dietrich, A. Drlica-Wagner, T. F. Eifler, A. E. Evrard, E. Fernandez, B. Flaugher, P. Fosalba, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, D. A. Goldstein, D. Gruen, R. A. Gruendl, G. Gutierrez, K. Honscheid, B. Jain, D. J. James, T. Jeltema, M. W. G. Johnson, M. D. Johnson, S. Kent, E. Krause, R. Kron, K. Kuehn, N. Kuropatkin, O. Lahav, M. Lima, H. Lin, M. A. G. Maia, M. March, P. Martini, R. G. McMahon, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, E. Neilsen, R. C. Nichol, R. L. C. Ogando, A. A. Plazas, N. Roe, A. K. Romer, A. Roodman, E. S. Rykoff, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, R. C. Thomas, M. A. Troxel, V. Vikram, A. R. Walker, R. H. Wechsler, J. Weller, B. Yanny, J. Zuntz
+Published: 2017-10-16 16:57:28+00:00
+Updated: 2017-10-16 16:57:28+00:00
+DOI: 10.3847/2041-8213/aa8fc7
+arXiv ID: http://arxiv.org/abs/1710.05840v1
+arXiv URL: http://arxiv.org/pdf/1710.05840v1
+Categories: astro-ph.HE
+Author Position: 141
+
+Abstract:
+We present UV, optical, and NIR photometry of the first electromagnetic
+counterpart to a gravitational wave source from Advanced LIGO/Virgo, the binary
+neutron star merger GW170817. Our data set extends from the discovery of the
+optical counterpart at $0.47$ days to $18.5$ days post-merger, and includes
+observations with the Dark Energy Camera (DECam), Gemini-South/FLAMINGOS-2
+(GS/F2), and the {\it Hubble Space Telescope} ({\it HST}). The spectral energy
+distribution (SED) inferred from this photometry at $0.6$ days is well
+described by a blackbody model with $T\approx 8300$ K, a radius of $R\approx
+4.5\times 10^{14}$ cm (corresponding to an expansion velocity of $v\approx
+0.3c$), and a bolometric luminosity of $L_{\rm bol}\approx 5\times10^{41}$ erg
+s$^{-1}$. At $1.5$ days we find a multi-component SED across the optical and
+NIR, and subsequently we observe rapid fading in the UV and blue optical bands
+and significant reddening of the optical/NIR colors. Modeling the entire data
+set we find that models with heating from radioactive decay of $^{56}$Ni, or
+those with only a single component of opacity from $r$-process elements, fail
+to capture the rapid optical decline and red optical/NIR colors. Instead,
+models with two components consistent with lanthanide-poor and lanthanide-rich
+ejecta provide a good fit to the data, the resulting "blue" component has
+$M_\mathrm{ej}^\mathrm{blue}\approx 0.01$ M$_\odot$ and
+$v_\mathrm{ej}^\mathrm{blue}\approx 0.3$c, and the "red" component has
+$M_\mathrm{ej}^\mathrm{red}\approx 0.04$ M$_\odot$ and
+$v_\mathrm{ej}^\mathrm{red}\approx 0.1$c. These ejecta masses are broadly
+consistent with the estimated $r$-process production rate required to explain
+the Milky Way $r$-process abundances, providing the first evidence that BNS
+mergers can be a dominant site of $r$-process enrichment.

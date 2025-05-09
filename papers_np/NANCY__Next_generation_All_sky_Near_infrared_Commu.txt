@@ -1,0 +1,31 @@
+Title: NANCY: Next-generation All-sky Near-infrared Community surveY
+Authors: Jiwon Jesse Han, Arjun Dey, Adrian M. Price-Whelan, Joan Najita, Edward F. Schlafly, Andrew Saydjari, Risa H. Wechsler, Ana Bonaca, David J Schlegel, Charlie Conroy, Anand Raichoor, Alex Drlica-Wagner, Juna A. Kollmeier, Sergey E. Koposov, Gurtina Besla, Hans-Walter Rix, Alyssa Goodman, Douglas Finkbeiner, Abhijeet Anand, Matthew Ashby, Benedict Bahr-Kalus, Rachel Beaton, Jayashree Behera, Eric F. Bell, Eric C Bellm, Segev BenZvi, Leandro Beraldo e Silva, Simon Birrer, Michael R. Blanton, Jamie Bock, Floor Broekgaarden, Dillon Brout, Warren Brown, Anthony G. A. Brown, Esra Bulbul, Rodrigo Calderon, Jeffrey L Carlin, Andreia Carrillo, Francisco Javier Castander, Priyanka Chakraborty, Vedant Chandra, Yi-Kuan Chiang, Yumi Choi, Susan E. Clark, William I. Clarkson, Andrew Cooper, Brendan Crill, Katia Cunha, Emily Cunningham, Julianne Dalcanton, Shany Danieli, Tansu Daylan, Roelof S. de Jong, Joseph DeRose, Biprateep Dey, Mark Dickinson, Mariano Dominguez, Dillon Dong, Tim Eifler, Kareem El-Badry, Denis Erkal, Ivanna Escala, Giovanni Fazio, Annette M. N. Ferguson, Simone Ferraro, Carrie Filion, Jaime E. Forero-Romero, Shenming Fu, Lluís Galbany, Nicolas Garavito-Camargo, Eric Gawiser, Marla Geha, Oleg Y. Gnedin, Sebastian Gomez, Jenny Greene, Julien Guy, Boryana Hadzhiyska, Keith Hawkins, Chen Heinrich, Lars Hernquist, Christopher Hirata, Joseph Hora, Benjamin Horowitz, Danny Horta, Caroline Huang, Xiaosheng Huang, Shan Huanyuan, Jason A. S. Hunt, Rodrigo Ibata, Buell Jannuzi, Kathryn V. Johnston, Michael G. Jones, Stephanie Juneau, Erin Kado-Fong, Venu Kalari, Nitya Kallivayalil, Tanveer Karim, Ryan Keeley, Sergey Khoperskov, Bokyoung Kim, András Kovács, Elisabeth Krause, Kyle Kremer, Anthony Kremin, Alex Krolewski, S. R. Kulkarni, Marine Kuna, Benjamin L'Huillier, Mark Lacy, Ting-Wen Lan, Dustin Lang, Denis Leahy, Jiaxuan Li, Seunghwan Lim, Mercedes López-Morales, Lucas Macri, Manera Marc, Sidney Mau, Patrick J McCarthy, Eithne McDonald, Kristen McQuinn, Aaron Meisner, Gary Melnick, Andrea Merloni, Cléa Millard, Martin Millon, Ivan Minchev, Paulo Montero-Camacho, Catalina Morales-Gutierrez, Nidia Morrell, John Moustakas, Leonidas Moustakas, Zachary Murray, Burcin Mutlu-Pakdil, GyuChul Myeong, Adam D. Myers, Ethan Nadler, Felipe Navarete, Melissa Ness, David L. Nidever, Robert Nikutta, Chamba Nushkia, Knut Olsen, Andrew B. Pace, Fabio Pacucci, Nikhil Padmanabhan, David Parkinson, Sarah Pearson, Eric W. Peng, Andreea O. Petric, Andreea Petric, Bridget Ratcliffe, Emami Razieh, Thomas Reiprich, Mehdi Rezaie, Marina Ricci, R. Michael Rich, Hannah Richstein, Alexander H. Riley, Constance Rockosi, Graziano Rossi, Mara Salvato, Lado Samushia, Javier Sanchez, David J Sand, Robyn E Sanderson, Nikolina Šarčević, Arnab Sarkar, Alessandro Savino, Francois Schweizer, Arman Shafieloo, Yang Shengqi, Joseph Shields, Nora Shipp, Josh Simon, Malgorzata Siudek, Zou Siwei, Zachary Slepian, Verne Smith, Jennifer Sobeck, Sangmo Tony Sohn, Debopam Som, Joshua S. Speagle, David Spergel, Robert Szabo, Ting Tan, Christopher Theissen, Erik Tollerud, Volker Tolls, Kim-Vy Tran, Kabelo Tsiane, William D. Vacca, Monica Valluri, TonyLouis Verberi, Jack Warfield, Noah Weaverdyck, Benjamin Weiner, Daniel Weisz, Andrew Wetzel, Martin White, Christina C. Williams, Scott Wolk, John F. Wu, Rosemary Wyse, Justina R. Yang, Dennis Zaritsky, Ioana A. Zelko, Zhou Zhimin, Catherine Zucker
+Published: 2023-06-20 18:00:00+00:00
+Updated: 2023-06-20 18:00:00+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2306.11784v1
+arXiv URL: http://arxiv.org/pdf/2306.11784v1
+Categories: astro-ph.IM
+Author Position: 7
+
+Abstract:
+The Nancy Grace Roman Space Telescope is capable of delivering an
+unprecedented all-sky, high-spatial resolution, multi-epoch infrared map to the
+astronomical community. This opportunity arises in the midst of numerous
+ground- and space-based surveys that will provide extensive spectroscopy and
+imaging together covering the entire sky (such as Rubin/LSST, Euclid, UNIONS,
+SPHEREx, DESI, SDSS-V, GALAH, 4MOST, WEAVE, MOONS, PFS, UVEX, NEO Surveyor,
+etc.). Roman can uniquely provide uniform high-spatial-resolution (~0.1 arcsec)
+imaging over the entire sky, vastly expanding the science reach and precision
+of all of these near-term and future surveys. This imaging will not only
+enhance other surveys, but also facilitate completely new science. By imaging
+the full sky over two epochs, Roman can measure the proper motions for stars
+across the entire Milky Way, probing 100 times fainter than Gaia out to the
+very edge of the Galaxy. Here, we propose NANCY: a completely public, all-sky
+survey that will create a high-value legacy dataset benefiting innumerable
+ongoing and forthcoming studies of the universe. NANCY is a pure expression of
+Roman's potential: it images the entire sky, at high spatial resolution, in a
+broad infrared bandpass that collects as many photons as possible. The majority
+of all ongoing astronomical surveys would benefit from incorporating
+observations of NANCY into their analyses, whether these surveys focus on
+nearby stars, the Milky Way, near-field cosmology, or the broader universe.

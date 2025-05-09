@@ -1,0 +1,25 @@
+Title: Dark Energy Survey Year 1 Results: Weak Lensing Shape Catalogues
+Authors: J. Zuntz, E. Sheldon, S. Samuroff, M. A. Troxel, M. Jarvis, N. MacCrann, D. Gruen, J. Prat, C. Sánchez, A. Choi, S. L. Bridle, G. M. Bernstein, S. Dodelson, A. Drlica-Wagner, Y. Fang, R. A. Gruendl, B. Hoyle, E. M. Huff, B. Jain, D. Kirk, T. Kacprzak, C. Krawiec, A. A. Plazas, R. P. Rollins, E. S. Rykoff, I. Sevilla-Noarbe, B. Soergel, T. N. Varga, T. M. C. Abbott, F. B. Abdalla, S. Allam, J. Annis, K. Bechtol, A. Benoit-Lévy, E. Bertin, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, J. Estrada, A. E. Evrard, A. Fausti Neto, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, D. W. Gerdes, T. Giannantonio, J. Gschwend, G. Gutierrez, W. G. Hartley, K. Honscheid, D. J. James, T. Jeltema, M. W. G. Johnson, M. D. Johnson, K. Kuehn, S. Kuhlmann, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, M. March, P. Martini, P. Melchior, F. Menanteau, C. J. Miller, R. Miquel, J. J. Mohr, E. Neilsen, R. C. Nichol, R. L. C. Ogando, N. Roe, A. K. Romer, A. Roodman, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, D. L. Tucker, V. Vikram, A. R. Walker, R. H. Wechsler, Y. Zhang
+Published: 2017-08-04 14:52:30+00:00
+Updated: 2018-09-07 09:19:44+00:00
+DOI: 10.1093/mnras/sty2219
+arXiv ID: http://arxiv.org/abs/1708.01533v2
+arXiv URL: http://arxiv.org/pdf/1708.01533v2
+Categories: astro-ph.CO
+Author Position: 106
+
+Abstract:
+We present two galaxy shape catalogues from the Dark Energy Survey Year 1
+data set, covering 1500 square degrees with a median redshift of $0.59$. The
+catalogues cover two main fields: Stripe 82, and an area overlapping the South
+Pole Telescope survey region. We describe our data analysis process and in
+particular our shape measurement using two independent shear measurement
+pipelines, METACALIBRATION and IM3SHAPE. The METACALIBRATION catalogue uses a
+Gaussian model with an innovative internal calibration scheme, and was applied
+to $riz$-bands, yielding 34.8M objects. The IM3SHAPE catalogue uses a
+maximum-likelihood bulge/disc model calibrated using simulations, and was
+applied to $r$-band data, yielding 21.9M objects. Both catalogues pass a suite
+of null tests that demonstrate their fitness for use in weak lensing science.
+We estimate the 1$\sigma$ uncertainties in multiplicative shear calibration to
+be $0.013$ and $0.025$ for the METACALIBRATION and IM3SHAPE catalogues,
+respectively.

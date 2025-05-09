@@ -1,0 +1,31 @@
+Title: JWST lensed quasar dark matter survey I: Description and First Results
+Authors: A. M. Nierenberg, R. E. Keeley, D. Sluse, D. Gilman, S. Birrer, T. Treu, K. N. Abazajian, T. Anguita, A. J. Benson, V. N. Bennert, S. G. Djorgovski, X. Du, C. D. Fassnacht, S. F. Hoenig, A. Kusenko, C. Lemon, M. Malkan, V. Motta, L. A. Moustakas, D. Stern, R. H. Wechsler
+Published: 2023-09-18 19:23:26+00:00
+Updated: 2023-09-18 19:23:26+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2309.10101v1
+arXiv URL: http://arxiv.org/pdf/2309.10101v1
+Categories: astro-ph.CO
+Author Position: 21
+
+Abstract:
+The flux ratios of gravitationally lensed quasars provide a powerful probe of
+the nature of dark matter. Importantly, these ratios are sensitive to
+small-scale structure, irrespective of the presence of baryons. This
+sensitivity may allow us to study the halo mass function even below the scales
+where galaxies form observable stars. For accurate measurements, it is
+essential that the quasar's light is emitted from a physical region of the
+quasar with an angular scale of milli-arcseconds or larger; this minimizes
+microlensing effects by stars within the deflector. The warm dust region of
+quasars fits this criterion, as it has parsec-size physical scales and
+dominates the spectral energy distribution of quasars at wavelengths greater
+than 10$\mu$m. The JWST Mid-Infrared Instrument (MIRI) is adept at detecting
+redshifted light in this wavelength range, offering both the spatial resolution
+and sensitivity required for accurate gravitational lensing flux ratio
+measurements. Here, we introduce our survey designed to measure the warm dust
+flux ratios of 31 lensed quasars. We discuss the flux-ratio measurement
+technique and present results for the first target, DES J0405-3308. We find
+that we can measure the quasar warm dust flux ratios with 3% precision. Our
+simulations suggest that this precision makes it feasible to detect the
+presence of 10$^7$ M$_\odot$ dark matter halos at cosmological distances. Such
+halos are expected to be completely dark in Cold Dark Matter models.

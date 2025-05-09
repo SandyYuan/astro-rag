@@ -1,0 +1,33 @@
+Title: DESI Observations of the Andromeda Galaxy: Revealing the Immigration History of our Nearest Neighbor
+Authors: Arjun Dey, Joan R. Najita, S. E. Koposov, J. Josephy-Zack, Gabriel Maxemin, Eric F. Bell, C. Poppett, E. Patel, L. Beraldo e Silva, A. Raichoor, D. Schlegel, D. Lang, A. Meisner, Adam D. Myers, J. Aguilar, S. Ahlen, C. Allende Prieto, D. Brooks, A. P. Cooper, K. S. Dawson, A. de la Macorra, P. Doel, A. Font-Ribera, Juan Garcia-Bellido, S. Gontcho A Gontcho, J. Guy, K. Honscheid, R. Kehoe, T. Kisner, A. Kremin, M. Landriau, L. Le Guillou, Michael E. Levi, T. S. Li, Paul Martini, R. Miquel, J. Moustakas, Jundan Nie, N. Palanque-Delabrouille, F. Prada, E. F. Schlafly, Ray M. Sharples, Gregory Tarle, Yuan-Sen Ting, L. Tyas, M. Valluri, Risa H. Wechsler, H. Zou
+Published: 2022-08-24 17:44:42+00:00
+Updated: 2023-01-21 00:18:15+00:00
+DOI: 10.3847/1538-4357/aca5f8
+arXiv ID: http://arxiv.org/abs/2208.11683v2
+arXiv URL: http://arxiv.org/pdf/2208.11683v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 47
+
+Abstract:
+We present DESI observations of the inner halo of M31, which reveal the
+kinematics of a recent merger - a galactic immigration event - in exquisite
+detail. Of the 11,416 sources studied in 3.75 hour of on-sky exposure time,
+7,438 are M31 sources with well measured radial velocities. The observations
+reveal intricate coherent kinematic structure in the positions and velocities
+of individual stars: streams, wedges, and chevrons. While hints of coherent
+structures have been previously detected in M31, this is the first time they
+have been seen with such detail and clarity in a galaxy beyond the Milky Way.
+We find clear kinematic evidence for shell structures in the Giant Stellar
+Stream, the Northeast Shelf and Western Shelf regions. The kinematics are
+remarkably similar to the predictions of dynamical models constructed to
+explain the spatial morphology of the inner halo. The results are consistent
+with the interpretation that much of the substructure in the inner halo of M31
+is produced by a single galactic immigration event 1 - 2 Gyr ago. Significant
+numbers of metal-rich stars ([Fe/H]$>-0.5$) are present in all of the detected
+substructures, suggesting that the immigrating galaxy had an extended star
+formation history. We also investigate the ability of the shells and Giant
+Stellar Stream to constrain the gravitational potential of M31, and estimate
+the mass within a projected radius of 125 kpc to be ${\rm log_{10}}\, M_{\rm
+NFW}(<125\,{\rm kpc})/M_\odot = 11.80_{-0.10}^{+0.12}$. The results herald a
+new era in our ability to study stars on a galactic scale and the immigration
+histories of galaxies.

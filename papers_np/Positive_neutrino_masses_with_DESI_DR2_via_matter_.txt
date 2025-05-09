@@ -1,0 +1,30 @@
+Title: Positive neutrino masses with DESI DR2 via matter conversion to dark energy
+Authors: S. Ahlen, A. Aviles, B. Cartwright, K. S. Croker, W. Elbers, D. Farrah, N. Fernandez, G. Niz, J. Rohlf, G. Tarlé, R. A. Windhorst, J. Aguilar, U. Andrade, D. Bianchi, D. Brooks, T. Claybaugh, A. de la Macorra, A. de Mattia, B. Dey, P. Doel, J. E. Forero-Romero, E. Gaztañaga, S. Gontcho A Gontcho, G. Gutierrez, D. Huterer, M. Ishak, R. Kehoe, D. Kirkby, A. Kremin, O. Lahav, C. Lamman, M. Landriau, L. Le Guillou, M. E. Levi, M. Manera, R. Miquel, J. Moustakas, I. Pérez-Ràfols, F. Prada, G. Rossi, E. Sanchez, M. Schubnell, H. Seo, J. Silber, D. Sprayberry, M. Walther, B. A. Weaver, R. H. Wechsler, H. Zou
+Published: 2025-04-29 01:13:41+00:00
+Updated: 2025-04-29 01:13:41+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2504.20338v1
+arXiv URL: http://arxiv.org/pdf/2504.20338v1
+Categories: astro-ph.CO, hep-ph
+Author Position: 48
+
+Abstract:
+The Dark Energy Spectroscopic Instrument (DESI) is a massively parallel
+spectroscopic survey on the Mayall telescope at Kitt Peak, which has released
+measurements of baryon acoustic oscillations determined from over 14 million
+extragalactic targets. We combine DESI Data Release 2 with CMB datasets to
+search for evidence of matter conversion to dark energy (DE), focusing on a
+scenario mediated by stellar collapse to cosmologically-coupled black holes
+(CCBH). In this physical model, which has the same number of free parameters as
+$\Lambda$CDM, DE production is determined by the cosmic star formation rate
+density (SFRD), allowing for distinct early- and late-time cosmologies. Using
+two SFRDs to bracket current observations, we find that the CCBH model:
+accurately recovers the cosmological expansion history, agrees with early-time
+baryon abundance measured by BBN, reduces tension with the local distance
+ladder, and relaxes constraints on the summed neutrino mass $\sum m_\nu$. For
+these SFRDs, we find a peaked positive $\sum m_\nu < 0.149\,\rm eV$ (95\%
+confidence) and $\sum m_\nu = 0.106^{+0.050}_{-0.069}\,\rm eV$ respectively, in
+good agreement with lower limits from neutrino oscillation experiments. A peak
+in $\sum m_\nu > 0$ results from late-time baryon consumption in the CCBH
+scenario and is expected to be a general feature of any model that converts
+sufficient matter to dark energy during and after reionization.

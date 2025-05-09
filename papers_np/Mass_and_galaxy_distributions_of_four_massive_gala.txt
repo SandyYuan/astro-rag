@@ -1,0 +1,32 @@
+Title: Mass and galaxy distributions of four massive galaxy clusters from Dark Energy Survey Science Verification data
+Authors: P. Melchior, E. Suchyta, E. Huff, M. Hirsch, T. Kacprzak, E. Rykoff, D. Gruen, R. Armstrong, D. Bacon, K. Bechtol, G. M. Bernstein, S. Bridle, J. Clampitt, K. Honscheid, B. Jain, S. Jouvel, E. Krause, H. Lin, N. MacCrann, K. Patton, A. Plazas, B. Rowe, V. Vikram, H. Wilcox, J. Young, J. Zuntz, T. Abbott, F. B. Abdalla, S. S. Allam, M. Banerji, J. P. Bernstein, R. A. Bernstein, E. Bertin, E. Buckley-Geer, D. L. Burke, F. J. Castander, L. N. da Costa, C. E. Cunha, D. L. Depoy, S. Desai, H. T. Diehl, P. Doel, J. Estrada, A. E. Evrard, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, J. A. Frieman, E. Gaztanaga, D. Gerdes, R. A. Gruendl, G. R. Gutierrez, M. Jarvis, I. Karliner, S. Kent, K. Kuehn, N. Kuropatkin, O. Lahav, M. A. G. Maia, M. Makler, J. Marriner, J. L. Marshall, K. W. Merritt, C. J. Miller, R. Miquel, J. Mohr, E. Neilsen, R. C. Nichol, B. D. Nord, K. Reil, N. A. Roe, A. Roodman, M. Sako, E. Sanchez, B. X. Santiago, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, E. Sheldon, C. Smith, M. Soares-Santos, M. E. C. Swanson, A. J. Sypniewski, G. Tarle, J. Thaler, D. Thomas, D. L. Tucker, A. Walker, R. Wechsler, J. Weller, W. Wester
+Published: 2014-05-16 19:52:15+00:00
+Updated: 2015-02-28 20:30:14+00:00
+DOI: 10.1093/mnras/stv398
+arXiv ID: http://arxiv.org/abs/1405.4285v2
+arXiv URL: http://arxiv.org/pdf/1405.4285v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 90
+
+Abstract:
+We measure the weak-lensing masses and galaxy distributions of four massive
+galaxy clusters observed during the Science Verification phase of the Dark
+Energy Survey. This pathfinder study is meant to 1) validate the DECam imager
+for the task of measuring weak-lensing shapes, and 2) utilize DECam's large
+field of view to map out the clusters and their environments over 90 arcmin. We
+conduct a series of rigorous tests on astrometry, photometry, image quality,
+PSF modeling, and shear measurement accuracy to single out flaws in the data
+and also to identify the optimal data processing steps and parameters. We find
+Science Verification data from DECam to be suitable for the lensing analysis
+described in this paper. The PSF is generally well-behaved, but the modeling is
+rendered difficult by a flux-dependent PSF width and ellipticity. We employ
+photometric redshifts to distinguish between foreground and background
+galaxies, and a red-sequence cluster finder to provide cluster richness
+estimates and cluster-galaxy distributions. By fitting NFW profiles to the
+clusters in this study, we determine weak-lensing masses that are in agreement
+with previous work. For Abell 3261, we provide the first estimates of redshift,
+weak-lensing mass, and richness. In addition, the cluster-galaxy distributions
+indicate the presence of filamentary structures attached to 1E 0657-56 and RXC
+J2248.7-4431, stretching out as far as 1 degree (approximately 20 Mpc),
+showcasing the potential of DECam and DES for detailed studies of degree-scale
+features on the sky.

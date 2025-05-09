@@ -1,0 +1,28 @@
+Title: Spectroscopic Needs for Imaging Dark Energy Experiments: Photometric Redshift Training and Calibration
+Authors: J. Newman, A. Abate, F. Abdalla, S. Allam, S. Allen, R. Ansari, S. Bailey, W. Barkhouse, T. Beers, M. Blanton, M. Brodwin, J. Brownstein, R. Brunner, M. Carrasco-Kind, J. Cervantes-Cota, E. Chisari, M. Colless, J. Comparat, J. Coupon, E. Cheu, C. Cunha, A. de la Macorra, I. Dell'Antonio, B. Frye, E. Gawiser, N. Gehrels, K. Grady, A. Hagen, P. Hall, A. Hearin, H. Hildebrandt, C. Hirata, S. Ho, K. Honscheid, D. Huterer, Z. Ivezic, J. -P. Kneib, J. Kruk, O. Lahav, R. Mandelbaum, J. Marshall, D. Matthews, B. Ménard, R. Miquel, M. Moniez, W. Moos, J. Moustakas, C. Papovich, J. Peacock, C. Park, J. Rhodes, J-S. Ricol, I. Sadeh, A. Slozar, S. Schmidt, D. Stern, T. Tyson, A. von der Linden, R. Wechsler, W. Wood-Vasey, A. Zentner
+Published: 2013-09-20 21:00:21+00:00
+Updated: 2013-09-20 21:00:21+00:00
+DOI: 10.1016/j.astropartphys.2014.06.007
+arXiv ID: http://arxiv.org/abs/1309.5384v1
+arXiv URL: http://arxiv.org/pdf/1309.5384v1
+Categories: astro-ph.CO
+Author Position: 59
+
+Abstract:
+Large sets of objects with spectroscopic redshift measurements will be needed
+for imaging dark energy experiments to achieve their full potential, serving
+two goals:_training_, i.e., the use of objects with known redshift to develop
+and optimize photometric redshift algorithms; and_calibration_, i.e., the
+characterization of moments of redshift (or photo-z error) distributions.
+Better training makes cosmological constraints from a given experiment
+stronger, while highly-accurate calibration is needed for photo-z systematics
+not to dominate errors. In this white paper, we investigate the required scope
+of spectroscopic datasets which can serve both these purposes for ongoing and
+next-generation dark energy experiments, as well as the time required to obtain
+such data with instruments available in the next decade. Large time allocations
+on kilo-object spectrographs will be necessary, ideally augmented by infrared
+spectroscopy from space. Alternatively, precision calibrations could be
+obtained by measuring cross-correlation statistics using samples of bright
+objects from a large baryon acoustic oscillation experiment such as DESI. We
+also summarize the additional work on photometric redshift methods needed to
+prepare for ongoing and future dark energy experiments.

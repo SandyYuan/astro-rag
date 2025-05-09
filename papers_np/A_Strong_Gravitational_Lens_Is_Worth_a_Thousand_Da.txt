@@ -1,0 +1,37 @@
+Title: A Strong Gravitational Lens Is Worth a Thousand Dark Matter Halos: Inference on Small-Scale Structure Using Sequential Methods
+Authors: Sebastian Wagner-Carena, Jaehoon Lee, Jeffrey Pennington, Jelle Aalbers, Simon Birrer, Risa H. Wechsler
+Published: 2024-04-22 18:00:01+00:00
+Updated: 2024-04-22 18:00:01+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2404.14487v1
+arXiv URL: http://arxiv.org/pdf/2404.14487v1
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+Strong gravitational lenses are a singular probe of the universe's
+small-scale structure $\unicode{x2013}$ they are sensitive to the gravitational
+effects of low-mass $(<10^{10} M_\odot)$ halos even without a luminous
+counterpart. Recent strong-lensing analyses of dark matter structure rely on
+simulation-based inference (SBI). Modern SBI methods, which leverage neural
+networks as density estimators, have shown promise in extracting the
+halo-population signal. However, it is unclear whether the constraining power
+of these models has been limited by the methodology or the information content
+of the data. In this study, we introduce an accelerator-optimized simulation
+pipeline that can generate lens images with realistic subhalo populations in a
+matter of milliseconds. Leveraging this simulator, we identify the main
+methodological limitation of our fiducial SBI analysis: training set size. We
+then adopt a sequential neural posterior estimation (SNPE) approach, allowing
+us to iteratively refine the distribution of simulated training images to
+better align with the observed data. Using only one-fifth as many mock Hubble
+Space Telescope (HST) images, SNPE matches the constraints on the low-mass halo
+population produced by our best non-sequential model. Our experiments suggest
+that an over three order-of-magnitude increase in training set size and GPU
+hours would be required to achieve an equivalent result without sequential
+methods. While the full potential of the existing strong lens sample remains to
+be explored, the notable improvement in constraining power enabled by our
+sequential approach highlights that the current constraints are limited
+primarily by methodology and not the data itself. Moreover, our results
+emphasize the need to treat training set generation and model optimization as
+interconnected stages of any cosmological analysis using simulation-based
+inference techniques.

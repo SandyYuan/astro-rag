@@ -1,0 +1,26 @@
+Title: Dark Energy Survey Year 1 Results: Photometric Data Set for Cosmology
+Authors: A. Drlica-Wagner, I. Sevilla-Noarbe, E. S. Rykoff, R. A. Gruendl, B. Yanny, D. L. Tucker, B. Hoyle, A. Carnero Rosell, G. M. Bernstein, K. Bechtol, M. R. Becker, A. Benoit-Levy, E. Bertin, M. Carrasco Kind, C. Davis, J. de Vicente, H. T. Diehl, D. Gruen, W. G. Hartley, B. Leistedt, T. S. Li, J. L. Marshall, E. Neilsen, M. M. Rau, E. Sheldon, J. Smith, M. A. Troxel, S. Wyatt, Y. Zhang, T. M. C. Abbott, F. B. Abdalla, S. Allam, M. Banerji, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, J. Carretero, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, J. P. Dietrich, P. Doel, A. E. Evrard, A. Fausti Neto, B. Flaugher, P. Fosalba, J. Frieman, J. Garcia-Bellido, D. W. Gerdes, T. Giannantonio, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, T. Jeltema, K. Kuehn, S. Kuhlmann, N. Kuropatkin, O. Lahav, M. Lima, H. Lin, M. A. G. Maia, P. Martini, R. G. McMahon, P. Melchior, F. Menanteau, R. Miquel, R. C. Nichol, R. L. C. Ogando, A. A. Plazas, A. K. Romer, A. Roodman, E. Sanchez, V. Scarpine, R. Schindler, M. Schubnell, M. Smith, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, G. Tarle, V. Vikram, A. R. Walker, R. H. Wechsler, J. Zuntz
+Published: 2017-08-04 14:52:28+00:00
+Updated: 2018-05-03 16:54:42+00:00
+DOI: 10.3847/1538-4365/aab4f5
+arXiv ID: http://arxiv.org/abs/1708.01531v2
+arXiv URL: http://arxiv.org/pdf/1708.01531v2
+Categories: astro-ph.CO, astro-ph.IM
+Author Position: 88
+
+Abstract:
+We describe the creation, content, and validation of the Dark Energy Survey
+(DES) internal year-one cosmology data set, Y1A1 GOLD, in support of upcoming
+cosmological analyses. The Y1A1 GOLD data set is assembled from multiple epochs
+of DES imaging and consists of calibrated photometric zeropoints, object
+catalogs, and ancillary data products - e.g., maps of survey depth and
+observing conditions, star-galaxy classification, and photometric redshift
+estimates - that are necessary for accurate cosmological analyses. The Y1A1
+GOLD wide-area object catalog consists of ~137 million objects detected in
+coadded images covering ~1800 deg$^2$ in the DES grizY filters. The 10{\sigma}
+limiting magnitude for galaxies is g = 23.4, r = 23.2, i = 22.5, z = 21.8, and
+Y = 20.1. Photometric calibration of Y1A1 GOLD was performed by combining
+nightly zeropoint solutions with stellar-locus regression, and the absolute
+calibration accuracy is better than 2% over the survey area. DES Y1A1 GOLD is
+the largest photometric data set at the achieved depth to date, enabling
+precise measurements of cosmic acceleration at z $\lesssim$ 1.

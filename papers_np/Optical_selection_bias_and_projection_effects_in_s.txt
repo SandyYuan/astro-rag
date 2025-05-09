@@ -1,0 +1,32 @@
+Title: Optical selection bias and projection effects in stacked galaxy cluster weak lensing
+Authors: Hao-Yi Wu, Matteo Costanzi, Chun-Hao To, Andrés N. Salcedo, David H. Weinberg, James Annis, Sebastian Bocquet, Maria Elidaiana da Silva Pereira, Joseph DeRose, Johnny Esteves, Arya Farahi, Sebastian Grandis, Eduardo Rozo, Eli S. Rykoff, Tamás N. Varga, Risa H. Wechsler, Chenxiao Zeng, Yuanyuan Zhang, Zhuowen Zhang
+Published: 2022-03-10 15:11:56+00:00
+Updated: 2022-08-09 18:07:49+00:00
+DOI: 10.1093/mnras/stac2048
+arXiv ID: http://arxiv.org/abs/2203.05416v2
+arXiv URL: http://arxiv.org/pdf/2203.05416v2
+Categories: astro-ph.CO
+Author Position: 16
+
+Abstract:
+Cosmological constraints from current and upcoming galaxy cluster surveys are
+limited by the accuracy of cluster mass calibration. In particular, optically
+identified galaxy clusters are prone to selection effects that can bias the
+weak lensing mass calibration. We investigate the selection bias of the stacked
+cluster lensing signal associated with optically selected clusters, using
+clusters identified by the redMaPPer algorithm in the Buzzard simulations as a
+case study. We find that at a given cluster halo mass, the residuals of
+redMaPPer richness and weak lensing signal are positively correlated. As a
+result, for a given richness selection, the stacked lensing signal is biased
+high compared with what we would expect from the underlying halo mass
+probability distribution. The cluster lensing selection bias can thus lead to
+overestimated mean cluster mass and biased cosmology results. We show that the
+lensing selection bias exhibits a strong scale-dependence and is approximately
+20 to 60 percent for $\Delta\Sigma$ at large scales. This selection bias
+largely originates from spurious member galaxies within +/- 20 to 60 Mpc/h
+along the line of sight, highlighting the importance of quantifying projection
+effects associated with the broad redshift distribution of member galaxies in
+photometric cluster surveys. While our results qualitatively agree with those
+in the literature, accurate quantitative modelling of the selection bias is
+needed to achieve the goals of cluster lensing cosmology and will require
+synthetic catalogues covering a wide range of galaxy-halo connection models.

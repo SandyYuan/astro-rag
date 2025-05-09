@@ -1,0 +1,33 @@
+Title: Dark Energy Survey Year 1 Results: Joint Analysis of Galaxy Clustering, Galaxy Lensing, and CMB Lensing Two-point Functions
+Authors: T. M. C. Abbott, F. B. Abdalla, A. Alarcon, S. Allam, J. Annis, S. Avila, K. Aylor, M. Banerji, N. Banik, E. J. Baxter, K. Bechtol, M. R. Becker, B. A. Benson, G. M. Bernstein, E. Bertin, F. Bianchini, J. Blazek, L. Bleem, L. E. Bleem, S. L. Bridle, D. Brooks, E. Buckley-Geer, D. L. Burke, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. Chang, C. L. Chang, H-M. Cho, A. Choi, R. Chown, T. M. Crawford, A. T. Crites, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, C. Davis, T. de Haan, J. DeRose, S. Desai, J. De Vicente, H. T. Diehl, J. P. Dietrich, M. A. Dobbs, S. Dodelson, P. Doel, A. Drlica-Wagner, T. F. Eifler, J. Elvin-Poole, W. B. Everett, B. Flaugher, P. Fosalba, O. Friedrich, J. Frieman, J. García-Bellido, M. Gatti, E. Gaztanaga, E. M. George, D. W. Gerdes, T. Giannantonio, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, N. W. Halverson, N. L. Harrington, W. G. Hartley, G. P. Holder, D. L. Hollowood, W. L. Holzapfel, K. Honscheid, Z. Hou, B. Hoyle, J. D. Hrubes, D. Huterer, B. Jain, D. J. James, M. Jarvis, T. Jeltema, M. W. G. Johnson, M. D. Johnson, S. Kent, D. Kirk, L. Knox, N. Kokron, E. Krause, K. Kuehn, O. Lahav, A. T. Lee, E. M. Leitch, T. S. Li, M. Lima, H. Lin, D. Luong-Van, N. MacCrann, M. A. G. Maia, A. Manzotti, D. P. Marrone, J. L. Marshall, P. Martini, J. J. McMahon, F. Menanteau, S. S. Meyer, R. Miquel, L. M. Mocanu, J. J. Mohr, J. Muir, T. Natoli, A. Nicola, B. Nord, Y. Omori, S. Padin, S. Pandey, A. A. Plazas, A. Porredon, J. Prat, C. Pryke, M. M. Rau, C. L. Reichardt, R. P. Rollins, A. K. Romer, A. Roodman, A. J. Ross, E. Rozo, J. E. Ruhl, E. S. Rykoff, S. Samuroff, C. Sánchez, E. Sanchez, J. T. Sayre, V. Scarpine, K. K. Schaffer, L. F. Secco, S. Serrano, I. Sevilla-Noarbe, E. Sheldon, E. Shirokoff, G. Simard, M. Smith, M. Soares-Santos, F. Sobreira, Z. Staniszewski, A. A. Stark, K. T. Story, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, M. A. Troxel, D. L. Tucker, K. Vanderlinde, J. D. Vieira, P. Vielzeuf, V. Vikram, A. R. Walker, R. H. Wechsler, J. Weller, R. Williamson, W. L. K. Wu, B. Yanny, O. Zahn, Y. Zhang, J. Zuntz
+Published: 2018-10-04 17:09:56+00:00
+Updated: 2018-10-04 17:09:56+00:00
+DOI: 10.1103/PhysRevD.100.023541
+arXiv ID: http://arxiv.org/abs/1810.02322v1
+arXiv URL: http://arxiv.org/pdf/1810.02322v1
+Categories: astro-ph.CO
+Author Position: 160
+
+Abstract:
+We perform a joint analysis of the auto and cross-correlations between three
+cosmic fields: the galaxy density field, the galaxy weak lensing shear field,
+and the cosmic microwave background (CMB) weak lensing convergence field. These
+three fields are measured using roughly 1300 sq. deg. of overlapping optical
+imaging data from first year observations of the Dark Energy Survey and
+millimeter-wave observations of the CMB from both the South Pole Telescope
+Sunyaev-Zel'dovich survey and Planck. We present cosmological constraints from
+the joint analysis of the two-point correlation functions between galaxy
+density and galaxy shear with CMB lensing. We test for consistency between
+these measurements and the DES-only two-point function measurements, finding no
+evidence for inconsistency in the context of flat $\Lambda$CDM cosmological
+models. Performing a joint analysis of five of the possible correlation
+functions between these fields (excluding only the CMB lensing autospectrum)
+yields $S_{8}\equiv \sigma_8\sqrt{\Omega_{\rm m}/0.3} =
+0.782^{+0.019}_{-0.025}$ and $\Omega_{\rm m}=0.260^{+0.029}_{-0.019}$. We test
+for consistency between these five correlation function measurements and the
+Planck-only measurement of the CMB lensing autospectrum, again finding no
+evidence for inconsistency in the context of flat $\Lambda$CDM models.
+Combining constraints from all six two-point functions yields
+$S_{8}=0.776^{+0.014}_{-0.021}$ and $\Omega_{\rm m}= 0.271^{+0.022}_{-0.016}$.
+These results provide a powerful test and confirmation of the results from the
+first year DES joint-probes analysis.

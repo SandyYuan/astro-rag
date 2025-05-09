@@ -1,0 +1,23 @@
+Title: Dark Energy Survey Year 3 Results: Weak Lensing Shape Catalogue
+Authors: M. Gatti, E. Sheldon, A. Amon, M. Becker, M. Troxel, A. Choi, C. Doux, N. MacCrann, A. Navarro Alsina, I. Harrison, D. Gruen, G. Bernstein, M. Jarvis, L. F. Secco, A. Ferté, T. Shin, J. McCullough, R. P. Rollins, R. Chen, C. Chang, S. Pandey, I. Tutusaus, J. Prat, J. Elvin-Poole, C. Sanchez, A. A. Plazas, A. Roodman, J. Zuntz, T. M. C. Abbott, M. Aguena, S. Allam, J. Annis, S. Avila, D. Bacon, E. Bertin, S. Bhargava, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, C. Conselice, M. Costanzi, L. N. da Costa, T. M. Davis, J. De Vicente, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. Drlica-Wagner, K. Eckert, S. Everett, I. Ferrero, J. Frieman, J. García-Bellido, D. W. Gerdes, T. Giannantonio, R. A. Gruendl, J. Gschwend, G. Gutierrez, W. G. Hartley, S. R. Hinton, D. L. Hollowood, K. Honscheid, B. Hoyle, E. M. Huff, D. Huterer, B. Jain, D. J. James, T. Jeltema, E. Krause, R. Kron, N. Kuropatkin, O. Lahav, M. Lima, M. A. G. Maia, J. L. Marshall, R. Miquel, R. Morgan, J. Myles, A. Palmese, F. Paz-Chinchón, E. S. Rykoff, S. Samuroff, E. Sanchez, V. Scarpine, M. Schubnell, S. Serrano, I. Sevilla-Noarbe, M. Smith, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, C. To, D. L. Tucker, T. N. Varga, R. H. Wechsler, J. Weller, W. Wester, R. D. Wilkinson
+Published: 2020-11-06 15:06:53+00:00
+Updated: 2022-03-09 04:17:52+00:00
+DOI: 10.1093/mnras/stab918
+arXiv ID: http://arxiv.org/abs/2011.03408v3
+arXiv URL: http://arxiv.org/pdf/2011.03408v3
+Categories: astro-ph.CO
+Author Position: 100
+
+Abstract:
+We present and characterise the galaxy shape catalogue from the first 3 years
+of Dark Energy Survey (DES) observations, over an effective area of ~4143
+deg$^2$ of the southern sky. We describe our data analysis process and our
+self-calibrating shear measurement pipeline METACALIBRATION, which builds and
+improves upon the pipeline used in the DES Year 1 analysis in several aspects.
+The DES Year 3 weak-lensing shape catalogue consists of 100,204,026 galaxies,
+measured in the $riz$ bands, resulting in a weighted source number density of
+$n_{\rm eff} = 5.59$ gal/arcmin$ ^{2}$ and corresponding shape noise $\sigma_e
+= 0.261$. We perform a battery of internal null tests on the catalogue,
+including tests on systematics related to the point-spread function (PSF)
+modelling, spurious catalogue B-mode signals, catalogue contamination, and
+galaxy properties.

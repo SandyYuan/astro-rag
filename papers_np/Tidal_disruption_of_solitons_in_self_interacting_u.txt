@@ -1,0 +1,27 @@
+Title: Tidal disruption of solitons in self-interacting ultralight axion dark matter
+Authors: Noah Glennon, Ethan O. Nadler, Nathan Musoke, Arka Banerjee, Chanda Prescod-Weinstein, Risa H. Wechsler
+Published: 2022-05-20 17:45:34+00:00
+Updated: 2022-07-06 16:08:20+00:00
+DOI: 10.1103/PhysRevD.105.123540
+arXiv ID: http://arxiv.org/abs/2205.10336v2
+arXiv URL: http://arxiv.org/pdf/2205.10336v2
+Categories: astro-ph.CO, hep-ph
+Author Position: 6
+
+Abstract:
+Ultralight axions (ULAs) are promising dark matter candidates that can have a
+distinct impact on the formation and evolution of structure on nonlinear scales
+relative to the cold, collisionless dark matter (CDM) paradigm. However, most
+studies of structure formation in ULA models do not include the effects of
+self-interactions, which are expected to arise generically. Here, we study how
+the tidal evolution of solitons is affected by ULA self-interaction strength
+and sign. Specifically, using the pseudospectral solver UltraDark.jl, we
+simulate the tidal disruption of self-interacting solitonic cores as they orbit
+a $10^{11}~M_{\mathrm{\odot}}$ Navarro-Frenk-White CDM host halo potential for
+a range of orbital parameters, assuming a fiducial ULA particle mass of
+$10^{-22}\mathrm{eV}$. We find that repulsive (attractive) self-interactions
+significantly accelerate (decelerate) soliton tidal disruption. We also
+identify a degeneracy between the self-interaction strength and soliton mass
+that determines the efficiency of tidal disruption, such that disruption
+timescales are affected at the $\sim 50\%$ level for variations in the
+dimensionless ULA self-coupling from $\lambda=-10^{-92}$ to $\lambda=10^{-92}$.

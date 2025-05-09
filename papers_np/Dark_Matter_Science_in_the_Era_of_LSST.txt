@@ -1,0 +1,23 @@
+Title: Dark Matter Science in the Era of LSST
+Authors: Keith Bechtol, Alex Drlica-Wagner, Kevork N. Abazajian, Muntazir Abidi, Susmita Adhikari, Yacine Ali-Haïmoud, James Annis, Behzad Ansarinejad, Robert Armstrong, Jacobo Asorey, Carlo Baccigalupi, Arka Banerjee, Nilanjan Banik, Charles Bennett, Florian Beutler, Simeon Bird, Simon Birrer, Rahul Biswas, Andrea Biviano, Jonathan Blazek, Kimberly K. Boddy, Ana Bonaca, Julian Borrill, Sownak Bose, Jo Bovy, Brenda Frye, Alyson M. Brooks, Matthew R. Buckley, Elizabeth Buckley-Geer, Esra Bulbul, Patricia R. Burchat, Cliff Burgess, Francesca Calore, Regina Caputo, Emanuele Castorina, Chihway Chang, George Chapline, Eric Charles, Xingang Chen, Douglas Clowe, Johann Cohen-Tanugi, Johan Comparat, Rupert A. C. Croft, Alessandro Cuoco, Francis-Yan Cyr-Racine, Guido D'Amico, Tamara M Davis, William A. Dawson, Axel de la Macorra, Eleonora Di Valentino, Ana Díaz Rivero, Seth Digel, Scott Dodelson, Olivier Doré, Cora Dvorkin, Christopher Eckner, John Ellison, Denis Erkal, Arya Farahi, Christopher D. Fassnacht, Pedro G. Ferreira, Brenna Flaugher, Simon Foreman, Oliver Friedrich, Joshua Frieman, Juan García-Bellido, Eric Gawiser, Martina Gerbino, Maurizio Giannotti, Mandeep S. S. Gill, Vera Gluscevic, Nathan Golovich, Satya Gontcho A Gontcho, Alma X. González-Morales, Daniel Grin, Daniel Gruen, Andrew P. Hearin, David Hendel, Yashar D. Hezaveh, Christopher M. Hirata, Renee Hložek, Shunsaku Horiuchi, Bhuvnesh Jain, M. James Jee, Tesla E. Jeltema, Marc Kamionkowski, Manoj Kaplinghat, Ryan E. Keeley, Charles R. Keeton, Rishi Khatri, Sergey E. Koposov, Savvas M. Koushiappas, Ely D. Kovetz, Ofer Lahav, Casey Lam, Chien-Hsiu Lee, Ting S. Li, Michele Liguori, Tongyan Lin, Mariangela Lisanti, Marilena LoVerde, Jessica R. Lu, Rachel Mandelbaum, Yao-Yuan Mao, Samuel D. McDermott, Mitch McNanna, Michael Medford, P. Daniel Meerburg, Manuel Meyer, Mehrdad Mirbabayi, Siddharth Mishra-Sharma, Moniez Marc, Surhud More, John Moustakas, Julian B. Muñoz, Simona Murgia, Adam D. Myers, Ethan O. Nadler, Lina Necib, Laura Newburgh, Jeffrey A. Newman, Brian Nord, Erfan Nourbakhsh, Eric Nuss, Paul O'Connor, Andrew B. Pace, Hamsa Padmanabhan, Antonella Palmese, Hiranya V. Peiris, Annika H. G. Peter, Francesco Piacentni, Francesco Piacentini, Andrés Plazas, Daniel A. Polin, Abhishek Prakash, Chanda Prescod-Weinstein, Justin I. Read, Steven Ritz, Brant E. Robertson, Benjamin Rose, Rogerio Rosenfeld, Graziano Rossi, Lado Samushia, Javier Sánchez, Miguel A. Sánchez-Conde, Emmanuel Schaan, Neelima Sehgal, Leonardo Senatore, Hee-Jong Seo, Arman Shafieloo, Huanyuan Shan, Nora Shipp, Joshua D. Simon, Sara Simon, Tracy R. Slatyer, Anže Slosar, Srivatsan Sridhar, Albert Stebbins, Oscar Straniero, Louis E. Strigari, Tim M. P. Tait, Erik Tollerud, M. A. Troxel, J. Anthony Tyson, Cora Uhlemann, L. Arturo Urenña-López, Aprajita Verma, Ricardo Vilalta, Christopher W. Walter, Mei-Yu Wang, Scott Watson, Risa H. Wechsler, David Wittman, Weishuang Xu, Brian Yanny, Sam Young, Hai-Bo Yu, Gabrijela Zaharijas, Andrew R. Zentner, Joe Zuntz
+Published: 2019-03-11 16:38:20+00:00
+Updated: 2019-03-11 16:38:20+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1903.04425v1
+arXiv URL: http://arxiv.org/pdf/1903.04425v1
+Categories: astro-ph.CO, astro-ph.HE, hep-ex
+Author Position: 172
+
+Abstract:
+Astrophysical observations currently provide the only robust, empirical
+measurements of dark matter. In the coming decade, astrophysical observations
+will guide other experimental efforts, while simultaneously probing unique
+regions of dark matter parameter space. This white paper summarizes
+astrophysical observations that can constrain the fundamental physics of dark
+matter in the era of LSST. We describe how astrophysical observations will
+inform our understanding of the fundamental properties of dark matter, such as
+particle mass, self-interaction strength, non-gravitational interactions with
+the Standard Model, and compact object abundances. Additionally, we highlight
+theoretical work and experimental/observational facilities that will complement
+LSST to strengthen our understanding of the fundamental characteristics of dark
+matter.

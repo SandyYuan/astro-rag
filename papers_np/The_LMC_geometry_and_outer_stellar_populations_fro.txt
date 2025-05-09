@@ -1,0 +1,33 @@
+Title: The LMC geometry and outer stellar populations from early DES data
+Authors: Eduardo Balbinot, B. X. Santiago, L. Girardi, A. Pieres, L. N. da Costa, M. A. G. Maia, R. A. Gruendl A. R. Walker, B. Yanny, A. Drlica-Wagner, A. Benoit-Levy, T. M. C. Abbott, S. S. Allam, J. A nnis, J. P. Bernstein, R. A. Bernstein, E. Bertin, D. Brooks, E. Buckley-Geer, A. Carnero Rosell, C. E. Cunha, D. L. DePoy, S. Desai, H. T. Diehl, P. Doel, J. Estrada, A. E. Evrard, A. Fausti Ne to, D. A. Finley, B. Flaugher, J. A. Frieman, D. Gruen, K. Honscheid, D. James, K. Kuehn, N. Kuropatkin, O. Lahav, M. March, J. L. Marshall, C. Miller, R. Miquel R. Ogando, J. Peoples, A. Plazas, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, D. L. Tucker, R. Wechsler, J. Zuntz
+Published: 2015-02-17 21:00:55+00:00
+Updated: 2015-02-17 21:00:55+00:00
+DOI: 10.1093/mnras/stv356
+arXiv ID: http://arxiv.org/abs/1502.05050v1
+arXiv URL: http://arxiv.org/pdf/1502.05050v1
+Categories: astro-ph.GA
+Author Position: 52
+
+Abstract:
+The Dark Energy Camera has captured a large set of images as part of Science
+Verification (SV) for the Dark Energy Survey. The SV footprint covers a lar ge
+portion of the outer Large Magellanic Cloud (LMC), providing photometry 1.5
+magnitudes fainter than the main sequence turn-off of the oldest LMC stel lar
+population. We derive geometrical and structural parameters for various stellar
+populations in the LMC disk. For the distribution of all LMC stars, we find an
+inclination of $i=-38.14^{\circ}\pm0.08^{\circ}$ (near side in the North) and a
+position angle for the line of nodes of
+$\theta_0=129.51^{\circ}\pm0.17^{\circ}$. We find that stars younger than $\sim
+4$ Gyr are more centrally concentrated than older stars. Fitting a projected
+exponential disk shows that the scale radius of the old populations is $R_{>4
+Gyr}=1.41\pm0.01$ kpc, while the younger population has $R_{<4
+Gyr}=0.72\pm0.01$ kpc. Howe ver, the spatial distribution of the younger
+population deviates significantly from the projected exponential disk model.
+The distribution of old stars suggests a large truncation radius of
+$R_{t}=13.5\pm0.8$ kpc. If this truncation is dominated by the tidal field of
+the Galaxy, we find that the LMC is $\simeq 24^{+9}_{-6}$ times less massive
+than the encircled Galactic mass. By measuring the Red Clump peak magnitude and
+comparing with the best-fit LM C disk model, we find that the LMC disk is
+warped and thicker in the outer regions north of the LMC centre. Our findings
+may either be interpreted as a warped and flared disk in the LMC outskirts, or
+as evidence of a spheroidal halo component

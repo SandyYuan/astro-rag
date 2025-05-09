@@ -1,0 +1,33 @@
+Title: Weak lensing combined with the kinetic Sunyaev Zel'dovich effect: A study of baryonic feedback
+Authors: L. Bigwood, A. Amon, A. Schneider, J. Salcido, I. G. McCarthy, C. Preston, D. Sanchez, D. Sijacki, E. Schaan, S. Ferraro, N. Battaglia, A. Chen, S. Dodelson, A. Roodman, A. Pieres, A. Ferte, A. Alarcon, A. Drlica-Wagner, A. Choi, A. Navarro-Alsina, A. Campos, A. J. Ross, A. Carnero Rosell, B. Yin, B. Yanny, C. Sanchez, C. Chang, C. Davis, C. Doux, D. Gruen, E. S. Rykoff, E. M. Huff, E. Sheldon, F. Tarsitano, F. Andrade-Oliveira, G. M. Bernstein, G. Giannini, H. T. Diehl, H. Huang, I. Harrison, I. Sevilla-Noarbe, I. Tutusaus, J. Elvin-Poole, J. McCullough, J. Zuntz, J. Blazek, J. DeRose, J. Cordero, J. Prat, J. Myles, K. Eckert, K. Bechtol, K. Herner, L. F. Secco, M. Gatti, M. Raveri, M. Carrasco Kind, M. R. Becker, M. A. Troxel, M. Jarvis, N. MacCrann, O. Friedrich, O. Alves, P. -F. Leget, R. Chen, R. P. Rollins, R. H. Wechsler, R. A. Gruendl, R. Cawthon, S. Allam, S. L. Bridle, S. Pandey, S. Everett, T. Shin, W. G. Hartley, X. Fang, Y. Zhang, M. Aguena, J. Annis, D. Bacon, E. Bertin, S. Bocquet, D. Brooks, J. Carretero, F. J. Castander, L. N. da Costa, M. E. S. Pereira, J. De Vicente, S. Desai, P. Doel, I. Ferrero, B. Flaugher, J. Frieman, J. Garcia-Bellido, E. Gaztanaga, G. Gutierrez, S. R. Hinton, D. L. Hollowood, K. Honscheid, D. Huterer, D. J. James, K. Kuehn, O. Lahav, S. Lee, J. L. Marshall, J. Mena-Fernandez, R. Miquel, J. Muir, M. Paterno, A. A. Plazas Malagon, A. Porredon, A. K. Romer, S. Samuroff, E. Sanchez, D. Sanchez Cid, M. Smith, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, C. To, N. Weaverdyck, J. Weller, P. Wiseman, M. Yamamoto
+Published: 2024-04-09 08:01:52+00:00
+Updated: 2024-04-09 08:01:52+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2404.06098v1
+arXiv URL: http://arxiv.org/pdf/2404.06098v1
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 67
+
+Abstract:
+Extracting precise cosmology from weak lensing surveys requires modelling the
+non-linear matter power spectrum, which is suppressed at small scales due to
+baryonic feedback processes. However, hydrodynamical galaxy formation
+simulations make widely varying predictions for the amplitude and extent of
+this effect. We use measurements of Dark Energy Survey Year 3 weak lensing (WL)
+and Atacama Cosmology Telescope DR5 kinematic Sunyaev-Zel'dovich (kSZ) to
+jointly constrain cosmological and astrophysical baryonic feedback parameters
+using a flexible analytical model, `baryonification'. First, using WL only, we
+compare the $S_8$ constraints using baryonification to a simulation-calibrated
+halo model, a simulation-based emulator model and the approach of discarding WL
+measurements on small angular scales. We find that model flexibility can shift
+the value of $S_8$ and degrade the uncertainty. The kSZ provides additional
+constraints on the astrophysical parameters and shifts $S_8$ to
+$S_8=0.823^{+0.019}_{-0.020}$, a higher value than attained using the WL-only
+analysis. We measure the suppression of the non-linear matter power spectrum
+using WL + kSZ and constrain a mean feedback scenario that is more extreme than
+the predictions from most hydrodynamical simulations. We constrain the baryon
+fractions and the gas mass fractions and find them to be generally lower than
+inferred from X-ray observations and simulation predictions. We conclude that
+the WL + kSZ measurements provide a new and complementary benchmark for
+building a coherent picture of the impact of gas around galaxies across
+observations.

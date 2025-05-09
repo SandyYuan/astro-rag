@@ -1,0 +1,34 @@
+Title: PROVABGS: The Probabilistic Stellar Mass Function of the BGS One-Percent Survey
+Authors: ChangHoon Hahn, Jessica Nicole Aguilar, Shadab Alam, Steven Ahlen, David Brooks, Shaun Cole, Axel de la Macorra, Peter Doel, Andreu A. Font-Ribera, Jaime E. Forero-Romero, Satya Gontcho A Gontcho, Klaus Honscheid, Song Huang, Theodore Kisner, Anthony Kremin, Martin Landriau, Marc Manera, Aaron Meisner, Ramon Miquel, John Moustakas, Jundan Nie, Claire Poppett, Graziano Rossi, Amélie Saintonge, Eusebio Sanchez, Christoph Saulder, Michael Schubnell, Hee-Jong Seo, Małgorzata Siudek, Federico Speranza, Gregory Tarlé, Benjamin A. Weaver, Risa H. Wechsler, Sihan Yuan, Zhimin Zhou, Hu Zou
+Published: 2023-06-09 23:55:47+00:00
+Updated: 2023-06-20 12:50:56+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2306.06318v2
+arXiv URL: http://arxiv.org/pdf/2306.06318v2
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 33
+
+Abstract:
+We present the probabilistic stellar mass function (pSMF) of galaxies in the
+DESI Bright Galaxy Survey (BGS), observed during the One-Percent Survey. The
+One-Percent Survey was one of DESI's survey validation programs conducted from
+April to May 2021, before the start of the main survey. It used the same target
+selection and similar observing strategy as the main survey and successfully
+observed the spectra and redshifts of 143,017 galaxies in the $r < 19.5$
+magnitude-limited BGS Bright sample and 95,499 galaxies in the fainter surface
+brightness and color selected BGS Faint sample over $z < 0.6$. We derive pSMFs
+from posteriors of stellar mass, $M_*$, inferred from DESI photometry and
+spectroscopy using the Hahn et al. (2022a; arXiv:2202.01809) PRObabilistic
+Value-Added BGS (PROVABGS) Bayesian SED modeling framework. We use a
+hierarchical population inference framework that statistically and rigorously
+propagates the $M_*$ uncertainties. Furthermore, we include correction weights
+that account for the selection effects and incompleteness of the BGS
+observations. We present the redshift evolution of the pSMF in BGS as well as
+the pSMFs of star-forming and quiescent galaxies classified using average
+specific star formation rates from PROVABGS. Overall, the pSMFs show good
+agreement with previous stellar mass function measurements in the literature.
+Our pSMFs showcase the potential and statistical power of BGS, which in its
+main survey will observe >100$\times$ more galaxies. Moreover, we present the
+statistical framework for subsequent population statistics measurements using
+BGS, which will characterize the global galaxy population and scaling relations
+at low redshifts with unprecedented precision.

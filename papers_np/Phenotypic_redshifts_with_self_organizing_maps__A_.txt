@@ -1,0 +1,29 @@
+Title: Phenotypic redshifts with self-organizing maps: A novel method to characterize redshift distributions of source galaxies for weak lensing
+Authors: R. Buchs, C. Davis, D. Gruen, J. DeRose, A. Alarcon, G. M. Bernstein, C. Sánchez, J. Myles, A. Roodman, S. Allen, A. Amon, A. Choi, D. C. Masters, R. Miquel, M. A. Troxel, R. H. Wechsler, T. M. C. Abbott, J. Annis, S. Avila, K. Bechtol, S. L. Bridle, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, R. Cawthon, C. B. D'Andrea, L. N. da Costa, J. De Vicente, S. Desai, H. T. Diehl, P. Doel, A. Drlica-Wagner, T. F. Eifler, A. E. Evrard, B. Flaugher, P. Fosalba, J. Frieman, J. García-Bellido, E. Gaztanaga, R. A. Gruend, J. Gschwend, G. Gutierrez, W. G. Hartley, D. L. Hollowood, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, M. Lima, H. Lin, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. L. C. Ogando, A. A. Plazas, E. S. Rykoff, E. Sanchez, V. Scarpine, S. Serrano, I. Sevilla-Noarbe, M. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, V. Vikram
+Published: 2019-01-15 19:00:00+00:00
+Updated: 2019-08-05 08:07:21+00:00
+DOI: 10.1093/mnras/stz2162
+arXiv ID: http://arxiv.org/abs/1901.05005v2
+arXiv URL: http://arxiv.org/pdf/1901.05005v2
+Categories: astro-ph.CO, astro-ph.GA
+Author Position: 16
+
+Abstract:
+Wide-field imaging surveys such as the Dark Energy Survey (DES) rely on
+coarse measurements of spectral energy distributions in a few filters to
+estimate the redshift distribution of source galaxies. In this regime, sample
+variance, shot noise, and selection effects limit the attainable accuracy of
+redshift calibration and thus of cosmological constraints. We present a new
+method to combine wide-field, few-filter measurements with catalogs from deep
+fields with additional filters and sufficiently low photometric noise to break
+degeneracies in photometric redshifts. The multi-band deep field is used as an
+intermediary between wide-field observations and accurate redshifts, greatly
+reducing sample variance, shot noise, and selection effects. Our implementation
+of the method uses self-organizing maps to group galaxies into phenotypes based
+on their observed fluxes, and is tested using a mock DES catalog created from
+N-body simulations. It yields a typical uncertainty on the mean redshift in
+each of five tomographic bins for an idealized simulation of the DES Year 3
+weak-lensing tomographic analysis of $\sigma_{\Delta z} = 0.007$, which is a
+60% improvement compared to the Year 1 analysis. Although the implementation of
+the method is tailored to DES, its formalism can be applied to other large
+photometric surveys with a similar observing strategy.

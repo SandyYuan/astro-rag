@@ -1,0 +1,30 @@
+Title: The DESI One-Percent Survey: Exploring the Halo Occupation Distribution of Luminous Red Galaxies and Quasi-Stellar Objects with AbacusSummit
+Authors: Sihan Yuan, Hanyu Zhang, Ashley J. Ross, Jamie Donald-McCann, Boryana Hadzhiyska, Risa H. Wechsler, Zheng Zheng, Shadab Alam, Violeta Gonzalez-Perez, Jessica Nicole Aguilar, Steven Ahlen, Davide Bianchi, David Brooks, Axel de la Macorra, Kevin Fanning, Jaime E. Forero-Romero, Klaus Honscheid, Mustapha Ishak, Robert Kehoe, James Lasker, Martin Landriau, Marc Manera, Paul Martini, Aaron Meisner, Ramon Miquel, John Moustakas, Seshadri Nadathur, Jeffrey A. Newman, Jundan Nie, Will Percival, Claire Poppett, Antoine Rocher, Graziano Rossi, Eusebio Sanchez, Lado Samushia, Michael Schubnell, Hee-Jong Seo, Gregory Tarle, Benjamin Alan Weaver, Jiaxi Yu, Zhimin Zhou, Hu Zou
+Published: 2023-06-09 23:55:43+00:00
+Updated: 2023-06-13 16:54:37+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2306.06314v2
+arXiv URL: http://arxiv.org/pdf/2306.06314v2
+Categories: astro-ph.CO
+Author Position: 6
+
+Abstract:
+We present the first comprehensive Halo Occupation Distribution (HOD)
+analysis of the DESI One-Percent survey Luminous Red Galaxy (LRG) and
+Quasi-Stellar Object (QSO) samples. We constrain the HOD of each sample and
+test possible HOD extensions by fitting the redshift-space galaxy 2-point
+correlation functions in 0.15 < r < 32 Mpc/h in a set of fiducial redshift
+bins. We use AbacusSummit cubic boxes at Planck 2018 cosmology as model
+templates and forward model galaxy clustering with the AbacusHOD package. We
+achieve good fits with a standard HOD model with velocity bias, and we find no
+evidence for galaxy assembly bias or satellite profile modulation at the
+current level of statistical uncertainty. For LRGs in 0.4 < z < 0.6, we infer a
+satellite fraction of fsat = 11+-1%, a mean halo mass of log10 Mh =
+13.40+0.02-0.02, and a linear bias of blin = 1.93+0.06-0.04. For LRGs in 0.6 <
+z < 0.8, we find fsat = 14+-1%, log10 Mh = 13.24+0.02-0.02, and blin =
+2.08+0.03-0.03. For QSOs, we infer fsat = 3+8-2%, log10 Mh = 12.65+0.09-0.04,
+and blin = 2.63+0.37-0.26 in redshift range 0.8 < z < 2.1. Using these fits, we
+generate a large suite of high-fidelity galaxy mocks. We also study the
+redshift-evolution of the DESI LRG sample from z = 0.4 up to z = 1.1, revealing
+significant and interesting trends in mean halo mass, linear bias, and
+satellite fraction.

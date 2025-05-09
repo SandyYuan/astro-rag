@@ -1,0 +1,31 @@
+Title: Joint Analysis of Galaxy-Galaxy Lensing and Galaxy Clustering: Methodology and Forecasts for DES
+Authors: Y. Park, E. Krause, S. Dodelson, B. Jain, A. Amara, M. R. Becker, S. L. Bridle, J. Clampitt, M. Crocce, P. Fosalba, E. Gaztanaga, K. Honscheid, E. Rozo, F. Sobreira, C. Sánchez, R. H. Wechsler, T. Abbott, F. B Abdalla, S. Allam, A. Benoit-Lévy, E. Bertin, D. Brooks, E. Buckley-Geer, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, F. J. Castander, L. N. da Costa, D. L. DePoy, S. Desai, J. P. Dietrich, P. Doel, T. F. Eifler, A. Fausti Neto, E. Fernandez, D. A. Finley, B. Flaugher, D. W. Gerdes, D. Gruen, R. A. Gruendl, G. Gutierrez, D. J. James, S. Kent, K. Kuehn, N. Kuropatkin, M. Lima, M. A. G. Maia, J. L. Marshall, P. Melchior, C. J. Miller, R. Miquel, R. C. Nichol, R. Ogando, A. A. Plazas, N. Roe, A. K. Romer, E. S. Rykoff, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, M. Soares-Santos, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, V. Vikram, A. R. Walker, J. Weller, J. Zuntz
+Published: 2015-07-19 23:22:54+00:00
+Updated: 2015-09-16 18:35:51+00:00
+DOI: 10.1103/PhysRevD.94.063533
+arXiv ID: http://arxiv.org/abs/1507.05353v2
+arXiv URL: http://arxiv.org/pdf/1507.05353v2
+Categories: astro-ph.CO
+Author Position: 16
+
+Abstract:
+The joint analysis of galaxy-galaxy lensing and galaxy clustering is a
+promising method for inferring the growth function of large scale structure.
+This analysis will be carried out on data from the Dark Energy Survey (DES),
+with its measurements of both the distribution of galaxies and the tangential
+shears of background galaxies induced by these foreground lenses. We develop a
+practical approach to modeling the assumptions and systematic effects affecting
+small scale lensing, which provides halo masses, and large scale galaxy
+clustering. Introducing parameters that characterize the halo occupation
+distribution (HOD), photometric redshift uncertainties, and shear measurement
+errors, we study how external priors on different subsets of these parameters
+affect our growth constraints. Degeneracies within the HOD model, as well as
+between the HOD and the growth function, are identified as the dominant source
+of complication, with other systematic effects sub-dominant. The impact of HOD
+parameters and their degeneracies necessitate the detailed joint modeling of
+the galaxy sample that we employ. We conclude that DES data will provide
+powerful constraints on the evolution of structure growth in the universe,
+conservatively/optimistically constraining the growth function to 7.9\%/4.8\%
+with its first-year data that covered over 1000 square degrees, and to
+3.9\%/2.3\% with its full five-year data that will survey 5000 square degrees,
+including both statistical and systematic uncertainties.

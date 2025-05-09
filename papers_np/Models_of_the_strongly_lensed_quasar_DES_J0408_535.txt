@@ -1,0 +1,36 @@
+Title: Models of the strongly lensed quasar DES J0408-5354
+Authors: Adriano Agnello, Huan Lin, L. Buckley-Geer, T. Treu, V. Bonvin, F. Courbin, C. Lemon, T. Morishita, A. Amara, M. W. Auger, S. Birrer, J. Chan, T. Collett, A. More, C. D. Fassnacht, J. Frieman, P. J. Marshall, R. G. McMahon, G. Meylan, S. H. Suyu, F. Castander, D. Finley, A. Howell, C. Kochanek, M. Makler, P. Martini, N. Morgan, B. Nord, F. Ostrovski, P. Schechter, D. Tucker, R. Wechsler, T. M. C. Abbott, F. B. Abdalla, S. Allam, A. Benoit-Lévy, E. Bertin, D. Brooks, D. L. Burke, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desa, J. P. Dietrich, T. F. Eifler, B. Flaugher, P. Fosalba, J. García-Bellido, E. Gaztanaga, D. A. Goldstein, D. Gruen, R. A. Gruendl, J. Gschwend, G. Gutierrez, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, T. S. Li, M. Lima, M. A. G. Maia, M. March, J. L. Marshall, P. Melchior, F. Menanteau, R. Miquel, R. L. C. Ogando, A. A. Plazas, A. K. Romer, E. Sanchez, R. Schindler, M. Schubnell, I. Sevilla-Noarbe, M. Smith, R. C. Smith, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, D. Thomas, A. R. Walker
+Published: 2017-02-01 19:00:02+00:00
+Updated: 2017-02-01 19:00:02+00:00
+DOI: 10.1093/mnras/stx2242
+arXiv ID: http://arxiv.org/abs/1702.00406v1
+arXiv URL: http://arxiv.org/pdf/1702.00406v1
+Categories: astro-ph.GA, astro-ph.CO
+Author Position: 32
+
+Abstract:
+We present gravitational lens models of the multiply imaged quasar DES
+J0408-5354, recently discovered in the Dark Energy Survey (DES) footprint, with
+the aim of interpreting its remarkable quad-like configuration. We first model
+the DES single-epoch $grizY$ images as a superposition of a lens galaxy and
+four point-like objects, obtaining spectral energy distributions (SEDs) and
+relative positions for the objects. Three of the point sources (A,B,D) have
+SEDs compatible with the discovery quasar spectra, while the faintest
+point-like image (G2/C) shows significant reddening and a `grey' dimming of
+$\approx0.8$mag. In order to understand the lens configuration, we fit
+different models to the relative positions of A,B,D. Models with just a single
+deflector predict a fourth image at the location of G2/C but considerably
+brighter and bluer. The addition of a small satellite galaxy ($R_{\rm
+E}\approx0.2$") in the lens plane near the position of G2/C suppresses the flux
+of the fourth image and can explain both the reddening and grey dimming. All
+models predict a main deflector with Einstein radius between $1.7"$ and $2.0",$
+velocity dispersion $267-280$km/s and enclosed mass $\approx
+6\times10^{11}M_{\odot},$ even though higher resolution imaging data are needed
+to break residual degeneracies in model parameters. The longest time-delay
+(B-A) is estimated as $\approx 85$ (resp. $\approx125$) days by models with
+(resp. without) a perturber near G2/C. The configuration and predicted
+time-delays of J0408-5354 make it an excellent target for follow-up aimed at
+understanding the source quasar host galaxy and substructure in the lens, and
+measuring cosmological parameters. We also discuss some lessons learnt from
+J0408-5354 on lensed quasar finding strategies, due to its chromaticity and
+morphology.

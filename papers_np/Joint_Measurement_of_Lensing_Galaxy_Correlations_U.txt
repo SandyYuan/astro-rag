@@ -1,0 +1,26 @@
+Title: Joint Measurement of Lensing-Galaxy Correlations Using SPT and DES SV Data
+Authors: E. J. Baxter, J. Clampitt, T. Giannantonio, S. Dodelson, B. Jain, D. Huterer, L. E. Bleem, T. M. Crawford, G. Efstathiou, P. Fosalba, D. Kirk, J. Kwan, C. Sánchez, K. T. Story, M. A. Troxel, T. M. C. Abbott, F. B. Abdalla, R. Armstrong, A. Benoit-Lévy, B. A. Benson, G. M. Bernstein, R. A. Bernstein, E. Bertin, D. Brooks, J. E. Carlstrom, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, R. Chown, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, A. E. Evrard, A. Fausti Neto, B. Flaugher, J. Frieman, D. Gruen, R. A. Gruendl, G. Gutierrez, T. de Haan, G. P. Holder, K. Honscheid, Z. Hou, D. J. James, K. Kuehn, N. Kuropatkin, M. Lima, M. March, J. L. Marshall, P. Martini, P. Melchior, C. J. Miller, R. Miquel, J. J. Mohr, B. Nord, Y. Omori, A. A. Plazas, C. L. Reichardt, A. K. Romer, E. S. Rykoff, E. Sanchez, I. Sevilla-Noarbe, E. Sheldon, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, A. A. Stark, M. E. C. Swanson, G. Tarle, D. Thomas, A. R. Walker, R. H. Wechsler
+Published: 2016-02-24 03:36:23+00:00
+Updated: 2016-06-30 19:57:22+00:00
+DOI: 10.1093/mnras/stw1584
+arXiv ID: http://arxiv.org/abs/1602.07384v2
+arXiv URL: http://arxiv.org/pdf/1602.07384v2
+Categories: astro-ph.CO
+Author Position: 78
+
+Abstract:
+We measure the correlation of galaxy lensing and cosmic microwave background
+lensing with a set of galaxies expected to trace the matter density field. The
+measurements are performed using pre-survey Dark Energy Survey (DES) Science
+Verification optical imaging data and millimeter-wave data from the 2500 square
+degree South Pole Telescope Sunyaev-Zel'dovich (SPT-SZ) survey. The two
+lensing-galaxy correlations are jointly fit to extract constraints on
+cosmological parameters, constraints on the redshift distribution of the lens
+galaxies, and constraints on the absolute shear calibration of DES galaxy
+lensing measurements. We show that an attractive feature of these fits is that
+they are fairly insensitive to the clustering bias of the galaxies used as
+matter tracers. The measurement presented in this work confirms that DES and
+SPT data are consistent with each other and with the currently favored
+$\Lambda$CDM cosmological model. It also demonstrates that joint lensing-galaxy
+correlation measurement considered here contains a wealth of information that
+can be extracted using current and future surveys.

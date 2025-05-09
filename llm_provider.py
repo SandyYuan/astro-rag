@@ -121,7 +121,7 @@ class LLMProvider:
     # Default model configuration
     PROVIDER_GOOGLE = "google"  # Kept for backward compatibility
     DEFAULT_EMBEDDING_MODEL = "models/text-embedding-004"
-    DEFAULT_TEXT_MODEL = "gemini-2.5-pro-exp-03-25"
+    DEFAULT_TEXT_MODEL = "gemini-2.5-pro-preview-05-06"
     
     def __init__(self, api_key: str = None, provider: str = None, embedding_model: str = None):
         """

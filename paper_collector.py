@@ -3,6 +3,7 @@ import time
 import logging
 import arxiv
 import re
+import json
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -17,7 +18,9 @@ class PaperCollector:
         self.stats = {
             "searched": 0,
             "downloaded": 0,
-            "skipped_not_primary": 0
+            "skipped_not_primary": 0,
+            "already_downloaded": 0,
+            "found_not_downloaded": []  # Track papers found but not downloaded
         }
     
     def search_arxiv_for_author(self, max_results=100):
@@ -41,7 +44,13 @@ class PaperCollector:
                 f'au:Wechsler',     # Simple last name search
                 f'au:"Wechsler, R"', # Last name, first initial format
                 f'au:"R. H. Wechsler"', # Initial format
-                f'au:"R. Wechsler"'  # Initial + last name
+                f'au:"R. Wechsler"',  # Initial + last name
+                f'au:"R H Wechsler"',  # Initials without dots
+                f'au:"R.H. Wechsler"', # Initials with dots
+                f'au:"R.H.Wechsler"',  # Initials with dots, no space
+                f'au:"Wechsler, R.H."', # Last name, initials with dots
+                f'au:"Wechsler, R H"',  # Last name, initials without dots
+                f'au:"Wechsler, R. H."'  # Last name, initials with dots and spaces
             ])
             
             # Additional formats with provided name
@@ -74,10 +83,9 @@ class PaperCollector:
                 if papers:
                     all_papers.extend(papers)
                     
-                    # Only break if we found a significant number of papers,
-                    # otherwise continue trying other formats and combine results
-                    if len(papers) > 10:
-                        break
+                    # Don't break early - collect papers from all formats
+                    # This ensures we don't miss papers that might be found with different name formats
+                    logger.info(f"Added {len(papers)} papers from format: {name_format}")
             except Exception as e:
                 logger.error(f"Error searching with format {name_format}: {str(e)}")
                 continue
@@ -120,22 +128,30 @@ class PaperCollector:
         author_first_name = author_parts[0].lower() if author_parts else ""
         author_last_name = author_parts[-1].lower() if author_parts else ""
         
-        # Look for variations of the author name
+        # Look for variations of the author name, but ensure first initial is 'R'
         variations = [
             self.author_name.lower(),           # Full name: "risa h. wechsler"
             f"{author_last_name}, {author_first_name}",  # "wechsler, risa" 
-            f"{author_last_name}, {author_first_name[0]}", # "wechsler, r"
-            f"{author_first_name[0]}. {author_last_name}", # "r. wechsler"
-            f"{author_first_name[0]}.h. {author_last_name}", # "r.h. wechsler"
-            f"r. h. {author_last_name}",        # "r. h. wechsler"
-            author_last_name                    # Just "wechsler"
+            f"{author_last_name}, r", # "wechsler, r"
+            f"r. {author_last_name}", # "r. wechsler"
+            f"r.h. {author_last_name}", # "r.h. wechsler"
+            f"r. h. {author_last_name}", # "r. h. wechsler"
+            f"r h {author_last_name}", # "r h wechsler"
+            f"r.h.{author_last_name}", # "r.h.wechsler"
+            f"{author_last_name}, r.h.", # "wechsler, r.h."
+            f"{author_last_name}, r h", # "wechsler, r h"
+            f"{author_last_name}, r. h." # "wechsler, r. h."
         ]
         
         # Check if our target author is in any of the first five authors
         for author in first_five_authors:
             name = author.name.lower()
             
-            # Try to match against our variations
+            # First check if it's a Wechsler
+            if "wechsler" not in name:
+                continue
+                
+            # Then check if it's Risa (or R) Wechsler
             for variation in variations:
                 if variation in name:
                     logger.info(f"Author matched with variation '{variation}' in '{name}'")
@@ -151,6 +167,12 @@ class PaperCollector:
             title = paper.title
             safe_title = "".join([c if c.isalnum() else "_" for c in title[:50]])
             filename = f"{self.output_dir}/{safe_title}.pdf"
+            
+            # Check if paper already exists
+            if os.path.exists(filename):
+                logger.info(f"Paper already exists: {filename}")
+                self.stats["already_downloaded"] += 1
+                return filename
             
             # Download the paper
             logger.info(f"Downloading paper: {title}")
@@ -201,10 +223,27 @@ class PaperCollector:
             
             # Check if the author is among the first five authors
             if self.is_primary_author(paper):
-                filename = self.download_paper(paper)
-                if filename:
+                # Create safe filename to check if it exists
+                safe_title = "".join([c if c.isalnum() else "_" for c in paper.title[:50]])
+                filename = f"{self.output_dir}/{safe_title}.pdf"
+                
+                if os.path.exists(filename):
+                    logger.info(f"Paper already exists: {filename}")
+                    self.stats["already_downloaded"] += 1
                     downloaded_files.append(filename)
-                    self.stats["downloaded"] += 1
+                else:
+                    filename = self.download_paper(paper)
+                    if filename:
+                        downloaded_files.append(filename)
+                        self.stats["downloaded"] += 1
+                    else:
+                        # Track papers that were found but couldn't be downloaded
+                        self.stats["found_not_downloaded"].append({
+                            "title": paper.title,
+                            "arxiv_id": paper.entry_id,
+                            "arxiv_url": paper.pdf_url,
+                            "authors": [author.name for author in paper.authors[:5]]
+                        })
             else:
                 self.stats["skipped_not_primary"] += 1
                 logger.info(f"Skipping paper where {self.author_name} is not a primary author")
@@ -214,12 +253,139 @@ class PaperCollector:
         
         # Log summary statistics
         logger.info(f"Summary: Searched {self.stats['searched']} papers")
-        logger.info(f"Downloaded {self.stats['downloaded']} papers where {self.author_name} is a primary author")
+        logger.info(f"Downloaded {self.stats['downloaded']} new papers where {self.author_name} is a primary author")
+        logger.info(f"Found {self.stats['already_downloaded']} papers that were already downloaded")
         logger.info(f"Skipped {self.stats['skipped_not_primary']} papers where {self.author_name} is not a primary author")
+        
+        # Report papers that were found but not downloaded
+        if self.stats["found_not_downloaded"]:
+            logger.info("\nPapers found but not downloaded:")
+            for paper in self.stats["found_not_downloaded"]:
+                logger.info(f"- {paper['title']} (arXiv: {paper['arxiv_id']})")
+                logger.info(f"  URL: {paper['arxiv_url']}")
+                logger.info(f"  Authors: {', '.join(paper['authors'])}")
         
         return downloaded_files
 
+    def get_non_primary_papers(self, max_papers=1000, download=True):
+        """Get a list of papers where the author is not among the first five authors."""
+        papers = self.search_arxiv_for_author(max_papers)
+        non_primary_papers = []
+        
+        if not papers:
+            logger.warning(f"No papers found for author: {self.author_name}")
+            return []
+        
+        # Create a separate directory for non-primary papers
+        np_output_dir = os.path.join(self.output_dir, "papers-np")
+        os.makedirs(np_output_dir, exist_ok=True)
+        
+        for paper in papers:
+            # Get all authors
+            authors = paper.authors
+            
+            # Check if our target author is in any position
+            author_found = False
+            author_position = None
+            
+            # Convert author name parts to lowercase for flexible matching
+            author_parts = self.author_name.lower().split()
+            author_first_name = author_parts[0].lower() if author_parts else ""
+            author_last_name = author_parts[-1].lower() if author_parts else ""
+            
+            # Look for variations of the author name
+            variations = [
+                self.author_name.lower(),           # Full name: "risa h. wechsler"
+                f"{author_last_name}, {author_first_name}",  # "wechsler, risa" 
+                f"{author_last_name}, r", # "wechsler, r"
+                f"r. {author_last_name}", # "r. wechsler"
+                f"r.h. {author_last_name}", # "r.h. wechsler"
+                f"r. h. {author_last_name}", # "r. h. wechsler"
+                f"r h {author_last_name}", # "r h wechsler"
+                f"r.h.{author_last_name}", # "r.h.wechsler"
+                f"{author_last_name}, r.h.", # "wechsler, r.h."
+                f"{author_last_name}, r h", # "wechsler, r h"
+                f"{author_last_name}, r. h." # "wechsler, r. h."
+            ]
+            
+            # Check all authors for our target
+            for i, author in enumerate(authors):
+                name = author.name.lower()
+                for variation in variations:
+                    if variation in name:
+                        author_found = True
+                        author_position = i + 1  # 1-based position
+                        break
+                if author_found:
+                    break
+            
+            # If author is found but not in top 5, add to list
+            if author_found and author_position > 5:
+                paper_info = {
+                    "title": paper.title,
+                    "authors": [author.name for author in paper.authors],
+                    "author_position": author_position,
+                    "published": paper.published,
+                    "arxiv_id": paper.entry_id,
+                    "arxiv_url": paper.pdf_url,
+                    "categories": paper.categories
+                }
+                non_primary_papers.append(paper_info)
+                
+                # Download the paper if requested
+                if download:
+                    try:
+                        # Create a safe filename based on the paper title
+                        safe_title = "".join([c if c.isalnum() else "_" for c in paper.title[:50]])
+                        filename = f"{np_output_dir}/{safe_title}.pdf"
+                        
+                        # Check if paper already exists
+                        if not os.path.exists(filename):
+                            logger.info(f"Downloading non-primary paper: {paper.title}")
+                            paper.download_pdf(filename=filename)
+                            logger.info(f"Successfully downloaded to {filename}")
+                            
+                            # Save metadata
+                            metadata_filename = f"{os.path.splitext(filename)[0]}.txt"
+                            with open(metadata_filename, 'w', encoding='utf-8') as f:
+                                f.write(f"Title: {paper.title}\n")
+                                f.write(f"Authors: {', '.join(author.name for author in paper.authors)}\n")
+                                f.write(f"Published: {paper.published}\n")
+                                f.write(f"Updated: {paper.updated}\n")
+                                f.write(f"DOI: {paper.doi}\n" if paper.doi else "DOI: None\n")
+                                f.write(f"arXiv ID: {paper.entry_id}\n")
+                                f.write(f"arXiv URL: {paper.pdf_url}\n")
+                                f.write(f"Categories: {', '.join(paper.categories)}\n")
+                                f.write(f"Author Position: {author_position}\n")
+                                f.write("\nAbstract:\n")
+                                f.write(paper.summary)
+                    except Exception as e:
+                        logger.error(f"Error downloading paper {paper.title}: {str(e)}")
+        
+        # Save the list to a file
+        output_file = os.path.join(np_output_dir, "non_primary_papers.json")
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(non_primary_papers, f, indent=2, default=str)
+            logger.info(f"Saved {len(non_primary_papers)} non-primary papers to {output_file}")
+        except Exception as e:
+            logger.error(f"Error saving non-primary papers list: {str(e)}")
+        
+        return non_primary_papers
+
 if __name__ == "__main__":
     collector = PaperCollector()
-    papers = collector.collect_papers(max_papers=500)
-    print(f"Downloaded {len(papers)} papers") 
+    
+    # # Get primary author papers
+    # papers = collector.collect_papers(max_papers=500)
+    # print(f"Downloaded {len(papers)} primary author papers")
+    
+    # Get non-primary author papers
+    non_primary = collector.get_non_primary_papers(max_papers=1000, download=True)
+    print(f"\nFound {len(non_primary)} papers where {collector.author_name} is not a primary author")
+    print("\nPaper titles:")
+    for i, paper in enumerate(non_primary, 1):
+        print(f"{i}. {paper['title']}")
+        print(f"   Position: {paper['author_position']}")
+        print(f"   arXiv: {paper['arxiv_id']}")
+        print() 

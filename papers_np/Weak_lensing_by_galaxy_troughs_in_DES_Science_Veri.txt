@@ -1,0 +1,31 @@
+Title: Weak lensing by galaxy troughs in DES Science Verification data
+Authors: D. Gruen, O. Friedrich, A. Amara, D. Bacon, C. Bonnett, W. Hartley, B. Jain, M. Jarvis, T. Kacprzak, E. Krause, A. Mana, E. Rozo, E. S. Rykoff, S. Seitz, E. Sheldon, M. A. Troxel, V. Vikram, T. Abbott, F. B. Abdalla, S. Allam, R. Armstrong, M. Banerji, A. H. Bauer, M. R. Becker, A. Benoit-Levy, G. M. Bernstein, R. A. Bernstein, E. Bertin, S. L. Bridle, D. Brooks, E. Buckley-Geer, D. L. Burke, D. Capozzi, A. Carnero Rosell, M. Carrasco Kind, J. Carretero, M. Crocce, C. E. Cunha, C. B. D'Andrea, L. N. da Costa, D. L. DePoy, S. Desai, H. T. Diehl, J. P. Dietrich, P. Doel, T. F. Eifler, A. Fausti Neto, E. Fernandez, B. Flaugher, P. Fosalba, J. Frieman, D. W. Gerdes, R. A. Gruendl, G. Gutierrez, K. Honscheid, D. J. James, K. Kuehn, N. Kuropatkin, O. Lahav, T. S. Li, M. Lima, M. A. G. Maia, M. March, P. Martini, P. Melchior, C. J. Miller, R. Miquel, J. J. Mohr, B. Nord, R. Ogando, A. A. Plazas, K. Reil, A. K. Romer, A. Roodman, M. Sako, E. Sanchez, V. Scarpine, M. Schubnell, I. Sevilla-Noarbe, R. C. Smith, M. Soares-Santos, F. Sobreira, E. Suchyta, M. E. C. Swanson, G. Tarle, J. Thaler, D. Thomas, A. R. Walker, R. H. Wechsler, J. Weller, Y. Zhang, J. Zuntz
+Published: 2015-07-17 20:00:20+00:00
+Updated: 2015-12-08 21:00:37+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/1507.05090v2
+arXiv URL: http://arxiv.org/pdf/1507.05090v2
+Categories: astro-ph.CO
+Author Position: 89
+
+Abstract:
+We measure the weak lensing shear around galaxy troughs, i.e. the radial
+alignment of background galaxies relative to underdensities in projections of
+the foreground galaxy field over a wide range of redshift in Science
+Verification data from the Dark Energy Survey. Our detection of the shear
+signal is highly significant (10 to 15$\sigma$ for the smallest angular scales)
+for troughs with the redshift range z in [0.2,0.5] of the projected galaxy
+field and angular diameters of 10 arcmin...1{\deg}. These measurements probe
+the connection between the galaxy, matter density, and convergence fields. By
+assuming galaxies are biased tracers of the matter density with Poissonian
+noise, we find agreement of our measurements with predictions in a fiducial
+Lambda cold dark matter model. The prediction for the lensing signal on large
+trough scales is virtually independent of the details of the underlying model
+for the connection of galaxies and matter. Our comparison of the shear around
+troughs with that around cylinders with large galaxy counts is consistent with
+a symmetry between galaxy and matter over- and underdensities. In addition, we
+measure the two-point angular correlation of troughs with galaxies which, in
+contrast to the lensing signal, is sensitive to galaxy bias on all scales. The
+lensing signal of troughs and their clustering with galaxies is therefore a
+promising probe of the statistical properties of matter underdensities and
+their connection to the galaxy field.

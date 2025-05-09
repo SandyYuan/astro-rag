@@ -1,0 +1,32 @@
+Title: Full Modeling and Parameter Compression Methods in configuration space for DESI 2024 and beyond
+Authors: S. Ramirez-Solano, M. Icaza-Lizaola, H. E. Noriega, M. Vargas-Magaña, S. Fromenteau, A. Aviles, F. Rodriguez-Martinez, J. Aguilar, S. Ahlen, O. Alves, S. Brieden, D. Brooks, T. Claybaugh, S. Cole, A. de la Macorra, Arjun Dey, B. Dey, P. Doel, K. Fanning, J. E. Forero-Romero, E. Gaztañaga, H. Gil-Marín, S. Gontcho A Gontcho, K. Honscheid, C. Howlett, S. Juneau, Y. Lai, M. Landriau, M. Manera, M. Maus, R. Miquel, E. Mueller, A. Muñoz-Gutiérrez, A. D. Myers, S. Nadathur, J. Nie, W. J. Percival, C. Poppett, M. Rezaie, G. Rossi, E. Sanchez, D. Schlegel, M. Schubnell, H. Seo, D. Sprayberry, G. Tarlé, L. Verde, B. A. Weaver, R. H. Wechsler, S. Yuan, P. Zarrouk, H. Zou
+Published: 2024-04-10 18:00:53+00:00
+Updated: 2024-04-16 20:47:32+00:00
+DOI: None
+arXiv ID: http://arxiv.org/abs/2404.07268v2
+arXiv URL: http://arxiv.org/pdf/2404.07268v2
+Categories: astro-ph.CO
+Author Position: 49
+
+Abstract:
+In the contemporary era of high-precision spectroscopic surveys, led by
+projects like DESI, there is an increasing demand for optimizing the extraction
+of cosmological information from clustering data. This work conducts a thorough
+comparison of various methodologies for modeling the full shape of the
+two-point statistics in configuration space. We investigate the performance of
+both direct fits (Full-Modeling) and the parameter compression approaches
+(ShapeFit and Standard). We utilize the ABACUS-SUMMIT simulations, tailored to
+exceed DESI's precision requirements. Particularly, we fit the two-point
+statistics of three distinct tracers (LRG, ELG, and QSO), by employing a
+Gaussian Streaming Model in tandem with Convolution Lagrangian Perturbation
+Theory and Effective Field Theory. We explore methodological setup variations,
+including the range of scales, the set of galaxy bias parameters, the inclusion
+of the hexadecapole, as well as model extensions encompassing varying $n_s$ and
+allowing for $w_0w_a$CDM dark energy model. Throughout these varied
+explorations, while precision levels fluctuate and certain configurations
+exhibit tighter parameter constraints, our pipeline consistently recovers the
+parameter values of the mocks within $1\sigma$ in all cases for a 1-year DESI
+volume. Additionally, we compare the performance of configuration space
+analysis with its Fourier space counterpart using three models: PyBird, FOLPS
+and velocileptors, presented in companion papers. We find good agreement with
+the results from all these models.
