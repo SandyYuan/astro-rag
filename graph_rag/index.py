@@ -171,7 +171,9 @@ class GraphIndexer:
                 cid = _stable_claim_id(text)
                 claims.append({"id": cid, "text": text, "confidence": None})
             elif isinstance(c, dict):
-                text = (c.get("text") or "").strip()
+                raw_text = c.get("text")
+                # Coerce non-strings to strings safely
+                text = (str(raw_text) if raw_text is not None else "").strip()
                 if not text:
                     continue
                 cid_in = (c.get("id") or "").strip()
