@@ -51,8 +51,9 @@ class GraphIndexer:
         self.input_dirs = input_dirs or ["papers", "papers_np"]
         self.limit_files = limit_files
         # Reuse existing provider for extraction. Keep deterministic settings.
-        self.llm_provider = llm_provider or LLMProvider()
-        self.llm = self.llm_provider.get_llm(temperature=0.1)
+        # Do NOT initialize LLM until extraction time, so schema-only flows work without GOOGLE_API_KEY.
+        self.llm_provider = llm_provider
+        self.llm = None
 
         self.driver = GraphDatabase.driver(self.neo4j.uri, auth=(self.neo4j.user, self.neo4j.password))
 
@@ -106,6 +107,15 @@ class GraphIndexer:
           "claims": [{"id": str, "text": str, "confidence": float|null}]
         }
         """
+        # Lazy LLM init to avoid requiring GOOGLE_API_KEY for schema-only operations
+        if self.llm is None:
+            provider = self.llm_provider or LLMProvider()
+            model_override = os.getenv("GRAPH_RAG_TEXT_MODEL")
+            if model_override:
+                self.llm = provider.get_llm(temperature=0.1, model_name=model_override)
+            else:
+                self.llm = provider.get_llm(temperature=0.1)
+
         prompt = (
             "Extract key entities (names and optional types), simple typed relations between them, "
             "and 1-5 short factual claims from the text below. Return strict JSON with keys: "

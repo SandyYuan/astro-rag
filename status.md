@@ -8,4 +8,12 @@
 - 6) Sanity checks: Pending — run `python -m graph_rag.index --init-schema-only` after setting `NEO4J_*`.
  - 6) Sanity checks: CLI help verified for indexer and retriever inside `mcp` env. Next: set `NEO4J_*` in `.env` and run `python -m graph_rag.index --init-schema-only`.
 
+### Blocker
+- **Neo4j not reachable**: `bolt://localhost:7687` connection refused. Docker daemon is not running on this machine, so a local Neo4j container cannot be started yet. No Aura credentials provided.
+
+### Unblock options (pick one)
+- Start Docker Desktop, then run: `docker run --name neo4j -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=neo4j/password neo4j:5`
+- Provide Aura `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`
+- Or install local Neo4j via Homebrew and start the service
+
 

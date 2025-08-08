@@ -43,12 +43,10 @@ class GraphRetriever:
         return records
 
     def _fetch_neighborhood_claims(self, name: str, limit: int = 20) -> List[Dict[str, Any]]:
+        # Use mentions to collect claims supported by papers that mention the entity
         query = (
-            "MATCH (e:Entity {name: $name})-[:RELATES_TO]-(e2) "
-            "OPTIONAL MATCH (e)-[:RELATES_TO]-(e2)-[:RELATES_TO]-(e3) "
-            "OPTIONAL MATCH (c:Claim)-[:SUPPORTED_BY]->(p:Paper) "
-            "WHERE (c)-[:SUPPORTED_BY]->(p) "
-            "WITH e, collect(DISTINCT e2.name)[..5] AS nbrs, c, p "
+            "MATCH (e:Entity {name: $name})-[:MENTIONED_IN]->(p:Paper) "
+            "OPTIONAL MATCH (c:Claim)-[:SUPPORTED_BY]->(p) "
             "RETURN c.text AS claim, collect(DISTINCT p.path)[..3] AS sources LIMIT $limit"
         )
         with self.driver.session() as session:
