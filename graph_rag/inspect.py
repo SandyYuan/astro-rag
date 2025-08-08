@@ -52,7 +52,14 @@ class GraphInspector:
                 """
                 MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)
                 WHERE p.path IN $paths
-                RETURN DISTINCT e.name AS name, e.type AS type
+                RETURN DISTINCT e.name AS name,
+                       e.type AS type,
+                       e.description AS description,
+                       e.aliases AS aliases,
+                       e.paper_count AS paper_count,
+                       e.mention_count AS mention_count,
+                       e.top_paper_paths AS top_paper_paths,
+                       e.top_claim_ids AS top_claim_ids
                 ORDER BY name
                 """,
                 {"paths": paper_paths},
@@ -132,7 +139,29 @@ def main(argv: Optional[List[str]] = None) -> None:
 
     print("\nENTITIES:")
     for e in data["entities"]:
-        print(f"- {e['name']} | type={e.get('type')}")
+        name = e.get('name')
+        etype = e.get('type')
+        print(f"- {name} | type={etype} | papers={e.get('paper_count')} | mentions={e.get('mention_count')}")
+        if e.get('aliases'):
+            try:
+                alias_str = ", ".join(a for a in e['aliases'] if a)[:200]
+                print(f"  aliases: {alias_str}")
+            except Exception:
+                pass
+        if e.get('description'):
+            print(f"  desc: {e['description']}")
+        if e.get('top_paper_paths'):
+            try:
+                tpp = ", ".join(e['top_paper_paths'])
+                print(f"  top_papers: {tpp}")
+            except Exception:
+                pass
+        if e.get('top_claim_ids'):
+            try:
+                tci = ", ".join(e['top_claim_ids'])
+                print(f"  top_claims: {tci}")
+            except Exception:
+                pass
 
     print("\nCLAIMS:")
     for c in data["claims"]:

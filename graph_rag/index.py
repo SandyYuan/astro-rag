@@ -5,6 +5,7 @@ import logging
 from dataclasses import dataclass
 from typing import List, Dict, Any, Iterable, Optional
 import hashlib
+import re
 
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
@@ -186,6 +187,23 @@ class GraphIndexer:
     # ---------------------------
     # Upsert into Neo4j
     # ---------------------------
+    @staticmethod
+    def _normalize_name(name: str) -> str:
+        base = name.lower().strip()
+        base = re.sub(r"\s+", " ", base)
+        base = re.sub(r"[^a-z0-9 _:\-/]", "", base)
+        return base
+
+    @staticmethod
+    def _generate_aliases(name: str) -> List[str]:
+        aliases = set()
+        base = name.strip()
+        aliases.add(base)
+        aliases.add(base.lower())
+        aliases.add(re.sub(r"[\-_:]", " ", base))
+        aliases = {a for a in aliases if a}
+        return list(aliases)[:5]
+
     def upsert_document(self, path: str, title: Optional[str], items: Dict[str, Any]) -> None:
         with self.driver.session() as session:
             # Upsert Paper
@@ -199,17 +217,29 @@ class GraphIndexer:
             )
 
             # Entities
+            # Deduplicate entity names per document
+            seen_entities: Dict[str, Optional[str]] = {}
             for e in items.get("entities", []):
+                ename = e.get("name") if isinstance(e, dict) else str(e)
+                if not ename:
+                    continue
+                if ename not in seen_entities:
+                    seen_entities[ename] = (e.get("type") if isinstance(e, dict) else None)
+            for ename, etype in seen_entities.items():
+                norm_name = self._normalize_name(ename)
+                aliases = self._generate_aliases(ename)
                 session.run(
                     """
                     MERGE (en:Entity {name: $name})
-                    ON CREATE SET en.type = $type
-                    ON MATCH SET en.type = coalesce($type, en.type)
+                    ON CREATE SET en.type = $type, en.normalized_name = $norm, en.aliases = $aliases
+                    ON MATCH SET en.type = coalesce($type, en.type),
+                                  en.normalized_name = coalesce(en.normalized_name, $norm),
+                                  en.aliases = coalesce(en.aliases, $aliases)
                     WITH en
                     MATCH (p:Paper {path: $paper})
                     MERGE (en)-[m:MENTIONED_IN]->(p)
                     """,
-                    {"name": e["name"], "type": e.get("type"), "paper": path},
+                    {"name": ename, "type": etype, "paper": path, "norm": norm_name, "aliases": aliases},
                 )
 
             # Claims
@@ -268,6 +298,53 @@ class GraphIndexer:
                 logger.info(f"Indexed: {path}")
             except Exception as e:
                 logger.error(f"Failed indexing {path}: {e}")
+
+        # Post-process entity summaries (counts, top references, description)
+        self.update_entity_summaries()
+
+    def update_entity_summaries(self) -> None:
+        with self.driver.session() as session:
+            # mention_count and paper_count
+            session.run(
+                """
+                MATCH (e:Entity)
+                OPTIONAL MATCH (e)-[:MENTIONED_IN]->(p:Paper)
+                WITH e, count(DISTINCT p) AS pc
+                SET e.paper_count = pc,
+                    e.mention_count = pc
+                """
+            )
+            # top_paper_paths by number of claims supported in that paper (desc)
+            session.run(
+                """
+                MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)
+                OPTIONAL MATCH (c:Claim)-[:SUPPORTED_BY]->(p)
+                WITH e, p, count(c) AS cc
+                ORDER BY e.name, cc DESC
+                WITH e, collect({path: p.path, cc: cc}) AS plist
+                SET e.top_paper_paths = [x IN plist[..3] | x.path]
+                """
+            )
+            # top_claim_ids for entity
+            session.run(
+                """
+                MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)<-[:SUPPORTED_BY]-(c:Claim)
+                WITH e, c, count(*) AS freq
+                ORDER BY e.name, freq DESC
+                WITH e, collect({id: c.id, f: freq}) AS cl
+                SET e.top_claim_ids = [x IN cl[..5] | x.id]
+                """
+            )
+            # description from top claim text (first only to avoid string concat issues)
+            session.run(
+                """
+                MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)<-[:SUPPORTED_BY]-(c:Claim)
+                WITH e, c, count(*) AS freq
+                ORDER BY e.name, freq DESC
+                WITH e, collect(c.text) AS texts
+                SET e.description = CASE WHEN size(texts) > 0 THEN texts[0] ELSE e.description END
+                """
+            )
 
 
 def _parse_args(argv: Optional[List[str]] = None) -> Any:
