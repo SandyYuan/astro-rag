@@ -1,6 +1,10 @@
 ## Neo4j GraphRAG Integration Plan
 
-Objective: Add a Neo4j-based GraphRAG path alongside the existing FAISS RAG with minimal edits. Keep the FastAPI surface (`app.py`) and chat flow intact. Allow easy A/B testing by switching retrievers.
+Objective: Build Neo4j GraphRAG first (graph + `retrieve_graph`) with zero changes to the FAISS pipeline. Then, optionally wire it into the chatbot and add a mode switch for A/B testing.
+
+Phases
+- Phase 1 (now): Implement graph indexing and `GraphRetriever` (no FAISS changes; no re-embedding required)
+- Phase 2 (later): Wire into `chatbot.py` with a retriever toggle; optional fusion with FAISS
 
 ### 1) Architecture delta (what changes vs what stays)
 - Keep
@@ -10,7 +14,7 @@ Objective: Add a Neo4j-based GraphRAG path alongside the existing FAISS RAG with
   - A small `graph_rag/` module containing:
     - `graph_rag/index.py`: one-off (or scheduled) graph indexing from existing `.txt`/PDF-derived text
     - `graph_rag/neo4j_client.py`: a `GraphRetriever` that returns `langchain`-compatible `Document` objects
-  - A mode switch in `chatbot.py` to select `neo4j` vs `faiss` retriever (default remains FAISS)
+  - (Phase 2) A mode switch in `chatbot.py` to select `neo4j` vs `faiss` retriever
 
 Result: Zero API changes, minimal code edits localized to `chatbot.py` plus new isolated files.
 
@@ -71,7 +75,7 @@ Steps
    - Upsert nodes and relationships via Cypher using Neo4j driver
 4. Optionally compute and store:
    - node-level/community summaries
-   - entity/claim embeddings and create a Neo4j vector index for hybrid search
+   - (Optional) entity/claim embeddings and a Neo4j vector index for hybrid search — not required for Phase 1
 
 Operational notes
 - Batch writes (transaction per document or per N chunks)
@@ -102,28 +106,11 @@ OPTIONAL MATCH (c)-[:SUPPORTED_BY]->(p:Paper)
 RETURN c.text AS claim, collect(DISTINCT p.path)[..3] AS sources LIMIT 20;
 ```
 
-### 7) Wire-up in `chatbot.py` (minimal edit)
-- Add a constructor parameter (or env var) to choose retrieval mode:
-  - `retrieval_mode = os.getenv("RAG_MODE", "faiss")`
-- In `setup_rag()`:
-  - If `faiss`: keep existing code
-  - If `neo4j`: instantiate `GraphRetriever` and assign to `self.retriever`; keep the same LLM and QA chain
+### 7) Wire-up in `chatbot.py` (Phase 2 — later)
+- Add a constructor parameter (or env var) to choose retrieval mode: `retrieval_mode = os.getenv("RAG_MODE", "faiss")`
+- If `neo4j`: instantiate `GraphRetriever` and assign to `self.retriever`; keep the same LLM and QA chain
+- If `faiss`: keep existing FAISS code
 - No other changes to `chat()` are needed since it already calls `self.retriever.get_relevant_documents(...)`
-
-Example toggle (conceptual)
-```python
-# chatbot.py
-self.retrieval_mode = os.getenv("RAG_MODE", "faiss")
-if self.retrieval_mode == "neo4j":
-    from graph_rag.neo4j_client import GraphRetriever
-    self.retriever = GraphRetriever(
-        uri=os.environ["NEO4J_URI"],
-        user=os.environ["NEO4J_USER"],
-        password=os.environ["NEO4J_PASSWORD"],
-    )
-else:
-    # existing FAISS setup
-```
 
 ### 8) Runbook
 1. Start Neo4j
@@ -134,11 +121,11 @@ else:
 3. Initialize graph
    - Run schema Cypher constraints (once)
 4. Index a small subset first
-   - `python -m graph_rag.index --limit 20` (implement `--limit` in the script for quick iteration)
-5. Launch app with Neo4j mode
-   - `RAG_MODE=neo4j python app.py`
-6. A/B test
-   - Switch `RAG_MODE=faiss` vs `neo4j` and compare multi-hop/entity questions and source quality
+   - `python -m graph_rag.index --limit 20` (implement `--limit`)
+5. Smoke test the retriever (Phase 1)
+   - Add a small CLI in `graph_rag/neo4j_client.py` to run `get_relevant_documents("<query>")` and print sources
+6. (Phase 2) Launch app with Neo4j mode
+   - `RAG_MODE=neo4j python app.py` and compare to `faiss`
 
 ### 9) A/B evaluation (lightweight)
 - Create a CSV of 15–20 representative questions (broad + entity-specific)
@@ -161,12 +148,13 @@ else:
 - Set `RAG_MODE=faiss` and restart; no data/model changes needed
 
 ### 13) Deliverables checklist
-- [ ] `graph_rag/index.py` (ingestion + extraction + upsert)
-- [ ] `graph_rag/neo4j_client.py` (`GraphRetriever.get_relevant_documents`)
-- [ ] `chatbot.py` mode switch in `setup_rag()`
-- [ ] `.env` updated with `NEO4J_*` and LLM keys
-- [ ] Constraints created in Neo4j
-- [ ] Smoke test queries pass in both modes
+- Phase 1
+  - [ ] `graph_rag/index.py` (ingestion + extraction + upsert)
+  - [ ] `graph_rag/neo4j_client.py` (`GraphRetriever.get_relevant_documents` + simple CLI smoke test)
+  - [ ] `.env` updated with `NEO4J_*` and LLM keys
+  - [ ] Constraints created in Neo4j
+- Phase 2
+  - [ ] `chatbot.py` mode switch in `setup_rag()` and end-to-end smoke test
 
 ### 14) Time estimate
 - Neo4j setup + schema: 0.5h–1h
