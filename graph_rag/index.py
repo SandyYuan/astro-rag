@@ -4,6 +4,7 @@ import glob
 import logging
 from dataclasses import dataclass
 from typing import List, Dict, Any, Iterable, Optional
+import hashlib
 
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
@@ -118,8 +119,9 @@ class GraphIndexer:
 
         prompt = (
             "Extract key entities (names and optional types), simple typed relations between them, "
-            "and 1-5 short factual claims from the text below. Return strict JSON with keys: "
-            "entities, relations, claims. Use stable IDs for claims derived from content (e.g., a short slug).\n\n"
+            "and 1-5 short, declarative claims from the text below. Return strict JSON with keys: "
+            "entities, relations, claims. Each claim must be an object with fields {text, id (optional), confidence (optional)}. "
+            "If unsure, include best-effort claims and set low confidence; do not return an empty 'claims' list.\n\n"
             "TEXT:\n" + text[:8000]
         )
         raw = self.llm(prompt)
@@ -135,11 +137,17 @@ class GraphIndexer:
                 raise ValueError("LLM did not return valid JSON for extraction")
 
         # Normalize
-        entities = [
-            {"name": e.get("name", "").strip(), "type": (e.get("type") or "").strip() or None}
-            for e in data.get("entities", [])
-            if e.get("name")
-        ]
+        entities: List[Dict[str, Any]] = []
+        for e in data.get("entities", []):
+            if isinstance(e, str):
+                name = e.strip()
+                if name:
+                    entities.append({"name": name, "type": None})
+            elif isinstance(e, dict):
+                name = (e.get("name") or "").strip()
+                if name:
+                    etype = (e.get("type") or "").strip() or None
+                    entities.append({"name": name, "type": etype})
         relations = [
             {
                 "source": r.get("source", "").strip(),
@@ -150,15 +158,27 @@ class GraphIndexer:
             for r in data.get("relations", [])
             if r.get("source") and r.get("target") and r.get("relation_type")
         ]
-        claims = [
-            {
-                "id": c.get("id", "").strip() or str(hash(c.get("text", "").strip()))[:12],
-                "text": c.get("text", "").strip(),
-                "confidence": c.get("confidence"),
-            }
-            for c in data.get("claims", [])
-            if c.get("text")
-        ]
+        def _stable_claim_id(text: str) -> str:
+            h = hashlib.blake2s(text.encode("utf-8"), digest_size=8).hexdigest()  # 16 hex chars
+            return f"clm_{h}"
+
+        claims: List[Dict[str, Any]] = []
+        for c in data.get("claims", []):
+            if isinstance(c, str):
+                text = c.strip()
+                if not text:
+                    continue
+                cid = _stable_claim_id(text)
+                claims.append({"id": cid, "text": text, "confidence": None})
+            elif isinstance(c, dict):
+                text = (c.get("text") or "").strip()
+                if not text:
+                    continue
+                cid_in = (c.get("id") or "").strip()
+                # Always normalize to our stable format for consistency
+                cid = _stable_claim_id(text)
+                conf = c.get("confidence")
+                claims.append({"id": cid, "text": text, "confidence": conf})
         return {"entities": entities, "relations": relations, "claims": claims}
 
     # ---------------------------
@@ -232,7 +252,15 @@ class GraphIndexer:
             try:
                 with open(path, "r", encoding="utf-8") as f:
                     text = f.read()
-                title = os.path.splitext(os.path.basename(path))[0].replace("_", " ")
+                # Prefer actual title from .txt if present (line starting with 'Title:')
+                title = None
+                for line in text.splitlines():
+                    if line.strip():
+                        if line.lower().startswith("title:"):
+                            title = line.split(":", 1)[1].strip()
+                        break
+                if not title:
+                    title = os.path.splitext(os.path.basename(path))[0].replace("_", " ")
                 items = self.extract_graph_items(text)
                 self.upsert_document(path=path, title=title, items=items)
                 logger.info(f"Indexed: {path}")
