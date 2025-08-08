@@ -95,8 +95,8 @@ class AstronomyChatbot:
             }
         )
         
-        # Get the language model from the provider
-        self.llm = self.llm_provider.get_llm()
+        # Get the language model from the provider (chat/agent: gemini-2.5-pro)
+        self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-pro")
         
         # Import QA chain components
         from langchain.chains.question_answering import load_qa_chain

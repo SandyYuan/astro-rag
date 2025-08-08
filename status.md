@@ -5,6 +5,7 @@
 - 3) Indexer CLI: Implemented `GraphIndexer` with `--limit`, `--dirs`, and `--init-schema-only` flags.
 - 4) Constraints: Added `Entity.name`, `Paper.path`, `Claim.id` constraints creation.
 - 5) Retriever: Implemented `GraphRetriever.get_relevant_documents()` with simple entity search and neighborhood claims.
+- 5.1) Removed global fallback path to comply with "no fallbacks" rule. Now returns empty when no entity match.
 - 6) Sanity checks: Pending — run `python -m graph_rag.index --init-schema-only` after setting `NEO4J_*`.
  - 6) Sanity checks: CLI help verified for indexer and retriever inside `mcp` env. Next: set `NEO4J_*` in `.env` and run `python -m graph_rag.index --init-schema-only`.
 

@@ -110,7 +110,7 @@ class GraphIndexer:
         # Lazy LLM init to avoid requiring GOOGLE_API_KEY for schema-only operations
         if self.llm is None:
             provider = self.llm_provider or LLMProvider()
-            model_override = os.getenv("GRAPH_RAG_TEXT_MODEL")
+            model_override = os.getenv("GRAPH_RAG_TEXT_MODEL", "gemini-2.5-flash")
             if model_override:
                 self.llm = provider.get_llm(temperature=0.1, model_name=model_override)
             else:

@@ -47,20 +47,12 @@ class GraphRetriever:
         query = (
             "MATCH (e:Entity {name: $name})-[:MENTIONED_IN]->(p:Paper) "
             "OPTIONAL MATCH (c:Claim)-[:SUPPORTED_BY]->(p) "
+            "WITH c, p WHERE c IS NOT NULL "
             "RETURN c.text AS claim, collect(DISTINCT p.path)[..3] AS sources LIMIT $limit"
         )
         with self.driver.session() as session:
             records = session.run(query, {"name": name, "limit": limit}).data()
         return records
-
-    def _global_top_entities(self, limit: int = 10) -> List[str]:
-        query = (
-            "MATCH (e:Entity)-[r]-() RETURN e.name AS name, count(r) AS deg "
-            "ORDER BY deg DESC LIMIT $limit"
-        )
-        with self.driver.session() as session:
-            records = session.run(query, {"limit": limit}).data()
-        return [r["name"] for r in records]
 
     def get_relevant_documents(self, query_str: str) -> List[Document]:
         # Heuristic: if the query contains a capitalized token likely to be an entity, prefer local search
@@ -71,25 +63,17 @@ class GraphRetriever:
             entity_name = candidate_entities[0]["name"]
             claims = self._fetch_neighborhood_claims(entity_name, limit=30)
             for c in claims[: self.k]:
+                claim_text = c.get('claim')
+                if not claim_text:
+                    continue
                 sources = c.get('sources', []) or []
                 page_content = (
                     f"Entity: {entity_name}\n"
-                    f"Claim: {c.get('claim','')}\n"
+                    f"Claim: {claim_text}\n"
                     f"Sources: {', '.join(sources)}"
                 )
                 docs.append(Document(page_content=page_content, metadata={"source": entity_name}))
-            return docs
-
-        # Fallback global path: central entities
-        top_entities = self._global_top_entities(limit=10)
-        for name in top_entities[: self.k]:
-            claims = self._fetch_neighborhood_claims(name, limit=10)
-            text_lines = [f"Entity: {name}"]
-            for c in claims[:3]:
-                sources = c.get('sources', []) or []
-                text_lines.append(f"- {c.get('claim','')} (src: {', '.join(sources)})")
-            page_content = "\n".join(text_lines)
-            docs.append(Document(page_content=page_content, metadata={"source": name}))
+        # No fallback path; if no entity match, return empty list
         return docs
 
 
