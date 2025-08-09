@@ -42,6 +42,21 @@ Professor-specific chatbot that uses Retrieval-Augmented Generation (RAG) over r
 - Required env var: `GOOGLE_API_KEY`
   - Optional legacy: `LLM_PROVIDER=google` (kept for compatibility)
 
+### Conda environment activation (mcp)
+This is necessary to run anything. Make sure to run this before testing the code. 
+- bash
+  ```bash
+eval "$(conda shell.bash hook)" && conda activate mcp
+  ```
+- If the hook is unavailable, source conda explicitly (adjust path if needed):
+  ```bash
+source /Users/sandyyuan/opt/anaconda3/etc/profile.d/conda.sh && conda activate mcp
+  ```
+- Without activation (one-off):
+  ```bash
+conda run -n mcp python -V
+  ```
+
 Place a `.env` file in repo root, e.g.:
 ```
 GOOGLE_API_KEY=your_google_api_key

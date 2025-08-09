@@ -1,20 +1,34 @@
 ## Knowledge Graph Implementation Trace
 
-- 1) Scaffolding: Added `graph_rag/` with `__init__.py`, `index.py`, `neo4j_client.py` per `graph.md` plan.
-- 2) Dependencies: Added `neo4j` Python driver to `requirements.txt`.
-- 3) Indexer CLI: Implemented `GraphIndexer` with `--limit`, `--dirs`, and `--init-schema-only` flags.
-- 4) Constraints: Added `Entity.name`, `Paper.path`, `Claim.id` constraints creation.
-- 5) Retriever: Implemented `GraphRetriever.get_relevant_documents()` with simple entity search and neighborhood claims.
-- 5.1) Removed global fallback path to comply with "no fallbacks" rule. Now returns empty when no entity match.
-- 6) Sanity checks: Pending — run `python -m graph_rag.index --init-schema-only` after setting `NEO4J_*`.
- - 6) Sanity checks: CLI help verified for indexer and retriever inside `mcp` env. Next: set `NEO4J_*` in `.env` and run `python -m graph_rag.index --init-schema-only`.
+- Implemented `graph_rag/` per plan: `index.py`, `neo4j_client.py`, `inspect.py`.
+- Added Neo4j constraints (`Entity.name`, `Paper.path`, `Claim.id`).
+- Indexer (Phase 1) over `.txt` abstracts:
+  - LLM extraction (Gemini) for entities, relations, claims
+  - Tolerant claim parsing; stable IDs `clm_<hash>`
+  - Upserts: `(Entity)-[:MENTIONED_IN]->(Paper)`, `(Claim)-[:SUPPORTED_BY]->(Paper)`
+  - Entity metadata: `description`, `aliases`, `paper_count`, `mention_count`, `top_paper_paths`, `top_claim_ids`
+- Inspector prints nodes and edges with the above metadata.
+- Retriever:
+  - No fallback. Returns results only when matches found
+  - Entity search now uses full-text in code path (pending index creation in DB)
+  - Aggregates multiple claim snippets per entity in one document (entity-centric)
+- Local Neo4j (Homebrew) running; DB wiped and rebuilt on 3 `.txt` papers; sanity queries work.
 
-### Blocker
-- **Neo4j not reachable**: `bolt://localhost:7687` connection refused. Docker daemon is not running on this machine, so a local Neo4j container cannot be started yet. No Aura credentials provided.
+### Current Work (in progress)
+- Full-text indexes in Neo4j 5 (DB DDL):
+  - CREATE FULLTEXT INDEX `entityFulltext` ON `Entity` (name, aliases)
+  - CREATE FULLTEXT INDEX `claimFulltext` ON `Claim` (text)
+  - CREATE FULLTEXT INDEX `paperFulltext` ON `Paper` (title)
+- Extend extraction schema to include `about_entities` per claim; upsert `(:Claim)-[:ABOUT]->(:Entity)`
+- Update retriever paths to use:
+  - Entity-centric: FT query entities → aggregate top `[:ABOUT]` claims
+  - Claim-centric: FT query claims → group by linked entities and return grouped summaries
 
-### Unblock options (pick one)
-- Start Docker Desktop, then run: `docker run --name neo4j -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=neo4j/password neo4j:5`
-- Provide Aura `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`
-- Or install local Neo4j via Homebrew and start the service
+### Next Steps
+- Implement Neo4j 5 DDL in `ensure_schema()` (CREATE FULLTEXT INDEX …) and re-run `--init-schema-only`
+- Update indexer to read `about_entities` and upsert `[:ABOUT]` edges; re-index 3 papers
+- Verify retrieval for queries: “weak lensing” (entity-centric) and “simulation-based inference” (claim-centric)
 
-
+### Notes
+- No fallbacks implemented (empty results are explicit)
+- Graph is persisted in local Neo4j; wipe with `MATCH (n) DETACH DELETE n` for clean runs

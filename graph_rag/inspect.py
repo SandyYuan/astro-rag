@@ -116,6 +116,19 @@ class GraphInspector:
             ).data()
             result["relates_to"] = relates
 
+            # Edges: ABOUT (claims about entities supported by selected papers)
+            about = session.run(
+                """
+                MATCH (c:Claim)-[:ABOUT]->(e:Entity)
+                MATCH (c)-[:SUPPORTED_BY]->(p:Paper)
+                WHERE p.path IN $paths
+                RETURN DISTINCT c.id AS claim, 'ABOUT' AS rel, e.name AS entity
+                ORDER BY claim, entity
+                """,
+                {"paths": paper_paths},
+            ).data()
+            result["about"] = about
+
         return result
 
 
@@ -178,6 +191,10 @@ def main(argv: Optional[List[str]] = None) -> None:
     print("\nEDGES: RELATES_TO")
     for r in data["relates_to"]:
         print(f"- ({r['source']}) -[{r['rel']}:{r.get('relation_type')}] -> ({r['target']})")
+
+    print("\nEDGES: ABOUT")
+    for a in data.get("about", []):
+        print(f"- ({a['claim']}) -[{a['rel']}]-> ({a['entity']})")
 
 
 if __name__ == "__main__":

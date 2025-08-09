@@ -8,11 +8,13 @@ import hashlib
 import re
 
 from dotenv import load_dotenv
+from pathlib import Path
 from neo4j import GraphDatabase
 
 from llm_provider import LLMProvider
 
-load_dotenv()
+# Load .env explicitly from repository root to ensure availability in all run contexts
+load_dotenv(dotenv_path=str(Path(__file__).resolve().parents[1] / ".env"), override=False)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -63,8 +65,8 @@ class GraphIndexer:
     # Schema and constraints
     # ---------------------------
     def ensure_schema(self) -> None:
-        """Create minimal constraints. Safe to run multiple times."""
-        cypher_statements = [
+        """Create constraints and Neo4j 5 full-text indexes (idempotent)."""
+        constraint_ddl = [
             """
             CREATE CONSTRAINT entity_name IF NOT EXISTS
             FOR (e:Entity) REQUIRE e.name IS UNIQUE
@@ -78,10 +80,29 @@ class GraphIndexer:
             FOR (c:Claim) REQUIRE c.id IS UNIQUE
             """,
         ]
+
+        fulltext_ddl = [
+            # Index both single string and array property via ON EACH
+            """
+            CREATE FULLTEXT INDEX entityFulltext IF NOT EXISTS
+            FOR (e:Entity) ON EACH [e.name, e.aliases]
+            """,
+            """
+            CREATE FULLTEXT INDEX claimFulltext IF NOT EXISTS
+            FOR (c:Claim) ON EACH [c.text]
+            """,
+            """
+            CREATE FULLTEXT INDEX paperFulltext IF NOT EXISTS
+            FOR (p:Paper) ON EACH [p.title]
+            """,
+        ]
+
         with self.driver.session() as session:
-            for stmt in cypher_statements:
+            for stmt in constraint_ddl:
                 session.run(stmt)
-        logger.info("Neo4j constraints ensured")
+            for stmt in fulltext_ddl:
+                session.run(stmt)
+        logger.info("Neo4j constraints and full-text indexes ensured")
 
     # ---------------------------
     # File loading
@@ -121,7 +142,7 @@ class GraphIndexer:
         prompt = (
             "Extract key entities (names and optional types), simple typed relations between them, "
             "and 1-5 short, declarative claims from the text below. Return strict JSON with keys: "
-            "entities, relations, claims. Each claim must be an object with fields {text, id (optional), confidence (optional)}. "
+            "entities, relations, claims. Each claim must be an object with fields {text, id (optional), confidence (optional), about_entities (array of canonical entity names)}. "
             "If unsure, include best-effort claims and set low confidence; do not return an empty 'claims' list.\n\n"
             "TEXT:\n" + text[:8000]
         )
@@ -170,7 +191,7 @@ class GraphIndexer:
                 if not text:
                     continue
                 cid = _stable_claim_id(text)
-                claims.append({"id": cid, "text": text, "confidence": None})
+                claims.append({"id": cid, "text": text, "confidence": None, "about_entities": []})
             elif isinstance(c, dict):
                 raw_text = c.get("text")
                 # Coerce non-strings to strings safely
@@ -181,7 +202,18 @@ class GraphIndexer:
                 # Always normalize to our stable format for consistency
                 cid = _stable_claim_id(text)
                 conf = c.get("confidence")
-                claims.append({"id": cid, "text": text, "confidence": conf})
+                about_list = c.get("about_entities") or c.get("about") or []
+                if isinstance(about_list, str):
+                    about_list = [about_list]
+                about_entities = []
+                for ae in about_list:
+                    try:
+                        s = str(ae).strip()
+                        if s:
+                            about_entities.append(s)
+                    except Exception:
+                        continue
+                claims.append({"id": cid, "text": text, "confidence": conf, "about_entities": about_entities})
         return {"entities": entities, "relations": relations, "claims": claims}
 
     # ---------------------------
@@ -244,6 +276,7 @@ class GraphIndexer:
 
             # Claims
             for c in items.get("claims", []):
+                about_entities = c.get("about_entities") or []
                 session.run(
                     """
                     MERGE (cl:Claim {id: $id})
@@ -252,8 +285,18 @@ class GraphIndexer:
                     WITH cl
                     MATCH (p:Paper {path: $paper})
                     MERGE (cl)-[:SUPPORTED_BY]->(p)
+                    WITH cl
+                    UNWIND $about AS ename
+                    MERGE (en:Entity {name: ename})
+                    MERGE (cl)-[:ABOUT]->(en)
                     """,
-                    {"id": c["id"], "text": c["text"], "conf": c.get("confidence"), "paper": path},
+                    {
+                        "id": c["id"],
+                        "text": c["text"],
+                        "conf": c.get("confidence"),
+                        "paper": path,
+                        "about": about_entities,
+                    },
                 )
 
             # Relations
@@ -304,6 +347,13 @@ class GraphIndexer:
 
     def update_entity_summaries(self) -> None:
         with self.driver.session() as session:
+            # Clear stale descriptions before recomputing from ABOUT edges
+            session.run(
+                """
+                MATCH (e:Entity)
+                SET e.description = NULL
+                """
+            )
             # mention_count and paper_count
             session.run(
                 """
@@ -328,7 +378,7 @@ class GraphIndexer:
             # top_claim_ids for entity
             session.run(
                 """
-                MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)<-[:SUPPORTED_BY]-(c:Claim)
+                MATCH (e:Entity)<-[:ABOUT]-(c:Claim)
                 WITH e, c, count(*) AS freq
                 ORDER BY e.name, freq DESC
                 WITH e, collect({id: c.id, f: freq}) AS cl
@@ -338,7 +388,7 @@ class GraphIndexer:
             # description from top claim text (first only to avoid string concat issues)
             session.run(
                 """
-                MATCH (e:Entity)-[:MENTIONED_IN]->(p:Paper)<-[:SUPPORTED_BY]-(c:Claim)
+                MATCH (e:Entity)<-[:ABOUT]-(c:Claim)
                 WITH e, c, count(*) AS freq
                 ORDER BY e.name, freq DESC
                 WITH e, collect(c.text) AS texts
@@ -363,6 +413,11 @@ def _parse_args(argv: Optional[List[str]] = None) -> Any:
         action="store_true",
         help="Only create constraints/indexes and exit",
     )
+    parser.add_argument(
+        "--update-summaries-only",
+        action="store_true",
+        help="Only recompute entity summaries/descriptions and exit",
+    )
     return parser.parse_args(argv)
 
 
@@ -372,6 +427,10 @@ def main(argv: Optional[List[str]] = None) -> None:
     if args.init_schema_only:
         indexer.ensure_schema()
         logger.info("Schema initialized. Exiting as requested.")
+        return
+    if args.update_summaries_only:
+        indexer.update_entity_summaries()
+        logger.info("Entity summaries updated. Exiting as requested.")
         return
     indexer.run()
 

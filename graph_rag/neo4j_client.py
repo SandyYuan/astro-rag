@@ -33,47 +33,68 @@ class GraphRetriever:
         self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
 
     def _search_entities(self, phrase: str) -> List[Dict[str, Any]]:
-        # Simple exact/contains search; fulltext index can be added later if desired
+        # Full-text search over entity index
         query = (
-            "MATCH (e:Entity) WHERE toLower(e.name) CONTAINS toLower($q) "
-            "RETURN e.name AS name, e.type AS type LIMIT 10"
+            "CALL db.index.fulltext.queryNodes('entityFulltext', $q) YIELD node, score "
+            "RETURN node.name AS name, node.type AS type, score ORDER BY score DESC LIMIT 10"
         )
         with self.driver.session() as session:
             records = session.run(query, {"q": phrase}).data()
         return records
 
-    def _fetch_neighborhood_claims(self, name: str, limit: int = 20) -> List[Dict[str, Any]]:
-        # Use mentions to collect claims supported by papers that mention the entity
+    def _fetch_entity_claims(self, name: str, limit: int = 20) -> List[Dict[str, Any]]:
+        # Prefer explicit ABOUT edges
         query = (
-            "MATCH (e:Entity {name: $name})-[:MENTIONED_IN]->(p:Paper) "
-            "OPTIONAL MATCH (c:Claim)-[:SUPPORTED_BY]->(p) "
-            "WITH c, p WHERE c IS NOT NULL "
+            "MATCH (e:Entity {name: $name})<-[:ABOUT]-(c:Claim) "
+            "OPTIONAL MATCH (c)-[:SUPPORTED_BY]->(p:Paper) "
             "RETURN c.text AS claim, collect(DISTINCT p.path)[..3] AS sources LIMIT $limit"
         )
         with self.driver.session() as session:
             records = session.run(query, {"name": name, "limit": limit}).data()
         return records
 
+    def _search_claims(self, phrase: str, limit: int = 20) -> List[Dict[str, Any]]:
+        query = (
+            "CALL db.index.fulltext.queryNodes('claimFulltext', $q) YIELD node, score "
+            "OPTIONAL MATCH (node)-[:ABOUT]->(e:Entity) "
+            "RETURN node.text AS claim, collect(DISTINCT e.name)[..3] AS entities, score "
+            "ORDER BY score DESC LIMIT $limit"
+        )
+        with self.driver.session() as session:
+            return session.run(query, {"q": phrase, "limit": limit}).data()
+
     def get_relevant_documents(self, query_str: str) -> List[Document]:
-        # Heuristic: if the query contains a capitalized token likely to be an entity, prefer local search
-        candidate_entities = self._search_entities(query_str)
         docs: List[Document] = []
-        if candidate_entities:
-            # Use the best-matching entity
-            entity_name = candidate_entities[0]["name"]
-            claims = self._fetch_neighborhood_claims(entity_name, limit=30)
-            for c in claims[: self.k]:
-                claim_text = c.get('claim')
-                if not claim_text:
-                    continue
-                sources = c.get('sources', []) or []
-                page_content = (
-                    f"Entity: {entity_name}\n"
-                    f"Claim: {claim_text}\n"
-                    f"Sources: {', '.join(sources)}"
-                )
-                docs.append(Document(page_content=page_content, metadata={"source": entity_name}))
-        # No fallback path; if no entity match, return empty list
+        # Try entity-centric aggregation
+        entities = self._search_entities(query_str)
+        if entities:
+            # Aggregate per-entity: 1 document per entity, include top claims
+            for ent in entities[: self.k]:
+                name = ent["name"]
+                claims = self._fetch_entity_claims(name, limit=5)
+                lines = [f"Entity: {name}"]
+                for c in claims:
+                    if c.get("claim"):
+                        lines.append(f"- {c['claim']} (src: {', '.join(c.get('sources', []) or [])})")
+                page_content = "\n".join(lines)
+                docs.append(Document(page_content=page_content, metadata={"source": name}))
+            return docs
+
+        # Claim-centric: group by entities
+        claim_hits = self._search_claims(query_str, limit=20)
+        if not claim_hits:
+            return []
+        # Build one document summarizing top claims grouped by entities
+        grouped: Dict[str, List[str]] = {}
+        for h in claim_hits[: 3 * self.k]:
+            claim = h.get("claim")
+            ent_list = h.get("entities") or ["(unknown entity)"]
+            for en in ent_list:
+                grouped.setdefault(en, []).append(claim)
+        # Take top-k entities and 2 claims each
+        for en, cl in list(grouped.items())[: self.k]:
+            lines = [f"Entity: {en}"] + [f"- {c}" for c in cl[:2] if c]
+            docs.append(Document(page_content="\n".join(lines), metadata={"source": en}))
         return docs
 
 
