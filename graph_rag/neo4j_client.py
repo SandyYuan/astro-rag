@@ -1,5 +1,6 @@
 import os
 import logging
+import atexit
 from typing import List, Dict, Any, Optional
 
 from dotenv import load_dotenv
@@ -31,6 +32,19 @@ class GraphRetriever:
         self.user = _get_env("NEO4J_USER")
         self.password = _get_env("NEO4J_PASSWORD")
         self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
+        # Ensure clean shutdown to avoid driver __del__ warnings at interpreter exit
+        atexit.register(self._safe_close)
+
+    def _safe_close(self) -> None:
+        try:
+            if getattr(self, "driver", None) is not None:
+                self.driver.close()
+        except BaseException:
+            # Ignore shutdown-time errors
+            pass
+
+    def close(self) -> None:
+        self._safe_close()
 
     def _search_entities(self, phrase: str) -> List[Dict[str, Any]]:
         # Full-text search over entity index
@@ -109,9 +123,12 @@ def _parse_args(argv: Optional[List[str]] = None):
 def main(argv: Optional[List[str]] = None) -> None:
     args = _parse_args(argv)
     retriever = GraphRetriever(k=args.k)
-    docs = retriever.get_relevant_documents(args.q)
-    for i, d in enumerate(docs, 1):
-        print(f"[#{i}] {d.metadata.get('source')}:\n{d.page_content}\n")
+    try:
+        docs = retriever.get_relevant_documents(args.q)
+        for i, d in enumerate(docs, 1):
+            print(f"[#{i}] {d.metadata.get('source')}:\n{d.page_content}\n")
+    finally:
+        retriever.close()
 
 
 if __name__ == "__main__":

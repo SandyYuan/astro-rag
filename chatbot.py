@@ -222,9 +222,9 @@ class AstronomyChatbot:
             logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
             
             # 2. Feed these documents and the full prompt to the chain
-            response = self.qa_chain({
+            response = self.qa_chain.invoke({
                 "question": query_with_context,
-                "input_documents": relevant_docs
+                "input_documents": relevant_docs,
             })
             
             # Extract the answer from the chain response
