@@ -46,9 +46,14 @@ def initialize_chatbot():
         # Initialize with the new vector store path
         chatbot = AstronomyChatbot(
             vector_store_path="rag_data/index_all",
-            provider="google"
         )
         logger.info("Chatbot initialized successfully with new vector store")
+        # Log retrieval mode for visibility
+        try:
+            logger.info(f"Retrieval mode: {getattr(chatbot, 'retrieval_mode', 'faiss')}")
+        except Exception:
+            # Keep initialization strict; this log should not interfere with startup
+            pass
     except Exception as e:
         logger.error(f"Failed to initialize chatbot: {str(e)}")
         raise

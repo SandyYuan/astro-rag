@@ -1,14 +1,12 @@
 import os
 import logging
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Tuple
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
 from langchain_community.vectorstores import FAISS
-from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
 
 from llm_provider import LLMProvider
 
@@ -16,22 +14,36 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class AstronomyChatbot:
-    def __init__(self, vector_store_path="rag_data/vector_store", provider="google", api_key=None, llm_provider_instance=None, summary_file="rag_data/prof_summary.txt"):
-        """Initialize the AstronomyChatbot with flexible provider options.
-        
+    def __init__(
+        self,
+        vector_store_path: str = "rag_data/vector_store",
+        api_key: Optional[str] = None,
+        llm_provider_instance: Optional[LLMProvider] = None,
+        summary_file: str = "rag_data/prof_summary.txt",
+        retrieval_mode: Optional[str] = None,
+    ) -> None:
+        """Initialize the AstronomyChatbot.
+
         Args:
-            vector_store_path: Path to the FAISS vector store
-            provider: LLM provider identifier (only "google" supported)
+            vector_store_path: Path to the FAISS vector store (used when RAG_MODE=faiss)
             api_key: Optional API key override
             llm_provider_instance: Optional pre-configured LLMProvider instance
             summary_file: Path to professor summary file
+            retrieval_mode: Retrieval backend selection; one of {"faiss", "neo4j"}. Defaults to env RAG_MODE or "faiss".
         """
         self.vector_store_path = vector_store_path
-        self.provider = provider
         # Initialize chat_history as a list to store tuples of (question, answer)
-        self.chat_history = []
+        self.chat_history: List[Tuple[str, str]] = []
+
+        # Determine retrieval mode (no fallbacks). Only accept explicit values.
+        env_mode = os.environ.get("RAG_MODE", "faiss").strip().lower()
+        selected_mode = (retrieval_mode or env_mode).strip().lower()
+        if selected_mode not in {"faiss", "neo4j"}:
+            raise ValueError("Invalid RAG_MODE. Expected 'faiss' or 'neo4j'.")
+        self.retrieval_mode = selected_mode
+        logger.info(f"Retrieval mode set to: {self.retrieval_mode}")
         
-        # Handle LLM provider setup with multiple options for flexibility
+        # Handle LLM provider setup
         if llm_provider_instance:
             # Use pre-configured provider if given
             self.llm_provider = llm_provider_instance
@@ -41,16 +53,9 @@ class AstronomyChatbot:
             self.api_key = api_key or os.environ.get("GOOGLE_API_KEY")
             if not self.api_key:
                 raise ValueError("API key is required. Either provide it directly, pass a provider instance, or set GOOGLE_API_KEY environment variable.")
-            
-            # Initialize the LLM provider with API key
-            try:
-                self.llm_provider = LLMProvider(api_key=self.api_key, provider=self.provider)
-                logger.info(f"Created new LLMProvider with {self.provider} provider")
-            except Exception as e:
-                # Fallback to original constructor if the new one fails
-                logger.warning(f"Error with new LLMProvider constructor: {e}. Trying legacy constructor...")
-                self.llm_provider = LLMProvider(provider=self.provider)
-                logger.info("Created LLMProvider with legacy constructor")
+            # Initialize the LLM provider with API key (no fallback)
+            self.llm_provider = LLMProvider(api_key=self.api_key)
+            logger.info("Created LLMProvider")
         
         # Load the summary file
         self.summary_text = self._load_summary(summary_file)
@@ -72,61 +77,68 @@ class AstronomyChatbot:
             logger.error(f"Error loading summary file {summary_file}: {e}", exc_info=True)
             return "" # Return empty string on other errors
     
-    def setup_rag(self):
-        """Set up the RAG system using the saved vector store."""
+    def setup_rag(self) -> None:
+        """Set up the retrieval backend and QA chain.
+
+        When in FAISS mode, loads the local vector store and configures an MMR retriever.
+        When in Neo4j mode, initializes the graph-backed GraphRetriever.
+        """
         logger.info("Setting up the RAG system...")
-        
-        # Load the vector store with the provider's embeddings
-        embeddings = self.llm_provider.get_embeddings()
-        self.vector_store = FAISS.load_local(
-            self.vector_store_path, 
-            embeddings, 
-            allow_dangerous_deserialization=True
-        )
-        logger.info("Vector store loaded successfully")
-        
-        # Set up the retriever with parameters to improve relevance
-        self.retriever = self.vector_store.as_retriever(
-            search_type="mmr",  # Maximum Marginal Relevance - helps with diversity
-            search_kwargs={
-                "k": 5,  # Number of documents to retrieve
-                "fetch_k": 10,  # Fetch more documents then rerank
-                "lambda_mult": 0.7  # Controls diversity (0 = max diversity, 1 = min diversity)
-            }
-        )
-        
-        # Get the language model from the provider (chat/agent: gemini-2.5-pro)
+
+        if self.retrieval_mode == "faiss":
+            # Load the vector store with the provider's embeddings
+            embeddings = self.llm_provider.get_embeddings()
+            self.vector_store = FAISS.load_local(
+                self.vector_store_path,
+                embeddings,
+            )
+            logger.info("Vector store loaded successfully")
+
+            # Set up the retriever with parameters to improve relevance
+            self.retriever = self.vector_store.as_retriever(
+                search_type="mmr",
+                search_kwargs={
+                    "k": 5,
+                    "fetch_k": 10,
+                    "lambda_mult": 0.7,
+                },
+            )
+            logger.info("FAISS retriever configured (MMR)")
+        else:
+            # Neo4j GraphRAG retriever
+            from graph_rag.neo4j_client import GraphRetriever
+
+            self.retriever = GraphRetriever(k=5)
+            logger.info("Neo4j GraphRetriever initialized")
+
+        # Configure the language model (generation remains the same across modes)
         self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-pro")
-        
+
         # Import QA chain components
         from langchain.chains.question_answering import load_qa_chain
         from langchain.prompts import PromptTemplate
-        
+
         # Create a document-aware prompt template for the QA chain
-        # This template will be formatted with our system instructions and the document content
         prompt_template = """
         {question}
-        
+
         RELEVANT DOCUMENTS:
         {context}
-        
+
         Answer the question based on the information above. Respond in a helpful, conversational tone.
         """
-        
+
         # Create the prompt template
-        prompt = PromptTemplate(
-            template=prompt_template,
-            input_variables=["context", "question"]
-        )
-        
+        prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
+
         # Create a simple QA chain that properly handles documents
         self.qa_chain = load_qa_chain(
             llm=self.llm,
-            chain_type="stuff",  # This combines all documents into one prompt
+            chain_type="stuff",
             prompt=prompt,
-            verbose=True
+            verbose=True,
         )
-        
+
         logger.info("RAG system setup complete")
     
     def get_system_prompt(self):
@@ -204,9 +216,9 @@ class AstronomyChatbot:
             retrieval_query = query
         
         try:
-            # Manual two-step RAG process to use context-enhanced retrieval
-            # 1. Get relevant documents using the contextual retrieval query
-            relevant_docs = self.retriever.get_relevant_documents(retrieval_query)
+            # Manual two-step RAG process. Use contextual retrieval only for FAISS.
+            query_for_retrieval = query if self.retrieval_mode == "neo4j" else retrieval_query
+            relevant_docs = self.retriever.get_relevant_documents(query_for_retrieval)
             logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
             
             # 2. Feed these documents and the full prompt to the chain
