@@ -236,16 +236,54 @@ class GraphIndexer:
         aliases = {a for a in aliases if a}
         return list(aliases)[:5]
 
-    def upsert_document(self, path: str, title: Optional[str], items: Dict[str, Any]) -> None:
+    @staticmethod
+    def _extract_arxiv_url(text: str) -> Optional[str]:
+        """Extract arXiv URL from paper text."""
+        for line in text.splitlines()[:20]:  # Check first 20 lines
+            if line.startswith("arXiv URL:"):
+                url = line.split(":", 1)[1].strip()
+                return url if url.startswith("http") else None
+        return None
+
+    @staticmethod
+    def _normalize_relation_type(relation_type: str) -> str:
+        """Convert relation_type to valid Neo4j relationship name.
+        
+        Common types get their own relationship types, others fall back to RELATES_TO.
+        """
+        # Common scientific relation types
+        common_types = {
+            "measures": "MEASURES",
+            "predicts": "PREDICTS", 
+            "constrains": "CONSTRAINS",
+            "conflicts_with": "CONFLICTS_WITH",
+            "supports": "SUPPORTS",
+            "uses": "USES",
+            "analyzes": "ANALYZES",
+            "compares": "COMPARES",
+            "extends": "EXTENDS",
+            "validates": "VALIDATES",
+            "improves": "IMPROVES",
+            "based_on": "BASED_ON",
+            "part_of": "PART_OF",
+            "contains": "CONTAINS",
+            "derives_from": "DERIVES_FROM"
+        }
+        
+        normalized = relation_type.lower().strip().replace(" ", "_").replace("-", "_")
+        return common_types.get(normalized, "RELATES_TO")
+
+    def upsert_document(self, path: str, title: Optional[str], items: Dict[str, Any], text: str = "") -> None:
+        arxiv_url = self._extract_arxiv_url(text) if text else None
         with self.driver.session() as session:
-            # Upsert Paper
+            # Upsert Paper with arXiv URL
             session.run(
                 """
                 MERGE (p:Paper {path: $path})
-                ON CREATE SET p.title = $title
-                ON MATCH SET p.title = coalesce($title, p.title)
+                ON CREATE SET p.title = $title, p.arxiv_url = $arxiv_url
+                ON MATCH SET p.title = coalesce($title, p.title), p.arxiv_url = coalesce($arxiv_url, p.arxiv_url)
                 """,
-                {"path": path, "title": title},
+                {"path": path, "title": title, "arxiv_url": arxiv_url},
             )
 
             # Entities
@@ -299,23 +337,43 @@ class GraphIndexer:
                     },
                 )
 
-            # Relations
+            # Relations - use typed relationships
             for r in items.get("relations", []):
-                session.run(
-                    """
-                    MERGE (s:Entity {name: $source})
-                    MERGE (t:Entity {name: $target})
-                    MERGE (s)-[rel:RELATES_TO {relation_type: $rtype}]->(t)
-                    ON CREATE SET rel.evidence = $evidence
-                    ON MATCH SET rel.evidence = coalesce($evidence, rel.evidence)
-                    """,
-                    {
+                rel_type = self._normalize_relation_type(r["relation_type"])
+                
+                # Use dynamic relationship type in Cypher
+                if rel_type == "RELATES_TO":
+                    # For generic relations, store original type as property
+                    session.run(
+                        """
+                        MERGE (s:Entity {name: $source})
+                        MERGE (t:Entity {name: $target})
+                        MERGE (s)-[rel:RELATES_TO {relation_type: $rtype}]->(t)
+                        ON CREATE SET rel.evidence = $evidence
+                        ON MATCH SET rel.evidence = coalesce($evidence, rel.evidence)
+                        """,
+                        {
+                            "source": r["source"],
+                            "target": r["target"],
+                            "rtype": r["relation_type"],
+                            "evidence": r.get("evidence"),
+                        },
+                    )
+                else:
+                    # For common types, create typed relationship
+                    query = f"""
+                        MERGE (s:Entity {{name: $source}})
+                        MERGE (t:Entity {{name: $target}})
+                        MERGE (s)-[rel:{rel_type}]->(t)
+                        ON CREATE SET rel.evidence = $evidence, rel.original_type = $rtype
+                        ON MATCH SET rel.evidence = coalesce($evidence, rel.evidence)
+                        """
+                    session.run(query, {
                         "source": r["source"],
                         "target": r["target"],
                         "rtype": r["relation_type"],
                         "evidence": r.get("evidence"),
-                    },
-                )
+                    })
 
     # ---------------------------
     # Public API
@@ -337,7 +395,7 @@ class GraphIndexer:
                 if not title:
                     title = os.path.splitext(os.path.basename(path))[0].replace("_", " ")
                 items = self.extract_graph_items(text)
-                self.upsert_document(path=path, title=title, items=items)
+                self.upsert_document(path=path, title=title, items=items, text=text)
                 logger.info(f"Indexed: {path}")
             except Exception as e:
                 logger.error(f"Failed indexing {path}: {e}")

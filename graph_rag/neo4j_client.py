@@ -57,11 +57,12 @@ class GraphRetriever:
         return records
 
     def _fetch_entity_claims(self, name: str, limit: int = 20) -> List[Dict[str, Any]]:
-        # Prefer explicit ABOUT edges
+        # Prefer explicit ABOUT edges, get arXiv URLs when available
         query = (
             "MATCH (e:Entity {name: $name})<-[:ABOUT]-(c:Claim) "
             "OPTIONAL MATCH (c)-[:SUPPORTED_BY]->(p:Paper) "
-            "RETURN c.text AS claim, collect(DISTINCT p.path)[..3] AS sources LIMIT $limit"
+            "RETURN c.text AS claim, "
+            "collect(DISTINCT coalesce(p.arxiv_url, p.path))[..3] AS sources LIMIT $limit"
         )
         with self.driver.session() as session:
             records = session.run(query, {"name": name, "limit": limit}).data()
@@ -87,14 +88,21 @@ class GraphRetriever:
                 name = ent["name"]
                 claims = self._fetch_entity_claims(name, limit=5)
                 lines = [f"Entity: {name}"]
+                # Collect all sources from claims for provenance
+                all_sources = []
                 for c in claims:
                     if c.get("claim"):
                         lines.append(f"- {c['claim']} (src: {', '.join(c.get('sources', []) or [])})")
+                        all_sources.extend(c.get('sources', []) or [])
+                
                 page_content = "\n".join(lines)
-                docs.append(Document(page_content=page_content, metadata={"source": name}))
+                # Use first paper source as metadata["source"], entity name in metadata["entity"]
+                source = all_sources[0] if all_sources else name
+                metadata = {"source": source, "entity": name}
+                docs.append(Document(page_content=page_content, metadata=metadata))
             return docs
 
-        # Claim-centric: group by entities
+        # Claim-centric: group by entities (keep entity name as source since no direct paper access)
         claim_hits = self._search_claims(query_str, limit=20)
         if not claim_hits:
             return []
