@@ -56,6 +56,118 @@ class GraphRetriever:
             records = session.run(query, {"q": phrase}).data()
         return records
 
+    def _is_quality_entity(self, entity_name: str) -> bool:
+        """Filter out low-quality entities: generic references, paper titles, and poor extractions."""
+        name = entity_name.strip()
+        
+        # Filter out generic references
+        generic_patterns = [
+            'the study', 'this paper', 'the paper', 'this work', 'the work',
+            'the analysis', 'the research', 'the method', 'the approach',
+            'the model', 'the survey', 'the data', 'the results',
+            'the collaboration', 'the team', 'the authors'
+        ]
+        
+        if name.lower() in generic_patterns:
+            return False
+            
+        # Filter out paper titles (contain "Results:" or are very long)
+        if 'Results:' in name or 'results:' in name:
+            return False
+            
+        if len(name) > 80:  # Likely paper titles
+            return False
+            
+        # Filter out overly procedural entities
+        procedural_patterns = [
+            'constraints on', 'analysis of', 'study of', 'measurement of',
+            'observations of', 'detection of', 'survey of'
+        ]
+        
+        name_lower = name.lower()
+        if any(name_lower.startswith(pattern) for pattern in procedural_patterns):
+            if len(name) > 50:  # Only filter if also long
+                return False
+                
+        # Filter out entities that are mostly punctuation or formatting
+        # But allow scientific parameters like S8, H0, etc.
+        cleaned_name = name.replace(' ', '').replace('-', '').replace('_', '')
+        if len(cleaned_name) < 2:  # Changed from 3 to 2
+            return False
+            
+        # Allow scientific parameters (contain numbers and letters)
+        if any(char.isdigit() for char in cleaned_name) and any(char.isalpha() for char in cleaned_name):
+            if len(cleaned_name) >= 2:  # S8, H0, etc. are valid
+                return True
+            
+        # For non-parameter entities, require at least 3 meaningful characters
+        if len(cleaned_name) < 3 and not any(char.isdigit() for char in cleaned_name):
+            return False
+            
+        return True
+
+    def _deduplicate_claims(self, claims_data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Remove exact and semantic duplicates from claims."""
+        if not claims_data:
+            return claims_data
+            
+        deduplicated = []
+        seen_exact = set()
+        seen_semantic = set()
+        
+        for claim_data in claims_data:
+            claim_text = claim_data.get('claim', '').strip()
+            if not claim_text:
+                continue
+                
+            # Check exact duplicates (case-insensitive, normalized)
+            normalized_text = claim_text.lower().strip()
+            if normalized_text in seen_exact:
+                continue
+                
+            # Check semantic duplicates (same key information)
+            semantic_key = self._get_semantic_key(claim_text)
+            if semantic_key and semantic_key in seen_semantic:
+                continue
+                
+            # Add to seen sets and include in results
+            seen_exact.add(normalized_text)
+            if semantic_key:
+                seen_semantic.add(semantic_key)
+            deduplicated.append(claim_data)
+            
+        return deduplicated
+        
+    def _get_semantic_key(self, claim_text: str) -> str:
+        """Generate a semantic key for duplicate detection."""
+        text_lower = claim_text.lower()
+        
+        # DES-Planck conflict claims
+        if 'des' in text_lower and 'planck' in text_lower:
+            if any(word in text_lower for word in ['conflict', 'disagree', 'tension', 'lower', 'favors']):
+                return 'des_planck_conflict'
+                
+        # S8 measurement claims - extract the actual measurement if present
+        if 's_8' in text_lower or 's8' in text_lower:
+            # Look for specific measurements like "S_8 = 0.792±0.012"
+            import re
+            s8_pattern = r's_?8\s*=\s*([0-9.±+\-\s]+)'
+            match = re.search(s8_pattern, text_lower)
+            if match:
+                measurement = match.group(1).strip()
+                return f's8_measurement_{measurement}'
+                
+            # General S8 measurement without specific value
+            if any(word in text_lower for word in ['yielded', 'resulted', 'found', 'measured', 'constrained']):
+                return 's8_measurement_general'
+                
+        # Consistency/agreement claims
+        if any(word in text_lower for word in ['consistent', 'agreement', 'agrees']):
+            if 'planck' in text_lower or 'cmb' in text_lower:
+                return 'consistency_planck'
+                
+        return None  # No semantic grouping identified
+
     def _fetch_entity_claims(self, name: str, limit: int = 20) -> List[Dict[str, Any]]:
         # Enhanced method: get claims from entity AND its 1-hop semantic neighbors
         records = []
@@ -96,7 +208,7 @@ class GraphRetriever:
         return records
 
     def _fetch_paper_context(self, paper_paths: List[str], limit_per_paper: int = 3) -> List[Dict[str, Any]]:
-        """Get additional relevant claims from the same papers for context."""
+        """Get additional relevant claims from the same papers, filtered for quality entities."""
         if not paper_paths:
             return []
             
@@ -104,17 +216,25 @@ class GraphRetriever:
         with self.driver.session() as session:
             for paper_path in paper_paths[:5]:  # Limit to 5 papers max
                 query = (
-                    "MATCH (p:Paper {path: $paper_path})<-[:SUPPORTED_BY]-(c:Claim) "
+                    "MATCH (p:Paper {path: $paper_path})<-[:SUPPORTED_BY]-(c:Claim)-[:ABOUT]->(e:Entity) "
                     "RETURN c.text AS claim, "
                     "coalesce(p.arxiv_url, p.path) AS source, "
-                    "'paper_context' AS claim_type, $paper_path AS entity_context "
+                    "'paper_context' AS claim_type, $paper_path AS entity_context, "
+                    "e.name AS about_entity "
                     "LIMIT $limit"
                 )
                 paper_records = session.run(query, {
                     "paper_path": paper_path,
-                    "limit": limit_per_paper
+                    "limit": limit_per_paper * 2  # Get more to filter
                 }).data()
-                records.extend(paper_records)
+                
+                # Filter for quality entities only
+                filtered_records = [
+                    record for record in paper_records 
+                    if self._is_quality_entity(record.get('about_entity', ''))
+                ][:limit_per_paper]  # Take only the limit after filtering
+                
+                records.extend(filtered_records)
                 
         return records
 
@@ -132,11 +252,18 @@ class GraphRetriever:
         docs: List[Document] = []
         # Try entity-centric aggregation
         entities = self._search_entities(query_str)
-        if entities:
+        # Filter out low-quality entities
+        quality_entities = [ent for ent in entities if self._is_quality_entity(ent["name"])]
+        
+        if quality_entities:
             # Aggregate per-entity: 1 document per entity, include claims from entity + neighbors + paper context
-            for ent in entities[: self.k]:
+            for ent in quality_entities[: self.k]:
                 name = ent["name"]
-                claims = self._fetch_entity_claims(name, limit=12)  # Slightly reduced to make room for paper context
+                claims = self._fetch_entity_claims(name, limit=15)  # Get more to account for deduplication
+                
+                # Apply deduplication to all claims
+                claims = self._deduplicate_claims(claims)
+                
                 lines = [f"Entity: {name}"]
                 
                 # Collect all sources from claims for provenance and paper context
@@ -173,6 +300,8 @@ class GraphRetriever:
                 # Add paper context from the same papers
                 if paper_paths:
                     paper_context = self._fetch_paper_context(list(paper_paths), limit_per_paper=2)
+                    # Deduplicate paper context as well
+                    paper_context = self._deduplicate_claims(paper_context)
                     if paper_context:
                         lines.append("Additional context from same papers:")
                         for pc in paper_context[:6]:  # Limit additional context
