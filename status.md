@@ -34,19 +34,23 @@
   - **Paper Context**: Added related claims from the same supporting papers to provide methodological validation and comparative analysis
   - **Structured Output**: Clear sections (Direct claims → Related entities → Additional paper context) with proper entity attribution
   - **3x Content Richness**: S8 queries now return 18 contextual claims vs 10 sparse claims before, with scientific methodology and statistical significance
+- **Quality Filtering & Deduplication**: Implemented comprehensive duplicate removal and entity quality filtering:
+  - **Entity Quality Filter**: Removes generic entities ("The study", "This paper"), paper titles (>80 chars), and procedural references while preserving scientific parameters (S8, H0)
+  - **Semantic Deduplication**: Removes exact and near-duplicate claims within individual entities using semantic grouping (DES-Planck conflicts, S8 measurements, consistency claims)
+  - **Paper Context Filtering**: Only includes claims about quality entities in additional context sections
+  - **Partial Success**: Eliminates duplicates within entities but cross-entity duplicates still present in final output (same claims appearing across different retrieved entities)
 - **Answer Quality**: Neo4j mode now provides comprehensive scientific context for complex queries like "S8 tension" with DES-Planck conflicts, statistical significance (2.3σ), validation methods, and comparative analysis
 
-### Current Status: GraphRAG System Fully Enhanced
+### Current Status: GraphRAG System Significantly Improved
 - **Phase 2 Complete**: Neo4j GraphRAG fully integrated with mode toggle (`RAG_MODE=neo4j|faiss`)
-- **Quality Issues Resolved**: Neighborhood expansion addresses the core entity sparsity problem that limited GraphRAG effectiveness
-- **Production Ready**: System now provides comprehensive scientific context for complex cosmological queries
-- **Validation Complete**: Tested across multiple tension-related queries with excellent results
+- **Major Quality Improvements**: Neighborhood expansion addresses core entity sparsity; quality filtering removes generic entities; partial deduplication implemented
+- **Remaining Issue**: Cross-entity duplicate claims still appear in final output (same claims retrieved by multiple entities)
+- **Production Status**: Functional with rich scientific context, but needs cross-entity deduplication for optimal quality
 
-### Next Steps (Lower Priority)
-- Query intent routing: detect parameter queries (S8, σ8, tension) and prefer claim-centric search over entity-centric for better measurement retrieval
-- Ranking improvements: weight entities by claim volume, centrality, and numeric value preference for scientific parameters
-- A/B evaluation on ~20 queries (quality, faithfulness, latency) comparing `neo4j` vs `faiss`
-- Consider indexing additional papers if coverage gaps identified
+### Next Steps
+- **High Priority**: Implement cross-entity deduplication to remove duplicate claims appearing across different retrieved entities in final output
+- **Medium Priority**: Query intent routing - detect parameter queries (S8, σ8, tension) and prefer claim-centric search over entity-centric for better measurement retrieval
+- **Lower Priority**: Ranking improvements, A/B evaluation, additional paper indexing
 
 ### Notes
 - No fallbacks: empty results are explicit if no matches/ABOUT claims
