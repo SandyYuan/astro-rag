@@ -20,11 +20,17 @@
 - Extended extraction to include `about_entities`; added `[:ABOUT]` upserts
 - Rewrote entity summary logic to use `[:ABOUT]` for `description` and `top_claim_ids`
 - Added CLI flag `--update-summaries-only` and explicit `.env` loading in indexer
+ - Phase 2 wiring done: `RAG_MODE=neo4j|faiss` toggle added to `chatbot.py`; `GraphRetriever` integrated
+ - Switched QA chain call to `invoke` to remove LangChain deprecation warning
+ - Fixed FAISS load compatibility (removed deprecated `allow_dangerous_deserialization` and re-saved existing FAISS docstore in current env; no re-embedding). One-time converter removed after use
+ - Added clean shutdown for Neo4j driver with `atexit` hook in `graph_rag/neo4j_client.py` and ensured CLI closes driver
 
 ### Next Steps
-- Phase 2 wiring: add `RAG_MODE=neo4j|faiss` toggle in `chatbot.py` and smoke test end-to-end
-- Index a larger subset (or full corpus) to improve coverage (e.g., weak lensing)
-- A/B evaluation on ~20 queries (answer quality, sources, latency)
+- Improve GraphRetriever intent routing: if query includes parameters/metrics (e.g., `S8`, `σ8`, `Ωm`, “tension”), prefer claim-centric FT search first; else entity-centric
+- Strengthen provenance: set `Document.metadata["source"]` to top supporting paper paths (not entity names); include `entity` in metadata
+- Ranking/aggregation: rank entities by FT score + claim volume/centrality; aggregate top-k `[:ABOUT]` claims with numeric values and 1–3 sources
+- Expand indexing coverage to more `.txt` files so parameter-specific claims (e.g., DES Y3 S8) are captured robustly
+- A/B evaluation on ~20 queries (quality, faithfulness, latency) comparing `neo4j` vs `faiss`
 
 ### Notes
 - No fallbacks: empty results are explicit if no matches/ABOUT claims
