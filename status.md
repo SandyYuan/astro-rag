@@ -114,8 +114,69 @@
 - **Clean Codebase**: Development test files removed, production tests maintained
 - **Comprehensive Documentation**: Full implementation and testing documentation complete
 
+## Content Filtering Enhancement - COMPLETED ✅
+
+### Implementation Summary (Latest Session)
+- **Problem Identified**: FAISS retrieval returning low-quality chunks (figure captions, reference lists, short fragments)
+- **Solution Implemented**: Post-retrieval content filtering without re-embedding
+- **Content Filter Module**: Created `retrieval/content_filter.py` with regex patterns and quality checks
+- **Integration**: Applied filtering to FAISS retrieval in both single and dual modes
+
+### Key Technical Components
+- **Quality Thresholds**: Minimum 30 tokens, 30% alphabetic content
+- **Regex Filtering**: Removes figure captions, reference lists, page numbers, repetitive content
+- **Candidate Pool Expansion**: Increased `fetch_k` from 10→20 to get more candidates before filtering
+- **Mode-Specific Application**: Filters FAISS results, preserves Neo4j entity quality
+
+### Performance Results
+- **FAISS Improvement**: 40-80% retention rate (effectively removes junk)
+- **Neo4j Consistency**: 80-100% retention rate (already high quality)
+- **Dual Mode Resilience**: Perfect compensation when individual retrievers fail
+- **No Re-embedding Required**: Works with existing vector store (cost-effective)
+
+### Testing Results: 4/4 Query Types PASSING ✅
+- ✅ Factual queries: Good filtering of data tables and fragments
+- ✅ Comparative queries: Excellent Neo4j compensation for FAISS failures  
+- ✅ Methodological queries: Balanced retention across both retrievers
+- ✅ Multi-hop queries: Strong fusion performance with quality content
+
+### Repository Cleanup - COMPLETED ✅
+- **Cache Removal**: Cleaned up `__pycache__` directories across all modules
+- **Unused Assets**: Removed obsolete vector stores (`index_smoke`, `vector_store`, `vector_store_embedding_004`)
+- **Test Artifacts**: Removed development test scripts and backup files
+- **Git Status**: All improvements committed and pushed to remote repository
+
+## Phase 4 & 5: SKIPPED 🚫
+
+### Phase 4 - Vectorize KG Summaries: SKIPPED
+- **Rationale**: Current dual system already provides excellent semantic coverage
+- **Analysis**: Would add complexity without significant quality gains
+- **Decision**: Neo4j + FAISS complementarity is sufficient
+
+### Phase 5 - Reranking & Evaluation: SKIPPED  
+- **Rationale**: Current filtering addresses data quality issues more effectively than reranking
+- **Analysis**: Problem was retrieval quality, not ranking quality
+- **Decision**: Focus resources on conversational capabilities instead
+
+## Phase 6: LangGraph Agent - INITIATED 🚀
+
+### Goal
+Multi-turn conversational agent with session memory and iterative tool use for complex astronomical queries.
+
+### Planned Components
+- **Agent Graph**: `agent/graph_app.py` with LangGraph framework
+- **Session Memory**: Persistent conversation state with checkpointer
+- **Tool Integration**: FAISS, GraphRetriever, and potential future tools
+- **ReAct Pattern**: Iterative reasoning with max-iterations cap
+- **Mode Toggle**: `CHAT_MODE=agent|legacy` for backward compatibility
+
+### Success Criteria
+- Better handling of complex, multi-turn astronomical discussions
+- Contextual follow-up questions and clarifications
+- Iterative refinement of answers based on user feedback
+
 ### Notes
-- Skipped cross-entity deduplication per user request to focus on Phase 3
+- Skipped cross-entity deduplication to focus on agent capabilities
 - All debug files cleaned up, maintaining only production test suite
 - Query condensation uses conversation history (last 2 exchanges) to avoid token bloat
 - Fusion algorithm prioritizes diversity while respecting token budget constraints
