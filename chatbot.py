@@ -100,7 +100,7 @@ class AstronomyChatbot:
                 search_type="mmr",
                 search_kwargs={
                     "k": 5,
-                    "fetch_k": 10,
+                    "fetch_k": 20,  # Increased to get more candidates for filtering
                     "lambda_mult": 0.7,
                 },
             )
@@ -124,7 +124,7 @@ class AstronomyChatbot:
                 search_type="mmr",
                 search_kwargs={
                     "k": 5,
-                    "fetch_k": 10,
+                    "fetch_k": 20,  # Increased to get more candidates for filtering
                     "lambda_mult": 0.7,
                 },
             )
@@ -251,8 +251,11 @@ Standalone Question:"""
         
         try:
             # FAISS retrieval with standalone question
-            faiss_docs = self.faiss_retriever.get_relevant_documents(standalone_question)
-            logger.info(f"FAISS retrieved {len(faiss_docs)} documents")
+            raw_faiss_docs = self.faiss_retriever.get_relevant_documents(standalone_question)
+            # Apply content quality filtering to FAISS results
+            from retrieval.content_filter import filter_quality_documents
+            faiss_docs = filter_quality_documents(raw_faiss_docs, min_tokens=30)
+            logger.info(f"FAISS retrieved {len(raw_faiss_docs)} documents, {len(faiss_docs)} after quality filtering")
         except Exception as e:
             logger.warning(f"FAISS retrieval failed: {e}")
         
@@ -410,8 +413,16 @@ Standalone Question:"""
             else:
                 # Single mode retrieval - use standalone question for consistency
                 standalone_question = self._create_standalone_question(query)
-                relevant_docs = self.retriever.get_relevant_documents(standalone_question)
-                logger.info(f"Retrieved {len(relevant_docs)} documents using standalone question")
+                raw_docs = self.retriever.get_relevant_documents(standalone_question)
+                
+                # Apply content filtering for FAISS mode
+                if self.retrieval_mode == "faiss":
+                    from retrieval.content_filter import filter_quality_documents
+                    relevant_docs = filter_quality_documents(raw_docs, min_tokens=30)
+                    logger.info(f"FAISS single mode: {len(raw_docs)} retrieved, {len(relevant_docs)} after filtering")
+                else:
+                    relevant_docs = raw_docs
+                    logger.info(f"Retrieved {len(relevant_docs)} documents using standalone question")
             
             # 2. Feed these documents and the full prompt to the chain
             response = self.qa_chain.invoke({
