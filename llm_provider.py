@@ -35,7 +35,7 @@ class LLMClient:
         except Exception as e:
             raise ValueError(f"Failed to initialize Gemini client: {e}")
     
-    def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-pro") -> str:
+    def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-flash") -> str:
         """Generate content using Gemini
         
         Args:
@@ -62,7 +62,7 @@ class LLMClientWrapper(LLM):
     
     client: LLMClient
     temperature: float = 0.3
-    model_name: str = "gemini-2.5-pro"
+    model_name: str = "gemini-2.5-flash"
     
     @property
     def _llm_type(self) -> str:
@@ -121,7 +121,7 @@ class LLMProvider:
     # Default model configuration
     PROVIDER_GOOGLE = "google"  # Kept for backward compatibility
     DEFAULT_EMBEDDING_MODEL = "models/text-embedding-004"
-    DEFAULT_TEXT_MODEL = "gemini-2.5-pro"
+    DEFAULT_TEXT_MODEL = "gemini-2.5-flash"
     
     def __init__(self, api_key: str = None, provider: str = None, embedding_model: str = None):
         """

@@ -139,7 +139,7 @@ class AstronomyChatbot:
             logger.info("Dual retrieval mode configured")
 
         # Configure the language model (generation remains the same across modes)
-        self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-pro")
+        self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-flash")
 
         # Import QA chain components
         from langchain.chains.question_answering import load_qa_chain
@@ -168,13 +168,70 @@ class AstronomyChatbot:
 
         logger.info("RAG system setup complete")
     
+    def _create_standalone_question(self, query: str) -> str:
+        """
+        Convert follow-up question to standalone question using LLM.
+        Uses industry-standard query condensation pattern.
+        
+        Args:
+            query: Current user question (may contain pronouns/references)
+        
+        Returns:
+            Standalone question with necessary context included
+        """
+        if not self.chat_history:
+            return query  # First question is already standalone
+        
+        # Get recent conversation context (last 2 exchanges max)
+        recent_history = []
+        for q, a in self.chat_history[-2:]:  # Last 2 exchanges to avoid token bloat
+            recent_history.append(f"Human: {q}")
+            # Truncate long answers to keep context focused
+            answer_snippet = a[:300] + "..." if len(a) > 300 else a
+            recent_history.append(f"Assistant: {answer_snippet}")
+        
+        history_text = "\n".join(recent_history)
+        
+        condense_prompt = f"""Given the following conversation and a follow-up question, rephrase the follow-up question to be a standalone question that includes all necessary context.
+
+Make the standalone question clear and specific, resolving any pronouns or references to previous topics.
+
+Conversation History:
+{history_text}
+
+Follow-up Question: {query}
+
+Standalone Question:"""
+
+        try:
+            # Use fast, cheap model for query condensation
+            condenser_llm = self.llm_provider.get_llm(
+                model_name="gemini-2.5-flash",
+                temperature=0.1  # Low temperature for consistent rewriting
+            )
+            
+            standalone_question = condenser_llm.invoke(condense_prompt).strip()
+            
+            # Fallback to original if rewriting fails or produces empty result
+            if not standalone_question or len(standalone_question.strip()) == 0:
+                logger.warning("Query condensation produced empty result, using original")
+                return query
+            
+            logger.info(f"Query condensation: '{query}' → '{standalone_question}'")
+            return standalone_question
+            
+        except Exception as e:
+            logger.warning(f"Query condensation failed: {e}, using original query")
+            return query
+    
     def _dual_retrieval_with_fusion(self, query: str, retrieval_query: str) -> List[Any]:
         """
         Perform dual retrieval from both FAISS and Neo4j, then fuse results.
+        Uses industry-standard query condensation for consistent retrieval.
         
         Args:
-            query: Original query for Neo4j
-            retrieval_query: Contextual query for FAISS
+            query: Original query 
+            retrieval_query: Legacy parameter (ignored, we use standalone question)
         
         Returns:
             List of fused and budget-enforced documents
@@ -185,20 +242,23 @@ class AstronomyChatbot:
             enforce_token_budget
         )
         
-        # Retrieve from both sources in parallel (could be actual parallel in future)
+        # Step 1: Create standalone question for consistent retrieval
+        standalone_question = self._create_standalone_question(query)
+        
+        # Step 2: Retrieve from both sources using the same standalone question
         faiss_docs = []
         neo4j_docs = []
         
         try:
-            # FAISS retrieval with contextual query
-            faiss_docs = self.faiss_retriever.get_relevant_documents(retrieval_query)
+            # FAISS retrieval with standalone question
+            faiss_docs = self.faiss_retriever.get_relevant_documents(standalone_question)
             logger.info(f"FAISS retrieved {len(faiss_docs)} documents")
         except Exception as e:
             logger.warning(f"FAISS retrieval failed: {e}")
         
         try:
-            # Neo4j retrieval with original query
-            neo4j_docs = self.graph_retriever.get_relevant_documents(query)
+            # Neo4j retrieval with standalone question  
+            neo4j_docs = self.graph_retriever.get_relevant_documents(standalone_question)
             logger.info(f"Neo4j retrieved {len(neo4j_docs)} documents")
         except Exception as e:
             logger.warning(f"Neo4j retrieval failed: {e}")
@@ -348,10 +408,10 @@ class AstronomyChatbot:
                 relevant_docs = self._dual_retrieval_with_fusion(query, retrieval_query)
                 logger.info(f"Retrieved {len(relevant_docs)} fused documents from dual retrieval")
             else:
-                # Single mode retrieval
-                query_for_retrieval = query if self.retrieval_mode == "neo4j" else retrieval_query
-                relevant_docs = self.retriever.get_relevant_documents(query_for_retrieval)
-                logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
+                # Single mode retrieval - use standalone question for consistency
+                standalone_question = self._create_standalone_question(query)
+                relevant_docs = self.retriever.get_relevant_documents(standalone_question)
+                logger.info(f"Retrieved {len(relevant_docs)} documents using standalone question")
             
             # 2. Feed these documents and the full prompt to the chain
             response = self.qa_chain.invoke({
