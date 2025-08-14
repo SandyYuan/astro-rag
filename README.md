@@ -45,6 +45,53 @@ The system combines vector search and graph traversal for comprehensive knowledg
   - Source deduplication while preserving content diversity
 - **Result**: ~10 sources combining document similarity with entity relationships
 
+### Hybrid Query Flow (LLM touchpoints)
+
+```mermaid
+flowchart LR
+    %% Input & Condensation (LLM)
+    subgraph Input[" "]
+      U["User Query"]:::io --> QC{{"Query Condenser with LLM"}}:::llm
+    end
+
+    %% Retrieval Layer (Hybrid)
+    subgraph Retrieval["Retrieval Layer"]
+      direction LR
+      V[("Vector DB\nFAISS")]:::store
+      G[("Knowledge Graph\nNeo4j")]:::store
+    end
+
+    QC -- "Standalone question" --> V
+    QC -- "Standalone question" --> G
+
+    %% Fusion Layer (No LLM)
+    subgraph Fusion["Fusion Layer"]
+      F["Fusion\nRRF + Score Norm + Token Budget\n(No LLM)"]:::algo
+    end
+
+    V -->|"Top‑k chunks"| F
+    G -->|"Top‑k entities/claims"| F
+
+    %% Answer Generation (LLM)
+    subgraph Generation["Answer Generation"]
+      L{{"LLM"}}:::llm
+      A["Final Answer\n+ Sources"]:::io
+    end
+
+    F --> L --> A
+
+    %% Styles
+    classDef io fill:#ffffff,stroke:#222,stroke-width:2px,color:#111
+    classDef llm fill:#fff4e6,stroke:#b85c00,stroke-width:2px,color:#000
+    classDef store fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000
+    classDef algo fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px,color:#000
+
+    style Input fill:none,stroke:none
+    style Retrieval fill:none,stroke:#ddd,stroke-width:1px
+    style Fusion fill:none,stroke:#ddd,stroke-width:1px
+    style Generation fill:none,stroke:#ddd,stroke-width:1px
+```
+
 ### Conversation Context Management
 
 The system maintains conversation history through an innovative dual-context approach:
