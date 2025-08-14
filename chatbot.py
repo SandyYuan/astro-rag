@@ -7,11 +7,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from langchain_community.vectorstores import FAISS
+from langchain.agents import create_react_agent, AgentExecutor
+from langchain.tools import Tool
+from langchain.prompts import PromptTemplate
+from langgraph.checkpoint.memory import MemorySaver
 
 from llm_provider import LLMProvider
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
 
 class AstronomyChatbot:
     def __init__(
@@ -32,8 +38,6 @@ class AstronomyChatbot:
             retrieval_mode: Retrieval backend selection; one of {"faiss", "neo4j"}. Defaults to env RAG_MODE or "faiss".
         """
         self.vector_store_path = vector_store_path
-        # Initialize chat_history as a list to store tuples of (question, answer)
-        self.chat_history: List[Tuple[str, str]] = []
 
         # Determine retrieval mode (no fallbacks). Only accept explicit values.
         env_mode = os.environ.get("RAG_MODE", "faiss").strip().lower()
@@ -42,6 +46,12 @@ class AstronomyChatbot:
             raise ValueError("Invalid RAG_MODE. Expected 'faiss', 'neo4j', or 'dual'.")
         self.retrieval_mode = selected_mode
         logger.info(f"Retrieval mode set to: {self.retrieval_mode}")
+        
+        # Determine chat mode for enhanced capabilities
+        self.chat_mode = os.environ.get("CHAT_MODE", "legacy").strip().lower()
+        if self.chat_mode not in {"legacy", "agent"}:
+            raise ValueError("Invalid CHAT_MODE. Expected 'legacy' or 'agent'.")
+        logger.info(f"Chat mode set to: {self.chat_mode}")
         
         # Handle LLM provider setup
         if llm_provider_instance:
@@ -92,6 +102,7 @@ class AstronomyChatbot:
             self.vector_store = FAISS.load_local(
                 self.vector_store_path,
                 embeddings,
+                allow_dangerous_deserialization=True
             )
             logger.info("Vector store loaded successfully")
 
@@ -117,6 +128,7 @@ class AstronomyChatbot:
             self.vector_store = FAISS.load_local(
                 self.vector_store_path,
                 embeddings,
+                allow_dangerous_deserialization=True
             )
             logger.info("Vector store loaded successfully")
 
@@ -168,61 +180,7 @@ class AstronomyChatbot:
 
         logger.info("RAG system setup complete")
     
-    def _create_standalone_question(self, query: str) -> str:
-        """
-        Convert follow-up question to standalone question using LLM.
-        Uses industry-standard query condensation pattern.
-        
-        Args:
-            query: Current user question (may contain pronouns/references)
-        
-        Returns:
-            Standalone question with necessary context included
-        """
-        if not self.chat_history:
-            return query  # First question is already standalone
-        
-        # Get recent conversation context (last 2 exchanges max)
-        recent_history = []
-        for q, a in self.chat_history[-2:]:  # Last 2 exchanges to avoid token bloat
-            recent_history.append(f"Human: {q}")
-            # Truncate long answers to keep context focused
-            answer_snippet = a[:300] + "..." if len(a) > 300 else a
-            recent_history.append(f"Assistant: {answer_snippet}")
-        
-        history_text = "\n".join(recent_history)
-        
-        condense_prompt = f"""Given the following conversation and a follow-up question, rephrase the follow-up question to be a standalone question that includes all necessary context.
 
-Make the standalone question clear and specific, resolving any pronouns or references to previous topics.
-
-Conversation History:
-{history_text}
-
-Follow-up Question: {query}
-
-Standalone Question:"""
-
-        try:
-            # Use fast, cheap model for query condensation
-            condenser_llm = self.llm_provider.get_llm(
-                model_name="gemini-2.5-flash",
-                temperature=0.1  # Low temperature for consistent rewriting
-            )
-            
-            standalone_question = condenser_llm.invoke(condense_prompt).strip()
-            
-            # Fallback to original if rewriting fails or produces empty result
-            if not standalone_question or len(standalone_question.strip()) == 0:
-                logger.warning("Query condensation produced empty result, using original")
-                return query
-            
-            logger.info(f"Query condensation: '{query}' → '{standalone_question}'")
-            return standalone_question
-            
-        except Exception as e:
-            logger.warning(f"Query condensation failed: {e}, using original query")
-            return query
     
     def _dual_retrieval_with_fusion(self, query: str, retrieval_query: str) -> List[Any]:
         """
@@ -330,6 +288,11 @@ Standalone Question:"""
         
         return final_docs
     
+
+    
+
+    
+
     def get_system_prompt(self):
         """Get the system prompt that defines Risa Wechsler's personality and response style."""
         # Base prompt definition
@@ -372,89 +335,194 @@ Standalone Question:"""
             
         return full_prompt
     
-    def chat(self, query: str) -> Dict[str, Any]:
+    def _setup_react_agent(self):
+        """Set up the LangGraph ReAct agent with proper checkpointer."""
+        if not hasattr(self, '_agent_executor'):
+            # Create document retrieval tool
+            def retrieval_func(query: str) -> str:
+                """Search research papers and documents."""
+                try:
+                    if self.retrieval_mode == "dual":
+                        docs = self._dual_retrieval_with_fusion(query, query)
+                    else:
+                        raw_docs = self.retriever.get_relevant_documents(query)
+                        
+                        if self.retrieval_mode == "faiss":
+                            from retrieval.content_filter import filter_quality_documents
+                            docs = filter_quality_documents(raw_docs, min_tokens=30)
+                        else:
+                            docs = raw_docs
+                    
+                    if docs:
+                        context = "\n\n".join([doc.page_content for doc in docs[:3]])
+                        sources = [doc.metadata.get("source", "Unknown") for doc in docs[:3]]
+                        return f"Context: {context}\nSources: {', '.join(sources)}"
+                    else:
+                        return "No relevant documents found."
+                        
+                except Exception as e:
+                    logger.error(f"Retrieval tool error: {e}")
+                    return f"Error retrieving documents: {e}"
+            
+            tools = [Tool(
+                name="document_search",
+                func=retrieval_func,
+                description="Search through research papers and academic documents for scientific concepts, research findings, measurements, and academic topics."
+            )]
+            
+            # Create ReAct prompt
+            react_prompt = PromptTemplate.from_template("""
+You are Professor Risa Wechsler, a renowned astrophysicist and cosmologist. Follow the ReAct format below.
+
+You have access to the following tools:
+{tools}
+
+Use this format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Action Input/Observation can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question
+
+Question: {input}
+Thought: {agent_scratchpad}
+""")
+            
+            # Create the ReAct agent
+            agent = create_react_agent(
+                llm=self.llm,
+                tools=tools,
+                prompt=react_prompt
+            )
+            
+            # Create checkpointer for conversation memory
+            checkpointer = MemorySaver()
+            
+            # Create agent executor with LangGraph checkpointer
+            self._agent_executor = AgentExecutor(
+                agent=agent,
+                tools=tools,
+                verbose=True,
+                max_iterations=int(os.environ.get("MAX_REACT_ITERATIONS", "3")),
+                return_intermediate_steps=True,
+                handle_parsing_errors=True,
+                checkpointer=checkpointer
+            )
+            
+            logger.info("ReAct agent initialized with LangGraph MemorySaver checkpointer")
+    
+    def _chat_agent_mode(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Enhanced chat with LangGraph ReAct agent and proper conversation memory.
+        
+        Args:
+            query: User query
+            session_id: Optional session ID for conversation continuity
+        
+        Returns:
+            Dict with 'answer', 'sources', and optional 'reasoning_trace'
+        """
+        self._setup_react_agent()
+        
+        try:
+            # Use session_id as thread_id for LangGraph conversation memory
+            thread_id = session_id or "default"
+            config = {"configurable": {"thread_id": thread_id}}
+            
+            # Execute the ReAct agent with proper conversation context
+            response = self._agent_executor.invoke(
+                {"input": query}, 
+                config=config
+            )
+            
+            answer = response["output"]
+            intermediate_steps = response.get("intermediate_steps", [])
+            
+            # Extract sources from intermediate steps
+            sources = []
+            reasoning_trace = []
+            
+            for step in intermediate_steps:
+                action, observation = step
+                reasoning_trace.append(f"Action: {action.tool} - {action.tool_input}")
+                reasoning_trace.append(f"Observation: {observation[:200]}...")
+                
+                # Extract sources from observations
+                if "Sources:" in observation:
+                    obs_sources = observation.split("Sources:")[-1].strip()
+                    for source in obs_sources.split(", "):
+                        if source and source not in sources:
+                            sources.append(source)
+            
+            result = {
+                "answer": answer,
+                "sources": sources,
+                "reasoning_trace": reasoning_trace
+            }
+            
+            logger.info(f"ReAct agent completed with {len(intermediate_steps)} steps")
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error in ReAct agent mode: {e}", exc_info=True)
+            return {
+                "answer": "I encountered an error processing your question. Please try again or rephrase your query.",
+                "sources": [],
+                "reasoning_trace": [f"Error: {e}"]
+            }
+    
+    def chat(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
         """Process a query and return a response."""
         logger.info(f"Received query: {query}")
         
-        # Prepare the system prompt - this sets the personality and constraints
-        system_prompt = self.get_system_prompt()
+        # Route to appropriate chat mode
+        if self.chat_mode == "agent":
+            return self._chat_agent_mode(query, session_id)
         
-        # Create a more effective conversation-aware prompt and query
-        if len(self.chat_history) > 0:
-            # When we have chat history, create a context that includes previous exchanges
-            # This helps the model understand follow-up questions
-            context_summary = "Previous conversation:\n"
-            for prev_q, prev_a in self.chat_history[-3:]:  # Include up to 3 most recent exchanges 
-                context_summary += f"User: {prev_q}\nRisa: {prev_a}\n\n"
-            
-            # Create two different formatted queries:
-            # 1. A full LLM prompt with system instructions
-            # 2. A search query that combines context with the new question for document retrieval
-            
-            # This is for the LLM response generation
-            query_with_context = f"{system_prompt}\n\n{context_summary}\nCurrent user question: {query}\n\nRemember to maintain continuity with our previous conversation when answering this follow-up question."
-            
-            # This is for document retrieval - include recent context to help with follow-up questions
-            # Get the most recent user question to provide context for the current query
-            recent_questions = [q for q, _ in self.chat_history[-2:]]
-            retrieval_query = f"Context: {' '.join(recent_questions)} Question: {query}"
-            logger.info(f"Using contextual retrieval query: {retrieval_query}")
-        else:
-            # First question in conversation
-            query_with_context = f"{system_prompt}\n\nUser query: {query}"
-            retrieval_query = query
+        # Legacy mode - simple retrieval without conversation memory
+        system_prompt = self.get_system_prompt()
+        query_with_context = f"{system_prompt}\n\nUser query: {query}"
         
         try:
-            # Retrieval process depends on mode
+            # Simple retrieval based on mode
             if self.retrieval_mode == "dual":
-                # Dual mode: retrieve from both sources and fuse
-                relevant_docs = self._dual_retrieval_with_fusion(query, retrieval_query)
-                logger.info(f"Retrieved {len(relevant_docs)} fused documents from dual retrieval")
+                relevant_docs = self._dual_retrieval_with_fusion(query, query)
             else:
-                # Single mode retrieval - use standalone question for consistency
-                standalone_question = self._create_standalone_question(query)
-                raw_docs = self.retriever.get_relevant_documents(standalone_question)
+                raw_docs = self.retriever.get_relevant_documents(query)
                 
-                # Apply content filtering for FAISS mode
                 if self.retrieval_mode == "faiss":
                     from retrieval.content_filter import filter_quality_documents
                     relevant_docs = filter_quality_documents(raw_docs, min_tokens=30)
-                    logger.info(f"FAISS single mode: {len(raw_docs)} retrieved, {len(relevant_docs)} after filtering")
                 else:
                     relevant_docs = raw_docs
-                    logger.info(f"Retrieved {len(relevant_docs)} documents using standalone question")
             
-            # 2. Feed these documents and the full prompt to the chain
+            # Generate response using QA chain
             response = self.qa_chain.invoke({
                 "question": query_with_context,
                 "input_documents": relevant_docs,
             })
             
-            # Extract the answer from the chain response
             answer = response["output_text"]
-            source_docs = relevant_docs
             
-            # Store this exchange in our chat history
-            self.chat_history.append((query, answer))
-            
-            # Format source information
+            # Extract sources
             sources = []
-            for doc in source_docs:
+            for doc in relevant_docs:
                 if "source" in doc.metadata:
                     source = doc.metadata["source"]
                     if source not in sources:
                         sources.append(source)
             
-            result = {
+            return {
                 "answer": answer,
                 "sources": sources
             }
             
-            logger.info("Generated response")
-            return result
         except Exception as e:
-            logger.error(f"Error generating response: {e}", exc_info=True)
-            # Return a meaningful error message
+            logger.error(f"Error in legacy mode: {e}", exc_info=True)
             return {
                 "answer": "I'm sorry, I encountered an error processing your question. Please try again or rephrase your query.",
                 "sources": []
