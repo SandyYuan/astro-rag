@@ -7,9 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from langchain_community.vectorstores import FAISS
-from langchain.agents import create_react_agent, AgentExecutor
 from langchain.tools import Tool
-from langchain.prompts import PromptTemplate
+from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 
 from llm_provider import LLMProvider
@@ -370,47 +369,26 @@ class AstronomyChatbot:
                 description="Search through research papers and academic documents for scientific concepts, research findings, measurements, and academic topics."
             )]
             
-            # Create ReAct prompt
-            react_prompt = PromptTemplate.from_template("""
-You are Professor Risa Wechsler, a renowned astrophysicist and cosmologist. Follow the ReAct format below.
-
-You have access to the following tools:
-{tools}
-
-Use this format:
-
-Question: the input question you must answer
-Thought: you should always think about what to do
-Action: the action to take, should be one of [{tool_names}]
-Action Input: the input to the action
-Observation: the result of the action
-... (this Thought/Action/Action Input/Observation can repeat N times)
-Thought: I now know the final answer
-Final Answer: the final answer to the original input question
-
-Question: {input}
-Thought: {agent_scratchpad}
-""")
-            
-            # Create the ReAct agent
-            agent = create_react_agent(
-                llm=self.llm,
-                tools=tools,
-                prompt=react_prompt
-            )
-            
             # Create checkpointer for conversation memory
             checkpointer = MemorySaver()
             
-            # Create agent executor with LangGraph checkpointer
-            self._agent_executor = AgentExecutor(
-                agent=agent,
+            # Create a proper LangChain model for LangGraph agent (needs bind_tools support)
+            from langchain_google_genai import ChatGoogleGenerativeAI
+            
+            agent_model = ChatGoogleGenerativeAI(
+                model="gemini-2.5-flash",
+                temperature=0.3,
+                google_api_key=self.llm_provider.api_key
+            )
+            
+            # Create the ReAct agent with proper conversation memory management
+            # Using the built-in create_react_agent with checkpointer
+            self._agent_executor = create_react_agent(
+                model=agent_model,
                 tools=tools,
-                verbose=True,
-                max_iterations=int(os.environ.get("MAX_REACT_ITERATIONS", "3")),
-                return_intermediate_steps=True,
-                handle_parsing_errors=True,
-                checkpointer=checkpointer
+                checkpointer=checkpointer,
+                # Optional: Add message trimming to prevent context overflow
+                # pre_model_hook=self._trim_messages_hook
             )
             
             logger.info("ReAct agent initialized with LangGraph MemorySaver checkpointer")
@@ -433,30 +411,44 @@ Thought: {agent_scratchpad}
             thread_id = session_id or "default"
             config = {"configurable": {"thread_id": thread_id}}
             
-            # Execute the ReAct agent with proper conversation context
+            # Execute the ReAct agent - conversation memory is handled automatically
+            # by the built-in create_react_agent with checkpointer
             response = self._agent_executor.invoke(
-                {"input": query}, 
+                {"messages": [("user", query)]}, 
                 config=config
             )
             
-            answer = response["output"]
-            intermediate_steps = response.get("intermediate_steps", [])
+            # Extract the final answer from the response
+            messages = response.get("messages", [])
+            if messages:
+                # Get the last AI message as the answer
+                for msg in reversed(messages):
+                    if hasattr(msg, 'type') and msg.type == 'ai':
+                        answer = msg.content
+                        break
+                else:
+                    answer = "No response generated."
+            else:
+                answer = "No response generated."
             
-            # Extract sources from intermediate steps
+            # For now, we'll extract sources and reasoning from the messages
+            # This is a simplified approach since the built-in agent structure is different
             sources = []
             reasoning_trace = []
             
-            for step in intermediate_steps:
-                action, observation = step
-                reasoning_trace.append(f"Action: {action.tool} - {action.tool_input}")
-                reasoning_trace.append(f"Observation: {observation[:200]}...")
-                
-                # Extract sources from observations
-                if "Sources:" in observation:
-                    obs_sources = observation.split("Sources:")[-1].strip()
-                    for source in obs_sources.split(", "):
-                        if source and source not in sources:
-                            sources.append(source)
+            # Look through messages for tool calls and responses
+            for msg in messages:
+                if hasattr(msg, 'type'):
+                    if msg.type == 'tool':
+                        reasoning_trace.append(f"Tool Call: {getattr(msg, 'name', 'unknown')}")
+                        reasoning_trace.append(f"Result: {msg.content[:200]}...")
+                        
+                        # Extract sources from tool results
+                        if "Sources:" in msg.content:
+                            obs_sources = msg.content.split("Sources:")[-1].strip()
+                            for source in obs_sources.split(", "):
+                                if source and source not in sources:
+                                    sources.append(source)
             
             result = {
                 "answer": answer,
@@ -464,7 +456,7 @@ Thought: {agent_scratchpad}
                 "reasoning_trace": reasoning_trace
             }
             
-            logger.info(f"ReAct agent completed with {len(intermediate_steps)} steps")
+            logger.info(f"ReAct agent completed with {len(messages)} messages")
             return result
             
         except Exception as e:
