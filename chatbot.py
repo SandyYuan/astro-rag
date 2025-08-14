@@ -38,8 +38,8 @@ class AstronomyChatbot:
         # Determine retrieval mode (no fallbacks). Only accept explicit values.
         env_mode = os.environ.get("RAG_MODE", "faiss").strip().lower()
         selected_mode = (retrieval_mode or env_mode).strip().lower()
-        if selected_mode not in {"faiss", "neo4j"}:
-            raise ValueError("Invalid RAG_MODE. Expected 'faiss' or 'neo4j'.")
+        if selected_mode not in {"faiss", "neo4j", "dual"}:
+            raise ValueError("Invalid RAG_MODE. Expected 'faiss', 'neo4j', or 'dual'.")
         self.retrieval_mode = selected_mode
         logger.info(f"Retrieval mode set to: {self.retrieval_mode}")
         
@@ -82,6 +82,7 @@ class AstronomyChatbot:
 
         When in FAISS mode, loads the local vector store and configures an MMR retriever.
         When in Neo4j mode, initializes the graph-backed GraphRetriever.
+        When in dual mode, initializes both retrievers for fusion.
         """
         logger.info("Setting up the RAG system...")
 
@@ -104,12 +105,38 @@ class AstronomyChatbot:
                 },
             )
             logger.info("FAISS retriever configured (MMR)")
-        else:
+        elif self.retrieval_mode == "neo4j":
             # Neo4j GraphRAG retriever
             from graph_rag.neo4j_client import GraphRetriever
 
             self.retriever = GraphRetriever(k=5)
             logger.info("Neo4j GraphRetriever initialized")
+        else:  # dual mode
+            # Initialize both retrievers for fusion
+            embeddings = self.llm_provider.get_embeddings()
+            self.vector_store = FAISS.load_local(
+                self.vector_store_path,
+                embeddings,
+            )
+            logger.info("Vector store loaded successfully")
+
+            self.faiss_retriever = self.vector_store.as_retriever(
+                search_type="mmr",
+                search_kwargs={
+                    "k": 5,
+                    "fetch_k": 10,
+                    "lambda_mult": 0.7,
+                },
+            )
+            logger.info("FAISS retriever configured (MMR)")
+
+            from graph_rag.neo4j_client import GraphRetriever
+            self.graph_retriever = GraphRetriever(k=5)
+            logger.info("Neo4j GraphRetriever initialized")
+            
+            # No single retriever in dual mode - we'll handle retrieval differently
+            self.retriever = None
+            logger.info("Dual retrieval mode configured")
 
         # Configure the language model (generation remains the same across modes)
         self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-pro")
@@ -140,6 +167,105 @@ class AstronomyChatbot:
         )
 
         logger.info("RAG system setup complete")
+    
+    def _dual_retrieval_with_fusion(self, query: str, retrieval_query: str) -> List[Any]:
+        """
+        Perform dual retrieval from both FAISS and Neo4j, then fuse results.
+        
+        Args:
+            query: Original query for Neo4j
+            retrieval_query: Contextual query for FAISS
+        
+        Returns:
+            List of fused and budget-enforced documents
+        """
+        from retrieval.fusion import (
+            reciprocal_rank_fusion, 
+            normalize_scores, 
+            enforce_token_budget
+        )
+        
+        # Retrieve from both sources in parallel (could be actual parallel in future)
+        faiss_docs = []
+        neo4j_docs = []
+        
+        try:
+            # FAISS retrieval with contextual query
+            faiss_docs = self.faiss_retriever.get_relevant_documents(retrieval_query)
+            logger.info(f"FAISS retrieved {len(faiss_docs)} documents")
+        except Exception as e:
+            logger.warning(f"FAISS retrieval failed: {e}")
+        
+        try:
+            # Neo4j retrieval with original query
+            neo4j_docs = self.graph_retriever.get_relevant_documents(query)
+            logger.info(f"Neo4j retrieved {len(neo4j_docs)} documents")
+        except Exception as e:
+            logger.warning(f"Neo4j retrieval failed: {e}")
+        
+        # If both failed, return empty list
+        if not faiss_docs and not neo4j_docs:
+            logger.warning("Both retrievers failed - returning empty results")
+            return []
+        
+        # Prepare scored document lists for fusion
+        faiss_scored = []
+        neo4j_scored = []
+        
+        # FAISS docs: extract scores from metadata or use rank-based scoring
+        for i, doc in enumerate(faiss_docs):
+            score = doc.metadata.get("score")
+            if score is None:
+                # Use similarity score if available in different metadata key
+                score = doc.metadata.get("similarity", 0.9 - i * 0.1)  # Fallback scoring
+            faiss_scored.append((doc, score))
+        
+        # Neo4j docs: use rank-based scoring (no similarity scores available)
+        for i, doc in enumerate(neo4j_docs):
+            neo4j_scored.append((doc, None))  # Will be normalized by rank
+        
+        # Normalize scores for each retriever type
+        if faiss_scored:
+            faiss_normalized = normalize_scores(faiss_scored, method="minmax")
+        else:
+            faiss_normalized = []
+            
+        if neo4j_scored:
+            neo4j_normalized = normalize_scores(neo4j_scored, method="rank")
+        else:
+            neo4j_normalized = []
+        
+        # Prepare ranked lists for RRF (convert to rank-based)
+        faiss_ranked = [(doc, i) for i, (doc, _) in enumerate(faiss_normalized)]
+        neo4j_ranked = [(doc, i) for i, (doc, _) in enumerate(neo4j_normalized)]
+        
+        # Apply Reciprocal Rank Fusion
+        ranked_lists = []
+        if faiss_ranked:
+            ranked_lists.append(faiss_ranked)
+        if neo4j_ranked:
+            ranked_lists.append(neo4j_ranked)
+        
+        fused_results = reciprocal_rank_fusion(ranked_lists, k=60)
+        
+        # Extract documents from fused results
+        fused_docs = [doc for doc, _ in fused_results]
+        
+        # Apply token budget enforcement (default 3000 tokens)
+        token_budget = int(os.environ.get("FUSION_TOKEN_BUDGET", "3000"))
+        diversity_factor = float(os.environ.get("FUSION_DIVERSITY_FACTOR", "0.5"))
+        
+        final_docs = enforce_token_budget(
+            fused_docs, 
+            budget=token_budget,
+            min_docs=2,  # Ensure at least 2 docs even if over budget
+            diversity_factor=diversity_factor
+        )
+        
+        logger.info(f"Fusion pipeline: {len(faiss_docs)} FAISS + {len(neo4j_docs)} Neo4j → "
+                   f"{len(fused_docs)} fused → {len(final_docs)} final (budget: {token_budget} tokens)")
+        
+        return final_docs
     
     def get_system_prompt(self):
         """Get the system prompt that defines Risa Wechsler's personality and response style."""
@@ -216,10 +342,16 @@ class AstronomyChatbot:
             retrieval_query = query
         
         try:
-            # Manual two-step RAG process. Use contextual retrieval only for FAISS.
-            query_for_retrieval = query if self.retrieval_mode == "neo4j" else retrieval_query
-            relevant_docs = self.retriever.get_relevant_documents(query_for_retrieval)
-            logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
+            # Retrieval process depends on mode
+            if self.retrieval_mode == "dual":
+                # Dual mode: retrieve from both sources and fuse
+                relevant_docs = self._dual_retrieval_with_fusion(query, retrieval_query)
+                logger.info(f"Retrieved {len(relevant_docs)} fused documents from dual retrieval")
+            else:
+                # Single mode retrieval
+                query_for_retrieval = query if self.retrieval_mode == "neo4j" else retrieval_query
+                relevant_docs = self.retriever.get_relevant_documents(query_for_retrieval)
+                logger.info(f"Retrieved {len(relevant_docs)} documents for contextual query")
             
             # 2. Feed these documents and the full prompt to the chain
             response = self.qa_chain.invoke({
