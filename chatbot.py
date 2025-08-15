@@ -38,21 +38,13 @@ class AstronomyChatbot:
         """
         self.vector_store_path = vector_store_path
 
-        # Determine retrieval mode (no fallbacks). Only accept explicit values.
-        env_mode = os.environ.get("RAG_MODE", "faiss").strip().lower()
-        selected_mode = (retrieval_mode or env_mode).strip().lower()
-        if selected_mode not in {"faiss", "neo4j", "dual"}:
-            raise ValueError("Invalid RAG_MODE. Expected 'faiss', 'neo4j', or 'dual'.")
-        self.retrieval_mode = selected_mode
-        logger.info(f"Retrieval mode set to: {self.retrieval_mode}")
+        # Always use sequential KG-enriched retrieval (only mode available)
+        self.retrieval_mode = "kg_enriched_sequential"
+        logger.info(f"Using sequential KG-enriched retrieval (only available mode)")
         
         # Always use agent mode for conversation capabilities
         self.chat_mode = "agent"
-        logger.info(f"Chat mode set to: {self.chat_mode} (agent mode is now the default and only option)")
-        
-        # Determine if KG-enriched pipeline should be used (default: true)
-        self.use_kg_enriched_pipeline = os.environ.get("USE_KG_ENRICHED", "true").lower() == "true"
-        logger.info(f"KG-enriched pipeline: {'enabled' if self.use_kg_enriched_pipeline else 'disabled'}")
+        logger.info(f"Chat mode: {self.chat_mode} (conversation memory enabled)")
         
         # Handle LLM provider setup
         if llm_provider_instance:
@@ -89,80 +81,45 @@ class AstronomyChatbot:
             return "" # Return empty string on other errors
     
     def setup_rag(self) -> None:
-        """Set up the retrieval backend and QA chain.
+        """Set up the KG-enriched sequential retrieval pipeline."""
+        logger.info("Setting up the KG-enriched sequential retrieval system...")
 
-        When in FAISS mode, loads the local vector store and configures an MMR retriever.
-        When in Neo4j mode, initializes the graph-backed GraphRetriever.
-        When in dual mode, initializes both retrievers for fusion.
-        """
-        logger.info("Setting up the RAG system...")
+        # Initialize FAISS vector store
+        embeddings = self.llm_provider.get_embeddings()
+        self.vector_store = FAISS.load_local(
+            self.vector_store_path,
+            embeddings,
+            allow_dangerous_deserialization=True
+        )
+        logger.info("Vector store loaded successfully")
 
-        if self.retrieval_mode == "faiss":
-            # Load the vector store with the provider's embeddings
-            embeddings = self.llm_provider.get_embeddings()
-            self.vector_store = FAISS.load_local(
-                self.vector_store_path,
-                embeddings,
-                allow_dangerous_deserialization=True
-            )
-            logger.info("Vector store loaded successfully")
+        # Set up FAISS retriever
+        self.faiss_retriever = self.vector_store.as_retriever(
+            search_type="mmr",
+            search_kwargs={
+                "k": 5,
+                "fetch_k": 20,  # Get more candidates for better quality
+                "lambda_mult": 0.7,
+            },
+        )
+        logger.info("FAISS retriever configured (MMR)")
 
-            # Set up the retriever with parameters to improve relevance
-            self.retriever = self.vector_store.as_retriever(
-                search_type="mmr",
-                search_kwargs={
-                    "k": 5,
-                    "fetch_k": 20,  # Increased to get more candidates for filtering
-                    "lambda_mult": 0.7,
-                },
-            )
-            logger.info("FAISS retriever configured (MMR)")
-        elif self.retrieval_mode == "neo4j":
-            # Neo4j GraphRAG retriever
-            from graph_rag.neo4j_client import GraphRetriever
-
-            self.retriever = GraphRetriever(k=5)
-            logger.info("Neo4j GraphRetriever initialized")
-        else:  # dual mode
-            # Initialize both retrievers for fusion
-            embeddings = self.llm_provider.get_embeddings()
-            self.vector_store = FAISS.load_local(
-                self.vector_store_path,
-                embeddings,
-                allow_dangerous_deserialization=True
-            )
-            logger.info("Vector store loaded successfully")
-
-            self.faiss_retriever = self.vector_store.as_retriever(
-                search_type="mmr",
-                search_kwargs={
-                    "k": 5,
-                    "fetch_k": 20,  # Increased to get more candidates for filtering
-                    "lambda_mult": 0.7,
-                },
-            )
-            logger.info("FAISS retriever configured (MMR)")
-
-            from graph_rag.neo4j_client import GraphRetriever
-            self.graph_retriever = GraphRetriever(k=5)
-            logger.info("Neo4j GraphRetriever initialized")
-            
-            # Initialize KG-enriched pipeline if enabled
-            if self.use_kg_enriched_pipeline:
-                from retrieval.kg_filter import KGQueryFilter
-                from retrieval.kg_enriched_retrieval import KGEnrichedRetriever
-                
-                self.kg_filter = KGQueryFilter(self.llm_provider)
-                self.kg_enriched_retriever = KGEnrichedRetriever(
-                    graph_retriever=self.graph_retriever,
-                    vector_retriever=self.faiss_retriever,
-                    kg_filter=self.kg_filter
-                )
-                logger.info("KG-enriched retrieval pipeline initialized")
-            
-            # No single retriever in dual mode - we'll handle retrieval differently
-            self.retriever = None
-            logger.info("Dual retrieval mode configured")
+        # Initialize Neo4j GraphRetriever
+        from graph_rag.neo4j_client import GraphRetriever
+        self.graph_retriever = GraphRetriever(k=5)
+        logger.info("Neo4j GraphRetriever initialized")
+        
+        # Initialize KG-enriched sequential pipeline
+        from retrieval.kg_filter import KGQueryFilter
+        from retrieval.kg_enriched_retrieval import KGEnrichedRetriever
+        
+        self.kg_filter = KGQueryFilter(self.llm_provider)
+        self.kg_enriched_retriever = KGEnrichedRetriever(
+            graph_retriever=self.graph_retriever,
+            vector_retriever=self.faiss_retriever,
+            kg_filter=self.kg_filter
+        )
+        logger.info("KG-enriched sequential retrieval pipeline initialized")
 
         # Configure the language model (generation remains the same across modes)
         self.llm = self.llm_provider.get_llm(model_name="gemini-2.5-flash")
@@ -248,181 +205,28 @@ Standalone Question:"""
     
     def _intelligent_retrieval(self, query: str, retrieval_query: str) -> List[Any]:
         """
-        Intelligent document retrieval with multiple strategies.
+        KG-enriched sequential retrieval pipeline.
         
-        Primary: Sequential KG-enriched pipeline (KG → LLM filter → query enrichment → vector search)
-        Fallback: Parallel dual retrieval with fusion (KG ∥ Vector → RRF fusion)
+        Pipeline: KG → LLM filter → query enrichment → vector search
         
         Args:
             query: Original query 
-            retrieval_query: Legacy parameter (ignored, we use standalone question)
+            retrieval_query: Legacy parameter (ignored)
         
         Returns:
-            List of relevant documents from the selected retrieval strategy
+            List of relevant documents from KG-enriched vector search
         """
-        # Use KG-enriched pipeline (default and primary mode)
-        if self.use_kg_enriched_pipeline and hasattr(self, 'kg_enriched_retriever'):
-            logger.info("Using KG-enriched sequential retrieval pipeline")
-            standalone_question = self._create_standalone_question(query)
-            return self.kg_enriched_retriever.get_relevant_documents(standalone_question)
-        from retrieval.fusion import (
-            reciprocal_rank_fusion, 
-            normalize_scores, 
-            enforce_token_budget
-        )
-        
-        # Step 1: Create standalone question for consistent retrieval
+        logger.info("Using KG-enriched sequential retrieval pipeline")
         standalone_question = self._create_standalone_question(query)
-        
-        # Step 2: Retrieve from both sources using the same standalone question
-        faiss_docs = []
-        neo4j_docs = []
-        
-        try:
-            # FAISS retrieval with standalone question
-            raw_faiss_docs = self.faiss_retriever.get_relevant_documents(standalone_question)
-            # Apply content quality filtering to FAISS results
-            from retrieval.content_filter import filter_quality_documents
-            faiss_docs = filter_quality_documents(raw_faiss_docs, min_tokens=30)
-            logger.info(f"FAISS retrieved {len(raw_faiss_docs)} documents, {len(faiss_docs)} after quality filtering")
-        except Exception as e:
-            logger.warning(f"FAISS retrieval failed: {e}")
-        
-        try:
-            # Neo4j retrieval with standalone question  
-            neo4j_docs = self.graph_retriever.get_relevant_documents(standalone_question)
-            logger.info(f"Neo4j retrieved {len(neo4j_docs)} documents")
-        except Exception as e:
-            logger.warning(f"Neo4j retrieval failed: {e}")
-        
-        # If both failed, return empty list
-        if not faiss_docs and not neo4j_docs:
-            logger.warning("Both retrievers failed - returning empty results")
-            return []
-        
-        # Prepare scored document lists for fusion
-        faiss_scored = []
-        neo4j_scored = []
-        
-        # FAISS docs: extract scores from metadata or use rank-based scoring
-        for i, doc in enumerate(faiss_docs):
-            score = doc.metadata.get("score")
-            if score is None:
-                # Use similarity score if available in different metadata key
-                score = doc.metadata.get("similarity", 0.9 - i * 0.1)  # Fallback scoring
-            faiss_scored.append((doc, score))
-        
-        # Neo4j docs: use rank-based scoring (no similarity scores available)
-        for i, doc in enumerate(neo4j_docs):
-            neo4j_scored.append((doc, None))  # Will be normalized by rank
-        
-        # Normalize scores for each retriever type
-        if faiss_scored:
-            faiss_normalized = normalize_scores(faiss_scored, method="minmax")
-        else:
-            faiss_normalized = []
-            
-        if neo4j_scored:
-            neo4j_normalized = normalize_scores(neo4j_scored, method="rank")
-        else:
-            neo4j_normalized = []
-        
-        # Prepare ranked lists for RRF (convert to rank-based)
-        faiss_ranked = [(doc, i) for i, (doc, _) in enumerate(faiss_normalized)]
-        neo4j_ranked = [(doc, i) for i, (doc, _) in enumerate(neo4j_normalized)]
-        
-        # Apply Reciprocal Rank Fusion
-        ranked_lists = []
-        if faiss_ranked:
-            ranked_lists.append(faiss_ranked)
-        if neo4j_ranked:
-            ranked_lists.append(neo4j_ranked)
-        
-        fused_results = reciprocal_rank_fusion(ranked_lists, k=60)
-        
-        # Extract documents from fused results
-        fused_docs = [doc for doc, _ in fused_results]
-        
-        # Apply token budget enforcement (default 3000 tokens)
-        token_budget = int(os.environ.get("FUSION_TOKEN_BUDGET", "3000"))
-        diversity_factor = float(os.environ.get("FUSION_DIVERSITY_FACTOR", "0.5"))
-        
-        final_docs = enforce_token_budget(
-            fused_docs, 
-            budget=token_budget,
-            min_docs=2,  # Ensure at least 2 docs even if over budget
-            diversity_factor=diversity_factor
-        )
-        
-        logger.info(f"Fusion pipeline: {len(faiss_docs)} FAISS + {len(neo4j_docs)} Neo4j → "
-                   f"{len(fused_docs)} fused → {len(final_docs)} final (budget: {token_budget} tokens)")
-        
-        return final_docs
-    
-
-    
-
-    
-
-    def get_system_prompt(self):
-        """Get the system prompt that defines Risa Wechsler's personality and response style."""
-        # Base prompt definition
-        base_prompt = """
-        You are a chatbot that emulates Professor Risa Wechsler, a renowned astrophysicist and cosmologist. **Speak directly *as* Professor Wechsler.**
-        
-        **Your Behavior:**
-        *   You are an expert in cosmology, dark matter, galaxy formation, and large-scale structure of the universe. Share your understanding and insights directly.
-        *   Your responses should reflect Professor Wechsler's academic expertise, communication style, and viewpoints.
-        *   Base your answers **primarily** on the content from her papers and research provided to you in the context, **supplemented by the background information below when relevant**.
-        *   Use the background information to inform your persona, style, and answers about non-research activities or general perspectives.
-        *   If the provided context is relevant but doesn't fully answer the question, use it as a starting point and feel free to **supplement with your general knowledge** about astrophysics and cosmology. Integrate this knowledge seamlessly.
-        *   When uncertain, acknowledge limitations rather than fabricating information.
-        *   Maintain a professional, educational tone while being approachable and enthusiastic about astronomy.
-        *   If asked about topics outside your provided context or expertise (astronomy/physics), politely state that the information is outside the scope of the provided documents or your core knowledge.
-        
-        **Be Opinionated and Take Clear Stances:**
-        *   Express strong, confident opinions on scientific theories, methods, and approaches in your field.
-        *   Don't hesitate to critique methodologies or theoretical frameworks you find problematic or insufficient.
-        *   Clearly state your preferences for certain research approaches over others when relevant.
-        *   When discussing competing theories or models, explicitly state which you find more compelling and why.
-        *   Be willing to disagree with mainstream positions if they don't align with your research findings.
-        *   Communicate enthusiasm for approaches you endorse and measured skepticism for those you don't.
-        
-        **Response Formatting and Structure:**
-        *   **Use Markdown** for formatting.
-        *   Structure your answers clearly. Start with a direct answer.
-        *   Provide supporting evidence or reasoning based **primarily** on the provided context, synthesizing information logically.
-        *   When expressing opinions, be clear about the distinction between established facts and your perspective.
-
-        **Important Constraints:**
-        *   **Critically Important: Absolutely DO NOT mention the source of your information** (e.g., 'Based on the provided text...', 'The context suggests...', 'According to the documents...', 'The texts indicate...'). Speak as if the knowledge is your own, integrating it naturally. Use phrases like "My understanding is...", "I believe...", "In my work...", or simply state the information directly.
-        *   **Do NOT mention specific Figure numbers or Table numbers.** Describe the data or finding itself.
-        """
-        
-        # Append the loaded summary text if it exists
-        full_prompt = base_prompt
-        if hasattr(self, 'summary_text') and self.summary_text: # Check attribute exists and is not empty
-            full_prompt += "\n\n---\n\n## Additional Background Information on Professor Wechsler:\n\n" + self.summary_text
-            
-        return full_prompt
-    
+        return self.kg_enriched_retriever.get_relevant_documents(standalone_question)
     def _setup_react_agent(self):
         """Set up the LangGraph ReAct agent with proper checkpointer."""
         if not hasattr(self, '_agent_executor'):
-            # Create document retrieval tool
+            # Create document retrieval tool using KG-enriched sequential pipeline
             def retrieval_func(query: str) -> str:
-                """Search research papers and documents."""
+                """Search research papers and documents using KG-enriched retrieval."""
                 try:
-                    if self.retrieval_mode == "dual":
-                        docs = self._intelligent_retrieval(query, query)
-                    else:
-                        raw_docs = self.retriever.get_relevant_documents(query)
-                        
-                        if self.retrieval_mode == "faiss":
-                            from retrieval.content_filter import filter_quality_documents
-                            docs = filter_quality_documents(raw_docs, min_tokens=30)
-                        else:
-                            docs = raw_docs
+                    docs = self._intelligent_retrieval(query, query)
                     
                     if docs:
                         context = "\n\n".join([doc.page_content for doc in docs[:3]])

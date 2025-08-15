@@ -16,37 +16,11 @@ The system combines vector search and graph traversal for comprehensive knowledg
 
 ### Hybrid RAG + Knowledge Graph Approach
 
-**Three Retrieval Modes:**
-- **FAISS Mode**: Pure vector similarity search for document content
-- **Neo4j Mode**: Graph traversal for entity relationships and scientific claims  
-- **Dual Mode**: Intelligent fusion of both approaches with query condensation
+**Single Advanced Mode:**
+- **KG-Enriched Sequential**: Knowledge Graph intelligence enhances vector search
 
-### 1. Vector RAG (FAISS)
-- Indexes research papers using Google's text-embedding-004 model
-- FAISS vector database with Maximum Marginal Relevance (MMR) search
-- Excellent for finding similar document content and methodological details
-- Retrieves 5 most relevant document chunks per query
-
-### 2. Knowledge Graph (Neo4j)
-- **Graph Structure:**
-  - **Nodes**: `:Entity` (scientific concepts), `:Claim` (factual statements), `:Paper` (documents)
-  - **Relationships**: `(:Entity)-[:MENTIONED_IN]->(:Paper)`, `(:Claim)-[:SUPPORTED_BY]->(:Paper)`, `(:Claim)-[:ABOUT]->(:Entity)`, `(:Entity)-[:MEASURES|PREDICTS|USES|CONSTRAINS]->(:Entity)`
-- **Semantic Retrieval**: Entity-centric search with 1-hop neighborhood expansion
-- **Quality Filtering**: Removes generic entities, keeps scientific parameters (S8, H0, etc.)
-- **Rich Context**: Includes related entities and paper-level context for comprehensive answers
-
-### 3. Dual Retrieval with Fusion
-- **Query Condensation**: Uses Gemini 2.5 Flash to resolve conversational context into standalone questions
-- **Parallel Retrieval**: Simultaneously queries both FAISS and Neo4j with the same condensed query
-- **Intelligent Fusion**: 
-  - Reciprocal Rank Fusion (RRF) algorithm combines ranked results
-  - Score normalization (MinMax for FAISS, rank-based for Neo4j)
-  - Token budget enforcement (3000 tokens) with diversity-aware selection
-  - Source deduplication while preserving content diversity
-- **Result**: ~10 sources combining document similarity with entity relationships
-
-### 4. KG-Enriched Sequential Pipeline (Default)
-When `USE_KG_ENRICHED=true` (default), replaces standard dual retrieval with a sequential approach:
+### KG-Enriched Sequential Pipeline
+The system uses an intelligent sequential approach that combines the best of both worlds:
 - **Pipeline Flow**: `User Query → KG Retrieval → LLM Filter → Query Enrichment → Vector Search → Results`
 - **LLM Filtering**: Uses Gemini 2.5 Flash (temperature=0.0) to filter KG results for relevance
 - **Smart Enrichment**: Original query enhanced with filtered KG context while preserving intent
@@ -54,7 +28,7 @@ When `USE_KG_ENRICHED=true` (default), replaces standard dual retrieval with a s
 - **Fail-Fast Design**: Clear error reporting without fallbacks that mask issues
 - **Cost Optimized**: Single LLM call per query for efficient operation
 
-### 5. Conversational Agent Interface (Default)
+### Conversational Agent Interface
 All interactions use ReAct agent with full conversation memory:
 - **Session Memory**: Maintains context across conversation turns using LangGraph
 - **ReAct Pattern**: Follows Thought → Action → Observation → Final Answer loop
@@ -178,13 +152,8 @@ This architecture ensures the chatbot can handle follow-up questions naturally, 
    NEO4J_USER=neo4j
    NEO4J_PASSWORD=your_password
    
-   # Retrieval mode: faiss, neo4j, or dual
-   RAG_MODE=dual
-   
-   # KG-enriched pipeline: true/false (only works with dual mode, default: true)
-   USE_KG_ENRICHED=true
-   
-   # Chat mode is always 'agent' (conversation memory enabled by default)
+   # System automatically uses KG-enriched sequential retrieval (only mode available)
+   # Agent mode with conversation memory is always enabled
    ```
 
 4. **Set up Neo4j (for graph functionality):**
