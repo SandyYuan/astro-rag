@@ -27,7 +27,7 @@ class KGQueryFilter:
             llm_provider: LLM provider configured for Gemini 2.5 Flash
         """
         self.llm_provider = llm_provider
-        self.llm = llm_provider.get_llm(temperature=0.0, model_name="gemini-2.5-flash")
+        self.llm = llm_provider.get_llm(temperature=0.1, model_name="gemini-2.5-flash")
         self.max_kg_results = 15  # Limit to prevent token overflow
         
     def filter_and_format_kg_results(self, kg_results: List[Dict], user_query: str) -> str:
@@ -54,8 +54,17 @@ class KGQueryFilter:
         prompt = self._create_filtering_prompt(user_query, kg_content)
         
         # Call LLM for deterministic results (temperature already set to 0.0 in __init__)
-        filtered_content = self.llm(prompt)
-        
+        try:
+            # Prefer invoke to avoid deprecated __call__
+            filtered_content = self.llm.invoke(prompt)
+        except AttributeError:
+            # Fallback if running older LC that lacks .invoke on wrapper
+            filtered_content = self.llm(prompt)
+
+        # Ensure we return a string
+        if not isinstance(filtered_content, str):
+            filtered_content = str(filtered_content or "")
+
         logger.info(f"LLM filtered {len(kg_results)} KG results for query: {user_query[:50]}...")
         return filtered_content.strip()
     

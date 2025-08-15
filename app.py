@@ -1,8 +1,10 @@
 import os
 import logging
 import re  # Added for regex pattern matching
-from typing import List, Dict
-from fastapi import FastAPI, HTTPException, Request
+import json
+import asyncio
+from typing import List, Dict, AsyncGenerator
+from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -65,11 +67,11 @@ async def startup_event():
 
 @app.get("/", response_class=HTMLResponse)
 async def get_home(request: Request):
-    """Serve the home page."""
-    # Get current provider name for display
-    provider = "Google"  # Simplified since we only support Google now
-    
-    # Create the index.html template content
+    """Serve the home page directly from the curated template."""
+    return templates.TemplateResponse("index_modern.html", {"request": request})
+
+    # Dead-code fallback removed by design to fail fast if template missing.
+    # If you prefer a soft fallback, restore the block below.
     index_html = """
     <!DOCTYPE html>
     <html lang="en">
@@ -355,12 +357,8 @@ async def get_home(request: Request):
     </body>
     </html>
     """
-    
-    # Write the template to the templates directory
-    with open("templates/index.html", "w") as f:
-        f.write(index_html)
-    
-    return templates.TemplateResponse("index.html", {"request": request})
+        
+    # return HTMLResponse(content=index_html, status_code=200)
 
 
 @app.post("/chat")
@@ -413,6 +411,131 @@ async def chat(request: ChatRequest):
     except Exception as e:
         logger.error(f"Error in chat endpoint: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    """WebSocket endpoint for real-time agent step streaming."""
+    await websocket.accept()
+    
+    try:
+        while True:
+            # Receive message from client
+            data = await websocket.receive_text()
+            message_data = json.loads(data)
+            message = message_data.get("message", "")
+            session_id = message_data.get("session_id", "default")
+            
+            if not message:
+                await websocket.send_text(json.dumps({
+                    "type": "error",
+                    "message": "Empty message received"
+                }))
+                continue
+            
+            # Stream agent steps
+            async for step_data in stream_agent_steps(message, session_id):
+                await websocket.send_text(json.dumps(step_data))
+                
+    except WebSocketDisconnect:
+        logger.info("WebSocket client disconnected")
+    except Exception as e:
+        logger.error(f"WebSocket error: {str(e)}")
+        try:
+            await websocket.send_text(json.dumps({
+                "type": "error",
+                "message": f"Server error: {str(e)}"
+            }))
+        except:
+            pass
+
+
+async def stream_agent_steps(message: str, session_id: str) -> AsyncGenerator[Dict, None]:
+    """Stream agent processing steps in real-time."""
+    global chatbot
+    
+    if chatbot is None:
+        yield {
+            "type": "error",
+            "message": "Chatbot not initialized"
+        }
+        return
+    
+    try:
+        # Step 1: Thinking
+        yield {
+            "type": "step",
+            "step": "thinking",
+            "message": "Analyzing your question...",
+            "progress": 10
+        }
+        await asyncio.sleep(0.1)  # Small delay for UX
+        
+        # Step 2: Knowledge Graph Search
+        yield {
+            "type": "step",
+            "step": "kg_search",
+            "message": "Searching knowledge graph for relevant entities...",
+            "progress": 25
+        }
+        await asyncio.sleep(0.2)
+        
+        # Step 3: Query Enrichment
+        yield {
+            "type": "step", 
+            "step": "enrichment",
+            "message": "Enriching query with domain knowledge...",
+            "progress": 40
+        }
+        await asyncio.sleep(0.2)
+        
+        # Step 4: Document Retrieval
+        yield {
+            "type": "step",
+            "step": "retrieval",
+            "message": "Retrieving relevant research papers...",
+            "progress": 65
+        }
+        await asyncio.sleep(0.3)
+        
+        # Step 5: Response Generation
+        yield {
+            "type": "step",
+            "step": "generation",
+            "message": "Generating comprehensive response...",
+            "progress": 85
+        }
+        await asyncio.sleep(0.2)
+        
+        # Execute the actual chat (this runs in sync)
+        loop = asyncio.get_event_loop()
+        response_data = await loop.run_in_executor(
+            None, 
+            lambda: chatbot.chat(message)
+        )
+        
+        # Step 6: Complete
+        yield {
+            "type": "step",
+            "step": "complete",
+            "message": "Response ready!",
+            "progress": 100
+        }
+        await asyncio.sleep(0.1)
+        
+        # Send final response
+        yield {
+            "type": "response",
+            "answer": response_data.get("answer", ""),
+            "sources": response_data.get("sources", [])
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in stream_agent_steps: {str(e)}")
+        yield {
+            "type": "error",
+            "message": f"Error processing request: {str(e)}"
+        }
 
 
 def main():

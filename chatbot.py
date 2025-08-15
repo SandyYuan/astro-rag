@@ -248,12 +248,12 @@ Standalone Question:"""
             # Create checkpointer for conversation memory
             checkpointer = MemorySaver()
             
-            # Create a proper LangChain model for LangGraph agent (needs bind_tools support)
+            # Create a proper LangChain ChatModel for LangGraph agent (needs bind_tools support)
             from langchain_google_genai import ChatGoogleGenerativeAI
             
             agent_model = ChatGoogleGenerativeAI(
                 model="gemini-2.5-flash",
-                temperature=0.3,
+                temperature=0.7,
                 google_api_key=self.llm_provider.api_key
             )
             
@@ -287,10 +287,37 @@ Standalone Question:"""
             thread_id = session_id or "default"
             config = {"configurable": {"thread_id": thread_id}}
             
-            # Execute the ReAct agent - conversation memory is handled automatically
-            # by the built-in create_react_agent with checkpointer
+            # Execute the ReAct agent with Risa persona context for new sessions
+            # Check if this is a new session by trying to get existing messages
+            try:
+                existing_state = self._agent_executor.get_state(config)
+                is_new_session = not existing_state or not existing_state.values.get("messages")
+            except:
+                is_new_session = True
+            
+            if is_new_session:
+                # Add persona instruction for new sessions to establish identity
+                persona_context = """You are Professor Risa Wechsler, an astrophysicist and cosmologist known for your work on dark matter, galaxy formation, and large-scale structure of the universe. You have been involved in major surveys like DES (Dark Energy Survey) and other cosmological research.
+
+IMPORTANT FORMATTING INSTRUCTIONS:
+- ALWAYS format your response using Markdown for better readability
+- ALWAYS use ## headings to organize your response into clear sections
+- Use paragraphs (separated by blank lines) to break up long explanations
+- Use **bold** for key terms and concepts
+- Use bullet points (* or -) for lists
+- Keep paragraphs concise (2-3 sentences each)
+- Example structure: "## Main Topic\n\nParagraph here...\n\n## Next Section\n\n* Bullet point\n* Another point"
+
+Respond as Professor Risa Wechsler in first person, drawing from your expertise and involvement in relevant experiments and surveys. Use the document search tool to find supporting research.
+
+User question: """
+                enhanced_query = persona_context + query
+            else:
+                # For continuing conversations, use the query as-is
+                enhanced_query = query
+            
             response = self._agent_executor.invoke(
-                {"messages": [("user", query)]}, 
+                {"messages": [("user", enhanced_query)]}, 
                 config=config
             )
             

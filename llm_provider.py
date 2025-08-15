@@ -44,18 +44,50 @@ class LLMClient:
             model_name: Gemini model to use
             
         Returns:
-            Generated text response
+            Generated text response (always a string)
         """
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
+
         last_err: Exception | None = None
         for attempt in range(1, max_retries + 1):
             try:
-                logger.debug(f"Generating content with model {model_name} (attempt {attempt}/{max_retries})")
-                # google.genai client does not expose a direct timeout here; rely on requests' defaults via env if needed
-                response = self.client.models.generate_content(
-                    model=model_name,
-                    contents=prompt
-                )
-                return response.text
+                logger.debug(f"Generating content with model {model_name} (attempt {attempt}/{max_retries}, timeout {timeout_s}s)")
+                with ThreadPoolExecutor(max_workers=1) as executor:
+                    future = executor.submit(
+                        self.client.models.generate_content,
+                        model=model_name,
+                        contents=prompt,
+                    )
+                    response = future.result(timeout=timeout_s)
+
+                    # Robustly extract text from the response
+                    text: str | None = getattr(response, "text", None)
+                    if not text:
+                        try:
+                            candidates = getattr(response, "candidates", []) or []
+                            parts_text: list[str] = []
+                            for cand in candidates:
+                                content = getattr(cand, "content", None)
+                                parts = getattr(content, "parts", None) if content else None
+                                if parts:
+                                    for p in parts:
+                                        t = getattr(p, "text", None)
+                                        if t:
+                                            parts_text.append(t)
+                            text = "\n".join(parts_text) if parts_text else ""
+                        except Exception as parse_err:
+                            logger.warning(f"Could not extract text from Gemini response: {parse_err}")
+                            text = ""
+
+                    if text is None:
+                        text = ""
+
+                    if text == "":
+                        logger.warning("Gemini returned empty text response")
+                    return text
+            except FuturesTimeout as e:
+                last_err = e
+                logger.warning(f"LLM call timeout after {timeout_s}s (attempt {attempt}/{max_retries})")
             except Exception as e:
                 last_err = e
                 logger.warning(f"LLM call failed (attempt {attempt}/{max_retries}): {e}")
@@ -67,7 +99,7 @@ class LLMClientWrapper(LLM):
     """LangChain-compatible wrapper for the Gemini client"""
     
     client: LLMClient
-    temperature: float = 0.3
+    temperature: float = 0.1
     model_name: str = "gemini-2.5-flash"
     
     @property
@@ -166,7 +198,7 @@ class LLMProvider:
         Returns:
             A LangChain-compatible LLM instance
         """
-        temperature = kwargs.pop("temperature", 0.3)
+        temperature = kwargs.pop("temperature", 0.1)
         model_name = kwargs.pop("model_name", self.DEFAULT_TEXT_MODEL)
         
         logger.info(f"Creating LLM with model: {model_name}, temperature: {temperature}")

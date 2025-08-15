@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Risa Chatbot</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'space-blue': '#1e3a8a',
+                        'cosmic-purple': '#7c3aed',
+                        'stellar-gold': '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom styles for animations and components -->
+    <style>
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .pulse-subtle {
+            animation: pulse-subtle 2s infinite;
+        }
+        
+        .message-enter {
+            animation: slideInUp 0.3s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .typing-indicator {
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        
+        /* Skeleton loading animation */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        .dark .skeleton {
+            background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+            background-size: 200% 100%;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Ensure all text is visible in dark mode */
+        .dark p, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+        .dark li, .dark span, .dark div:not(.bg-gradient-to-r) {
+            color: rgb(243 244 246) !important; /* gray-100 */
+        }
+        
+        .dark .prose * {
+            color: rgb(243 244 246) !important; /* gray-100 */
+        }
+        
+        .dark .prose strong {
+            color: white !important;
+        }
+        
+        .dark .prose a {
+            color: rgb(96 165 250) !important; /* blue-400 */
+        }
+    </style>
+</head>
+
+<body class="h-full bg-gray-50 dark:bg-gray-900 font-sans antialiased transition-colors duration-200">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and title -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-8 h-8 bg-gradient-to-r from-space-blue to-cosmic-purple rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-900 dark:text-white">Mini-Risa Chatbot</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Astrophysics Research Assistant</p>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme toggle -->
+                    <button id="theme-toggle" 
+                            class="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                            aria-label="Toggle dark mode">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Export chat button -->
+                    <button onclick="astroRAGChat?.exportChat()" 
+                            class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200">
+                        Export
+                    </button>
+                    
+                    <!-- Clear chat button -->
+                    <button id="clear-chat" 
+                            class="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200">
+                        Clear Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main container -->
+    <div class="flex h-[calc(100vh-4rem)]">
+        <!-- Sidebar -->
+        <nav class="hidden lg:flex lg:flex-col lg:w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+            <div class="flex-1 px-4 py-6">
+                <div class="space-y-4">
+                    <!-- Chat sessions section -->
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
+                            Recent Conversations
+                        </h3>
+                        <div id="chat-sessions" class="space-y-2">
+                            <!-- Chat sessions will be populated here -->
+                            <div class="p-3 rounded-lg bg-gray-50 dark:bg-gray-700 text-sm text-gray-600 dark:text-gray-300">
+                                No previous conversations
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Model info -->
+                    <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-green-500 rounded-full pulse-subtle"></div>
+                                <span class="text-sm font-medium text-blue-900 dark:text-blue-100">Active</span>
+                            </div>
+                            <p class="text-xs text-blue-700 dark:text-blue-300 mt-1">
+                                Gemini 2.5 Flash • Neo4j GraphRAG
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main chat area -->
+        <main class="flex-1 flex flex-col min-w-0">
+            <!-- Chat messages -->
+            <div class="flex-1 overflow-hidden">
+                <div id="chat-messages" class="h-full overflow-y-auto custom-scrollbar px-4 lg:px-6 py-6 space-y-4">
+                    <!-- Welcome message -->
+                    <div class="message-enter">
+                        <div class="flex space-x-3">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-gradient-to-r from-cosmic-purple to-stellar-gold rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+                                    <div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-gray-100">
+                                        <p>Hello! I'm a chatbot designed to emulate Professor Risa Wechsler, an astrophysicist and cosmologist. 
+                                        How can I help with questions about astronomy, cosmology, dark matter, or related topics?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 lg:px-6 py-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex space-x-4">
+                        <div class="flex-1">
+                            <div class="relative">
+                                <input type="text" 
+                                       id="user-input"
+                                       placeholder="Ask about astrophysics, cosmology, or upload a paper..."
+                                       class="w-full px-4 py-3 pr-12 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-space-blue focus:border-transparent resize-none transition-colors duration-200"
+                                       autocomplete="off"
+                                       maxlength="500">
+                                
+                                <!-- Character counter -->
+                                <div class="absolute right-3 top-3 text-xs text-gray-400 dark:text-gray-500">
+                                    <span id="char-count">0</span>/500
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="send-button" 
+                                class="px-6 py-3 bg-gradient-to-r from-space-blue to-cosmic-purple text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 focus:ring-2 focus:ring-space-blue focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 active:scale-95">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Keyboard shortcut hint -->
+                    <div class="mt-2 text-xs text-gray-500 dark:text-gray-400 text-center">
+                        Press <kbd class="px-1.5 py-0.5 text-xs font-semibold text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded">Enter</kbd> to send, 
+                        <kbd class="px-1.5 py-0.5 text-xs font-semibold text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded">Ctrl+K</kbd> to clear, 
+                        <kbd class="px-1.5 py-0.5 text-xs font-semibold text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded">Ctrl+E</kbd> to export
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm mx-4">
+            <div class="flex items-center space-x-3">
+                <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-space-blue"></div>
+                <div class="text-gray-900 dark:text-white font-medium">Processing your request...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the application
+        class AstroRAGChat {
+            constructor() {
+                this.initializeElements();
+                this.initializeTheme();
+                this.bindEvents();
+                this.setupMarked();
+            }
+
+            initializeElements() {
+                this.messagesContainer = document.getElementById('chat-messages');
+                this.userInput = document.getElementById('user-input');
+                this.sendButton = document.getElementById('send-button');
+                this.themeToggle = document.getElementById('theme-toggle');
+                this.clearChatButton = document.getElementById('clear-chat');
+                this.charCount = document.getElementById('char-count');
+                this.loadingOverlay = document.getElementById('loading-overlay');
+            }
+
+            initializeTheme() {
+                // Check for saved theme preference or default to system preference
+                const savedTheme = localStorage.getItem('theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                    document.documentElement.classList.add('dark');
+                    this.updateThemeIcons(true);
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    this.updateThemeIcons(false);
+                }
+            }
+
+            updateThemeIcons(isDark) {
+                const lightIcon = document.getElementById('theme-toggle-light-icon');
+                const darkIcon = document.getElementById('theme-toggle-dark-icon');
+                
+                if (isDark) {
+                    lightIcon.classList.remove('hidden');
+                    darkIcon.classList.add('hidden');
+                } else {
+                    lightIcon.classList.add('hidden');
+                    darkIcon.classList.remove('hidden');
+                }
+            }
+
+            bindEvents() {
+                // Send message events
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.userInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+
+                // Character counter
+                this.userInput.addEventListener('input', () => {
+                    this.charCount.textContent = this.userInput.value.length;
+                });
+
+                // Theme toggle
+                this.themeToggle.addEventListener('click', () => this.toggleTheme());
+
+                // Clear chat
+                this.clearChatButton.addEventListener('click', () => this.clearChat());
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'k') {
+                        e.preventDefault();
+                        this.clearChat();
+                    }
+                    if (e.ctrlKey && e.key === 'e') {
+                        e.preventDefault();
+                        this.exportChat();
+                    }
+                    if (e.key === 'Escape') {
+                        this.userInput.blur();
+                    }
+                });
+
+                // Auto-focus input
+                this.userInput.focus();
+            }
+
+            setupMarked() {
+                if (typeof marked !== 'undefined') {
+                    marked.setOptions({
+                        breaks: true,
+                        gfm: true,
+                        highlight: function(code, lang) {
+                            // Basic syntax highlighting could be added here
+                            return code;
+                        }
+                    });
+                }
+            }
+
+            toggleTheme() {
+                const isDark = document.documentElement.classList.contains('dark');
+                
+                if (isDark) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    this.updateThemeIcons(false);
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    this.updateThemeIcons(true);
+                }
+            }
+
+            clearChat() {
+                // Keep only the welcome message
+                const welcomeMessage = this.messagesContainer.firstElementChild;
+                this.messagesContainer.innerHTML = '';
+                this.messagesContainer.appendChild(welcomeMessage);
+                this.userInput.focus();
+            }
+
+            addMessage(content, isUser = false, sources = [], isLoading = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message-enter';
+                
+                const avatarBg = isUser 
+                    ? 'bg-gradient-to-r from-green-500 to-blue-500' 
+                    : 'bg-gradient-to-r from-cosmic-purple to-stellar-gold';
+                
+                const avatarIcon = isUser 
+                    ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>'
+                    : '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>';
+                
+                let messageContent = '';
+                if (isLoading) {
+                    messageContent = `
+                        <div class="flex space-x-2 items-center">
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400">Thinking...</span>
+                        </div>
+                    `;
+                } else if (isUser) {
+                    messageContent = `<p class="text-gray-900 dark:text-white">${this.escapeHtml(content)}</p>`;
+                } else {
+                    const renderedContent = typeof marked !== 'undefined' 
+                        ? marked.parse(content) 
+                        : content.replace(/\n/g, '<br>');
+                    messageContent = `<div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-gray-900 dark:text-gray-100">${renderedContent}</div>`;
+                }
+
+                // Add sources if available
+                let sourcesHtml = '';
+                if (sources && sources.length > 0) {
+                    sourcesHtml = `
+                        <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                            <div class="flex items-start space-x-2">
+                                <svg class="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                                </svg>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium">Sources:</span>
+                                    ${sources.map(source => {
+                                        if (source.startsWith('http')) {
+                                            return `<a href="${source}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline ml-1">${source}</a>`;
+                                        } else {
+                                            return `<span class="ml-1">${source}</span>`;
+                                        }
+                                    }).join(', ')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Add message actions for bot messages (not loading messages)
+                let actionsHtml = '';
+                if (!isUser && !isLoading) {
+                    const messageId = 'msg-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                    actionsHtml = `
+                        <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="astroRAGChat.copyMessage('${messageId}')" 
+                                            class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                        </svg>
+                                        <span>Copy</span>
+                                    </button>
+                                    
+                                    <button onclick="astroRAGChat.regenerateResponse(this)" 
+                                            class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                        </svg>
+                                        <span>Regenerate</span>
+                                    </button>
+                                    
+                                    <button onclick="astroRAGChat.thumbsUp('${messageId}')" 
+                                            class="text-xs text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    <button onclick="astroRAGChat.thumbsDown('${messageId}')" 
+                                            class="text-xs text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 flex items-center space-x-1 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2M17 4H19a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <div class="text-xs text-gray-400 dark:text-gray-500">
+                                    ${new Date().toLocaleTimeString()}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                messageDiv.innerHTML = `
+                    <div class="flex space-x-3 ${isUser ? 'flex-row-reverse space-x-reverse' : ''}">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 ${avatarBg} rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+                                    ${avatarIcon}
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 ${isUser ? 'bg-blue-50 dark:bg-blue-900/20' : ''}" data-message-id="${!isUser && !isLoading ? 'msg-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9) : ''}">
+                                ${messageContent}
+                                ${sourcesHtml}
+                                ${actionsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                this.messagesContainer.appendChild(messageDiv);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                
+                return messageDiv;
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            async sendMessage() {
+                const message = this.userInput.value.trim();
+                if (!message) return;
+
+                // Add user message
+                this.addMessage(message, true);
+                
+                // Clear input and disable send button
+                this.userInput.value = '';
+                this.charCount.textContent = '0';
+                this.sendButton.disabled = true;
+                
+                // Use WebSocket for real-time agent steps
+                this.sendMessageWebSocket(message);
+            }
+
+            sendMessageWebSocket(message) {
+                // Create WebSocket connection
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const wsUrl = `${protocol}//${window.location.host}/ws`;
+                const ws = new WebSocket(wsUrl);
+                
+                let agentStepsMessage = null;
+                
+                ws.onopen = () => {
+                    console.log('WebSocket connected');
+                    
+                    // Add agent steps visualization
+                    agentStepsMessage = this.addAgentStepsMessage();
+                    
+                    // Send message
+                    ws.send(JSON.stringify({
+                        message: message,
+                        session_id: this.getSessionId()
+                    }));
+                };
+                
+                ws.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        
+                        if (data.type === 'step') {
+                            this.updateAgentStep(agentStepsMessage, data);
+                        } else if (data.type === 'response') {
+                            // Remove agent steps message
+                            if (agentStepsMessage) {
+                                agentStepsMessage.remove();
+                            }
+                            
+                            // Add final response
+                            this.addMessage(data.answer, false, data.sources || []);
+                            
+                            // Close WebSocket
+                            ws.close();
+                        } else if (data.type === 'error') {
+                            console.error('WebSocket error:', data.message);
+                            
+                            // Remove agent steps message
+                            if (agentStepsMessage) {
+                                agentStepsMessage.remove();
+                            }
+                            
+                            // Add error message
+                            this.addMessage(
+                                `Error: ${data.message}`, 
+                                false
+                            );
+                            
+                            ws.close();
+                        }
+                    } catch (error) {
+                        console.error('Error parsing WebSocket message:', error);
+                    }
+                };
+                
+                ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                    
+                    // Remove agent steps message
+                    if (agentStepsMessage) {
+                        agentStepsMessage.remove();
+                    }
+                    
+                    // Fallback to HTTP
+                    this.sendMessageHTTP(message);
+                };
+                
+                ws.onclose = () => {
+                    console.log('WebSocket closed');
+                    
+                    // Re-enable send button and focus input
+                    this.sendButton.disabled = false;
+                    this.userInput.focus();
+                };
+            }
+
+            async sendMessageHTTP(message) {
+                // Fallback HTTP implementation
+                const loadingMessage = this.addMessage('', false, [], true);
+                
+                try {
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Remove loading message
+                    loadingMessage.remove();
+                    
+                    // Add bot response
+                    this.addMessage(data.answer, false, data.sources || []);
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    
+                    // Remove loading message
+                    loadingMessage.remove();
+                    
+                    // Add error message
+                    this.addMessage(
+                        'Sorry, I encountered an error processing your request. Please try again.', 
+                        false
+                    );
+                } finally {
+                    // Re-enable send button and focus input
+                    this.sendButton.disabled = false;
+                    this.userInput.focus();
+                }
+            }
+
+            addAgentStepsMessage() {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message-enter';
+                
+                messageDiv.innerHTML = `
+                    <div class="flex space-x-3">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 bg-gradient-to-r from-cosmic-purple to-stellar-gold rounded-full flex items-center justify-center">
+                                <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+                                <div class="space-y-3">
+                                    <!-- Progress bar -->
+                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div id="agent-progress" class="bg-gradient-to-r from-space-blue to-cosmic-purple h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                                    </div>
+                                    
+                                    <!-- Current step -->
+                                    <div id="agent-step" class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
+                                        <div class="flex space-x-1">
+                                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce"></div>
+                                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                        </div>
+                                        <span id="agent-step-text">Initializing...</span>
+                                    </div>
+                                    
+                                    <!-- Steps list -->
+                                    <div id="agent-steps-list" class="space-y-2">
+                                        <div class="agent-step-item flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400" data-step="thinking">
+                                            <div class="w-3 h-3 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                            <span>Analyzing question</span>
+                                        </div>
+                                        <div class="agent-step-item flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400" data-step="kg_search">
+                                            <div class="w-3 h-3 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                            <span>Searching knowledge graph</span>
+                                        </div>
+                                        <div class="agent-step-item flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400" data-step="enrichment">
+                                            <div class="w-3 h-3 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                            <span>Enriching query</span>
+                                        </div>
+                                        <div class="agent-step-item flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400" data-step="retrieval">
+                                            <div class="w-3 h-3 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                            <span>Retrieving documents</span>
+                                        </div>
+                                        <div class="agent-step-item flex items-center space-x-2 text-xs text-gray-500 dark:text-gray-400" data-step="generation">
+                                            <div class="w-3 h-3 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                            <span>Generating response</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                this.messagesContainer.appendChild(messageDiv);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                
+                return messageDiv;
+            }
+
+            updateAgentStep(messageDiv, stepData) {
+                if (!messageDiv) return;
+                
+                // Update progress bar
+                const progressBar = messageDiv.querySelector('#agent-progress');
+                if (progressBar) {
+                    progressBar.style.width = `${stepData.progress}%`;
+                }
+                
+                // Update current step text
+                const stepText = messageDiv.querySelector('#agent-step-text');
+                if (stepText) {
+                    stepText.textContent = stepData.message;
+                }
+                
+                // Update step indicators
+                const stepItem = messageDiv.querySelector(`[data-step="${stepData.step}"]`);
+                if (stepItem) {
+                    const indicator = stepItem.querySelector('div');
+                    indicator.className = 'w-3 h-3 rounded-full bg-green-500 border-2 border-green-500';
+                    stepItem.className = stepItem.className.replace('text-gray-500 dark:text-gray-400', 'text-green-600 dark:text-green-400');
+                }
+            }
+
+            getSessionId() {
+                // Generate or retrieve session ID for conversation continuity
+                let sessionId = localStorage.getItem('astro-rag-session-id');
+                if (!sessionId) {
+                    sessionId = 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                    localStorage.setItem('astro-rag-session-id', sessionId);
+                }
+                return sessionId;
+            }
+
+            copyMessage(messageId) {
+                const messageElement = document.querySelector(`[data-message-id="${messageId}"]`);
+                if (!messageElement) return;
+                
+                // Get the text content, excluding action buttons
+                const contentDiv = messageElement.querySelector('.prose, p');
+                const textContent = contentDiv ? contentDiv.textContent : messageElement.textContent;
+                
+                navigator.clipboard.writeText(textContent).then(() => {
+                    this.showToast('Message copied to clipboard', 'success');
+                }).catch(() => {
+                    this.showToast('Failed to copy message', 'error');
+                });
+            }
+
+            regenerateResponse(buttonElement) {
+                // Find the message container
+                const messageContainer = buttonElement.closest('.message-enter');
+                if (!messageContainer) return;
+                
+                // Find the previous user message
+                let previousElement = messageContainer.previousElementSibling;
+                let userMessage = null;
+                
+                while (previousElement) {
+                    const userMessageDiv = previousElement.querySelector('.bg-blue-50, .dark\\:bg-blue-900\\/20');
+                    if (userMessageDiv) {
+                        const messageContent = userMessageDiv.querySelector('p');
+                        if (messageContent) {
+                            userMessage = messageContent.textContent;
+                            break;
+                        }
+                    }
+                    previousElement = previousElement.previousElementSibling;
+                }
+                
+                if (userMessage) {
+                    // Remove the current bot message
+                    messageContainer.remove();
+                    
+                    // Regenerate response
+                    this.sendMessageWebSocket(userMessage);
+                    this.showToast('Regenerating response...', 'info');
+                } else {
+                    this.showToast('Could not find original message to regenerate', 'error');
+                }
+            }
+
+            thumbsUp(messageId) {
+                this.showToast('Thank you for the feedback!', 'success');
+                // Here you could send feedback to server
+                console.log('Thumbs up for message:', messageId);
+            }
+
+            thumbsDown(messageId) {
+                this.showToast('Feedback recorded. We\'ll work to improve!', 'info');
+                // Here you could send feedback to server
+                console.log('Thumbs down for message:', messageId);
+            }
+
+            exportChat() {
+                const messages = this.getAllMessages();
+                if (messages.length === 0) {
+                    this.showToast('No messages to export', 'error');
+                    return;
+                }
+                
+                // Show export options
+                this.showExportModal(messages);
+            }
+
+            getAllMessages() {
+                const messageElements = this.messagesContainer.querySelectorAll('.message-enter');
+                const messages = [];
+                
+                messageElements.forEach((element, index) => {
+                    const isUser = element.querySelector('.bg-blue-50, .dark\\:bg-blue-900\\/20') !== null;
+                    const contentDiv = element.querySelector('.prose, p');
+                    const sourcesDiv = element.querySelector('.text-xs.text-gray-500');
+                    
+                    if (contentDiv) {
+                        const message = {
+                            id: index + 1,
+                            type: isUser ? 'user' : 'assistant',
+                            content: contentDiv.textContent,
+                            timestamp: new Date().toISOString(),
+                            sources: sourcesDiv ? sourcesDiv.textContent : null
+                        };
+                        messages.push(message);
+                    }
+                });
+                
+                return messages;
+            }
+
+            showExportModal(messages) {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+                modal.innerHTML = `
+                    <div class="bg-white dark:bg-gray-800 rounded-lg max-w-md w-full p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Export Chat</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Choose export format:</p>
+                        
+                        <div class="space-y-3">
+                            <button onclick="astroRAGChat.exportAsText(${JSON.stringify(messages).replace(/"/g, '&quot;')}); this.closest('.fixed').remove();" 
+                                    class="w-full text-left px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                                <div class="font-medium text-gray-900 dark:text-white">Plain Text</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Simple text format</div>
+                            </button>
+                            
+                            <button onclick="astroRAGChat.exportAsJSON(${JSON.stringify(messages).replace(/"/g, '&quot;')}); this.closest('.fixed').remove();" 
+                                    class="w-full text-left px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                                <div class="font-medium text-gray-900 dark:text-white">JSON</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Structured data format</div>
+                            </button>
+                            
+                            <button onclick="astroRAGChat.exportAsMarkdown(${JSON.stringify(messages).replace(/"/g, '&quot;')}); this.closest('.fixed').remove();" 
+                                    class="w-full text-left px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                                <div class="font-medium text-gray-900 dark:text-white">Markdown</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Formatted text with sources</div>
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 flex justify-end">
+                            <button onclick="this.closest('.fixed').remove()" 
+                                    class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+            }
+
+            exportAsText(messages) {
+                const text = messages.map(msg => 
+                    `${msg.type.toUpperCase()}: ${msg.content}${msg.sources ? '\nSources: ' + msg.sources : ''}\n`
+                ).join('\n');
+                
+                this.downloadFile(text, 'astro-rag-chat.txt', 'text/plain');
+                this.showToast('Chat exported as text file', 'success');
+            }
+
+            exportAsJSON(messages) {
+                const json = JSON.stringify({
+                    exportedAt: new Date().toISOString(),
+                    sessionId: this.getSessionId(),
+                    messages: messages
+                }, null, 2);
+                
+                this.downloadFile(json, 'astro-rag-chat.json', 'application/json');
+                this.showToast('Chat exported as JSON file', 'success');
+            }
+
+            exportAsMarkdown(messages) {
+                let markdown = `# Astro-RAG Chat Export\n\n`;
+                markdown += `**Exported:** ${new Date().toLocaleString()}\n`;
+                markdown += `**Session ID:** ${this.getSessionId()}\n\n---\n\n`;
+                
+                messages.forEach((msg, index) => {
+                    if (msg.type === 'user') {
+                        markdown += `## 🧑 User\n\n${msg.content}\n\n`;
+                    } else {
+                        markdown += `## 🤖 Assistant\n\n${msg.content}\n\n`;
+                        if (msg.sources) {
+                            markdown += `**Sources:** ${msg.sources}\n\n`;
+                        }
+                    }
+                    markdown += `---\n\n`;
+                });
+                
+                this.downloadFile(markdown, 'astro-rag-chat.md', 'text/markdown');
+                this.showToast('Chat exported as Markdown file', 'success');
+            }
+
+            downloadFile(content, filename, mimeType) {
+                const blob = new Blob([content], { type: mimeType });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                const bgColor = type === 'success' ? 'bg-green-500' : 
+                               type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+                
+                toast.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300 translate-x-full`;
+                toast.textContent = message;
+                
+                document.body.appendChild(toast);
+                
+                // Animate in
+                setTimeout(() => {
+                    toast.classList.remove('translate-x-full');
+                }, 100);
+                
+                // Animate out and remove
+                setTimeout(() => {
+                    toast.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize the chat application when DOM is loaded
+        let astroRAGChat;
+        document.addEventListener('DOMContentLoaded', () => {
+            astroRAGChat = new AstroRAGChat();
+            window.astroRAGChat = astroRAGChat; // Make globally accessible
+        });
+    </script>
+</body>
+</html>

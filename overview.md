@@ -10,7 +10,7 @@ Professor-specific chatbot that uses Retrieval-Augmented Generation (RAG) over r
 - Serving: FastAPI app with a simple browser UI
 
 ## Repository Structure
-- `app.py`: FastAPI server and web UI bootstrap (creates `templates/index.html` on startup). Initializes the chatbot.
+- `app.py`: FastAPI server and web UI bootstrap (serves `templates/index_modern.html`). Initializes the chatbot.
 - `chatbot.py`: Core chat workflow
   - Loads FAISS index and builds a retriever (`mmr`, `k=5`, `fetch_k=10`, `lambda_mult=0.7`)
   - Constructs a custom QA chain (LangChain `load_qa_chain` with `chain_type="stuff"`)

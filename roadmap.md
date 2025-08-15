@@ -13,7 +13,7 @@
 **Timeline**: 3-4 days
 
 ### 8.1 Modern UI Design (Day 1-2)
-**File**: `templates/index.html`, `static/`
+**File**: `templates/index_modern.html`, `static/`
 - [ ] **Modern CSS Framework**: Replace basic HTML with Tailwind CSS or Material UI
 - [ ] **Responsive Design**: Mobile-first approach with breakpoints for tablet/desktop
 - [ ] **Professional Layout**: 
@@ -26,7 +26,7 @@
 - [ ] **Loading States**: Skeleton loaders, progress indicators
 
 ### 8.2 Real-Time Agent Visualization (Day 2-3)
-**Files**: `chatbot.py`, `templates/index.html`, `static/app.js`
+**Files**: `chatbot.py`, `templates/index_modern.html`, `static/app.js`
 - [ ] **WebSocket Integration**: Replace HTTP polling with real-time updates
 - [ ] **Agent Step Streaming**: Show live agent reasoning steps
   - "🤔 Thinking about your question..."
@@ -70,7 +70,7 @@
 - [ ] **Error Handling**: Graceful failures with user-friendly messages
 
 ### 9.3 Frontend Implementation (Day 3-4)
-**Files**: `templates/index.html`, `static/`
+**Files**: `templates/index_modern.html`, `static/`
 - [ ] **Drag & Drop Interface**: Modern file upload with preview
 - [ ] **File Preview**: Show uploaded images/PDF thumbnails
 - [ ] **Progress Upload**: Real-time upload progress with cancel option
