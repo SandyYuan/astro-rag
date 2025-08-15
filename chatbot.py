@@ -46,11 +46,13 @@ class AstronomyChatbot:
         self.retrieval_mode = selected_mode
         logger.info(f"Retrieval mode set to: {self.retrieval_mode}")
         
-        # Determine chat mode for enhanced capabilities
-        self.chat_mode = os.environ.get("CHAT_MODE", "legacy").strip().lower()
-        if self.chat_mode not in {"legacy", "agent"}:
-            raise ValueError("Invalid CHAT_MODE. Expected 'legacy' or 'agent'.")
-        logger.info(f"Chat mode set to: {self.chat_mode}")
+        # Always use agent mode for conversation capabilities
+        self.chat_mode = "agent"
+        logger.info(f"Chat mode set to: {self.chat_mode} (agent mode is now the default and only option)")
+        
+        # Determine if KG-enriched pipeline should be used (default: true)
+        self.use_kg_enriched_pipeline = os.environ.get("USE_KG_ENRICHED", "true").lower() == "true"
+        logger.info(f"KG-enriched pipeline: {'enabled' if self.use_kg_enriched_pipeline else 'disabled'}")
         
         # Handle LLM provider setup
         if llm_provider_instance:
@@ -145,6 +147,19 @@ class AstronomyChatbot:
             self.graph_retriever = GraphRetriever(k=5)
             logger.info("Neo4j GraphRetriever initialized")
             
+            # Initialize KG-enriched pipeline if enabled
+            if self.use_kg_enriched_pipeline:
+                from retrieval.kg_filter import KGQueryFilter
+                from retrieval.kg_enriched_retrieval import KGEnrichedRetriever
+                
+                self.kg_filter = KGQueryFilter(self.llm_provider)
+                self.kg_enriched_retriever = KGEnrichedRetriever(
+                    graph_retriever=self.graph_retriever,
+                    vector_retriever=self.faiss_retriever,
+                    kg_filter=self.kg_filter
+                )
+                logger.info("KG-enriched retrieval pipeline initialized")
+            
             # No single retriever in dual mode - we'll handle retrieval differently
             self.retriever = None
             logger.info("Dual retrieval mode configured")
@@ -179,20 +194,77 @@ class AstronomyChatbot:
 
         logger.info("RAG system setup complete")
     
+    def _create_standalone_question(self, query: str) -> str:
+        """
+        Convert follow-up question to standalone question using LLM.
+        Uses industry-standard query condensation pattern.
+        
+        Args:
+            query: Current user question (may contain pronouns/references)
+        
+        Returns:
+            Standalone question with necessary context included
+        """
+        if not hasattr(self, 'chat_history') or not self.chat_history:
+            return query  # First question is already standalone
+        
+        # Get recent conversation context (last 2 exchanges max)
+        recent_history = []
+        for q, a in self.chat_history[-2:]:  # Last 2 exchanges to avoid token bloat
+            recent_history.append(f"Human: {q}")
+            # Truncate long answers to keep context focused
+            answer_snippet = a[:300] + "..." if len(a) > 300 else a
+            recent_history.append(f"Assistant: {answer_snippet}")
+        
+        history_text = "\n".join(recent_history)
+        
+        condense_prompt = f"""Given the following conversation and a follow-up question, rephrase the follow-up question to be a standalone question that includes all necessary context.
+
+Make the standalone question clear and specific, resolving any pronouns or references to previous topics.
+
+Conversation History:
+{history_text}
+
+Follow-up Question: {query}
+
+Standalone Question:"""
+
+        # Use fast, cheap model for query condensation
+        condenser_llm = self.llm_provider.get_llm(
+            model_name="gemini-2.5-flash",
+            temperature=0.1  # Low temperature for consistent rewriting
+        )
+        
+        standalone_question = condenser_llm.invoke(condense_prompt).strip()
+        
+        # Validate that LLM produced a meaningful result
+        if not standalone_question or len(standalone_question.strip()) == 0:
+            logger.error("Query condensation produced empty result - this indicates an LLM issue")
+            raise ValueError("Query condensation failed: empty response from LLM")
+        
+        logger.info(f"Query condensation: '{query}' → '{standalone_question}'")
+        return standalone_question
 
     
-    def _dual_retrieval_with_fusion(self, query: str, retrieval_query: str) -> List[Any]:
+    def _intelligent_retrieval(self, query: str, retrieval_query: str) -> List[Any]:
         """
-        Perform dual retrieval from both FAISS and Neo4j, then fuse results.
-        Uses industry-standard query condensation for consistent retrieval.
+        Intelligent document retrieval with multiple strategies.
+        
+        Primary: Sequential KG-enriched pipeline (KG → LLM filter → query enrichment → vector search)
+        Fallback: Parallel dual retrieval with fusion (KG ∥ Vector → RRF fusion)
         
         Args:
             query: Original query 
             retrieval_query: Legacy parameter (ignored, we use standalone question)
         
         Returns:
-            List of fused and budget-enforced documents
+            List of relevant documents from the selected retrieval strategy
         """
+        # Use KG-enriched pipeline (default and primary mode)
+        if self.use_kg_enriched_pipeline and hasattr(self, 'kg_enriched_retriever'):
+            logger.info("Using KG-enriched sequential retrieval pipeline")
+            standalone_question = self._create_standalone_question(query)
+            return self.kg_enriched_retriever.get_relevant_documents(standalone_question)
         from retrieval.fusion import (
             reciprocal_rank_fusion, 
             normalize_scores, 
@@ -342,7 +414,7 @@ class AstronomyChatbot:
                 """Search research papers and documents."""
                 try:
                     if self.retrieval_mode == "dual":
-                        docs = self._dual_retrieval_with_fusion(query, query)
+                        docs = self._intelligent_retrieval(query, query)
                     else:
                         raw_docs = self.retriever.get_relevant_documents(query)
                         
@@ -468,57 +540,11 @@ class AstronomyChatbot:
             }
     
     def chat(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
-        """Process a query and return a response."""
+        """Process a query and return a response using ReAct agent with conversation memory."""
         logger.info(f"Received query: {query}")
         
-        # Route to appropriate chat mode
-        if self.chat_mode == "agent":
-            return self._chat_agent_mode(query, session_id)
-        
-        # Legacy mode - simple retrieval without conversation memory
-        system_prompt = self.get_system_prompt()
-        query_with_context = f"{system_prompt}\n\nUser query: {query}"
-        
-        try:
-            # Simple retrieval based on mode
-            if self.retrieval_mode == "dual":
-                relevant_docs = self._dual_retrieval_with_fusion(query, query)
-            else:
-                raw_docs = self.retriever.get_relevant_documents(query)
-                
-                if self.retrieval_mode == "faiss":
-                    from retrieval.content_filter import filter_quality_documents
-                    relevant_docs = filter_quality_documents(raw_docs, min_tokens=30)
-                else:
-                    relevant_docs = raw_docs
-            
-            # Generate response using QA chain
-            response = self.qa_chain.invoke({
-                "question": query_with_context,
-                "input_documents": relevant_docs,
-            })
-            
-            answer = response["output_text"]
-            
-            # Extract sources
-            sources = []
-            for doc in relevant_docs:
-                if "source" in doc.metadata:
-                    source = doc.metadata["source"]
-                    if source not in sources:
-                        sources.append(source)
-            
-            return {
-                "answer": answer,
-                "sources": sources
-            }
-            
-        except Exception as e:
-            logger.error(f"Error in legacy mode: {e}", exc_info=True)
-            return {
-                "answer": "I'm sorry, I encountered an error processing your question. Please try again or rephrase your query.",
-                "sources": []
-            }
+        # Always use agent mode for enhanced conversation capabilities
+        return self._chat_agent_mode(query, session_id)
 
 if __name__ == "__main__":
     # Test the chatbot

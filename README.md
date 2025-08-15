@@ -45,6 +45,23 @@ The system combines vector search and graph traversal for comprehensive knowledg
   - Source deduplication while preserving content diversity
 - **Result**: ~10 sources combining document similarity with entity relationships
 
+### 4. KG-Enriched Sequential Pipeline (Default)
+When `USE_KG_ENRICHED=true` (default), replaces standard dual retrieval with a sequential approach:
+- **Pipeline Flow**: `User Query → KG Retrieval → LLM Filter → Query Enrichment → Vector Search → Results`
+- **LLM Filtering**: Uses Gemini 2.5 Flash (temperature=0.0) to filter KG results for relevance
+- **Smart Enrichment**: Original query enhanced with filtered KG context while preserving intent
+- **Length Management**: Intelligent truncation prevents token overflow while maintaining query quality
+- **Fail-Fast Design**: Clear error reporting without fallbacks that mask issues
+- **Cost Optimized**: Single LLM call per query for efficient operation
+
+### 5. Conversational Agent Interface (Default)
+All interactions use ReAct agent with full conversation memory:
+- **Session Memory**: Maintains context across conversation turns using LangGraph
+- **ReAct Pattern**: Follows Thought → Action → Observation → Final Answer loop
+- **Tool Integration**: Uses document search tool with all retrieval modes
+- **Session Isolation**: Different conversations maintain separate contexts
+- **Reasoning Transparency**: Provides visible reasoning steps in responses
+
 ### Hybrid Query Flow (LLM touchpoints)
 
 ```mermaid
@@ -163,6 +180,11 @@ This architecture ensures the chatbot can handle follow-up questions naturally, 
    
    # Retrieval mode: faiss, neo4j, or dual
    RAG_MODE=dual
+   
+   # KG-enriched pipeline: true/false (only works with dual mode, default: true)
+   USE_KG_ENRICHED=true
+   
+   # Chat mode is always 'agent' (conversation memory enabled by default)
    ```
 
 4. **Set up Neo4j (for graph functionality):**
