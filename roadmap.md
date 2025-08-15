@@ -1,86 +1,270 @@
-## Roadmap: Post-GraphRAG (Phase 1) Steps
+# Roadmap: Production-Ready Web Application
 
-Assumes `graph.md` Phase 1 is completed: Neo4j graph built from existing texts and a `GraphRetriever.get_relevant_documents()` implemented (Cypher-only; no new embeddings).
+## Current Status: KG-Enriched RAG System ✅ COMPLETE
+- ✅ **Phase 1-7**: All GraphRAG phases completed (Neo4j integration, dual retrieval, KG-enriched sequential pipeline)
+- ✅ **Current Architecture**: Single KG-enriched sequential mode with ReAct agent conversation interface
+- ✅ **Production Status**: Fully functional local development system
 
-### Phase 2 — Graph-only chatbot integration
-- Goal: Enable a graph-only mode without touching FAISS or the API surface.
-- Steps:
-  1) Add `RAG_MODE=neo4j|faiss` env toggle in `chatbot.py` constructor.
-  2) If `neo4j`, initialize `GraphRetriever` and assign to `self.retriever`; keep current Gemini LLM and QA prompt.
-  3) Return `answer` and `sources` as today; no UI changes.
-- Deliverables:
-  - `chatbot.py` retriever toggle
-  - Smoke test: 5–10 multi-hop/entity queries; verify sources
-- Success criteria:
-  - Correct answers for entity/relationship questions; no regressions in app stability
+---
 
-### Phase 3 — Dual retrieval (graph + FAISS) with fusion
-- Goal: Run both retrieval channels per query and fuse contexts before generation.
-- Steps:
-  1) Keep FAISS retriever as-is; call both FAISS and `GraphRetriever` in parallel.
-  2) Fuse results via reciprocal rank fusion (RRF) or simple score normalization; dedupe by `metadata.source`.
-  3) Enforce a token budget (e.g., 2–4k tokens) by taking top-N diverse chunks.
-  4) Feed merged context into the existing persona prompt.
-- Deliverables:
-  - A small utility (e.g., `retrieval/fusion.py`) with RRF
-  - Toggle to enable fusion mode
-- Success criteria:
-  - Improved recall on broad/fuzzy queries; no significant latency spikes
+## Phase 8: Enhanced Web UI & UX - PRIORITY 1 🎨
 
-### Phase 4 — Vectorize KG summaries (optional, recommended)
-- Goal: Add a small vector index for KG artifacts to improve global recall & reduce Cypher fan-out.
-- What to index:
-  - Entity summaries (name, type, 1–2 sentence description)
-  - Claim texts (short declarative statements)
-  - Community/topic summaries (if computed)
-- Steps:
-  1) Add `graph_rag/kg_vector_index.py` to build/update a FAISS (or Chroma) index at `rag_data/kg_index`.
-  2) Use the same embedding model as chunks (Gemini `text-embedding-004`) for consistency.
-  3) At query-time: retrieve top KG summaries by vectors, then run targeted Cypher expansions for those hits.
-  4) Fuse with FAISS chunks and direct graph results as in Phase 3.
-- Deliverables:
-  - `rag_data/kg_index` and build script
-  - Integrated query path using KG vectors → Cypher expansion
-- Success criteria:
-  - Better coverage for synonym/fuzzy queries; reduced traversal cost
+### Goal: Transform into a polished, professional web application
+**Timeline**: 3-4 days
 
-### Phase 5 — Reranking & evaluation
-- Goal: Improve final context selection and add measurable evaluation.
-- Steps:
-  1) Add a cross-encoder reranker (e.g., bge-reranker or MiniLM) after fusion to re-order top contexts.
-  2) Create a small evaluation set (15–30 queries) with manual ratings for quality/faithfulness.
-  3) Track latency and context length; adjust k/budgets.
-- Deliverables:
-  - Reranking module and a simple evaluation script/notebook
-- Success criteria:
-  - Higher rated answers at similar or acceptable latency
+### 8.1 Modern UI Design (Day 1-2)
+**File**: `templates/index.html`, `static/`
+- [ ] **Modern CSS Framework**: Replace basic HTML with Tailwind CSS or Material UI
+- [ ] **Responsive Design**: Mobile-first approach with breakpoints for tablet/desktop
+- [ ] **Professional Layout**: 
+  - Clean header with project branding
+  - Sidebar for chat history/sessions
+  - Main chat area with proper message bubbles
+  - Input area with file upload and send button
+- [ ] **Dark/Light Mode Toggle**: User preference with localStorage persistence
+- [ ] **Typography & Colors**: Professional color scheme, readable fonts
+- [ ] **Loading States**: Skeleton loaders, progress indicators
 
-### Phase 6 — LangGraph agent (optional, advanced)
-- Goal: Multi-turn agent with session memory and iterative tool use.
-- Steps:
-  1) Build an agent graph (`agent/graph_app.py`) with memory (checkpointer) and tools: FAISS, GraphRetriever, (optional) KG vectors.
-  2) Start single-pass (condense → retrieve → answer); then enable ReAct-style tool loops with a max-iterations cap.
-  3) Add `CHAT_MODE=agent|legacy` to `chatbot.py`; keep FastAPI unchanged.
-- Deliverables:
-  - `agent/graph_app.py`, mode toggle, smoke tests
-- Success criteria:
-  - Better handling of complex, iterative questions across turns
+### 8.2 Real-Time Agent Visualization (Day 2-3)
+**Files**: `chatbot.py`, `templates/index.html`, `static/app.js`
+- [ ] **WebSocket Integration**: Replace HTTP polling with real-time updates
+- [ ] **Agent Step Streaming**: Show live agent reasoning steps
+  - "🤔 Thinking about your question..."
+  - "📚 Searching knowledge graph for entities..."
+  - "🔍 Enriching query with relevant context..."
+  - "📖 Retrieving relevant documents..."
+  - "✍️ Generating response..."
+- [ ] **Progress Indicators**: Visual progress bars for each step
+- [ ] **Expandable Details**: Click to see detailed reasoning/sources
+- [ ] **Typing Animation**: Realistic response streaming
 
-## Notes & Constraints
-- No re-embedding of corpus is required for Phase 2–3; Phase 4 embeds only KG summaries (small set).
-- Keep FAISS and graph retrieval independent to enable A/B and rollback.
-- Centralize any text post-processing (phrase removal) in the backend for consistency.
+### 8.3 Enhanced Chat Features (Day 3-4)
+- [ ] **Chat Sessions**: Persistent conversation history with session management
+- [ ] **Message Actions**: Copy, regenerate, thumbs up/down feedback
+- [ ] **Export Options**: Save conversations as PDF/text
+- [ ] **Search History**: Find previous conversations
+- [ ] **Keyboard Shortcuts**: Quick actions (Ctrl+Enter to send, etc.)
 
-## Rollback
-- Graph-only: set `RAG_MODE=faiss`.
-- Dual/fusion: disable the fusion toggle to return to single-channel retrieval.
-- Agent: set `CHAT_MODE=legacy`.
+---
 
-## Time Estimates (rough)
-- Phase 2: 0.5–1 day
-- Phase 3: 0.5–1 day
-- Phase 4: 1 day
-- Phase 5: 0.5–1 day
-- Phase 6: 1–2 days
+## Phase 9: Multimodal Support - PRIORITY 2 📁
 
+### Goal: Add image and PDF upload capabilities using Gemini 2.5 Flash
+**Timeline**: 4-5 days
 
+### 9.1 Research & Architecture (Day 1)
+- [ ] **Gemini Multimodal API Research**: Document exact capabilities and limitations
+- [ ] **File Upload Architecture**: Design secure file handling pipeline
+- [ ] **Storage Strategy**: Temporary file storage with automatic cleanup
+- [ ] **Security Considerations**: File type validation, size limits, virus scanning
+
+### 9.2 Backend Implementation (Day 2-3)
+**Files**: `multimodal/`, `chatbot.py`, `app.py`
+- [ ] **File Upload Endpoint**: `/upload` with validation and security
+- [ ] **Multimodal Processor**: `multimodal/processor.py`
+  - Image processing (JPEG, PNG, WebP support)
+  - PDF text extraction and image extraction
+  - File metadata extraction
+- [ ] **Gemini Integration**: Update `llm_provider.py` for multimodal calls
+- [ ] **Context Enrichment**: Combine uploaded files with RAG retrieval
+- [ ] **Error Handling**: Graceful failures with user-friendly messages
+
+### 9.3 Frontend Implementation (Day 3-4)
+**Files**: `templates/index.html`, `static/`
+- [ ] **Drag & Drop Interface**: Modern file upload with preview
+- [ ] **File Preview**: Show uploaded images/PDF thumbnails
+- [ ] **Progress Upload**: Real-time upload progress with cancel option
+- [ ] **File Management**: Remove files, file size display
+- [ ] **Mobile Support**: Camera integration for mobile devices
+
+### 9.4 Integration & Testing (Day 4-5)
+- [ ] **End-to-End Testing**: Upload → Process → Query → Response flow
+- [ ] **Performance Testing**: Large file handling, concurrent uploads
+- [ ] **Error Scenarios**: Invalid files, API failures, network issues
+- [ ] **User Experience**: Intuitive workflow, clear error messages
+
+---
+
+## Phase 10: Secure Web Deployment - PRIORITY 3 🚀
+
+### Goal: Deploy as a public web application with enterprise-grade security
+**Timeline**: 5-6 days
+
+### 10.1 Deployment Architecture Design (Day 1)
+- [ ] **Platform Selection**: Choose between Vercel, Railway, Render, or AWS
+- [ ] **Security Architecture**: API key management strategy
+  - Option A: User-provided API keys (most secure)
+  - Option B: Shared API key with usage limits
+  - Option C: Hybrid approach with tiers
+- [ ] **Database Strategy**: User sessions, chat history, API usage tracking
+- [ ] **CDN & Caching**: Static asset delivery, response caching
+- [ ] **Monitoring**: Error tracking, performance monitoring, usage analytics
+
+### 10.2 Authentication & User Management (Day 2-3)
+**Files**: `auth/`, `database/`, `app.py`
+- [ ] **User Authentication System**:
+  - Email/password registration with email verification
+  - OAuth integration (Google, GitHub)
+  - Password reset flow
+- [ ] **API Key Management**:
+  - User dashboard for API key input/management
+  - Encrypted storage of user API keys
+  - API key validation and error handling
+- [ ] **Usage Tracking & Limits**:
+  - Per-user query limits and rate limiting
+  - Usage dashboard and analytics
+  - Billing integration (if needed)
+
+### 10.3 Security Implementation (Day 3-4)
+**Files**: `security/`, `middleware/`
+- [ ] **API Security**:
+  - JWT token authentication
+  - Rate limiting per user/IP
+  - Request validation and sanitization
+  - CORS configuration
+- [ ] **Data Protection**:
+  - Environment variable security
+  - Database encryption at rest
+  - Secure file upload handling
+  - PII data anonymization
+- [ ] **Infrastructure Security**:
+  - HTTPS enforcement
+  - Security headers (HSTS, CSP, etc.)
+  - DDoS protection
+  - Regular security audits
+
+### 10.4 Production Deployment (Day 4-5)
+- [ ] **Environment Setup**:
+  - Production environment configuration
+  - Environment variable management
+  - Database setup and migrations
+  - CDN configuration
+- [ ] **CI/CD Pipeline**:
+  - Automated testing and deployment
+  - Health checks and monitoring
+  - Rollback procedures
+  - Performance monitoring
+- [ ] **Documentation**:
+  - User guide and API documentation
+  - Admin documentation
+  - Security procedures
+  - Incident response plan
+
+### 10.5 Launch Preparation (Day 5-6)
+- [ ] **Load Testing**: Simulate concurrent users and high traffic
+- [ ] **Security Audit**: Penetration testing, vulnerability assessment
+- [ ] **User Acceptance Testing**: Beta testing with real users
+- [ ] **Launch Strategy**: Gradual rollout, monitoring, feedback collection
+- [ ] **Support Infrastructure**: Help documentation, contact forms, issue tracking
+
+---
+
+## Technical Requirements & Dependencies
+
+### New Dependencies
+```python
+# UI Enhancement
+websockets==12.0
+tailwindcss  # or material-ui components
+
+# Multimodal Support
+python-multipart==0.0.6
+Pillow==10.0.0
+PyMuPDF==1.23.0  # PDF processing
+python-magic==0.4.27  # File type detection
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==41.0.0
+
+# Database & Caching
+sqlalchemy==2.0.0
+alembic==1.12.0
+redis==4.6.0
+
+# Monitoring & Analytics
+prometheus-client==0.17.0
+sentry-sdk[fastapi]==1.32.0
+```
+
+### Infrastructure Requirements
+- **Database**: PostgreSQL for user data, Redis for sessions/caching
+- **File Storage**: Cloud storage (AWS S3, GCP Storage) for uploaded files
+- **CDN**: CloudFlare or similar for static assets
+- **Monitoring**: Sentry for error tracking, Prometheus for metrics
+- **Deployment**: Docker containers with orchestration
+
+---
+
+## Success Criteria
+
+### Phase 8: Enhanced UI
+- [ ] Professional, responsive design works on all devices
+- [ ] Real-time agent step visualization provides clear user feedback
+- [ ] Chat interface feels modern and intuitive
+- [ ] Performance: UI interactions < 100ms response time
+
+### Phase 9: Multimodal Support
+- [ ] Users can upload images and PDFs seamlessly
+- [ ] Gemini processes multimodal content accurately
+- [ ] File uploads integrate smoothly with existing RAG pipeline
+- [ ] Security: All file uploads are validated and secure
+
+### Phase 10: Web Deployment
+- [ ] Public website accessible via custom domain
+- [ ] User authentication works reliably
+- [ ] API keys are managed securely
+- [ ] System handles 100+ concurrent users
+- [ ] 99.9% uptime with monitoring and alerts
+
+---
+
+## Risk Mitigation
+
+### Technical Risks
+- **Gemini API Limits**: Implement fallback modes, usage monitoring
+- **File Upload Security**: Strict validation, sandboxed processing
+- **Performance**: Caching strategies, CDN, database optimization
+- **API Key Security**: Encryption, secure storage, access controls
+
+### Business Risks
+- **Cost Management**: Usage limits, billing alerts, cost optimization
+- **Legal Compliance**: GDPR, data privacy, terms of service
+- **Support Load**: Documentation, FAQ, automated responses
+- **Scaling**: Auto-scaling infrastructure, database sharding
+
+---
+
+## Timeline Summary
+- **Phase 8 (UI)**: 3-4 days
+- **Phase 9 (Multimodal)**: 4-5 days  
+- **Phase 10 (Deployment)**: 5-6 days
+- **Total**: ~12-15 days for complete transformation
+
+**Estimated Launch Date**: 2-3 weeks from start
+
+---
+
+## Implementation Strategy
+
+### Phase 8: Start with UI Enhancement
+1. **Day 1**: Research modern UI frameworks, create design mockups
+2. **Day 2**: Implement responsive layout with Tailwind CSS
+3. **Day 3**: Add WebSocket support for real-time agent visualization
+4. **Day 4**: Polish chat features and user experience
+
+### Phase 9: Add Multimodal Capabilities
+1. **Day 1**: Research Gemini 2.5 Flash multimodal API capabilities
+2. **Day 2-3**: Implement secure file upload and processing backend
+3. **Day 3-4**: Create intuitive frontend file upload interface
+4. **Day 5**: Integration testing and performance optimization
+
+### Phase 10: Production Deployment
+1. **Day 1**: Architecture design and platform selection
+2. **Day 2-3**: User authentication and API key management
+3. **Day 3-4**: Security implementation and testing
+4. **Day 4-5**: Production deployment and monitoring setup
+5. **Day 6**: Launch preparation and final testing
+
+This roadmap transforms the current local development tool into a production-ready, publicly accessible web application with enterprise-grade features and security.

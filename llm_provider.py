@@ -35,7 +35,7 @@ class LLMClient:
         except Exception as e:
             raise ValueError(f"Failed to initialize Gemini client: {e}")
     
-    def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-flash") -> str:
+    def generate_content(self, prompt: str, temperature: float = 0.7, model_name: str = "gemini-2.5-flash", timeout_s: float = 30.0, max_retries: int = 3) -> str:
         """Generate content using Gemini
         
         Args:
@@ -46,16 +46,22 @@ class LLMClient:
         Returns:
             Generated text response
         """
-        try:
-            logger.debug(f"Generating content with model {model_name}")
-            response = self.client.models.generate_content(
-                model=model_name,
-                contents=prompt
-            )
-            return response.text
-        except Exception as e:
-            logger.error(f"Error generating content: {e}")
-            raise
+        last_err: Exception | None = None
+        for attempt in range(1, max_retries + 1):
+            try:
+                logger.debug(f"Generating content with model {model_name} (attempt {attempt}/{max_retries})")
+                # google.genai client does not expose a direct timeout here; rely on requests' defaults via env if needed
+                response = self.client.models.generate_content(
+                    model=model_name,
+                    contents=prompt
+                )
+                return response.text
+            except Exception as e:
+                last_err = e
+                logger.warning(f"LLM call failed (attempt {attempt}/{max_retries}): {e}")
+        # If all retries failed, raise the last error
+        logger.error(f"LLM call failed after {max_retries} attempts: {last_err}")
+        raise last_err if last_err else RuntimeError("LLM call failed with unknown error")
 
 class LLMClientWrapper(LLM):
     """LangChain-compatible wrapper for the Gemini client"""
@@ -77,9 +83,11 @@ class LLMClientWrapper(LLM):
     ) -> str:
         """Call the Gemini API with the given prompt"""
         return self.client.generate_content(
-            prompt, 
+            prompt,
             temperature=self.temperature,
-            model_name=self.model_name
+            model_name=self.model_name,
+            timeout_s=30.0,
+            max_retries=3,
         )
 
 class LLMEmbeddings(Embeddings):

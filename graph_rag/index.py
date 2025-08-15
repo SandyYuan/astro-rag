@@ -46,6 +46,7 @@ class GraphIndexer:
         input_dirs: Optional[List[str]] = None,
         llm_provider: Optional[LLMProvider] = None,
         limit_files: Optional[int] = None,
+        skip_existing: bool = True,
     ) -> None:
         self.neo4j = neo4j_config or Neo4jConfig(
             uri=_get_env("NEO4J_URI"),
@@ -54,6 +55,7 @@ class GraphIndexer:
         )
         self.input_dirs = input_dirs or ["papers", "papers_np"]
         self.limit_files = limit_files
+        self.skip_existing = skip_existing
         # Reuse existing provider for extraction. Keep deterministic settings.
         # Do NOT initialize LLM until extraction time, so schema-only flows work without GOOGLE_API_KEY.
         self.llm_provider = llm_provider
@@ -116,6 +118,20 @@ class GraphIndexer:
             files = files[: self.limit_files]
         logger.info(f"Found {len(files)} .txt files for indexing")
         return files
+
+    def _paper_already_processed(self, path: str) -> bool:
+        """Return True if the paper already has at least one supported claim in the graph.
+
+        This is used to skip re-processing papers on resume to avoid extra LLM calls.
+        """
+        query = (
+            "MATCH (p:Paper {path: $path})<-[:SUPPORTED_BY]-(:Claim) "
+            "RETURN count(*) AS cnt"
+        )
+        with self.driver.session() as session:
+            rec = session.run(query, {"path": path}).single()
+            cnt = rec[0] if rec is not None else 0
+        return (cnt or 0) > 0
 
     # ---------------------------
     # LLM extraction
@@ -383,6 +399,9 @@ class GraphIndexer:
         files = self.list_input_texts()
         for path in files:
             try:
+                if self.skip_existing and self._paper_already_processed(path):
+                    logger.info(f"Skipping (already processed): {path}")
+                    continue
                 with open(path, "r", encoding="utf-8") as f:
                     text = f.read()
                 # Prefer actual title from .txt if present (line starting with 'Title:')
