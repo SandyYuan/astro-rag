@@ -25,16 +25,16 @@ class AstronomyChatbot:
         api_key: Optional[str] = None,
         llm_provider_instance: Optional[LLMProvider] = None,
         summary_file: str = "rag_data/prof_summary.txt",
-        retrieval_mode: Optional[str] = None,
+        retrieval_mode: Optional[str] = None,  # Legacy parameter, ignored
     ) -> None:
-        """Initialize the AstronomyChatbot.
+        """Initialize the AstronomyChatbot with KG-enriched sequential retrieval.
 
         Args:
-            vector_store_path: Path to the FAISS vector store (used when RAG_MODE=faiss)
+            vector_store_path: Path to the FAISS vector store
             api_key: Optional API key override
             llm_provider_instance: Optional pre-configured LLMProvider instance
             summary_file: Path to professor summary file
-            retrieval_mode: Retrieval backend selection; one of {"faiss", "neo4j"}. Defaults to env RAG_MODE or "faiss".
+            retrieval_mode: Legacy parameter, ignored (system always uses KG-enriched sequential)
         """
         self.vector_store_path = vector_store_path
 
