@@ -10,6 +10,7 @@ from typing import List, Dict
 from langchain.schema import Document
 
 from retrieval.kg_filter import KGQueryFilter
+from retrieval.content_filter import filter_documents
 
 
 logger = logging.getLogger(__name__)
@@ -51,6 +52,10 @@ class KGEnrichedRetriever:
             return self.vector_retriever.get_relevant_documents(query)
         
         logger.info(f"Retrieved {len(kg_documents)} documents from KG")
+        for i, d in enumerate(kg_documents[:5], 1):
+            src = d.metadata.get("source", "Unknown") if hasattr(d, "metadata") else "Unknown"
+            preview = (d.page_content[:200] + "...") if hasattr(d, "page_content") and d.page_content else ""
+            logger.info(f"KG[{i}] source={src} | {preview}")
         
         # Step 2: Convert to dict format and filter with LLM
         logger.debug("Step 2: Converting KG documents and filtering with LLM")
@@ -65,14 +70,25 @@ class KGEnrichedRetriever:
         # Step 3: Create enriched query
         logger.debug("Step 3: Creating enriched query")
         enriched_query = self._create_enriched_query(query, kg_context)
-        logger.info(f"Enriched query: {enriched_query[:100]}...")
+        logger.info("Enriched query (first 200 chars): %s", enriched_query[:200])
         
         # Step 4: Vector search with enriched query
         logger.debug("Step 4: Performing vector search with enriched query")
         vector_results = self.vector_retriever.get_relevant_documents(enriched_query)
+        for i, d in enumerate(vector_results[:5], 1):
+            src = d.metadata.get("source", "Unknown") if hasattr(d, "metadata") else "Unknown"
+            preview = (d.page_content[:200] + "...") if hasattr(d, "page_content") and d.page_content else ""
+            logger.info(f"VEC[{i}] source={src} | {preview}")
+
+        # Post-filter vector results to drop citations/affiliations/boilerplate
+        filtered_results = filter_documents(vector_results)
+        if len(filtered_results) != len(vector_results):
+            logger.info("Vector post-filter: kept %d / %d", len(filtered_results), len(vector_results))
+        else:
+            logger.info("Vector post-filter: no removals")
         
-        logger.info(f"KG-enriched retrieval completed: {len(vector_results)} results")
-        return vector_results
+        logger.info(f"KG-enriched retrieval completed: {len(filtered_results)} results")
+        return filtered_results
     
     def _convert_kg_documents_to_dict(self, kg_docs: List[Document]) -> List[Dict]:
         """Convert LangChain Documents to dict format for LLM processing.
@@ -109,7 +125,7 @@ class KGEnrichedRetriever:
         enriched = f"{original_query} {kg_context}"
         
         # Limit total length to prevent overwhelming vector search
-        max_length = 500
+        max_length = 1000
         if len(enriched) > max_length:
             # If original query itself is too long, truncate it first
             if len(original_query) > max_length * 0.7:  # Reserve 30% for context
