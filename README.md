@@ -85,6 +85,19 @@ flowchart LR
     style Generation fill:none,stroke:#ddd,stroke-width:1px
 ```
 
+### Primary-Author Corpus Preference
+
+The system strongly prioritizes the primary-author corpus (`papers/`) over the non‑primary set (`papers_np/`). This is applied as a post‑vector reranker inside the KG‑enriched pipeline and is fully configurable via environment variables.
+
+- Default behavior: ensure a minimum share of primary sources in the final top‑k (e.g., ≥80% of top‑5 when available), while preserving the original order within each corpus.
+- Configuration (env):
+  - `PRIMARY_AUTHOR_BIAS_ENABLED=true`
+  - `PRIMARY_AUTHOR_PREFIX=papers/`
+  - `PRIMARY_AUTHOR_MIN_SHARE=0.8`
+  - `PRIMARY_AUTHOR_FINAL_K=5`
+
+This bias reflects that the target professor’s own papers should be favored when relevant, without excluding clearly superior non‑primary matches when primary supply is limited.
+
 ### Conversation Context Management
 
 The system maintains conversation history through an innovative dual-context approach:

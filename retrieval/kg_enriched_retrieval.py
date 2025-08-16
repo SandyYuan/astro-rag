@@ -11,6 +11,7 @@ from langchain.schema import Document
 
 from retrieval.kg_filter import KGQueryFilter
 from retrieval.content_filter import filter_documents
+from retrieval.corpus_bias import apply_primary_corpus_bias
 
 
 logger = logging.getLogger(__name__)
@@ -75,6 +76,12 @@ class KGEnrichedRetriever:
         # Step 4: Vector search with enriched query
         logger.debug("Step 4: Performing vector search with enriched query")
         vector_results = self.vector_retriever.get_relevant_documents(enriched_query)
+        # Apply primary-author corpus bias reranking if enabled
+        try:
+            vector_results = apply_primary_corpus_bias(vector_results)
+        except Exception:
+            # Fail-safe: do not block retrieval if biasing fails
+            pass
         for i, d in enumerate(vector_results[:5], 1):
             src = d.metadata.get("source", "Unknown") if hasattr(d, "metadata") else "Unknown"
             preview = (d.page_content[:200] + "...") if hasattr(d, "page_content") and d.page_content else ""

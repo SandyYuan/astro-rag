@@ -322,3 +322,22 @@
 - **Performance**: Optimized for speed, responsiveness, and user engagement
 - **Ready for Phase 9**: Solid foundation prepared for multimodal support (next priority)
 - **Deployment Ready**: Can be deployed as standalone website with current feature set
+
+## Primary-Author Corpus Preference - COMPLETED ✅
+
+### Summary
+- Added a strong, configurable priority for primary-author papers (`papers/`) over non‑primary (`papers_np/`).
+- Implemented as a post‑vector reranker in `retrieval/corpus_bias.py`, applied inside the KG‑enriched pipeline.
+
+### Behavior
+- Enforces a minimum share of primary sources in the final top‑k (default: ≥80% of top‑5 when available) while preserving base order within each corpus.
+- No reindex required; relies on `Document.metadata["source"]` (already set by `rag_processor.py`).
+
+### Configuration (env)
+- `PRIMARY_AUTHOR_BIAS_ENABLED=true`
+- `PRIMARY_AUTHOR_PREFIX=papers/`
+- `PRIMARY_AUTHOR_MIN_SHARE=0.8`
+- `PRIMARY_AUTHOR_FINAL_K=5`
+
+### Impact
+- Answers preferentially cite the target professor’s own papers when relevant, reflecting their research emphasis and perspective.

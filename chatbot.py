@@ -97,8 +97,8 @@ class AstronomyChatbot:
         self.faiss_retriever = self.vector_store.as_retriever(
             search_type="mmr",
             search_kwargs={
-                "k": 5,
-                "fetch_k": 20,  # Get more candidates for better quality
+                "k": 12,          # larger candidate pool for downstream reranker
+                "fetch_k": 40,    # more candidates for quality + biasing
                 "lambda_mult": 0.7,
             },
         )
