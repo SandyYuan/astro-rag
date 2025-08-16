@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import os
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 from langchain.schema import Document
 
@@ -26,12 +26,44 @@ def _is_primary_source(doc: Document, prefix: str) -> bool:
     return bool(prefix) and source.startswith(prefix)
 
 
+def _extract_year(doc: Document, field: str) -> Optional[int]:
+    """Extract an integer publication year from Document.metadata[field].
+    No I/O; only use in-memory metadata. Returns None if unavailable/invalid.
+    """
+    try:
+        if not hasattr(doc, "metadata") or not isinstance(doc.metadata, dict):
+            return None
+        val = doc.metadata.get(field)
+        if val is None:
+            # common alternative key
+            val = doc.metadata.get("published_year")
+        if val is None:
+            return None
+        if isinstance(val, int):
+            return val
+        s = str(val).strip()
+        # Take first 4-digit year in string if present
+        if len(s) >= 4:
+            for i in range(len(s) - 3):
+                chunk = s[i : i + 4]
+                if chunk.isdigit():
+                    y = int(chunk)
+                    if 1800 <= y <= 2200:
+                        return y
+        return None
+    except Exception:
+        return None
+
+
 def rerank_with_primary_weight(
     documents: List[Document],
     primary_prefix: str = "papers/",
     primary_boost: float = 2.0,
     min_primary_share: float = 0.8,
     final_k: int | None = 5,
+    recency_enabled: bool = True,
+    recency_field: str = "year",
+    recency_missing_last: bool = True,
 ) -> List[Document]:
     """
     Rerank docs with a very strong prior for primary-author sources.
@@ -51,8 +83,25 @@ def rerank_with_primary_weight(
     n = len(documents)
     k = final_k if (final_k is not None and final_k > 0) else n
 
-    primary_list: List[Document] = [d for d in documents if _is_primary_source(d, primary_prefix)]
-    non_primary_list: List[Document] = [d for d in documents if not _is_primary_source(d, primary_prefix)]
+    indexed_docs: List[Tuple[int, Document]] = list(enumerate(documents))
+    primary_list_idx: List[Tuple[int, Document]] = [(i, d) for i, d in indexed_docs if _is_primary_source(d, primary_prefix)]
+    non_primary_list_idx: List[Tuple[int, Document]] = [(i, d) for i, d in indexed_docs if not _is_primary_source(d, primary_prefix)]
+
+    def sort_by_recency(items: List[Tuple[int, Document]]) -> List[Tuple[int, Document]]:
+        if not recency_enabled:
+            return items  # preserve original order
+        def key(t: Tuple[int, Document]):
+            idx, doc = t
+            y = _extract_year(doc, recency_field)
+            missing = 1 if (y is None and recency_missing_last) else 0
+            # Newer first: use -y; if missing and we keep missing last, set missing=1
+            sort_y = -(y if y is not None else 0)
+            return (missing, sort_y, idx)
+        # Stable sort based on key
+        return sorted(items, key=key)
+
+    primary_sorted = sort_by_recency(primary_list_idx)
+    non_primary_sorted = sort_by_recency(non_primary_list_idx)
 
     required_primary = 0
     if min_primary_share > 0 and k > 0:
@@ -60,18 +109,18 @@ def rerank_with_primary_weight(
 
     selected: List[Document] = []
     # First, take required_primary primaries if available
-    take_primary = min(required_primary, len(primary_list))
-    selected.extend(primary_list[:take_primary])
+    take_primary = min(required_primary, len(primary_sorted))
+    selected.extend([d for (_, d) in primary_sorted[:take_primary]])
 
     # Next, fill remaining slots, preferring more primaries first
     remaining = max(k - len(selected), 0)
     if remaining > 0:
         # Append more primaries
-        selected.extend(primary_list[take_primary : take_primary + remaining])
+        selected.extend([d for (_, d) in primary_sorted[take_primary : take_primary + remaining]])
         remaining = max(k - len(selected), 0)
     if remaining > 0:
         # Then append non-primary
-        selected.extend(non_primary_list[:remaining])
+        selected.extend([d for (_, d) in non_primary_sorted[:remaining]])
 
     return selected[:k]
 
